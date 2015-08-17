@@ -20,6 +20,7 @@
     // HEY!
     
     // write your code here! :D
+    {NSLog(@"Helloworld!");}
     
     return YES; // except don't touch this line
 }
