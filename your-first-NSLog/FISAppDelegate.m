@@ -18,7 +18,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     // HEY!
-    
+    NSLog(@"Hello, World!");
     // write your code here! :D
     
     return YES; // except don't touch this line
