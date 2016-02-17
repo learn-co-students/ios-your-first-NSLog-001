@@ -11,5 +11,4 @@
     /** CONFIGURATION END **/
 	</script>
  <script async src = "//static.chartbeat.com/js/chartbeat_mab.js"></script>
- <!-- FROM FWX WEBSITE -->
 
