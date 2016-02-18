@@ -1,0 +1,50 @@
+
+		var _sf_async_config={},
+			_comscore = _comscore || [];
+
+		_comscore.push({ c1: "2", c2: "6035677" });
+
+		_sf_async_config.uid = "34974";
+		_sf_async_config.domain = "news.sky.com";
+
+		// Set section for Chartbeat
+		if (window.skynews.config.analytics.section === "watch-live") {
+			_sf_async_config.sections = window.skynews.config.analytics.section
+		} else {
+			_sf_async_config.sections = "US Home";
+		}
+
+		// Set author for Chartbeat for section and article
+		
+
+		_sf_async_config.useCanonical = true;
+
+		(function(){
+			function loadChartbeat() {
+				window._sf_endpt=(new Date()).getTime();
+				var e = document.createElement("script");
+				e.setAttribute("language", "javascript");
+				e.setAttribute("type", "text/javascript");
+				e.async = true;
+				e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+				document.body.appendChild(e);
+			}
+
+			function loadComscore() {
+				var s = document.createElement("script"),
+					el = document.getElementsByTagName("script")[0];
+
+				s.async = true;
+				s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+				el.parentNode.insertBefore(s, el);
+			}
+
+			function loadScripts() {
+				if (window.skynews.config.analytics.chartbeat.enabled) loadChartbeat();
+				loadComscore();
+			}
+
+			var oldonload = window.onload;
+			window.onload = (typeof window.onload != "function") ? loadScripts : function() { oldonload(); loadScripts(); };
+		})();
+	
