@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#">
+
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UwcOUVJQGwYGU1JaAQI="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(){}function r(t){function e(t){return t&&t instanceof n?t:t?a(t,i,o):o()}function s(n,r,o){t&&t(n,r,o);for(var i=e(o),a=f(n),s=a.length,c=0;s>c;c++)a[c].apply(i,r);return i}function c(t,e){d[t]=f(t).concat(e)}function f(t){return d[t]||[]}function u(){return r(s)}var d={};return{on:c,emit:s,create:u,listeners:f,context:e,_events:d}}function o(){return new n}var i="nr@context",a=t("gos");e.exports=r()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:25,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,a){try{f?f-=1:r("err",[a||new UncaughtException(t,e,n)])}catch(c){try{r("ierr",[c,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof s?s.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=t("loader"),s=window.onerror,c=!1,f=0;a.features.err=!0,t(5),window.onerror=e;try{throw new Error}catch(u){"stack"in u&&(t(1),t(2),"addEventListener"in window&&t(3),a.xhrWrappable&&t(4),c=!0)}i.on("fn-start",function(){c&&(f+=1)}),i.on("fn-err",function(t,e,r){c&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){c&&!this.thrown&&f>0&&(f-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:11,2:10,3:8,4:12,5:3,6:26,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){if(window.addEventListener){var e=t("handle"),n=t("ee");t(1),window.addEventListener("click",function(){e("inc",["ck"])},!1),window.addEventListener("hashchange",function(){e("inc",["hc"])},!1),n.on("pushState-start",function(){e("inc",["ps"])})}},{1:9,ee:"QJf3ax",handle:"D5DuLP"}],6:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],7:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1),i=t(2);t("loader").features.stn=!0,t(3);var a=Event;n.on("fn-start",function(t){var e=t[0];e instanceof a&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof a&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),i.on("fn-start",function(){this.bstStart=Date.now()}),i.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.clearResourceTimings?window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1):window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:11,2:10,3:9,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){function n(t){for(var e=t;e&&!e.hasOwnProperty("addEventListener");)e=Object.getPrototypeOf(e);e&&r(e)}function r(t){a.inPlace(t,["addEventListener","removeEventListener"],"-",o)}function o(t){return t[1]}var i=t("ee").create(),a=t(1)(i),s=t("gos");e.exports=i,r(window),"getPrototypeOf"in Object?(n(document),n(XMLHttpRequest.prototype)):XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&r(XMLHttpRequest.prototype),i.on("addEventListener-start",function(t){if(t[1]){var e=t[1];if("function"==typeof e){var n=s(e,"nr@wrapped",function(){return a(e,"fn-",null,e.name||"anonymous")});this.wrapped=t[1]=n}else"function"==typeof e.handleEvent&&a.inPlace(e,["handleEvent"],"fn-")}}),i.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:27,ee:"QJf3ax",gos:"7eSDFh"}],9:[function(t,e){var n=t("ee").create(),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState","replaceState"],"-")},{1:27,ee:"QJf3ax"}],10:[function(t,e){var n=t("ee").create(),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:27,ee:"QJf3ax"}],11:[function(t,e){function n(t,e,n){t[0]=i(t[0],"fn-",null,n)}function r(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=i(t[0],"fn-",this,n)}var o=t("ee").create(),i=t(1)(o);e.exports=o,i.inPlace(window,["setTimeout","setImmediate"],"setTimer-"),i.inPlace(window,["setInterval"],"setInterval-"),i.inPlace(window,["clearTimeout","clearImmediate"],"clearTimeout-"),o.on("setInterval-start",n),o.on("setTimer-start",r)},{1:27,ee:"QJf3ax"}],12:[function(t,e){function n(){f.inPlace(this,l,"fn-",o)}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-",o)}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,l=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[e],e),e.hasOwnProperty("addEventListener")&&u.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:8,2:27,ee:"QJf3ax"}],13:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var o=0;u>o;o++)t.removeEventListener(f[o],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=this.lastSize||n(t);if(i&&(r.rxSize=i),this.sameOrigin){var s=t.getResponseHeader("X-NewRelic-App-Data");s&&(e.cat=s.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,c.emit("xhr-done",[t],t),a("xhr",[e,r,this.startTime])}}}function n(t){var e=t.responseType,n="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return r(n)}function r(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function o(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var i=t("loader");if(i.xhrWrappable){var a=t("handle"),s=t(2),c=t("ee"),f=["load","error","abort","timeout"],u=f.length,d=t(1),l=t(3),p=window.XMLHttpRequest;i.features.xhr=!0,t(5),t(4),c.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=e,n.ended=!1,n.xhrGuids={},n.lastSize=0,l&&(l>34||10>l)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),c.on("open-xhr-start",function(t){this.params={method:t[0]},o(this,t[1]),this.metrics={}}),c.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),c.on("send-xhr-start",function(t,e){var n=this.metrics,o=t[0],i=this;if(n&&o){var a=r(o);a&&(n.txSize=a)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{c.emit("internal-error",[n])}catch(r){}}};for(var s=0;u>s;s++)e.addEventListener(f[s],this.listener,!1)}),c.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),c.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),c.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),c.on("addEventListener-end",function(t,e){e instanceof p&&"load"===t[0]&&c.emit("xhr-load-added",[t[1],t[2]],e)}),c.on("removeEventListener-end",function(t,e){e instanceof p&&"load"===t[0]&&c.emit("xhr-load-removed",[t[1],t[2]],e)}),c.on("fn-start",function(t,e,n){e instanceof p&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),c.on("fn-end",function(t,e){this.xhrCbStart&&c.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:14,3:16,4:12,5:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],14:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],15:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:25,2:26,handle:"D5DuLP"}],16:[function(t,e){var n=0,r=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);r&&(n=+r[1]),e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):void(r.q&&(r.q[t]||(r.q[t]=[]),r.q[t].push(e)))}var r=t("ee").create();e.exports=n,n.ee=r,r.q={}},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],G9z0Bl:[function(t,e){function n(){if(!h++){var t=p.info=NREUM.info,e=f.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){t[e]||(t[e]=n)});var n="https"===u.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=f.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=window,f=c.document;t(2);var u=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-852.min.js"},l=window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent),p=e.exports={offset:i(),origin:u,features:{},xhrWrappable:l};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(f.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()]);var h=0},{1:25,2:15,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],25:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],26:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],27:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@original",a=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,c;try{i=this,n=o(arguments),s="function"==typeof r?r(n,i):r||{}}catch(u){d([u,"",[n,i,a],s])}f(e+"start",[n,i,a],s);try{return c=t.apply(i,n)}catch(l){throw f(e+"err",[n,i,l],s),l}finally{f(e+"end",[n,i,c],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=t,u(t,nrWrapper),nrWrapper)}function c(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function f(e,n,r){if(!s){s=!0;try{t.emit(e,n,r)}catch(o){d([o,e,n,r])}s=!1}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){d([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function d(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=c,e.flag=i,e}},{1:26,ee:"QJf3ax"}]},{},["G9z0Bl",4,13,7,6,5]);</script>
+<meta property="fb:app_id" content="83187307959" />
+<meta http-equiv="refresh" content="14400" />
+
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<title>~~!@!!@#!@!~@# Cura the Horse Runs With Her Hero Through Village Streets | Care2 Causes</title>
+<meta property="og:image" content="http://dingo.care2.com/pictures/causes/3169/3168752.large.jpg"/><link rel='stylesheet' id='mtq_CoreStyleSheets-css'  href='//dingo.care2.com/pictures/static/css/www/wp/wp-content/plugins/mtouch-quiz/mtq_core_style.min/mtq_core_style.min.1377720672.css' type='text/css' media='all' />
+<link rel='stylesheet' id='mtq_ThemeStyleSheets-css'  href='//dingo.care2.com/pictures/static/css/www/wp/wp-content/plugins/mtouch-quiz/mtq_theme_style.min/mtq_theme_style.min.1377720672.css' type='text/css' media='all' />
+<script type='text/javascript' src='//dingo.care2.com/pictures/static/js/www/wp/wp-includes/js/jquery/jquery/jquery.1417805794.js'></script>
+<script type='text/javascript' src='//dingo.care2.com/pictures/static/js/www/wp/wp-includes/js/jquery/jquery-migrate.min/jquery-migrate.min.1417805794.js'></script>
+<script type='text/javascript' src='//dingo.care2.com/pictures/static/js/www/wp/wp-content/plugins/mtouch-quiz/script.min/script.min.1377720672.js'></script>
+<link rel='canonical' href='http://www.care2.com/causes/horse-runs-with-her-hero-through-village-streets.html' />
+
+<!-- All in One SEO Pack 1.6.13.2 by Michael Torbert of Semper Fi Web Design[511,590] -->
+<meta name="description" content="Police in Nis, Serbia, called Dušan Stojanovi&#263; for help when they needed expert help catching a horse who had escaped her abusers and was running" />
+<meta name="keywords" content="harmony fund, horse rescue, zoo planet" />
+<!-- /all in one seo pack -->
+<script type="text/javascript" src="//dingo.care2.com/pictures/static/js/www/wp/wp-content/plugins/audio-player/assets/audio-player/audio-player.1373489117.js"></script>
+<script type="text/javascript">AudioPlayer.setup("//dingo.care2.com/pictures/static/swf/www/wp/wp-content/plugins/audio-player/assets/player/player.1373489117.swf", {width:"290",animation:"yes",encode:"yes",initialvolume:"60",remaining:"no",noinfo:"no",buffer:"5",checkpolicy:"no",rtl:"no",bg:"E5E5E5",text:"333333",leftbg:"CCCCCC",lefticon:"333333",volslider:"666666",voltrack:"FFFFFF",rightbg:"B4B4B4",rightbghover:"999999",righticon:"333333",righticonhover:"FFFFFF",track:"FFFFFF",loader:"009900",border:"CCCCCC",tracker:"DDDDDD",skip:"666666",pagebg:"FFFFFF",transparentpagebg:"yes"});</script>
+<!-- functions.php:care2_wp_head_noodp() -->
+<meta name="robots" content="noodp" />
+<link rel="stylesheet" type="text/css" href="//dingo.care2.com/pictures/static/css/f_e/front_end/css/main/main.1456165755.css" />
+<link rel="stylesheet" type="text/css" href="//dingo.care2.com/pictures/static/css/f_e/front_end/css/c2wp/c2wp.1456165755.css" />
+<script type='text/javascript' src='//dingo.care2.com/pictures/static/js/f_e/front_end/jscript/main/main.1454435281.js' language='javascript'></script>
+<script type="text/javascript">
+
+        if (!window.care2_ua_header_ts) {
+            window.care2_ua_header_ts = new Date().getTime() / 1000;
+        }
+        
+</script>
+<script src="//cdn.optimizely.com/js/22866392.js"></script>
+<script type='text/javascript'>
+    var _sf_async_config = _sf_async_config || {};
+    /** CONFIGURATION START **/
+    _sf_async_config.uid = 62058; // ACCOUNT NUMBER
+    _sf_async_config.domain = 'care2.com'; //DOMAIN TRACKED
+    _sf_async_config.useCanonical = true;
+    var _sf_startpt = (new Date()).getTime();
+    /** CONFIGURATION END **/
+	</script>
+
+</head>
+<body class="causes c2wp_single">
+<script type="text/javascript">
+
+        if (!window.care2_ua_header_ts) {
+            window.care2_ua_header_ts = new Date().getTime() / 1000;
+        }
+        
+</script><div id="care2_wrapper"><div style="position:absolute">
+<!-- SiteCatalyst code version: H.26.2.
+Copyright 1996-2013 Adobe, Inc. All Rights Reserved
+More info available at http://www.omniture.com -->
+<script language="JavaScript"><!--
+var analytics_site = "c2preprod";
+//--></script>
+
+<script type="text/javascript" src="//dingo.care2.com/pictures/static/js/f_e/front_end/jscript/s_code/s_code.1455133321.js"></script>
+<script language="JavaScript"><!--
+/* You may give each page an identifying name, server, and channel on
+the next lines. */
+s.pageName="Care2 : Causes : Blog"
+s.server="www.care2.com"
+s.channel="Causes"
+s.pageType=""
+s.prop3="causes/AW"
+s.prop16="Unregistered"
+s.prop22="Causes: AW (Blog: Laura Simpson Pub: Feb_16 __horse-runs-with-her-hero-through-village-streets)"
+s.prop35="causes"
+s.prop37="Care2 : Causes : Blog - Causes: AW (Blog: Laura Simpson Pub: Feb_16 __horse-runs-with-her-hero-through-village-streets)"
+s.prop39="Laura Simpson __Causes"
+/* E-commerce Variables */
+s.campaign=""
+s.state=""
+s.zip=""
+s.events=""
+s.products=""
+s.purchaseID=""
+s.eVar6="Causes: AW"
+s.eVar14="Unregistered"
+s.eVar30="Causes: AW (Blog: Laura Simpson Pub: Feb_16 __horse-runs-with-her-hero-through-village-streets)"
+s.eVar33="Laura Simpson __Causes"
+s.eVar35="causes"
+/* Hierarchy Variables */
+s.hier1=""
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+        var s_code=s.t();if(s_code)document.write(s_code)
+    //--></script>
+<!-- End SiteCatalyst code version: H.26.2. -->
+</div>
+<div style="position:absolute;"><!-- begin: ZEDO for publisher: Care2, Ad dimension: Pixel - 1 x 1 -->
+        <script language="JavaScript">
+        var zflag_nid="885"; var zflag_cid="20/18/14"; var zflag_sid="1"; var deferred="1"; var zflag_width="1"; var zflag_height="1"; var zflag_sz="15"; 
+        </script>
+        <script language="JavaScript" src="http://zads.care2.com/jsc/d3/fo.js"></script>
+<!-- end: ZEDO for publisher: Care2, Ad dimension: Pixel - 1 x 1 --><!-- begin: ZEDO for publisher: Care2, Ad dimension: Page Skin - 1 x 1 -->
+        <script language="JavaScript">
+        var zflag_nid="885"; var zflag_cid="20/18/14"; var zflag_sid="1"; var deferred="1"; var zflag_width="1"; var zflag_height="1"; var zflag_sz="41"; 
+        </script>
+        <script language="JavaScript" src="http://zads.care2.com/jsc/d3/fo.js"></script>
+<!-- end: ZEDO for publisher: Care2, Ad dimension: Page Skin - 1 x 1 --></div><noscript><div id="care2_outage_msg">You have JavaScript disabled. Without it, our site might not function properly. <a href="http://enable-javascript.com/">learn more</a></div></noscript><div id="fb-root"></div><div class="header_strip care2_wrapper"><a href="http://www.thepetitionsite.com/create-a-petition.html?cid=headerClickC2&src=care2&campaign=headerClickC2" class="start_petition">START A PETITION</a><span><strong id="member_count_header_count">27,000,000</strong> members: the world's largest community for good</span><div class="social_buttons"><div class="fb-like" data-href="http://www.facebook.com/Care2" data-share="false" data-layout="button_count" data-show-faces="face"></div></div></div><header class="contain_floats care2_wrapper"><a href="http://www.care2.com" class="care2_logo">Care2</a><div class="login_links_container"><ul class="login_links loggedin" style="display:none"><li><a href="http://www.care2.com/c2c/pm/folder/inbox" class="pms"></a></li><li><a href="http://www.care2.com/mail.html" class="email"></a></li><li><a href="http://www.care2.com/c2c/my/kudos_green_stars.html" class="greenstars"></a></li><li><a href="http://www.care2.com/rewards/" class="credits"></a></li><li class="name"><a href="http://www.care2.com/c2c/my/" class="name"></a></li><li class="my"><a href="http://www.care2.com/c2c/my/">MY</a></li></ul><ul class="login_links loggedout" style="display:none"><li><a href="http://www.care2.com/passport/login.html?promo=register" class="login_link">JOIN US</a></li><li><a href="http://www.care2.com/passport/login.html" class="login_link">SIGN IN</a></li></ul></div><nav><ul><li><a href="http://www.thepetitionsite.com/" class="petitions">PETITIONS<span></span></a></li><li><a href="http://www.care2.com/causes/" class="causes active">CAUSES<span></span></a></li><li><a href="http://www.care2.com/greenliving/" class="healthy_living">HEALTHY LIVING<span></span></a></li><li><a href="http://www.care2.com/rewards/" class="rewards">REWARDS<span></span></a></li></ul></nav><form action="http://www.care2.com/find/site" method="post"><input type="hidden" name="search" value="care2" /><input type="text" name="q" /><input type="submit" name="care2MainSearchSubmit" class="care2_search_submit" value=" " /></form><div id="care2_sub_nav" class="care2_sub_nav_causes-news"><ul><li class="animal-welfare active"><a href="http://www.care2.com/causes/animal-welfare">ANIMALS</a></li><li class="womens-rights"><a href="http://www.care2.com/causes/womens-rights">WOMEN</a></li><li class="politics"><a href="http://www.care2.com/causes/politics">POLITICS</a></li><li class="real-food"><a href="http://www.care2.com/causes/real-food">FOOD</a></li><li class="lgbt"><a href="http://www.care2.com/causes/lgbt">LGBT</a></li><li class="human-rights"><a href="http://www.care2.com/causes/human-rights">Human Rights</a></li><li class="sub_nav_dropdown causes_more"><a href="#" class="sub_nav_dropdown_causes_more">MORE</a></li></ul></div></header><div id="fixed_header" style="display:none"><div class="mobile_background"></div><div class="left_side"><a href="#" class="shortcut_menu"></a><a href="http://www.care2.com/" class="care2_logo"></a></div><div class="right_side"><button class="show_form"></button><form action="http://www.care2.com/find/site" method="post"><input type="hidden" name="search" value="care2"><input type="text" name="q"><input type="submit" name="care2MainSearchSubmit" class="care2_search_submit" value=" "></form><ul class="login_links loggedin" style="display: none;"><li><a href="http://www.care2.com/c2c/pm/folder/inbox" class="pms"></a></li><li><a href="http://www.care2.com/mail.html" class="email"></a></li><li><a href="http://www.care2.com/c2c/my/kudos_green_stars.html" class="greenstars"></a></li><li><a href="http://www.care2.com/rewards/" class="credits"></a></li><li class="name"><a href="http://www.care2.com/c2c/my/" class="name" style="cursor: pointer;"></a></li></ul><ul class="login_links loggedout" style="display: block;"><li><a href="http://www.care2.com/passport/login.html?promo=register&amp;pg=http%3A%2F%2Fwww.care2.com%2F" class="login_link">JOIN US</a></li><li><a href="http://www.care2.com/passport/login.html?pg=http%3A%2F%2Fwww.care2.com%2F" class="login_link">SIGN IN</a></li></ul><a href="http://www.thepetitionsite.com/create-a-petition.html" class="start_petition">START A PETITION</a></div></div><div id="scroll_mb_header" style="display: none;"><div class="left_side"><a href="#" class="shortcut_menu"></a><a href="http://www.care2.com/" class="care2_logo"></a><div class="blog_title"><strong>Care2 Causes</strong><span> | </span>Cura the Horse Runs With Her Hero Through Village Streets</div></div><div class="right_side"><ul class="contain_floats share_widget" data-actions="open_window"><li class="facebook"><a href="/share/doshare.html?url=http%3A%2F%2Fwww.care2.com%2Fcauses%2Fhorse-runs-with-her-hero-through-village-streets.html&title=Cura+the+Horse+Runs+With+Her+Hero+Through+Village+Streets&media=http%3A%2F%2Fdingo.care2.com%2Fpictures%2Fcauses%2F3169%2F3168752.large.jpg&summary=Police+in+Nis%2C+Serbia%2C+called+Du%9Aan+Stojanovi%26%23263%3B+for+help%A0when+they+needed+expert+help+catching+a+horse+who+had+escaped+her+abusers+and+was+running&system=25&system_key=3168752&service=facebook" data-width="640" data-height="400"></a></li><li class="twitter"><a href="/share/doshare.html?url=http%3A%2F%2Fwww.care2.com%2Fcauses%2Fhorse-runs-with-her-hero-through-village-streets.html&title=Cura+the+Horse+Runs+With+Her+Hero+Through+Village+Streets&media=http%3A%2F%2Fdingo.care2.com%2Fpictures%2Fcauses%2F3169%2F3168752.large.jpg&summary=Police+in+Nis%2C+Serbia%2C+called+Du%9Aan+Stojanovi%26%23263%3B+for+help%A0when+they+needed+expert+help+catching+a+horse+who+had+escaped+her+abusers+and+was+running&system=25&system_key=3168752twitter" data-width="640" data-height="400"></a><li class="comments"><a href="#comments"></a></li></li></ul><a href="http://www.thepetitionsite.com/create-a-petition.html" class="start_petition">START A PETITION</a></div></div><div id="shortcut_menu" style="display:none"><ul><li><a href="http://www.care2.com/">care2 Home</a></li><li><a href="http://www.thepetitionsite.com/create-a-petition.html" class="emphesis">start a petition</a></li><li><a href="http://www.thepetitionsite.com/browse-petitions/">browse petitions</a></li><li><a href="http://www.care2.com/success/">Success stories</a></li><li><a href="http://www.care2.com/causes/">causes</a></li><li><a href="http://www.care2.com/greenliving/">Healthy living</a></li><li><a href="http://www.care2.com/rewards/">butterfly rewards</a></li></ul><ul><li><a href="http://www.care2.com/care2blog/welcome-to-care2.html" class="emphesis">New? Start Here!</a></li><li><a href="http://www.thepetitionsite.com/animal-welfare/">Animal Welfare</a></li><li><a href="http://www.thepetitionsite.com/human-rights/">Human Rights</a></li><li><a href="http://www.thepetitionsite.com/human-rights/gay-rights/">LGBT</a></li><li><a href="http://www.thepetitionsite.com/human-rights/womens-rights/">Womens Rights</a></li><li><a href="http://www.care2.com/care2blog/">Care2 Team Blog</a></li><li><a href="http://www.care2.com/aboutus/">About Us</a></li></ul><a href="#" class="close">x</a></div><div id="pm_dropdown" style="display:none"><div class="arrow"></div><div class="header"><ul><li><a href="http://www.care2.com/c2c/pm/folder/inbox">INBOX (<strong></strong>)</a></li><li><a href="http://www.care2.com/c2c/pm/compose/">send new</a></li></ul></div><div class="messages"></div></div><div id="care2_main_container" class="care2_wrapper contain_floats"><main role="main">
+
+    <article>
+
+        <div class="post_data">
+            <h1>Cura the Horse Runs With Her Hero Through Village Streets</h1>
+
+            <div class="post_image">
+                <img src="http://dingo.care2.com/pictures/causes/3169/3168752.large.jpg" />
+
+                    
+
+    
+
+    <ul class="care2_share_flat_horiz contain_floats share_widget" data-actions="get_counts open_window" data-url="http://www.care2.com/causes/horse-runs-with-her-hero-through-village-streets.html">
+        <li class="facebook"><a href="http://www.care2.com/share/doshare.html?url=http%3A%2F%2Fwww.care2.com%2Fcauses%2Fhorse-runs-with-her-hero-through-village-streets.html&title=Cura%20the%20Horse%20Runs%20With%20Her%20Hero%20Through%20Village%20Streets&media=http%3A%2F%2Fdingo.care2.com%2Fpictures%2Fcauses%2F3169%2F3168752.large.jpg&summary=Police%20in%20Nis%2C%20Serbia%2C%20called%20Du%9Aan%20Stojanovi%26%23263%3B%20for%20help%A0when%20they%20needed%20expert%20help%20catching%20a%20horse%20who%20had%20escaped%20her%20abusers%20and%20was%20running&system=25&system_key=3168752&service=facebook" data-width="640" data-height="400"></a></li>
+        <li class="twitter"><a href="http://www.care2.com/share/doshare.html?url=http%3A%2F%2Fwww.care2.com%2Fcauses%2Fhorse-runs-with-her-hero-through-village-streets.html&title=Cura%20the%20Horse%20Runs%20With%20Her%20Hero%20Through%20Village%20Streets&media=http%3A%2F%2Fdingo.care2.com%2Fpictures%2Fcauses%2F3169%2F3168752.large.jpg&summary=Police%20in%20Nis%2C%20Serbia%2C%20called%20Du%9Aan%20Stojanovi%26%23263%3B%20for%20help%A0when%20they%20needed%20expert%20help%20catching%20a%20horse%20who%20had%20escaped%20her%20abusers%20and%20was%20running&system=25&system_key=3168752&service=twitter" data-width="640" data-height="400">tweet</a></li>
+        <li class="pinterest"><a href="http://www.care2.com/share/doshare.html?url=http%3A%2F%2Fwww.care2.com%2Fcauses%2Fhorse-runs-with-her-hero-through-village-streets.html&title=Cura%20the%20Horse%20Runs%20With%20Her%20Hero%20Through%20Village%20Streets&media=http%3A%2F%2Fdingo.care2.com%2Fpictures%2Fcauses%2F3169%2F3168752.large.jpg&summary=Police%20in%20Nis%2C%20Serbia%2C%20called%20Du%9Aan%20Stojanovi%26%23263%3B%20for%20help%A0when%20they%20needed%20expert%20help%20catching%20a%20horse%20who%20had%20escaped%20her%20abusers%20and%20was%20running&system=25&system_key=3168752&service=pinterest" data-width="640" data-height="400"></a></li>
+        <li class="googleplus"><a href="http://www.care2.com/share/doshare.html?url=http%3A%2F%2Fwww.care2.com%2Fcauses%2Fhorse-runs-with-her-hero-through-village-streets.html&title=Cura%20the%20Horse%20Runs%20With%20Her%20Hero%20Through%20Village%20Streets&media=http%3A%2F%2Fdingo.care2.com%2Fpictures%2Fcauses%2F3169%2F3168752.large.jpg&summary=Police%20in%20Nis%2C%20Serbia%2C%20called%20Du%9Aan%20Stojanovi%26%23263%3B%20for%20help%A0when%20they%20needed%20expert%20help%20catching%20a%20horse%20who%20had%20escaped%20her%20abusers%20and%20was%20running&system=25&system_key=3168752&service=googleplus" data-width="640" data-height="400"></a></li>
+        <li class="email"><a href="#">EMAIL</a></li>
+        <li class="comments"><a href="#comments" class="total-comments-count"></a></li>    </ul>
+
+        <style>
+        ul.care2_share_flat_horiz {
+            height: 34px;
+        }
+
+        ul.care2_share_flat_horiz li {
+            float: left;
+            padding-left: 10px;
+        }
+
+        ul.care2_share_flat_horiz li:first-child {
+            padding-left: 0;
+        }
+
+        ul.care2_share_flat_horiz li a {
+            float: left;
+            width: 60px;
+            height: 34px;
+            line-height: 32px;
+            padding-left: 30px;
+            padding-right: 10px;
+            background: transparent url(//dingo.care2.com/c2/sharing/sprites/flat.png) no-repeat scroll 0 0;
+            font-size: 13px;
+            color: #fff;
+            text-align: center;
+            border-radius: 3px;
+        }
+
+        ul.care2_share_flat_horiz li a:hover {
+            text-decoration: none;
+        }
+
+        ul.care2_share_flat_horiz li.facebook a {
+            background-position: 0 2px;
+            background-color: #507cbe;
+        }
+
+        ul.care2_share_flat_horiz li.twitter a {
+            background-position: 0 -158px;
+            background-color: #63cdf1;
+        }
+
+        ul.care2_share_flat_horiz li.pinterest a {
+            background-position: 0 -318px;
+            background-color: #b92031;
+        }
+
+        ul.care2_share_flat_horiz li.googleplus a {
+            background-position: 0 -478px;
+            background-color: #444748;
+        }
+
+        ul.care2_share_flat_horiz li.email a {
+            background-position: 0 -638px;
+            background-color: #979797;
+        }
+
+        ul.care2_share_flat_horiz li.comments a {
+            background-position: 0 -958px;
+            background-color: #fb7b00;
+        }
+    </style>
+    
+    
+
+    
+
+        <style>
+
+        div.care2_side_float {
+            visibility: hidden;
+            position: fixed;
+            top: 100px;
+            left: 0;
+            color: #494949;
+            border-radius: 5px;
+            background: #acafaf;
+            padding: 5px 0;
+        }
+
+        div.care2_side_float li a {
+            display: block;
+            width: 60px;
+            height: 30px;
+            padding-top: 30px;
+            background: transparent url(//dingo.care2.com/c2/sharing/sprites/flat.png) no-repeat scroll 0 0;
+            color: #fff;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        div.care2_side_float li a:hover {
+            text-decoration: none;
+        }
+
+        div.care2_side_float li.facebook a {
+            background-position: center -78px;
+            background-color: #507cbe;
+        }
+
+        div.care2_side_float li.twitter a {
+            background-position: center -238px;
+            background-color: #63cdf1;
+        }
+
+        div.care2_side_float li.pinterest a {
+            background-position: center -398px;
+            background-color: #b92031;
+        }
+
+        div.care2_side_float li.googleplus a {
+            background-position: center -558px;
+            background-color: #444748;
+        }
+
+        @media only screen and (max-width: 1120px) {
+            div.care2_side_float {
+                display: none;
+            }
+        }
+
+    </style>
+    
+    <div class="care2_side_float contain_floats share_widget" data-actions="get_counts open_window" data-url="http://www.care2.com/causes/horse-runs-with-her-hero-through-village-streets.html">
+        <ul>
+            <li class="facebook"><a href="http://www.care2.com/share/doshare.html?url=http%3A%2F%2Fwww.care2.com%2Fcauses%2Fhorse-runs-with-her-hero-through-village-streets.html&title=Cura%20the%20Horse%20Runs%20With%20Her%20Hero%20Through%20Village%20Streets&media=http%3A%2F%2Fdingo.care2.com%2Fpictures%2Fcauses%2F3169%2F3168752.large.jpg&summary=Police%20in%20Nis%2C%20Serbia%2C%20called%20Du%9Aan%20Stojanovi%26%23263%3B%20for%20help%A0when%20they%20needed%20expert%20help%20catching%20a%20horse%20who%20had%20escaped%20her%20abusers%20and%20was%20running&system=25&system_key=3168752&service=facebook" data-width="640" data-height="400"></a></li>
+            <li class="twitter"><a href="http://www.care2.com/share/doshare.html?url=http%3A%2F%2Fwww.care2.com%2Fcauses%2Fhorse-runs-with-her-hero-through-village-streets.html&title=Cura%20the%20Horse%20Runs%20With%20Her%20Hero%20Through%20Village%20Streets&media=http%3A%2F%2Fdingo.care2.com%2Fpictures%2Fcauses%2F3169%2F3168752.large.jpg&summary=Police%20in%20Nis%2C%20Serbia%2C%20called%20Du%9Aan%20Stojanovi%26%23263%3B%20for%20help%A0when%20they%20needed%20expert%20help%20catching%20a%20horse%20who%20had%20escaped%20her%20abusers%20and%20was%20running&system=25&system_key=3168752&service=twitter" data-width="640" data-height="400">tweet</a></li>
+            <li class="pinterest"><a href="http://www.care2.com/share/doshare.html?url=http%3A%2F%2Fwww.care2.com%2Fcauses%2Fhorse-runs-with-her-hero-through-village-streets.html&title=Cura%20the%20Horse%20Runs%20With%20Her%20Hero%20Through%20Village%20Streets&media=http%3A%2F%2Fdingo.care2.com%2Fpictures%2Fcauses%2F3169%2F3168752.large.jpg&summary=Police%20in%20Nis%2C%20Serbia%2C%20called%20Du%9Aan%20Stojanovi%26%23263%3B%20for%20help%A0when%20they%20needed%20expert%20help%20catching%20a%20horse%20who%20had%20escaped%20her%20abusers%20and%20was%20running&system=25&system_key=3168752&service=pinterest" data-width="640" data-height="400"></a></li>
+            <li class="googleplus"><a href="http://www.care2.com/share/doshare.html?url=http%3A%2F%2Fwww.care2.com%2Fcauses%2Fhorse-runs-with-her-hero-through-village-streets.html&title=Cura%20the%20Horse%20Runs%20With%20Her%20Hero%20Through%20Village%20Streets&media=http%3A%2F%2Fdingo.care2.com%2Fpictures%2Fcauses%2F3169%2F3168752.large.jpg&summary=Police%20in%20Nis%2C%20Serbia%2C%20called%20Du%9Aan%20Stojanovi%26%23263%3B%20for%20help%A0when%20they%20needed%20expert%20help%20catching%20a%20horse%20who%20had%20escaped%20her%20abusers%20and%20was%20running&system=25&system_key=3168752&service=googleplus" data-width="640" data-height="400"></a></li>
+        </ul>
+    </div>
+
+        <script>
+
+        $(function() {
+            var share_div = $("div.care2_side_float");
+
+            var append_share_div = function () {
+                if($(window).scrollTop() > 200) {
+                    $("div.care2_side_float").css("visibility", "visible")
+                    $(window).off("scroll", append_share_div);
+                }
+            }
+
+            $(window).scroll(append_share_div);
+        });
+
+    </script>
+    
+            </div>
+
+            <div class="post_author contain_floats">
+                <a href="/causes/author/lauraandsabrina"><img alt='' src='http://0.gravatar.com/avatar/e9a4ceda22edb393d825f8e789a6406d?s=45&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D45&amp;r=G' class='avatar avatar-45 photo' height='45' width='45' /></a>
+
+                <ul>
+                                            <li>By: <a href="/causes/author/lauraandsabrina">Laura S.</a></li>
+                        <li>February 25, 2016</li>
+                                    </ul>
+
+                <ul>
+                    <li><a href="/causes/author/lauraandsabrina">About Laura</a></li>
+                                    </ul>
+            </div>
+        </div>
+
+        <div id="post_content" class="article_content">
+            <p>Police in Nis, Serbia, called Dušan Stojanovi&#263; for help when they needed expert help catching a horse who had escaped her abusers and was running frantically through the streets. Months later Dušan and the horse are still running, but for very different reasons.</p>
+<p>The horse, now named Cura (<em>which means girl</em>) ran away from her abusive Roma “owners” in Serbia. When Dušan brought her to his rescue center called Zoo Planet, he began to assess the most visible signs of neglect. He began helping her put weight on and removed the many painful burs from her head. The scars from belts and ropes on her chest tell a small piece of her history as a towing horse. But it&#8217;s her strongly defensive behavior that says the most. So far, Cura appears to find the greatest comfort in simply running. So every day, even when the wind blows too cold against his chest, Dušan sets out with her on a run through the village. The momentum and exertion sooth Cura and settle her down just enough to allow a select few volunteers to handle her for feeding and grooming.</p>
+<p>Two days ago, Dušan had a very big scare when Cura&#8217;s original &#8220;owners&#8221; came to his rescue center to demand the return of their horse.</p>
+<p><iframe width="853" height="480" src="https://www.youtube.com/embed/8ebKgCBeEX8" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+<p>“The owners have surfaced and want to sell the mare to the butchers,” Goran said in a distress call to the Harmony Fund international animal rescue charity. “This is unacceptable for us. We are stuck. On the one hand, we have a mare which we don&#8217;t have money to take care of but on the other hand, we can’t let the owners take her to the butcher&#8217;s. The only solution that we have is to buy out the mare from the owners. For this, we would need 700 Euros (about $777 American dollars). Once we buy out the mare, we will find her a home where she can grow old. She is really beautiful, healthy, young and strong girl and what happened with her is terrible. We need the money in next 7 days to realize this activity and save her from the butchers. Do you think you could help?”</p>
+<p>The <a title="home" href="https://www.facebook.com/GreatAnimalRescueChase" target="_blank"><strong>Harmony Fund</strong></a> shared Cura&#8217;s story on Facebook and raised funds to make sure that Cura would have her happily-ever-after. But for now she&#8217;ll remain with Dušan as he&#8217;s trying to arrange for special help with her hooves.</p>
+<p>&#8220;We are managing to comb her mane and to groom her, but we need to cut the hooves. They are now growing fast,&#8221; Dusan said. &#8220;This is still a big problem because she won’t allow to us to touch her hooves. We are trying to collect money for this and to find somebody who has a frame for horse hooves treatments and who can do this.&#8221;</p>
+        </div>
+    </article>
+
+    <div id="take_action_petition">
+                <div class="care2PetitionEmbed" rssPath="http://www.thepetitionsite.com/feeds/category/animal-welfare/npo/feed.rss" adSize="interstitial"
+                    publisherId="1007" flags="#002000" buttonColor="#EB6924"></div>
+                </div><!-- begin: ZEDO for channel: Animal Welfare; publisher: Care2, Ad dimension: Video Ad 1x1 - 1 x 1 -->
+        <script language="JavaScript">
+        var zflag_nid="885"; var zflag_cid="20/18/14"; var zflag_sid="1"; var zflag_width="1"; var zflag_height="1"; var zflag_sz="43"; 
+        </script>
+        <script language="JavaScript" src="http://zads.care2.com/jsc/d3/fo.js"></script>
+<!-- end: ZEDO for channel: Animal Welfare; publisher: Care2, Ad dimension: Video Ad 1x1 - 1 x 1 -->
+    <div id="in_article">
+        <div id="wp_newsletter">
+            <h3>Love This? Never Miss Another Story.</h3>
+            <form action="/newsletters/" method="post" class="wp_newsletter">
+                <input type="email" class="newsletter_email" placeholder="" />
+                <input type="submit" value="Sign Up" />
+            </form>
+        </div>
+
+        <div class="ad_region"></div>
+    </div>
+
+    <div class="share_story">
+        <h3>GREAT STORY, RIGHT?</h3>
+        <h4>Share it with your friends</h4>
+            
+
+    
+
+    <ul class="care2_share_flat_horiz contain_floats share_widget" data-actions="get_counts open_window" data-url="http://www.care2.com/causes/horse-runs-with-her-hero-through-village-streets.html">
+        <li class="facebook"><a href="http://www.care2.com/share/doshare.html?url=http%3A%2F%2Fwww.care2.com%2Fcauses%2Fhorse-runs-with-her-hero-through-village-streets.html&title=Cura%20the%20Horse%20Runs%20With%20Her%20Hero%20Through%20Village%20Streets&media=http%3A%2F%2Fdingo.care2.com%2Fpictures%2Fcauses%2F3169%2F3168752.large.jpg&summary=Police%20in%20Nis%2C%20Serbia%2C%20called%20Du%9Aan%20Stojanovi%26%23263%3B%20for%20help%A0when%20they%20needed%20expert%20help%20catching%20a%20horse%20who%20had%20escaped%20her%20abusers%20and%20was%20running&system=25&system_key=3168752&service=facebook" data-width="640" data-height="400"></a></li>
+        <li class="twitter"><a href="http://www.care2.com/share/doshare.html?url=http%3A%2F%2Fwww.care2.com%2Fcauses%2Fhorse-runs-with-her-hero-through-village-streets.html&title=Cura%20the%20Horse%20Runs%20With%20Her%20Hero%20Through%20Village%20Streets&media=http%3A%2F%2Fdingo.care2.com%2Fpictures%2Fcauses%2F3169%2F3168752.large.jpg&summary=Police%20in%20Nis%2C%20Serbia%2C%20called%20Du%9Aan%20Stojanovi%26%23263%3B%20for%20help%A0when%20they%20needed%20expert%20help%20catching%20a%20horse%20who%20had%20escaped%20her%20abusers%20and%20was%20running&system=25&system_key=3168752&service=twitter" data-width="640" data-height="400">tweet</a></li>
+        <li class="pinterest"><a href="http://www.care2.com/share/doshare.html?url=http%3A%2F%2Fwww.care2.com%2Fcauses%2Fhorse-runs-with-her-hero-through-village-streets.html&title=Cura%20the%20Horse%20Runs%20With%20Her%20Hero%20Through%20Village%20Streets&media=http%3A%2F%2Fdingo.care2.com%2Fpictures%2Fcauses%2F3169%2F3168752.large.jpg&summary=Police%20in%20Nis%2C%20Serbia%2C%20called%20Du%9Aan%20Stojanovi%26%23263%3B%20for%20help%A0when%20they%20needed%20expert%20help%20catching%20a%20horse%20who%20had%20escaped%20her%20abusers%20and%20was%20running&system=25&system_key=3168752&service=pinterest" data-width="640" data-height="400"></a></li>
+        <li class="googleplus"><a href="http://www.care2.com/share/doshare.html?url=http%3A%2F%2Fwww.care2.com%2Fcauses%2Fhorse-runs-with-her-hero-through-village-streets.html&title=Cura%20the%20Horse%20Runs%20With%20Her%20Hero%20Through%20Village%20Streets&media=http%3A%2F%2Fdingo.care2.com%2Fpictures%2Fcauses%2F3169%2F3168752.large.jpg&summary=Police%20in%20Nis%2C%20Serbia%2C%20called%20Du%9Aan%20Stojanovi%26%23263%3B%20for%20help%A0when%20they%20needed%20expert%20help%20catching%20a%20horse%20who%20had%20escaped%20her%20abusers%20and%20was%20running&system=25&system_key=3168752&service=googleplus" data-width="640" data-height="400"></a></li>
+        <li class="email"><a href="#">EMAIL</a></li>
+            </ul>
+
+    
+    </div>
+
+    <div class="c2_outbrain contain_floats">
+        <div class="OUTBRAIN" data-src="http://www.care2.com/causes/horse-runs-with-her-hero-through-village-streets.html" data-widget-id="AR_1" data-ob-template="care2" ></div>
+        <script type="text/javascript" src="http://widgets.outbrain.com/outbrain.js"></script>
+    </div>
+
+    <div id="comments"></div>
+    <div id="blog_comments" class="blog_comments">
+        <!--mfunc-->
+
+
+<script>
+    CARE2.commentsParams = {
+        "script_path"       : "/causes/horse-runs-with-her-hero-through-village-streets.html",
+        "system"            : 25,
+        "itemID"            : 3168752,
+        "comments_per_page" : 10,
+        "total_comments"    : 93,
+        "current_page"      : 1,
+        "num_pages"         : 10
+    }
+</script>
+
+<div class="header">
+    <h3><span id="total-comments-count">93</span> comments</h3>
+    <div class="prime-credits" data-challengename="causes-comment" data-prefix="+"></div>
+</div>
+
+<div id="Care2CommentForm" class="form">
+
+
+<div class="new_comment contain_floats">
+    <img src="//dingo.care2.com/c2wp/comment_logged_out.png" class="thumbnail" />
+
+    <form id="comment_form" action="/causes/horse-runs-with-her-hero-through-village-streets.html" method="post">
+        <textarea id="comment_content" name="frm[content]" placeholder="Join the conversation"></textarea>
+        <button type="submit">Post Comment</button>
+    </form>
+
+    <div id="login_comment" class="login_comment logged_out_only contain_floats">
+        <div class="facebook">
+            <h3>LOG IN WITH FACEBOOK</h3>
+            <a href="#" class="fb_connect_button" data-onlogin="onFacebookConnect" data-scope="email">FACEBOOK</a>
+        </div>
+        <div class="care2">
+            <h3>OR SIGN IN WITH CARE2</h3>
+            <form action="/passport/login.html" method="post">
+                <input type="hidden" id="comment_pg" name="pg" value="/causes/horse-runs-with-her-hero-through-village-streets.html" />
+                <input type="hidden" name="perm" value="1" />
+
+                <input type="text" id="login_connect-username" name="loginemail" placeholder="username or email" />&nbsp;
+                <input type="password" id="login_connect-password" name="password" placeholder="password" />
+
+                <input type="submit" name="login" value="Log in" />
+            </form>
+            <a href="/accounts/loginhelp_new.html" class="login_help">?</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+<div id="Care2CommentContainer" class="comments"><div id="comment-8123301" class="comment contain_floats author-550637877"><a id="comment-mempic-8123301" class="about_rollover thumbnail" href="/c2c/people/profile.html?pid=550637877"><img src="http://dingo.care2.com/pictures/c2c/profiles/55/550/063/550637877_60x60.jpg"  alt="Hent catalina - maria" title="Hent catalina - maria" /></a><div class="author"><a href="#" class="flag" rel="8123301"></a><a href="/c2c/people/profile.html?pid=550637877" class="about_rollover">Hent catalina - maria</a><span>just now</span></div><p>Thank you !</p><a href="/c2c/people/greenstar.html?targetID=550637877&s=25&a=8123301&ap=3168752&c=Thank+you+%21" class="send_green_star"></a></div><div id="comment-8123300" class="comment contain_floats author-402082158"><a id="comment-mempic-8123300" class="about_rollover thumbnail" href="/c2c/people/profile.html?pid=402082158"><img src="http://dingo.care2.com/pictures/c2c/profiles/40/402/208/402082158_60x60.jpg"  alt="Nina S." title="Nina S." /></a><div class="author"><a href="#" class="flag" rel="8123300"></a><a href="/c2c/people/profile.html?pid=402082158" class="about_rollover">Nina S.</a><span>just now</span></div><p>tyfs</p><a href="/c2c/people/greenstar.html?targetID=402082158&s=25&a=8123300&ap=3168752&c=tyfs" class="send_green_star"></a></div><div id="comment-8123298" class="comment contain_floats author-720219190"><a id="comment-mempic-8123298" class="about_rollover thumbnail" href="/c2c/people/profile.html?pid=720219190"><img src="http://dingo.care2.com/pictures/c2c/profiles/72/720/021/720219190_60x60.jpg"  alt="Anne Moran" title="Anne Moran" /></a><div class="author"><a href="#" class="flag" rel="8123298"></a><a href="/c2c/people/profile.html?pid=720219190" class="about_rollover">Anne Moran</a><span>1 minutes ago</span></div><p>Glad Cura let Dusan approach her, and help her, after being abused by other humans... I bet it took her a while to trust people again... Great ending !!</p><a href="/c2c/people/greenstar.html?targetID=720219190&s=25&a=8123298&ap=3168752&c=Glad+Cura+let+Dusan+approach+her%2C+and+help+her%2C+after+being+abused+by+other+humans...+I+bet+it+took+her+a+while+to+trust+people+again...+Great+ending+%21%21" class="send_green_star"></a></div><div id="comment-8123285" class="comment contain_floats author-926036551"><a id="comment-mempic-8123285" class="about_rollover thumbnail" href="/c2c/people/profile.html?pid=926036551"><img src="http://dingo.care2.com/pictures/c2c/profiles/92/926/603/926036551_60x60.jpg"  alt="Laura R." title="Laura R." /></a><div class="author"><a href="#" class="flag" rel="8123285"></a><a href="/c2c/people/profile.html?pid=926036551" class="about_rollover">Laura R.</a><span>6 minutes ago</span></div><p>Thank you for posting this very heartwarming story.</p><a href="/c2c/people/greenstar.html?targetID=926036551&s=25&a=8123285&ap=3168752&c=Thank+you+for+posting+this+very+heartwarming+story." class="send_green_star"></a></div><div id="comment-8123283" class="comment contain_floats author-170937839"><a id="comment-mempic-8123283" class="about_rollover thumbnail" href="/c2c/people/profile.html?pid=170937839"><img src="http://dingo.care2.com/pictures/c2c/profiles/17/170/093/170937839_60x60.jpg"  alt="Wesley Struebing" title="Wesley Struebing" /></a><div class="author"><a href="#" class="flag" rel="8123283"></a><a href="/c2c/people/profile.html?pid=170937839" class="about_rollover">Wesley Struebing</a><span>7 minutes ago</span></div><p>I love people who care!  And I'll wager that soon, Cura will allow people to touch her again. How someone (the original "owners") can be that cruel and unfeeling to begin with just infuriates me.</p><a href="/c2c/people/greenstar.html?targetID=170937839&s=25&a=8123283&ap=3168752&c=I+love+people+who+care%21++And+I%27ll+wager+that+soon%2C+Cura+will+allow+people+to+touch+her+again.+How+someone+%28the+original+%22owners%22%29+can+be+that+cruel+and+unfeeling+to+begin+with+just+infuriates+me." class="send_green_star"></a></div><div id="comment-8123250" class="comment contain_floats author-361487792"><a id="comment-mempic-8123250" class="about_rollover thumbnail" href="/c2c/people/profile.html?pid=361487792"><img src="http://dingo.care2.com/pictures/c2c/profiles/36/361/148/361487792_60x60.jpg"  alt="Brandy S." title="Brandy S." /></a><div class="author"><a href="#" class="flag" rel="8123250"></a><a href="/c2c/people/profile.html?pid=361487792" class="about_rollover">Brandy S.</a><span>18 minutes ago</span></div><p>Thank you to everyone who helped in the rescue of this little mare.  You are all caring and giving people, the kind we need a lot more of.</p><a href="/c2c/people/greenstar.html?targetID=361487792&s=25&a=8123250&ap=3168752&c=Thank+you+to+everyone+who+helped+in+the+rescue+of+this+little+mare.++You+are+all+caring+and+giving+people%2C+the+kind+we+need+a+lot+more+of." class="send_green_star"></a></div><div id="comment-8123240" class="comment contain_floats author-564974713"><a id="comment-mempic-8123240" class="about_rollover thumbnail" href="/c2c/people/profile.html?pid=564974713"><img src="http://dingo.care2.com/pictures/c2c/profiles/56/564/497/564974713_60x60.jpg"  alt="Stardust Noel" title="Stardust Noel" /></a><div class="author"><a href="#" class="flag" rel="8123240"></a><a href="/c2c/people/profile.html?pid=564974713" class="about_rollover">Stardust Noel</a><span>21 minutes ago</span></div><p>Great story</p><a href="/c2c/people/greenstar.html?targetID=564974713&s=25&a=8123240&ap=3168752&c=Great+story" class="send_green_star"></a></div><div id="comment-8123239" class="comment contain_floats author-564974713"><a id="comment-mempic-8123239" class="about_rollover thumbnail" href="/c2c/people/profile.html?pid=564974713"><img src="http://dingo.care2.com/pictures/c2c/profiles/56/564/497/564974713_60x60.jpg"  alt="Stardust Noel" title="Stardust Noel" /></a><div class="author"><a href="#" class="flag" rel="8123239"></a><a href="/c2c/people/profile.html?pid=564974713" class="about_rollover">Stardust Noel</a><span>22 minutes ago</span></div><p>Great story  &amp; a lucky horse.</p><a href="/c2c/people/greenstar.html?targetID=564974713&s=25&a=8123239&ap=3168752&c=Great+story++%26amp%3B+a+lucky+horse." class="send_green_star"></a></div><div id="comment-8123238" class="comment contain_floats author-305541619"><a id="comment-mempic-8123238" class="about_rollover thumbnail" href="/c2c/people/profile.html?pid=305541619"><img src="//dingo.care2.com/avatars/avatar-51.png"  alt="Barbra Raymond" title="Barbra Raymond" /></a><div class="author"><a href="#" class="flag" rel="8123238"></a><a href="/c2c/people/profile.html?pid=305541619" class="about_rollover">Barbra Raymond</a><span>23 minutes ago</span></div><p>Cura, that name suits her! She is a very beautiful gift! Let's make sure more people don't abuse horses and their animals! Thanks to Harmony Fund and Cura's rescuer!</p><a href="/c2c/people/greenstar.html?targetID=305541619&s=25&a=8123238&ap=3168752&c=Cura%2C+that+name+suits+her%21+She+is+a+very+beautiful+gift%21+Let%27s+make+sure+more+people+don%27t+abuse+horses+and+their+animals%21+Thanks+to+Harmony+Fund+and+Cura%27s+rescuer%21" class="send_green_star"></a></div><div id="comment-8123237" class="comment contain_floats author-652235600"><a id="comment-mempic-8123237" class="about_rollover thumbnail" href="/c2c/people/profile.html?pid=652235600"><img src="http://dingo.care2.com/pictures/c2c/profiles/65/652/223/652235600_60x60.jpg"  alt="Rita Delfing" title="Rita Delfing" /></a><div class="author"><a href="#" class="flag" rel="8123237"></a><a href="/c2c/people/profile.html?pid=652235600" class="about_rollover">Rita Delfing</a><span>23 minutes ago</span></div><p>Another disservice to animals, we humans need to change how we do things.  Glad she's safe, it's a never ending job saving animals and finding the funds to do so.</p><a href="/c2c/people/greenstar.html?targetID=652235600&s=25&a=8123237&ap=3168752&c=Another+disservice+to+animals%2C+we+humans+need+to+change+how+we+do+things.++Glad+she%27s+safe%2C+it%27s+a+never+ending+job+saving+animals+and+finding+the+funds+to+do+so." class="send_green_star"></a></div></div>
+
+<div id="Care2CommentPageLinkContainer"></div>
+<!--Array
+(
+    [render:start] => 0
+    [render:contentloaded] => 0.0017039775848389
+    [render:tokensbuilt] => 0.0017340183258057
+    [render:end] => 0.0017380714416504
+)
+--><!--/mfunc-->
+    </div>
+
+</main>
+
+<div id="right_column" class="sticky_column">
+
+    <div class="top_stories">
+    <h3>TOP STORIES</h3>
+
+    <ol>            <li>
+                <a href="http://www.care2.com/causes/horse-runs-with-her-hero-through-village-streets.html">
+                    <span><img src="http://dingo.care2.com/pictures/causes/3169/3168752.small.jpg" /></span>
+                    <strong>1</strong>
+                    <span>Cura the Horse Runs With Her Hero Through Village Streets</span>
+                </a>
+            </li>
+                    <li>
+                <a href="http://www.care2.com/causes/6-reasons-not-to-get-too-excited-about-low-gas-prices.html">
+                    <span><img src="http://dingo.care2.com/pictures/causes/3170/3169005.small.jpg" /></span>
+                    <strong>2</strong>
+                    <span>6 Reasons Not to Get Too Excited About Low Gas Prices</span>
+                </a>
+            </li>
+                    <li>
+                <a href="http://www.care2.com/causes/stolen-guide-dog-highlights-chinas-poor-disability-access-record.html">
+                    <span><img src="http://dingo.care2.com/pictures/causes/3170/3169115.small.jpg" /></span>
+                    <strong>3</strong>
+                    <span>Stolen Guide Dog Highlights China's Poor Disability Access Record</span>
+                </a>
+            </li>
+                    <li>
+                <a href="http://www.care2.com/causes/human-traffickers-are-benefiting-the-most-from-anti-refugee-hysteria.html">
+                    <span><img src="http://dingo.care2.com/pictures/causes/3170/3169103.small.jpg" /></span>
+                    <strong>4</strong>
+                    <span>Human Traffickers Are Benefiting the Most From Anti-Refugee Hysteria</span>
+                </a>
+            </li>
+                    <li>
+                <a href="http://www.care2.com/causes/single-women-are-no-longer-allowed-to-use-cell-phones-in-indian-village.html">
+                    <span><img src="http://dingo.care2.com/pictures/causes/3170/3169013.small.jpg" /></span>
+                    <strong>5</strong>
+                    <span>Single Women Are No Longer Allowed to Use Cell Phones in Indian Village</span>
+                </a>
+            </li>
+            </ol>
+</div>
+<div class="top_ad"><div class="care2_adspace"><h5>ads keep care2 free<a href="http://www.care2.com/aboutus/ads.html">learn more &#9656;</a></h5><!-- begin: ZEDO for channel: Animal Welfare; publisher: Care2, Ad dimension: Multi-Dimension Combo - 1 x 1 -->
+        <script language="JavaScript">
+        var zflag_nid="885"; var zflag_cid="44/20/18/14"; var zflag_sid="1"; var zflag_width="1"; var zflag_height="1"; var zflag_sz="35"; 
+        </script>
+        <script language="JavaScript" src="http://zads.care2.com/jsc/d3/fo.js"></script>
+<!-- end: ZEDO for channel: Animal Welfare; publisher: Care2, Ad dimension: Multi-Dimension Combo - 1 x 1 --></div></div><div class="connect_with_us">
+    <h3>CONNECT WITH US</h3>
+
+    <ul>
+        <li class="facebook"><a href="http://www.facebook.com/Care2">Facebook <span>1.1 million followers</span></a></li>
+        <li class="twitter"><a href="https://twitter.com/Care2Causes">Twitter <span>560,000 followers</span></a></li>
+        <li class="pinterest"><a href="http://pinterest.com/care2/">Pinterest <span>30,000 followers</span></a></li>
+        <!--li class="email"><a href="#" id="connect_email">Email Newsletter</a></li-->
+    </ul>
+
+    <h4 id="contact_editors">EMAIL THE EDITORS</h4>
+</div>
+</div>
+
+<div class="disclaimer">
+    Disclaimer: The views expressed above are solely those of the author and may not reflect those of
+    Care2, Inc., its employees or advertisers.
+</div>
+
+<script>
+    /* begin Tynt */
+    if(document.location.protocol=='http:'){
+        window.Tynt=window.Tynt||[];window.Tynt.push('aFND9iVgqr35BEadbi-bnq');
+        (function(){var s=document.createElement('script');s.async="async";s.type="text/javascript";s.src='http://tcr.tynt.com/ti.js';var h=document.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);})();
+    }
+
+        var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-7779329-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+
+
+
+
+<script>
+
+    window.addressBookCSS = "//dingo.care2.com/pictures/static/css/www/styles/addressbook_popup/addressbook_popup.1373489117.css";
+    window.addressBookJS = "//dingo.care2.com/pictures/static/js/f_e/front_end/jscript/addressbook/addressbook.1453846477.js";
+
+
+    $(function() {
+
+        CARE2.addressBook = function(actionLink,textbox,helpLink) {
+            this.helpLink=helpLink||false;
+            this.actionLink=actionLink;
+            this.textbox=textbox;
+
+            $(this.actionLink).one("click",{obj:this},function(e) {
+                e.preventDefault();
+
+                var obj = e.data.obj;
+
+                CARE2.addressBookInit = function() {
+                    obj.bind();
+                    delete CARE2.addressBookInit;
+                }
+
+                if(!$("#addybook_box").length) {
+                    $(document.body).append(
+                        '<div id="addybook_box" class="care2_floater_container" style="display:none">' +
+                            '<div id="addybook_title" class="floater_header branding_care2" style="cursor: move;"><span>Address Book</span></div>' +
+                            '<div id="addybook_close_box" class="floater_closebox"></div>' +
+                            '<div style="padding: 10px;" class="contain_floats">' +
+                                '<div id="addressBook_loading" style="width: 300px; height: 200px; padding: 25px; text-align: center"><img src="http://dingo.care2.com/petitions/loading.gif" /> Loading...</div>' +
+                                '<div id="addybook_contents"></div>' +
+                            '</div>' +
+                        '</div>'
+                    );
+                }
+
+                if(window.addressBookCSS) {
+                    $("head:first").append('<link rel="stylesheet" type="text/css" href="' + window.addressBookCSS + '" />');
+                    window.addressBookCSS = false;
+                }
+
+                if(window.addressBookJS) {
+                    var script = document.createElement( 'script' );
+                    script.type = 'text/javascript';
+                    script.src = window.addressBookJS;
+                    $("head:first").append( script );
+                    window.addressBookJS = false;
+                } else {
+                    obj.bind();
+                }
+            });
+        }
+
+    });
+
+</script>
+
+<script>
+
+    window.tellAFriendPopupCSS = "//dingo.care2.com/pictures/static/css/www/styles/tellafriend_popup/tellafriend_popup.1452021151.css";
+    window.tellAFriendPopupJS = "//dingo.care2.com/pictures/static/js/f_e/front_end/jslibs/tellafriend_popup/tellafriend_popup.1453846477.js";
+
+
+    $(function() {
+
+        $(document.body).one("click", "li.email a", function(e) {
+            e.preventDefault();
+
+            $(window).one("tellAFriendPopupInit", function() {
+                CARE2.tellAFriend.init("li.email a", true);
+            });
+
+            if(window.tellAFriendPopupCSS) {
+                $("head:first").append('<link rel="stylesheet" type="text/css" href="' + window.tellAFriendPopupCSS + '" />');
+                window.tellAFriendPopupCSS = false;
+            }
+
+            if(window.tellAFriendPopupJS) {
+                var script = document.createElement( 'script' );
+                script.type = 'text/javascript';
+                script.src = window.tellAFriendPopupJS;
+                $("head:first").append( script );
+                window.tellAFriendPopupJS = false;
+            } else {
+                $(window).trigger("tellAFriendPopupInit");
+            }
+
+            return false;
+        });
+
+    });
+
+</script>
+
+<div style="display:none">
+<div id="tellafriendPopup"><div class="tellafriend_container">
+
+    <form id="taf_form">
+
+        
+        <input type="hidden" value="email_na" name="taf[cid]" id="taf_cid">
+        <input type="hidden" value="3168752" name="taf[system_key]" id="taf_system_key">
+        <input type="hidden" value="25" name="taf[system]" id="taf_system">
+        <div style="display: none;" id="taf_responsePane">
+            <div id="taf_message_div">
+                <img src="http://dingo.care2.com/petitions/home/sending_anim.gif" />
+            </div>
+        </div>
+
+
+        <label>From</label>
+        <input type="text" name="taf[sender_name]" placeholder="Enter Your Name" class="inputwidth naturalState" id="taf_sender_name" autocorrect="off" autocomplete="off"><br>
+        <div style="display: none;" class="taf_error" id="tafError_sender_name"></div>
+
+
+        <div id="taf_email_field">
+            <label>Your Email</label>
+            <input type="text" name="taf[sender_email]" placeholder="Enter Your Email" class="inputwidth naturalState" id="taf_sender_email" autocorrect="off" autocomplete="off" autocapitalize="off"><br>
+            <div style="display: none;" class="taf_error" id="tafError_sender_email"></div>
+        </div>
+
+
+        <label>To</label>
+        <textarea rows="3" name="taf[recipients]" class="inputwidth naturalState" id="taf_recipients" placeholder="enter multiple email addresses separated by commas (up to 100)" autocorrect="off" autocomplete="off" autocapitalize="off"></textarea><br/>
+        <div style="display: none;" class="taf_error" id="tafError_recipients"></div>
+
+        <div id="care2_addressbook_section">
+            <div class="addressbutton_section">
+                <img class="taf_arrow" src="http://dingo.care2.com/petitions/taf_arrow.gif" />
+                <div class="addressbutton_inner">
+                    Select names from your address book&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a id="addressBook_help" href="javascript:void(0);">Help</a><br/>
+
+                    <table cellspacing="0" cellpadding="0" class="addressbutton_container login">
+                    <tbody><tr><td>
+                        <div class="addressbook_care2btn"><a id="addressBook_link" href="javascript:void(0)">&nbsp;</a></div>
+                    </td><td width="10"></td><td>
+                        <div class="addressbook_otherbtn"></div>
+                    </td></tr></tbody></table>
+
+                </div>
+            </div>
+
+            <label><input type="checkbox" value="1" checked="checked" name="taf[addressbook]" id="taf_addressbook">&nbsp;Add new contacts to Care2 address book</label>
+        </div>
+
+        <label>Personal message</label>
+        <textarea rows="5" name="taf[message]" class="inputwidth naturalState" id="taf_message" autocorrect="off" autocomplete="off" autocapitalize="off">Hello,
+    I saw this on Care2 and thought you'd like it as well.
+
+    Care2 is the largest and most trusted information and action site for people who care to make a difference in their lives and the world.</textarea>
+        <div style="display: none;" class="taf_error" id="tafError_message"></div>
+
+        
+
+        <div class="tellafriend_container_extended">
+            <a id="tafpopupsubmit" class="tafpopupsubmit" href="#">&nbsp;</a>
+            <a id="tafpopupcancel" class="tafpopupcancel" href="#">&nbsp;</a>
+
+            <p class="smallerFont"><img src="http://dingo.care2.com/petitions/home/butterfly.gif" /> We hate spam.  We do not sell or share the email addresses you provide. </p>
+        </div>
+    </form>
+
+
+</div></div>
+</div>
+
+
+
+
+
+</div><div class="footer_ad"><!-- begin: ZEDO for channel: Animal Welfare; publisher: Care2, Ad dimension: Super Banner - 728 x 90 -->
+<iframe id="zedo_ad_0" src="http://zads.care2.com/jsc/d3/ff2.html?n=885;c=44/20/18/14;s=1;d=14;w=728;h=90;" frameborder=0 marginheight=0 marginwidth=0 scrolling="no" allowTransparency="true" width=728 height=90></iframe>
+<script>
+    document.getElementById("zedo_ad_0").onload = function() {
+        clearTimeout(window.killFrame_0);
+    }
+    window.killFrame_0 = setTimeout(function() {
+        document.getElementById("zedo_ad_0").src = "about:blank";
+    }, 8000);
+</script>
+<!-- end: ZEDO for channel: Animal Welfare; publisher: Care2, Ad dimension: Super Banner - 728 x 90 --></div><footer><div class="nonprofit_partners"><div class="header"><div class="care2_wrapper"><h3>FEATURED NONPROFIT PARTNERS</h3></div></div><div class="care2_wrapper"><!-- AMS: slot [nonprofit_partners] --><div id='ams_slot_1' class='ams_slot ams_slot_nonprofit_partners' style=""><div id="ams_block_1" class="ams_block" style=""><a href="http://www.care2.com/aboutus/partnerships.html"><img src="//dingo.care2.com/nav/nonprofit_1.jpg" /></a>
+&nbsp;
+<a href="http://www.care2.com/aboutus/partnerships.html"><img src="//dingo.care2.com/nav/nonprofit_2.jpg" /></a>
+&nbsp;
+<a href="http://www.care2.com/aboutus/partnerships.html"><img src="//dingo.care2.com/nav/nonprofit_3.jpg" /></a>
+&nbsp;
+<a href="http://www.care2.com/aboutus/partnerships.html"><img src="//dingo.care2.com/nav/nonprofit_8.jpg" /></a>
+&nbsp;
+<a href="http://www.care2.com/aboutus/partnerships.html"><img src="//dingo.care2.com/nav/nonprofit_5.jpg" /></a>
+&nbsp;
+<a href="http://www.care2.com/aboutus/partnerships.html"><img src="//dingo.care2.com/nav/nonprofit_6.jpg" /></a></div></div>
+<!-- AMS: end slot --></div></div><div class="care2_wrapper contain_floats"><div class="footer_section"><h3>CARE2</h3><ul><li><a href="http://www.thepetitionsite.com/">Care2 - The Petition Site</a></li><li><a href="http://www.care2.com/">Care2 Home</a></li><li><a href="http://www.care2.com/causes/">Causes</a></li><li><a href="http://www.care2.com/greenliving/">Healthy Living</a></li><li><a href="http://www.care2.com/rewards/">Butterfly Rewards</a></li><li><a href="http://www.care2.com/ecards">Ecards</a></li><li><a href="http://www.care2.com/news">C2NN</a></li><li><a href="http://www.care2.com/c2c/groups">Groups</a></li></ul></div><div class="footer_section"><h3>PETITIONS</h3><ul><li><a href="http://www.thepetitionsite.com/create-a-petition.html?src=care2&campaign=footer">Start a Petition</a></li><li><a href="http://www.thepetitionsite.com/browse-petitions/">Browse Petitions</a></li><li><a href="http://www.thepetitionsite.com/animal-welfare/">Animal Welfare</a></li><li><a href="http://www.thepetitionsite.com/environment-and-wildlife/">Environment &amp; Wildlife</a></li><li><a href="http://www.thepetitionsite.com/human-rights/womens-rights/">Women's Rights</a></li><li><a href="http://www.thepetitionsite.com/human-rights/">Human Rights</a></li><li><a href="http://www.thepetitionsite.com/human-rights/gay-rights/">LGBT Issues</a></li></ul></div><div class="footer_section"><h3>ABOUT CARE2</h3><ul><li><a href="http://www.care2.com/aboutus/">About Us</a></li><li><a href="http://www.care2.com/help">Help</a></li><li><a href="http://www.care2.com/newsletters">Subscription Center</a></li><li><a href="http://www.care2.com/aboutus/careers.html">Careers</a></li><li><a href="http://www.care2.com/aboutus/press.html">Press</a></li><li><a href="http://www.care2.com/aboutus/partnerships.html">Nonprofit Partners</a></li><li><a href="http://www.care2.com/aboutus/advertise.html">Advertising</a></li><li><a href="http://www.care2.com/help/general/privacy.html">Privacy</a></li><li><a href="http://www.care2.com/help/general/tos.html">Terms of Service</a></li><li><a href="http://www.care2.com/aboutus/contactus.html">Contact Us</a></li></ul></div></div><div class="copyright"><ul><li><a href="http://www.care2.com/">Care2 home</a></li><li><a href="http://www.care2.com/aboutus/">about us</a></li><li><a href="http://www.care2.com/aboutus/contactus.html">contact us</a></li><li><a href="http://www.care2.com/aboutus/advertise.html">advertising</a></li></ul><span>Copyright &copy; 2016 Care2.com, inc. and its licensors. All rights reserved</span></div></footer></div><div id="nav_dropdowns"><ul class="petitions"><li><a href="http://www.thepetitionsite.com/">Care2 - The Petition Site</a></li><li><a href="http://www.thepetitionsite.com/create-a-petition.html">Start petition</a></li><li><a href="http://www.thepetitionsite.com/browse-petitions/">Browse petitions</a></li></ul><ul class="causes"><li><a href="http://www.care2.com/causes/">causes</a></li><li><a href="http://www.care2.com/causes/animal-welfare">animal welfare</a></li><li><a href="http://www.care2.com/causes/womens-rights">women's rights</a></li><li><a href="http://www.care2.com/causes/real-food">real food</a></li><li><a href="http://www.care2.com/causes/lgbt">lgbt</a></li><li><a href="http://www.care2.com/causes/civil-rights">civil rights</a></li><li><a href="http://www.care2.com/causes/environment">environment &amp; wildlife</a></li><li><a href="http://www.care2.com/care2blog/">care2 team blog</a></li><li><a href="http://www.care2.com/dailyaction/">daily action</a></li><li><a href="http://www.care2.com/click-to-donate/">click to donate</a></li><li><a href="http://www.care2.com/c2c/groups/">groups</a></li><li><a href="http://www.care2.com/news/">care2 news network</a></li></ul><ul class="healthy_living"><li><a href="http://www.care2.com/greenliving/">healthy living</a></li><li><a href="http://www.care2.com/greenliving/food-recipes">food</a></li><li><a href="http://www.care2.com/greenliving/health-wellness">health</a></li><li><a href="http://www.care2.com/greenliving/love">love + sex</a></li><li><a href="http://www.care2.com/greenliving/garden-nature">nature</a></li><li><a href="http://www.care2.com/greenliving/brands-for-good-2">brands for good</a></li><li><a href="http://www.care2.com/greenliving/pets">pets</a></li><li><a href="http://www.care2.com/greenliving/spirituality">spirit</a></li><li><a href="http://www.care2.com/greenliving/healthy-home">healthy home</a></li><li><a href="http://www.care2.com/ecards/">eCards</a></li></ul><ul class="rewards"><li><a href="http://www.care2.com/rewards/">butterfly rewards</a></li><li><a href="http://www.care2.com/rewards/how-to-earn.html">how to earn credits</a></li><li><a href="http://www.care2.com/rewards/redeem.html">redeem credits</a></li><li><a href="http://www.care2.com/help/butterfly-rewards/">help</a></li></ul><ul class="name"><li><a href="http://www.care2.com/accounts/logoff.html" class="login_link">log off</a></li><li><a href="http://www.care2.com/help">help</a></li><li><a href="http://www.care2.com/c2c/my/">my care2 main</a></li><li><a href="http://www.care2.com/accounts/">my settings</a></li><li><a href="http://www.care2.com/rewards/my-dashboard.html">my butterfly rewards</a></li><li><a href="http://www.care2.com/click-to-donate/my-impact">my click to donate</a></li><li><a href="http://www.care2.com/ecards">my ecards</a></li><li><a href="http://www.care2.com/c2c/my/friends.html">my friends</a></li><li><a href="http://www.care2.com/c2c/my/groups.html">my groups</a></li><li><a href="http://www.care2.com/c2c/my/kudos_butterflies.html">my green stars</a></li><li><a href="http://www.care2.com/news/member">my news</a></li><li><a href="http://www.care2.com/c2c/people/profile.html">my profile page</a></li><li><a href="http://www.care2.com/my/petitionsite">my petitionsite</a></li><li><a href="http://www.care2.com/newsletters">my subscriptions</a></li><li><a href="http://www.care2.com/rewards/thank-you-notes.html">my thank you notes</a></li><li><a href="http://www.care2.com/dailyaction/journal.html">my daily action</a></li></ul><ul class="sub_nav_dropdown_causes_more"><li><a href="http://www.care2.com/causes/civil-rights">Civil Rights</a></li><li><a href="http://www.care2.com/causes/children">children</a></li><li><a href="http://www.care2.com/causes/education">education</a></li><li><a href="http://www.care2.com/causes/environment">Environment</a></li><li><a href="http://www.care2.com/causes/health-policy">Health Policy</a></li><li><a href="http://www.care2.com/causes/human-rights">Human Rights</a></li><li><a href="http://www.care2.com/causes/global-warming">Global Warming</a></li><li><a href="http://www.care2.com/causes/trailblazers">trailblazers</a></li><li><a href="http://www.care2.com/causes/canada">canada</a></li><li><a href="http://www.care2.com/causes/uk">UK</a></li><li><a href="http://www.care2.com/care2blog/">care2 team blog</a></li><li><a href="http://www.care2.com/dailyaction/">daily action</a></li><li><a href="http://www.care2.com/click-to-donate/">click to donate</a></li><li><a href="http://www.care2.com/c2c/groups/">groups</a></li><li><a href="http://www.care2.com/news/">care2 news network</a></li></ul><ul class="sub_nav_dropdown_greenliving_more"><li><a href="http://www.care2.com/greenliving/healthy-home">home</a></li><li><a href="http://www.care2.com/greenliving/life">life</a></li><li><a href="http://www.care2.com/greenliving/family">family</a></li><li><a href="http://www.care2.com/greenliving/personal-care">beauty</a></li><li><a href="http://www.care2.com/greenliving/brands-for-good-2">brands for good</a></li><li><a href="http://www.care2.com/greenliving/green-101">green</a></li><li><a href="http://www.care2.com/greenliving/crafts-design">crafts &amp; designs</a></li><li><a href="http://www.care2.com/greenliving/news-issues">news</a></li><li><a href="http://www.care2.com/greenliving/videos">videos</a></li><li><a href="http://www.care2.com/ecards/">eCards</a></li></ul><ul class="sub_nav_dropdown_ecards_my"><li><a href="http://www.care2.com/send/card/sentcards">my ecards</a></li><li><a href="http://www.care2.com/send/card/favorites">my favorites</a></li><li><a href="http://www.care2.com/send/card/futurecards">my future cards</a></li></ul><ul class="sub_nav_dropdown_rewards_my-dashboard"><li><a href="http://www.care2.com/rewards/my-dashboard.html">my dashboard</a></li><li><a href="http://www.care2.com/rewards/my-credits-earned.html">my credits earned</a></li><li><a href="http://www.care2.com/rewards/my-gifts-given.html">my gifts given</a></li><li><a href="http://www.care2.com/rewards/thank-you-notes.html">my thank you notes</a></li></ul></div><div id="mobile_dropdowns"><div class="arrow"></div><ul class="name"><li><a href="http://www.care2.com/accounts/logoff.html">logoff</a></li><li><a href="http://www.care2.com/accounts/">my account</a></li><li><a href="http://www.care2.com/c2c/my/">my care2</a></li></ul></div><!-- begin adroll -->
+<script type="text/javascript">
+adroll_adv_id = "D4HNDFE5HFCRHKXV4IQWZM";
+adroll_pix_id = "NNXB6V7M2RETXLN63JJSYH";
+(function () {
+var oldonload = window.onload;
+window.onload = function(){
+__adroll_loaded=true;
+var scr = document.createElement("script");
+var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+scr.setAttribute('async', 'true');
+scr.type = "text/javascript";
+scr.src = host + "/j/roundtrip.js";
+((document.getElementsByTagName('head') || [null])[0] ||
+document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+if(oldonload){ oldonload() }};
+}());
+</script>
+<!-- end adroll -->
+<div id="hamburger_menu"><ul class="login_links loggedout"><li><a href="http://www.care2.com/accounts/login.html?pg=http://www.care2.com/causes/horse-runs-with-her-hero-through-village-streets.html" target="_top">log in / Join</a></li></ul><ul class="login_links loggedin"><li><a href="http://www.care2.com/accounts/logoff.html" target="_top">log out</a></li></ul><div class="hamburger_menu_section care2_petitions"><ul><li><a href="http://www.thepetitionsite.com/create-a-petition.html?cid=mobilemenu&src=TPS&campaign=headerClickPS">Start A Petition</a></li><li><a href="http://www.thepetitionsite.com/browse-petitions/">Sign Petition</a></li><li><a href="http://www.care2.com/">CARE2 home</a></li><li><a href="http://www.care2.com/greenliving/">healthy living</a><ul class="left"><li><a href="http://www.care2.com/greenliving/food-recipes">Food + Recipes</a></li><li><a href="http://www.care2.com/greenliving/health-wellness">Health</a></li><li><a href="http://www.care2.com/greenliving/love">Love + Sex</a></li><li><a href="http://www.care2.com/greenliving/green-101">Green</a></li><li><a href="http://www.care2.com/greenliving/news-issues">News</a></li><li><a href="http://www.care2.com/greenliving/crafts-design">Crafts</a></li><li><a href="http://www.care2.com/ecards/">Ecards</a></li><li><a href="http://www.care2.com/greenliving/brands-for-good-2">Brands for Good</a></li></ul><ul><li><a href="http://www.care2.com/greenliving/garden-nature">Nature</a></li><li><a href="http://www.care2.com/greenliving/pets">Pets</a></li><li><a href="http://www.care2.com/greenliving/spirituality">Spirit</a></li><li><a href="http://www.care2.com/greenliving/healthy-home">Home</a></li><li><a href="http://www.care2.com/greenliving/life">Life</a></li><li><a href="http://www.care2.com/greenliving/family">Family</a></li><li><a href="http://www.care2.com/greenliving/personal-care">Beauty</a></li></ul></li><li class="arrow contain_floats"><a href="http://www.care2.com/causes/">causes & news</a><ul class="left"><li><a href="http://www.care2.com/causes/animal-welfare">Animals</a></li><li><a href="http://www.care2.com/causes/womens-rights">Women</a></li><li><a href="http://www.care2.com/causes/politics">Politics</a></li><li><a href="http://www.care2.com/causes/real-food">Food</a></li><li><a href="http://www.care2.com/causes/lgbt">LGBT</a></li><li><a href="http://www.care2.com/causes/human-rights">Human Rights</a></li><li><a href="http://www.care2.com/causes/civil-rights">Civil Rights</a></li></ul><ul><li><a href="http://www.care2.com/causes/children">Children</a></li><li><a href="http://www.care2.com/causes/education">Education</a></li><li><a href="http://www.care2.com/causes/environment">Environment</a></li><li><a href="http://www.care2.com/causes/health-policy">Health Policy</a></li><li><a href="http://www.care2.com/causes/global-warming">Global Warming</a></li><li><a href="http://www.care2.com/causes/trailblazers">Trailblazers</a></li><li><a href="http://www.care2.com/causes/canada">Canada</a></li><li><a href="http://www.care2.com/causes/uk">UK</a></li></ul></li><li><a href="http://www.care2.com/causes/tag/success-story">Success Stories</a></li><li><a href="http://www.care2.com/rewards/">butterfly rewards</a></li></ul></div><div class="hamburger_menu_section new_to_care2"><h3>New to Care2? Start Here.</h3><ul><li><a href="http://www.care2.com/aboutus/">about us</a></li><li><a href="http://www.care2.com/care2blog/">Care2 Team Blog</a></li></ul></div></div><div id="care2_help_tab">site feedback</div><div id="care2_help_tab_dialog"><h3>ONSITE FEEDBACK FORM</h3><p>Problem on this page? Briefly let us know what isn't working for you and we'll try to make it right!</p><form action="http://www.care2.com/help/support" method="post"><input type="hidden" class="current_url" name="cs[current_url]" value="" /><input type="hidden" class="referrer_url" name="cs[referrer_url]" value="" /><input type="hidden" class="userAgent" name="cs[userAgent]" value="" /><input type="email" class="popup_email" name="cs[email]" value="" placeholder="Email Address" /><textarea name="cs[message]"></textarea><div class="buttons"><a href="#">send feedback</a></div></form></div>
+
+
+
+
+<script type='text/javascript' src='//dingo.care2.com/pictures/static/js/f_e/front_end/jscript/c2wp/c2wp.1455222121.js' language='javascript'></script>
+<script type="text/javascript">
+        if (!window.care2_ua_footer_ts) {
+            window.care2_ua_footer_ts = new Date().getTime() / 1000;
+        
+            }
+</script>
+<!-- INTERSTITIALS: none -->
+
+
+	<!-- do not remove the below or there will be problems -->
+	<!-- aw4y1n -->
+<!-- begin: ZEDO for publisher: Care2, Ad dimension: Inview 728x90 - 728 x 90 -->
+        <script language="JavaScript">
+        var zflag_nid="885"; var zflag_cid="1049"; var zflag_sid="1"; var zflag_width="728"; var zflag_height="90"; var zflag_sz="89"; 
+        </script>
+        <script language="JavaScript" src="http://zads.care2.com/jsc/d3/fso.js"></script>
+<!-- end: ZEDO for publisher: Care2, Ad dimension: Inview 728x90 - 728 x 90 --><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"5c61b037c4","applicationID":"5673863","transactionName":"YFVUY0IHWUsAAkZZClkfY0VZSVRZFBJXQw==","queueTime":0,"applicationTime":23,"atts":"TBJXFQodSkU=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+<script type='text/javascript'>
+    var _sf_async_config = _sf_async_config || {};
+    /** CONFIGURATION START **/
+     _sf_async_config.uid = 62058; // ACCOUNT NUMBER
+    _sf_async_config.domain = 'care2.com'; //DOMAIN TRACKED
+    _sf_async_config.useCanonical = true;
+    _sf_async_config.sections = s.prop35;  //CHANGE THIS TO DYNAMICALLY POPULATE EACH SECTION
+    _sf_async_config.authors = s.prop39;    //CHANGE THIS TO DYNAMICALLY POPULATE EACH AUTHOR
+
+    /** CONFIGURATION END **/
+    (function() {
+        function loadChartbeat() {
+            window._sf_endpt = (new Date()).getTime();
+            var e = document.createElement('script');
+            e.setAttribute('language', 'javascript');
+            e.setAttribute('type', 'text/javascript');
+            e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+            document.body.appendChild(e);
+        }
+        var oldonload = window.onload;
+        window.onload = (typeof window.onload != 'function') ?
+            loadChartbeat : function() {
+                oldonload();
+                loadChartbeat();
+            };
+    })();
+</script>
+</body></html>
+<!-- Dynamic Page Served (once) in 0.148 seconds -->
+<!-- Cached page served by WP-Cache -->

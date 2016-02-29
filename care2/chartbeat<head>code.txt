@@ -1,0 +1,8 @@
+<script type='text/javascript'>
+    var _sf_async_config = _sf_async_config || {};
+    /** CONFIGURATION START **/
+   
+    var _sf_startpt = (new Date()).getTime();
+    /** CONFIGURATION END **/
+	</script>
+ <script async src = "//static.chartbeat.com/js/chartbeat.js"></script>
