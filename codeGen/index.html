@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Chartbeat Code Generator</title>
+  <title>Chartbeat Publishing Setup</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -36,57 +36,109 @@
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
       <br><br>
-      <h1 class="header center">Chartbeat Code Generator</h1>
+      <h1 class="header center">Chartbeat Publishing Setup</h1>
       <div class="row center">
-        <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+        <p class="header col s12 light">   Getting up and running with Chartbeat Publishing is a simple process but does require some familiarity with your site’s architecture and JavaScript. The instructions on this page will guide you through the implementation process for a new domain. For reference, the full Chartbeat Publishing documentation is available in the <a href="http://support.chartbeat.com/docs/" target="_blank">Docs section of the support site.</a></p>
       </div>
-      <div class="row center">
-        <a href="http://chartbeat.com" id="download-button" class="btn-large waves-effect waves-light">Get Started</a>
+      
+      <div class="row">
+        <p>First select the additional product(s) that you are implementing on your site.</p>
+        <form action="#">
+          <div class='row'>
+            <p class='col s4'>
+              <input type="checkbox" id="EHT" />
+              <label for="EHT">Engaged Headline Testing</label>
+
+            </p>
+            <div class="input-field col s6">
+              <select>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1">Synchronous</option>
+                <option value="2">Asynchronous with flicker control</option>
+                <option value="3">Asynchronous without flicker control</option>
+              </select>
+              <label>Choose your implementation option</label>
+            </div>
+          </div>
+          <div class='row'>
+
+           <p class='col s4'>
+            <input type="checkbox" id="video" />
+            <label for="video">Video Dashboard</label>
+          </p>
+          <div class="input-field col s6">
+              <select>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1">Flowplayer</option>
+                <option value="2">HTML5</option>
+                <option value="3">JW Player</option>
+                <option value="4">Kaltura</option>
+                <option value="5">Ooyala</option>
+                <option value="6">ThePlatform</option>
+                <option value="7">Brightcove (New)</option>
+                <option value="8">Brightcove (Legacy)</option>
+                <option value="9">Youtube</option>
+                <option value="10">Other</option>
+              </select>
+              <label>Choose your implementation option</label>
+            </div>
+          
+        
+        </form>
+      </div>
+      <br><br>
+
+      <div class="row">
+        <div class="input-field col s8">
+          <input placeholder="Domain (without the www.)" id="domain" type="text" class="validate">
+          <label for="first_name">Enter the name of the domain you want to track, without including ‘www.’ at the beginning. For example, “yoursite.com”.</label>
+        </div>
+        <a href="#" id="download-button" class=" right btn-large waves-effect waves-light" >Generate Javascript</a>
       </div>
       <br><br>
 
     </div>
   </div>
 
-
-  <div class="container">
-    <div class="section">
-
-      <!--   Icon Section   -->
+  <div class="section no-pad-bot" id="">
+    <div class="container">
+      <h4>Chartbeat Publishing Code — Implement on all pages on your site.</h3>
       <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">Speeds up development</h5>
-
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">User Experience Focused</h5>
-
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Easy to work with</h5>
-
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
-          </div>
-        </div>
+        <h5>Part 1</h5>
+        <p>Part 1: Insert this right after the opening &lt;head&gt; tag:</p>
+        <code>
+          &amp;lt;script type='text/javascript'&amp;gt;
+            <br>            var _sf_async_config = _sf_async_config || {};
+            <br>            /** CONFIGURATION START **/
+            <br>            _sf_async_config.uid = 12345
+            <br>            _sf_async_config.domain = 'isthatoffensive.tumblr.com';
+            <br>            _sf_async_config.useCanonical = true;
+            <br>            _sf_async_config.videoType = 'ooyala';
+            <br>            _sf_async_config.sections = 'Change this to your Section name'; //CHANGE THIS
+            <br>            _sf_async_config.authors = 'Change this to your Author name'; //CHANGE THIS
+            <br>            /** CONFIGURATION END **/
+            <br>            (function() {
+            <br>                function loadChartbeat() {
+            <br>                    window._sf_endpt = (new Date()).getTime();
+            <br>                    var e = document.createElement('script');
+            <br>                    e.setAttribute('language', 'javascript');
+            <br>                    e.setAttribute('type', 'text/javascript');
+            <br>                    e.setAttribute('src', '//static.chartbeat.com/js/chartbeat_video.js');
+            <br>                    document.body.appendChild(e);
+            <br>                }
+            <br>                var oldonload = window.onload;
+            <br>                window.onload = (typeof window.onload != 'function') ?
+            <br>                    loadChartbeat : function() {
+            <br>                        oldonload();
+            <br>                        loadChartbeat();
+            <br>                    };
+            <br>            })();
+            <br>          &amp;lt;/script&amp;gt;
+        </code>
+        <h5>Part 2</h5>
+        <h5>Part 3</h5>
+        <h5>Part 4</h5>
       </div>
-
-    </div>
-    <br><br>
-
-    <div class="section">
-
     </div>
   </div>
 
@@ -95,7 +147,7 @@
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+          <p class="grey-text text-lighten-4"></p>
 
 
         </div>
