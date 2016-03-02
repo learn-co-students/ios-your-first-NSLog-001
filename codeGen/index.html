@@ -44,6 +44,22 @@
       <div class="row">
         <p>First select the additional product(s) that you are implementing on your site.</p>
         <form action="#">
+        <div class='row'>
+            <p class='col s4'>
+              <input type="checkbox" id="cbp" />
+              <label for="cbp">Standard Chartbeat Publishing</label>
+
+            </p>
+            <div class="input-field col s6">
+              <select>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1">Synchronous</option>
+                <option value="2">Asynchronous with flicker control</option>
+                <option value="3">Asynchronous without flicker control</option>
+              </select>
+              <label>Choose your implementation option</label>
+            </div>
+          </div>
           <div class='row'>
             <p class='col s4'>
               <input type="checkbox" id="EHT" />
@@ -106,8 +122,12 @@
       <div class="row">
         <h5>Part 1</h5>
         <p>Part 1: Insert this right after the opening &lt;head&gt; tag:</p>
+        <code>&lt;script type='text/javascript'&gt;var _sf_startpt=(new Date()).getTime()&lt;/script&gt;
+        </code>
+        <h5>Part 2</h5>
+        <p>Insert this script right before the closing &lt;body&gt; tag:</p>
         <code>
-          &amp;lt;script type='text/javascript'&amp;gt;
+          &lt;script type='text/javascript'&gt;
             <br>            var _sf_async_config = _sf_async_config || {};
             <br>            /** CONFIGURATION START **/
             <br>            _sf_async_config.uid = 12345
@@ -133,11 +153,90 @@
             <br>                        loadChartbeat();
             <br>                    };
             <br>            })();
-            <br>          &amp;lt;/script&amp;gt;
+            <br>          &lt;/script&gt;
         </code>
-        <h5>Part 2</h5>
+        <p>For more information about setting the section and author variable on lines 6 and 7 see the section and author docs on the Support Site.  </p>
+        <code>
+                    &lt;script type='text/javascript'&gt;
+          <br>    var _sf_async_config = _sf_async_config || {};
+          <br>    /** CONFIGURATION START **/
+          <br>    _sf_async_config.useCanonical = true;
+          <br>    _sf_async_config.sections = 'Change this to your Section name'; //CHANGE THIS
+          <br>    _sf_async_config.authors = 'Change this to your Author name'; //CHANGE THIS
+          <br>    /** CONFIGURATION END **/
+          <br>    (function() {
+          <br>        function loadChartbeat() {
+          <br>            window._sf_endpt = (new Date()).getTime();
+          <br>            var e = document.createElement('script');
+          <br>            e.setAttribute('language', 'javascript');
+          <br>            e.setAttribute('type', 'text/javascript');
+          <br>            e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+          <br>            document.body.appendChild(e);
+          <br>        }
+          <br>        var oldonload = window.onload;
+          <br>        window.onload = (typeof window.onload != 'function') ?
+          <br>            loadChartbeat : function() {
+          <br>                oldonload();
+          <br>                loadChartbeat();
+          <br>            };
+          <br>    })();
+          <br>&lt;/script&gt;
+        </code>
+        <h4>Engaged Headline Testing Code — Implement only on pages that will run headline tests.</h4>
         <h5>Part 3</h5>
+        <p>Modify the code block from part 2 by removing lines 4 and 5. The main Chartbeat code on those pages should should look like this:</p>
+          <code>
+                        &lt;script type='text/javascript'&gt;
+            <br>    var _sf_async_config = _sf_async_config || {};
+            <br>    /** CONFIGURATION START **/
+            <br>    _sf_async_config.useCanonical = true;
+            <br>    _sf_async_config.sections = 'Change this to your Section name'; //CHANGE THIS
+            <br>    _sf_async_config.authors = 'Change this to your Author name'; //CHANGE THIS
+            <br>    /** CONFIGURATION END **/
+            <br>    (function() {
+            <br>        function loadChartbeat() {
+            <br>            window._sf_endpt = (new Date()).getTime();
+            <br>            var e = document.createElement('script');
+            <br>            e.setAttribute('language', 'javascript');
+            <br>            e.setAttribute('type', 'text/javascript');
+            <br>            e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+            <br>            document.body.appendChild(e);
+            <br>        }
+            <br>        var oldonload = window.onload;
+            <br>        window.onload = (typeof window.onload != 'function') ?
+            <br>            loadChartbeat : function() {
+            <br>                oldonload();
+            <br>                loadChartbeat();
+            <br>            };
+            <br>    })();
+            <br>&lt;/script&gt;
+          </code>
+          <p>For additional considerations please see the initial instructions section of the Headline Testing docs</p>
         <h5>Part 4</h5>
+        <p>Insert this script right before the closing &lt;/head&gt; tag:</p>
+        <code>
+                    &lt;script type=&quot;text/javascript&quot;&gt;
+          <br>     var _sf_async_config = _sf_async_config || {};
+          <br>     /** CONFIGURATION START **/
+          <br>     _sf_async_config.uid = #####; /** CHANGE TO YOUR CHARTBEAT ACCOUNT ID **/
+          <br>     _sf_async_config.domain = &quot;yoursite.com&quot;; /** CHANGE THIS **/
+          <br>     /** CONFIGURATION END **/
+          <br>     var _sf_startpt = (new Date()).getTime();
+          <br>&lt;/script&gt;
+          <br>&lt;script src=&quot;//static.chartbeat.com/js/chartbeat_mab.js&quot;&gt;&lt;/script&gt;
+        </code>
+        <h5>Video Dashboard Code — Implement on all pages that contain the Ooyala video player. </h5>
+        <p>Part 5: Modify the Ooyala embed code so that the code inside the 'onCreate' event provided by Ooyala looks like:</p>
+        <code>
+                    OO.ready(function() {
+          <br>    OO.Player.create('element_id', 'account_id', {
+          <br>        onCreate: function(player) {
+          <br>            var _cbv = window._cbv || (window._cbv = []);
+          <br>            _cbv.push(player);
+          <br>        }
+          <br>    });
+          <br>});
+        </code>
       </div>
     </div>
   </div>

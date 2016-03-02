@@ -16,31 +16,38 @@ nav ul a {
 	color: #7accc0;
 }
 
+/*  BODY */
 
-.icon-block {
-  padding: 0 15px;
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
-.icon-block .material-icons {
-	font-size: inherit;
-}
-
- body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
 
 main {
-    flex: 1 0 auto;
-  }
+  flex: 1 0 auto;
+}
+
+code {
+  color: blue;
+}
 
 /*#CBPcode {
 display: none;
 }*/
 
+/* CLASSES */
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
 
 /* FOOTER */
 
 footer {
 	background-color: #26495c !important;
 }
+
