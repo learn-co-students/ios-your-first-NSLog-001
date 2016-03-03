@@ -72,11 +72,11 @@
         <p>First select the product(s) that you are implementing on your site.</p>
         <form action="#">
         <div class='row'>
-            <p class='col s3'>
+            <p class='col s4'>
               <input type="checkbox" id="cbp" />
-              <label for="cbp">Standard Chartbeat Publishing</label>
+              <label for="cbp" class='tooltipped' data-position="bottom" data-delay="50" data-tooltip="I am tooltip">Standard Chartbeat Publishing</label>
             </p>
-            <div class="input-field col s6">
+            <div class="input-field col s8">
               <select>
                 <option value="" disabled selected>Choose your option</option>
                 <option value="1">Synchronous</option>
@@ -87,13 +87,12 @@
             </div> <!-- inout field -->
           </div> <!-- row -->
           
-
           <div class='row'>
-            <p class='col s3'>
-              <input type="checkbox" id="EHT" />
-              <label for="EHT">Engaged Headline Testing</label>
+            <p class='col s4'>
+              <input type="checkbox" id="EHT"/>
+              <label for="EHT" class='tooltipped' data-position="bottom" data-delay="50" data-tooltip="I am tooltip">Engaged Headline Testing</label>
             </p>
-            <div class="input-field col s6">
+            <div class="input-field col s8">
               <select>
                 <option value="" disabled selected>Choose your option</option>
                 <option value="1">Synchronous</option>
@@ -105,11 +104,11 @@
           </div>
           <div class='row'>
 
-           <p class='col s3'>
+           <p class='col s4'>
             <input type="checkbox" id="video" />
-            <label for="video">Video Dashboard</label>
+            <label for="video" class='tooltipped' data-position="bottom" data-delay="50" data-tooltip="I am tooltip">Video Dashboard</label>
           </p>
-          <div class="input-field col s6">
+          <div class="input-field col s8">
               <select>
                 <option value="" disabled selected>Choose your option</option>
                 <option value="1">Flowplayer</option>
@@ -133,10 +132,12 @@
 
       <div class="row">
         <div class="input-field col s2">
-          <input placeholder="UID" id="domain" type="text" class="validate">
+        <i class="material-icons small prefix">account_circle</i>
+          <input placeholder="UID" id="domain" type="text" class="validate" length="6">
           <label for="UID">Enter the Chartbeat UID</label>
         </div>
-        <div class="input-field col s6">
+        <div class="input-field col s7">
+          <i class="material-icons small prefix">language</i>
           <input placeholder="Domain (without the www.)" id="domain" type="text" class="validate">
           <label for="first_name">Enter the name of the domain you want to track, without including ‘www.’ at the beginning. For example, “yoursite.com”.</label>
         </div>
@@ -149,22 +150,22 @@
 
   <div class="section no-pad-bot hide" id="codegen">
     <div class="container">
-      <h4>Chartbeat Publishing Code — Implement on all pages on your site.</h3>
+      <h4>Chartbeat Publishing Code — Implement on all pages of your site.</h3>
       <div class="row">
         <h5>Part 1</h5>
         <p>Part 1: Insert this right after the opening &lt;head&gt; tag:</p>
         <code>&lt;script type='text/javascript'&gt;var _sf_startpt=(new Date()).getTime()&lt;/script&gt;
         </code>
         <h5>Part 2</h5>
-        <p>Insert this script right before the closing &lt;body&gt; tag:</p>
+        <p>Insert this script right before the closing &lt;/body&gt; tag:</p>
         <code>
           &lt;script type='text/javascript'&gt;
             <br>            var _sf_async_config = _sf_async_config || {};
             <br>            /** CONFIGURATION START **/
-            <br>            _sf_async_config.uid = 12345
-            <br>            _sf_async_config.domain = 'isthatoffensive.tumblr.com';
+            <br>            _sf_async_config.uid = {{DYNAMICALLY POPULATED}}
+            <br>            _sf_async_config.domain = {{DYNAMICALLY POPULATED}};
             <br>            _sf_async_config.useCanonical = true;
-            <br>            _sf_async_config.videoType = 'ooyala';
+            <br>            _sf_async_config.videoType = '{{DYNAMICALLY POPULATED}};';
             <br>            _sf_async_config.sections = 'Change this to your Section name'; //CHANGE THIS
             <br>            _sf_async_config.authors = 'Change this to your Author name'; //CHANGE THIS
             <br>            /** CONFIGURATION END **/
@@ -177,6 +178,7 @@
             <br>                    e.setAttribute('src', '//static.chartbeat.com/js/chartbeat_video.js');
             <br>                    document.body.appendChild(e);
             <br>                }
+            <!-- {{DYNAMICALLY POPULATED}} -->
             <br>                var oldonload = window.onload;
             <br>                window.onload = (typeof window.onload != 'function') ?
             <br>                    loadChartbeat : function() {
@@ -186,16 +188,16 @@
             <br>            })();
             <br>          &lt;/script&gt;
         </code>
-        <p>For more information about setting the section and author variable on lines 6 and 7 see the section and author docs on the Support Site.  </p>
+        <p>For more information about setting the section and author variable on lines 6 and 7 see the <a href="http://support.chartbeat.com/docs/#sectionsauthors" target="_blank">section and author docs on the Support Site.</a>  </p>
         <code>
-                    &lt;script type='text/javascript'&gt;
-          <br>    var _sf_async_config = _sf_async_config || {};
-          <br>    /** CONFIGURATION START **/
-          <br>    _sf_async_config.useCanonical = true;
-          <br>    _sf_async_config.sections = 'Change this to your Section name'; //CHANGE THIS
+<!--                     &lt;script type='text/javascript'&gt;
+ --><!--           <br>    var _sf_async_config = _sf_async_config || {};
+ -->          <br>    /** CONFIGURATION START **/
+<!--           <br>    _sf_async_config.useCanonical = true;
+ -->          <br>    _sf_async_config.sections = 'Change this to your Section name'; //CHANGE THIS
           <br>    _sf_async_config.authors = 'Change this to your Author name'; //CHANGE THIS
           <br>    /** CONFIGURATION END **/
-          <br>    (function() {
+         <!--  <br>    (function() {
           <br>        function loadChartbeat() {
           <br>            window._sf_endpt = (new Date()).getTime();
           <br>            var e = document.createElement('script');
@@ -210,12 +212,12 @@
           <br>                oldonload();
           <br>                loadChartbeat();
           <br>            };
-          <br>    })();
-          <br>&lt;/script&gt;
-        </code>
+          <br>    })(); -->
+<!--           <br>&lt;/script&gt;
+ -->        </code>
         <h4>Engaged Headline Testing Code — Implement only on pages that will run headline tests.</h4>
         <h5>Part 3</h5>
-        <p>Modify the code block from part 2 by removing lines 4 and 5. The main Chartbeat code on those pages should should look like this:</p>
+        <p>Modify the code block from part 2 by removing <code>.useCanonical</code> and <code>.videoType</code>. The main Chartbeat code on those pages should should look like this:</p>
           <code>
                         &lt;script type='text/javascript'&gt;
             <br>    var _sf_async_config = _sf_async_config || {};
@@ -242,32 +244,72 @@
             <br>    })();
             <br>&lt;/script&gt;
           </code>
-          <p>For additional considerations please see the initial instructions section of the Headline Testing docs</p>
+          <p>For additional considerations please see the initial instructions section of the <a href="http://support.chartbeat.com/docs/headlinetesting.html" target="_blank">Headline Testing docs</a></p>
         <h5>Part 4</h5>
         <p>Insert this script right before the closing &lt;/head&gt; tag:</p>
         <code>
                     &lt;script type=&quot;text/javascript&quot;&gt;
           <br>     var _sf_async_config = _sf_async_config || {};
           <br>     /** CONFIGURATION START **/
-          <br>     _sf_async_config.uid = #####; /** CHANGE TO YOUR CHARTBEAT ACCOUNT ID **/
-          <br>     _sf_async_config.domain = &quot;yoursite.com&quot;; /** CHANGE THIS **/
+          <br>     _sf_async_config.uid = {{DYNAMICALLY POPULATED}} 
+          <br>     _sf_async_config.domain = &quot;{{DYNAMICALLY POPULATED}}&quot;;
           <br>     /** CONFIGURATION END **/
           <br>     var _sf_startpt = (new Date()).getTime();
           <br>&lt;/script&gt;
-          <br>&lt;script src=&quot;//static.chartbeat.com/js/chartbeat_mab.js&quot;&gt;&lt;/script&gt;
+          <br>&lt;script rel=&quot;canonical&quot; src=&quot;//static.chartbeat.com/js/chartbeat_mab.js&quot;&gt;&lt;/script&gt;
         </code>
-        <h5>Video Dashboard Code — Implement on all pages that contain the Ooyala video player. </h5>
-        <p>Part 5: Modify the Ooyala embed code so that the code inside the 'onCreate' event provided by Ooyala looks like:</p>
-        <code>
-                    OO.ready(function() {
-          <br>    OO.Player.create('element_id', 'account_id', {
-          <br>        onCreate: function(player) {
-          <br>            var _cbv = window._cbv || (window._cbv = []);
-          <br>            _cbv.push(player);
-          <br>        }
-          <br>    });
-          <br>});
-        </code>
+        <h4>Video Dashboard Code — Implement on all pages that contain the {{DYNAMICALLY POPULATED}} video player. </h4>
+        <h5>Part 5:</h5>
+        <div class="flowplayer">
+          <p></p>
+          <code></code>
+        </div>
+        <div class="HTML5">
+          <p></p>
+          <code></code>
+        </div>
+        <div class="JW Player">
+          <p></p>
+          <code></code>
+        </div>
+        <div class="Kaltura">
+          <p></p>
+          <code></code>
+        </div>
+        <div class='ooyala'>
+          <p>Modify the Ooyala embed code so that the code inside the 'onCreate' event provided by Ooyala looks like:</p>
+          <code>
+                      OO.ready(function() {
+            <br>    OO.Player.create('element_id', 'account_id', {
+            <br>        onCreate: function(player) {
+            <br>            var _cbv = window._cbv || (window._cbv = []);
+            <br>            _cbv.push(player);
+            <br>        }
+            <br>    });
+            <br>});
+          </code>
+        </div>
+        <div class="thePlatform">
+          <p></p>
+          <code></code>
+        </div>
+        <div class="Brightcove-new">
+          <p></p>
+          <code></code>
+        </div>
+        <div class="Brightcove-leg">
+          <p></p>
+          <code></code>
+        </div>
+        <div class="Youtube">
+          <p></p>
+          <code></code>
+        </div>
+        <div class="Other">
+          <p></p>
+          <code></code>
+        </div>
+        
         <br><br>
         <a href="#" id="download-button" class="right btn-large waves-effect waves-light" >Next: Activate and Test</a>
       </div>
@@ -278,7 +320,7 @@
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
+          <h5 class="white-text">Chartbeat Logo</h5>
           <p class="grey-text text-lighten-4"></p>
 
 
@@ -304,7 +346,7 @@
     </div>
     <div class="footer-copyright">
       <div class="container">
-      Made by <a class="orange-text text-lighten-3" href="http://support.chartbeat.com/">ChartCorps</a>
+      Made by <a class="orange-text text-lighten-3" target ="_blank" href="http://support.chartbeat.com/">ChartCorps</a>
       </div>
     </div>
   </footer>
