@@ -40,15 +40,41 @@
       <div class="row center">
         <p class="header col s12 light">   Getting up and running with Chartbeat Publishing is a simple process but does require some familiarity with your site’s architecture and JavaScript. The instructions on this page will guide you through the implementation process for a new domain. For reference, the full Chartbeat Publishing documentation is available in the <a href="http://support.chartbeat.com/docs/" target="_blank">Docs section of the support site.</a></p>
       </div>
+      <p>A few definitions of Chartbeat implementations to get you started. </p>
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="card teal darken-1">
+            <div class="card-content white-text">
+              <span class="card-title orange-text">Synchronous</span>
+              <p>Does not utilize the <code>window.onload</code> function and will not load asynchronously — meaning that it will load inline with all other elements on the page.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card teal darken-1">
+            <div class="card-content white-text">
+              <span class="card-title orange-text">Asynchronous with flicker control</span>
+              <p>Does not utilize the <code>window.onload</code> function and will not load asynchronously — meaning that it will load inline with all other elements on the page.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card teal darken-1">
+            <div class="card-content white-text">
+              <span class="card-title orange-text">Asynchronous w/o flicker control</span>
+              <p>Does not utilize the <code>window.onload</code> function and will not load asynchronously — meaning that it will load inline with all other elements on the page.</p>
+            </div>
+          </div>
+        </div>
+      </div> <!-- row -->
       
       <div class="row">
-        <p>First select the additional product(s) that you are implementing on your site.</p>
+        <p>First select the product(s) that you are implementing on your site.</p>
         <form action="#">
         <div class='row'>
-            <p class='col s4'>
+            <p class='col s3'>
               <input type="checkbox" id="cbp" />
               <label for="cbp">Standard Chartbeat Publishing</label>
-
             </p>
             <div class="input-field col s6">
               <select>
@@ -58,13 +84,14 @@
                 <option value="3">Asynchronous without flicker control</option>
               </select>
               <label>Choose your implementation option</label>
-            </div>
-          </div>
+            </div> <!-- inout field -->
+          </div> <!-- row -->
+          
+
           <div class='row'>
-            <p class='col s4'>
+            <p class='col s3'>
               <input type="checkbox" id="EHT" />
               <label for="EHT">Engaged Headline Testing</label>
-
             </p>
             <div class="input-field col s6">
               <select>
@@ -78,7 +105,7 @@
           </div>
           <div class='row'>
 
-           <p class='col s4'>
+           <p class='col s3'>
             <input type="checkbox" id="video" />
             <label for="video">Video Dashboard</label>
           </p>
@@ -105,18 +132,22 @@
       <br><br>
 
       <div class="row">
-        <div class="input-field col s8">
+        <div class="input-field col s2">
+          <input placeholder="UID" id="domain" type="text" class="validate">
+          <label for="UID">Enter the Chartbeat UID</label>
+        </div>
+        <div class="input-field col s6">
           <input placeholder="Domain (without the www.)" id="domain" type="text" class="validate">
           <label for="first_name">Enter the name of the domain you want to track, without including ‘www.’ at the beginning. For example, “yoursite.com”.</label>
         </div>
-        <a href="#" id="download-button" class=" right btn-large waves-effect waves-light" >Generate Javascript</a>
+        <a id="download-button" class=" right btn-large waves-effect waves-light" >Generate Javascript</a>
       </div>
       <br><br>
 
     </div>
   </div>
 
-  <div class="section no-pad-bot" id="">
+  <div class="section no-pad-bot hide" id="codegen">
     <div class="container">
       <h4>Chartbeat Publishing Code — Implement on all pages on your site.</h3>
       <div class="row">
@@ -237,6 +268,8 @@
           <br>    });
           <br>});
         </code>
+        <br><br>
+        <a href="#" id="download-button" class="right btn-large waves-effect waves-light" >Next: Activate and Test</a>
       </div>
     </div>
   </div>

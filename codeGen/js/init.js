@@ -8,4 +8,7 @@
 $(document).ready(function() {
     $('select').material_select();
   });
-            
+
+$('#download-button').click(function(){
+	$('#codegen').removeClass('hide')
+})
