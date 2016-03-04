@@ -31,3 +31,31 @@ $(document).ready(function() {
 $('#download-button').click(function(){
 	$('#codegen').removeClass('hide')
 })
+
+// PART 1 - HEAD CODE
+
+// if SYNC  no value for flicker control (not included in block)
+
+// without flicker adds false
+
+// with Flicker adds style and TIME OUT THING
+
+// PART 2
+
+// PART 5 VIDEO CODE
+// ***** NEEDS .PLAYERDOMAIN SET
+// **BRIGHTCOVE OLD
+// **THE PLATFORM
+// **IFRAME
+
+// VIDEO.JS
+// FLOWPLAYER
+// HTML5
+// JWPLAYER
+// KALTURA
+// OOYALA
+// YOUTUBE
+// SDK
+// IFRAME - INSIDE
+
+

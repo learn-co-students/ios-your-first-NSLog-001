@@ -53,7 +53,7 @@
         <div class="col s12 m4">
           <div class="card teal darken-1">
             <div class="card-content white-text">
-              <span class="card-title orange-text">Asynchronous with flicker control</span>
+              <span class="card-title orange-text">Asynchronous</span>
               <p>Does not utilize the <code>window.onload</code> function and will not load asynchronously — meaning that it will load inline with all other elements on the page.</p>
             </div>
           </div>
@@ -61,7 +61,7 @@
         <div class="col s12 m4">
           <div class="card teal darken-1">
             <div class="card-content white-text">
-              <span class="card-title orange-text">Asynchronous w/o flicker control</span>
+              <span class="card-title orange-text">document.ready</span>
               <p>Does not utilize the <code>window.onload</code> function and will not load asynchronously — meaning that it will load inline with all other elements on the page.</p>
             </div>
           </div>
@@ -72,22 +72,6 @@
         <p>First select the product(s) that you are implementing on your site.</p>
         <form action="#">
         <div class='row'>
-            <p class='col s4'>
-              <input type="checkbox" id="cbp" />
-              <label for="cbp" class='tooltipped' data-position="bottom" data-delay="50" data-tooltip="I am tooltip">Standard Chartbeat Publishing</label>
-            </p>
-            <div class="input-field col s8">
-              <select>
-                <option value="" disabled selected>Choose your option</option>
-                <option value="1">Synchronous</option>
-                <option value="2">Asynchronous with flicker control</option>
-                <option value="3">Asynchronous without flicker control</option>
-              </select>
-              <label>Choose your implementation option</label>
-            </div> <!-- inout field -->
-          </div> <!-- row -->
-          
-          <div class='row'>
             <p class='col s4'>
               <input type="checkbox" id="EHT"/>
               <label for="EHT" class='tooltipped' data-position="bottom" data-delay="50" data-tooltip="I am tooltip">Engaged Headline Testing</label>
@@ -102,6 +86,23 @@
               <label>Choose your implementation option</label>
             </div>
           </div>
+        <div class='row'>
+            <p class='col s4'>
+              <input type="checkbox" id="cbp" />
+              <label for="cbp" class='tooltipped' data-position="bottom" data-delay="50" data-tooltip="I am tooltip">Standard Chartbeat Publishing</label>
+            </p>
+            <div class="input-field col s8">
+              <select>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1">Synchronous</option>
+                <option value="2">Asynchronous</option>
+                <option value="3">document.ready</option>
+              </select>
+              <label>Choose your implementation option</label>
+            </div> <!-- inout field -->
+          </div> <!-- row -->
+          
+          
           <div class='row'>
 
            <p class='col s4'>
@@ -111,21 +112,20 @@
           <div class="input-field col s8">
               <select>
                 <option value="" disabled selected>Choose your option</option>
+                <option value="7">Brightcove (New)</option>
+                <option value="8">Brightcove (Legacy)</option>
                 <option value="1">Flowplayer</option>
                 <option value="2">HTML5</option>
                 <option value="3">JW Player</option>
                 <option value="4">Kaltura</option>
                 <option value="5">Ooyala</option>
                 <option value="6">ThePlatform</option>
-                <option value="7">Brightcove (New)</option>
-                <option value="8">Brightcove (Legacy)</option>
+                
                 <option value="9">Youtube</option>
                 <option value="10">Other</option>
               </select>
               <label>Choose your implementation option</label>
             </div>
-          
-        
         </form>
       </div>
       <br><br>
@@ -153,111 +153,164 @@
       <h4>Chartbeat Publishing Code — Implement on all pages of your site.</h3>
       <div class="row">
         <h5>Part 1</h5>
-        <p>Part 1: Insert this right after the opening &lt;head&gt; tag:</p>
-        <code>&lt;script type='text/javascript'&gt;var _sf_startpt=(new Date()).getTime()&lt;/script&gt;
-        </code>
+        <p>Insert this right after the opening &lt;head&gt; tag:</p>
+        <pre>
+          <code class=''>
+            &lt;script type='text/javascript'&gt;
+               var _sf_async_config = _sf_async_config || {};
+               /** CONFIGURATION START **/
+               _sf_async_config.uid = {{DYNAMICALLY POPULATED}}; // ACCOUNT NUMBER
+               _sf_async_config.domain = '{{DYNAMICALLY POPULATED}}'; //DOMAIN TRACKED
+               _sf_async_config.useCanonical = true;
+               var _sf_startpt = (new Date()).getTime();
+               /** CONFIGURATION END **/
+             &lt;/script&gt;
+            &lt;script async src = &quot;//static.chartbeat.com/js/chartbeat_mab.js&quot;&gt;&lt;/script&gt;
+          </code>
+        </pre>
+        <pre>
+          <code class=''>
+              &lt;style id='chartbeat-flicker-control-style' type='text/css'&gt;
+                  body {
+                  visibility: hidden !important;
+                  }
+              &lt;/style&gt;
+              &lt;script type='text/javascript'&gt;
+                  var _sf_async_config = _sf_async_config || {};
+                  /** CONFIGURATION START **/
+                  _sf_async_config.uid = #####;
+                  _sf_async_config.domain = 'yoursite.com';
+                  /** CONFIGURATION END **/
+                  var _sf_startpt = (new Date()).getTime();
+                  // Set a timeout event for 1 second that will remove the body hiding
+                  // tag from the document if it has not already been removed. This
+                  // gives the Headline Tester script a total of 1 second to load and run to limit
+                  // the potential for flicker of headlines.
+                  // The one second time limit can be adjusted to client preferences.
+                  window.setTimeout(function() {
+                      var hider = document.getElementById('chartbeat-flicker-control-style');
+                      if (hider) {
+                          hider.parentNode.removeChild(hider);
+                      }
+                  }, 1000);
+              &lt;/script&gt;
+              &lt;script async src = &quot;//static.chartbeat.com/js/chartbeat_mab.js&quot;&gt;&lt;/script
+          </code>
+        </pre>
+        <pre>
+          <code class=''>
+            &lt;script type=&quot;text/javascript&quot;&gt;
+                var _sf_async_config = _sf_async_config || {};
+                /** CONFIGURATION START **/
+                _sf_async_config.uid = #####; /** CHANGE TO YOUR CHARTBEAT ACCOUNT ID **/
+                _sf_async_config.domain = 'yoursite.com'; /** CHANGE THIS **/
+                _sf_async_config.flickerControl = false;
+                /** CONFIGURATION END **/
+                var _sf_startpt = (new Date()).getTime();
+            &lt;/script&gt;
+            &lt;script async src=&quot;//static.chartbeat.com/js/chartbeat_mab.js&quot;&gt;&lt;/script&gt;
+          </code>
+        </pre>
+       
         <h5>Part 2</h5>
         <p>Insert this script right before the closing &lt;/body&gt; tag:</p>
-        <code>
-          &lt;script type='text/javascript'&gt;
-            <br>            var _sf_async_config = _sf_async_config || {};
-            <br>            /** CONFIGURATION START **/
-            <br>            _sf_async_config.uid = {{DYNAMICALLY POPULATED}}
-            <br>            _sf_async_config.domain = {{DYNAMICALLY POPULATED}};
-            <br>            _sf_async_config.useCanonical = true;
-            <br>            _sf_async_config.videoType = '{{DYNAMICALLY POPULATED}};';
-            <br>            _sf_async_config.sections = 'Change this to your Section name'; //CHANGE THIS
-            <br>            _sf_async_config.authors = 'Change this to your Author name'; //CHANGE THIS
-            <br>            /** CONFIGURATION END **/
-            <br>            (function() {
-            <br>                function loadChartbeat() {
-            <br>                    window._sf_endpt = (new Date()).getTime();
-            <br>                    var e = document.createElement('script');
-            <br>                    e.setAttribute('language', 'javascript');
-            <br>                    e.setAttribute('type', 'text/javascript');
-            <br>                    e.setAttribute('src', '//static.chartbeat.com/js/chartbeat_video.js');
-            <br>                    document.body.appendChild(e);
-            <br>                }
-            <!-- {{DYNAMICALLY POPULATED}} -->
-            <br>                var oldonload = window.onload;
-            <br>                window.onload = (typeof window.onload != 'function') ?
-            <br>                    loadChartbeat : function() {
-            <br>                        oldonload();
-            <br>                        loadChartbeat();
-            <br>                    };
-            <br>            })();
-            <br>          &lt;/script&gt;
-        </code>
-        <p>For more information about setting the section and author variable on lines 6 and 7 see the <a href="http://support.chartbeat.com/docs/#sectionsauthors" target="_blank">section and author docs on the Support Site.</a>  </p>
-        <code>
-<!--                     &lt;script type='text/javascript'&gt;
- --><!--           <br>    var _sf_async_config = _sf_async_config || {};
- -->          <br>    /** CONFIGURATION START **/
-<!--           <br>    _sf_async_config.useCanonical = true;
- -->          <br>    _sf_async_config.sections = 'Change this to your Section name'; //CHANGE THIS
-          <br>    _sf_async_config.authors = 'Change this to your Author name'; //CHANGE THIS
-          <br>    /** CONFIGURATION END **/
-         <!--  <br>    (function() {
-          <br>        function loadChartbeat() {
-          <br>            window._sf_endpt = (new Date()).getTime();
-          <br>            var e = document.createElement('script');
-          <br>            e.setAttribute('language', 'javascript');
-          <br>            e.setAttribute('type', 'text/javascript');
-          <br>            e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
-          <br>            document.body.appendChild(e);
-          <br>        }
-          <br>        var oldonload = window.onload;
-          <br>        window.onload = (typeof window.onload != 'function') ?
-          <br>            loadChartbeat : function() {
-          <br>                oldonload();
-          <br>                loadChartbeat();
-          <br>            };
-          <br>    })(); -->
-<!--           <br>&lt;/script&gt;
- -->        </code>
-        <h4>Engaged Headline Testing Code — Implement only on pages that will run headline tests.</h4>
-        <h5>Part 3</h5>
-        <p>Modify the code block from part 2 by removing <code>.useCanonical</code> and <code>.videoType</code>. The main Chartbeat code on those pages should should look like this:</p>
-          <code>
-                        &lt;script type='text/javascript'&gt;
-            <br>    var _sf_async_config = _sf_async_config || {};
-            <br>    /** CONFIGURATION START **/
-            <br>    _sf_async_config.useCanonical = true;
-            <br>    _sf_async_config.sections = 'Change this to your Section name'; //CHANGE THIS
-            <br>    _sf_async_config.authors = 'Change this to your Author name'; //CHANGE THIS
-            <br>    /** CONFIGURATION END **/
-            <br>    (function() {
-            <br>        function loadChartbeat() {
-            <br>            window._sf_endpt = (new Date()).getTime();
-            <br>            var e = document.createElement('script');
-            <br>            e.setAttribute('language', 'javascript');
-            <br>            e.setAttribute('type', 'text/javascript');
-            <br>            e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
-            <br>            document.body.appendChild(e);
-            <br>        }
-            <br>        var oldonload = window.onload;
-            <br>        window.onload = (typeof window.onload != 'function') ?
-            <br>            loadChartbeat : function() {
-            <br>                oldonload();
-            <br>                loadChartbeat();
-            <br>            };
-            <br>    })();
-            <br>&lt;/script&gt;
+        <pre>
+          <code class='async-body'>
+              &lt;script type='text/javascript'&gt;
+                var _sf_async_config = _sf_async_config || {};
+                /** CONFIGURATION START **/
+                _sf_async_config.uid = #####; //CHANGE THIS
+                _sf_async_config.domain = 'YourDomain.com'; //CHANGE THIS
+                _sf_async_config.useCanonical = true;
+                _sf_async_config.sections = 'Change this to your Section name'; //CHANGE THIS
+                _sf_async_config.authors = 'Change this to your Author name'; //CHANGE THIS
+                <code>_sf_async_config.playerdomain = 'c.brightcove.com';</code>
+                <code>_sf_async_config.playerdomain = 'the platform';</code>
+                <code>_sf_async_config.playerdomain = 'iframe';</code>
+                /** CONFIGURATION END **/
+                (function() {
+                    function loadChartbeat() {
+                        window._sf_endpt = (new Date()).getTime();
+                        var e = document.createElement('script');
+                        e.setAttribute('language', 'javascript');
+                        e.setAttribute('type', 'text/javascript');
+                        e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+                        <code>e.setAttribute('src', '//static.chartbeat.com/js/chartbeat_video.js');</code>
+                        document.body.appendChild(e);
+                    }
+                    var oldonload = window.onload;
+                    window.onload = (typeof window.onload != 'function') ?
+                        loadChartbeat : function() {
+                            oldonload();
+                            loadChartbeat();
+                        };
+                })();
+            &lt;/script&gt;
           </code>
-          <p>For additional considerations please see the initial instructions section of the <a href="http://support.chartbeat.com/docs/headlinetesting.html" target="_blank">Headline Testing docs</a></p>
-        <h5>Part 4</h5>
-        <p>Insert this script right before the closing &lt;/head&gt; tag:</p>
-        <code>
-                    &lt;script type=&quot;text/javascript&quot;&gt;
-          <br>     var _sf_async_config = _sf_async_config || {};
-          <br>     /** CONFIGURATION START **/
-          <br>     _sf_async_config.uid = {{DYNAMICALLY POPULATED}} 
-          <br>     _sf_async_config.domain = &quot;{{DYNAMICALLY POPULATED}}&quot;;
-          <br>     /** CONFIGURATION END **/
-          <br>     var _sf_startpt = (new Date()).getTime();
-          <br>&lt;/script&gt;
-          <br>&lt;script rel=&quot;canonical&quot; src=&quot;//static.chartbeat.com/js/chartbeat_mab.js&quot;&gt;&lt;/script&gt;
-        </code>
+        </pre>
+        <pre>
+          <code class='sync-body'>
+              &lt;script type='text/javascript'&gt;
+                var _sf_async_config = _sf_async_config || {};
+                 /** CONFIGURATION START **/
+                _sf_async_config.uid = #####; //CHANGE THIS
+                _sf_async_config.domain = 'YourDomain.com'; //CHANGE THIS
+                _sf_async_config.useCanonical = true;
+                _sf_async_config.sections = 'Change this to your Section name'; //CHANGE THIS
+                _sf_async_config.authors = 'Change this to your Author name'; //CHANGE THIS
+                 <code>_sf_async_config.playerdomain = 'c.brightcove.com';</code>
+                <code>_sf_async_config.playerdomain = 'the platform';</code>
+                <code>_sf_async_config.playerdomain = 'iframe';</code>
+                /** CONFIGURATION END **/
+                 (function () {
+                      function loadChartbeat() {
+                           window._sf_endpt = (new Date()).getTime();
+                           var e = document.createElement('script');
+                           e.setAttribute('language', 'javascript');
+                           e.setAttribute('type', 'text/javascript');
+                           e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+                           <code>e.setAttribute('src', '//static.chartbeat.com/js/chartbeat_video.js');</code>
+                           document.body.appendChild(e);
+                      }
+                      loadChartbeat();
+                 })();
+            &lt;/script&gt;
+          </code>
+        </pre>
+        <pre>
+          <code class='doc-ready-body'>
+              &lt;script type='text/javascript'&gt;
+                var _sf_async_config = _sf_async_config || {};
+                _sf_async_config.uid = #####; //CHANGE THIS
+                _sf_async_config.domain = 'YourDomain.com'; //CHANGE THIS
+                _sf_async_config.useCanonical = true;
+                _sf_async_config.sections = 'Change this to your Section name'; //CHANGE THIS
+                _sf_async_config.authors = 'Change this to your Author name'; //CHANGE THIS 
+                 <code>_sf_async_config.playerdomain = 'c.brightcove.com';</code>
+                <code>_sf_async_config.playerdomain = 'the platform';</code>
+                <code>_sf_async_config.playerdomain = 'iframe';</code>
+                (function() {
+                   function loadChartbeat() {
+                       window._sf_endpt = (new Date()).getTime();
+                       var e = document.createElement('script');
+                       e.setAttribute('language', 'javascript');
+                       e.setAttribute('type', 'text/javascript');
+                       e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+                       <code>e.setAttribute('src', '//static.chartbeat.com/js/chartbeat_video.js');</code>
+                       document.body.appendChild(e);
+                   }
+                   var oldonload = document.ready;
+                   document.ready = (typeof document.ready != 'function') ? loadChartbeat : function() {
+                       oldonload();
+                       loadChartbeat();
+                   };
+               })();
+            &lt;/script&gt;
+          </code>
+        </pre>
+
+        <p>For more information about setting the section and author variable on lines 6 and 7 see the <a href="http://support.chartbeat.com/docs/#sectionsauthors" target="_blank">section and author docs on the Support Site.</a>  </p>
+      
         <h4>Video Dashboard Code — Implement on all pages that contain the {{DYNAMICALLY POPULATED}} video player. </h4>
         <h5>Part 5:</h5>
         <div class="flowplayer">
