@@ -39,73 +39,80 @@ $( "#cbp" ).change( displayVals );
 $( "#video" ).change( displayVals );
 
 
-
 function generate() {
-	$('#download-button').click(function(){
-		$('#sync-head').addClass('hide');
-		$('#async-flick-head').addClass('hide');
-		$('#async-noFlick-head').addClass('hide');
-	// PART 1 - HEAD CODE
-		// if SYNC  no value for flicker control (not included in block)
-		// with Flicker adds style and TIME OUT THING
-		// without flicker adds FLICKERCONTROL=false
- 
-		function headCode() {
-			var eht = $('#EHT').val();
-			
+    $('#download-button').click(function(){
+        $('#sync-head').addClass('hide');
+        $('#async-flick-head').addClass('hide');
+        $('#async-noFlick-head').addClass('hide');
+    // PART 1 - HEAD CODE
+        // if SYNC  no value for flicker control (not included in block)
+        // with Flicker adds style and TIME OUT THING
+        // without flicker adds FLICKERCONTROL=false
 
-			if (eht === null) {
-			}
-			else if (eht == 1) {
-				$('#sync-head').removeClass('hide');
-			}
-			else if (eht == 2) {
-				$('#async-flick-head').removeClass('hide');
-			}
-			else if (eht == 3) {
-				$('#async-noFlick-head').removeClass('hide');
-		};
-	});
-};
-	
-// GRAB UID AND DOMAIN
-	// function config(){
-	// 	$( "#UID" )
-	// 	  .keyup(function() {
-	// 	    var value = $( this ).val();
-	// 	    $( ".head-uid" ).text( value );
-	// 	  })
-	//   .keyup();
+        function code() {
+            var eht = $('#EHT').val();
+            var cbp = $('#cbp').val();
+			$('#body-code').removeClass('hide')
+			$('#async-body').addClass('hide')
+			$('#sync-body').addClass('hide')
+			$('#doc-ready').addClass('hide')
 
-	//  $( "#domain" )
-	// 	  .keyup(function() {
-	// 	    var value = $( this ).val();
-	// 	    $( ".head-domain" ).text( value );
-	// 	  })
-	//   .keyup();
-
-	// };
-	
+            if (eht === null) {
+            }
+            else if (eht == 1) {
+                $('#sync-head').removeClass('hide');
+            }
+            else if (eht == 2) {
+                $('#async-flick-head').removeClass('hide');
+            }
+            else if (eht == 3) {
+                $('#async-noFlick-head').removeClass('hide');
+            };
+        
 // PART 2 BODY CODE
 	// IF ASYNC LOAD async-body
 	// IF SYNC LOAD sync-body
 	// // IF DOC.READY LOAD that CLASS
-	// function bodyCode(){
-	// 	var cbp = $('#cbp').val();
+			
 
-	// 	if (cbp === null) {
-	// 	console.log("none");
-	// 	}
-	// 	else if (cbp == 1) {
-	// 		$('#async-body').removeClass('hide')
-	// 	}
-	// 	else if (cbp == 2) {
-	// 		$('#sync-body').removeClass('hide')
-	// 	}
-	// 	else if (cbp == 3) {
-	// 		$('#doc-ready').removeClass('hide')
-	// 	};
-	// };
+			if (cbp === null) {
+			console.log("none");
+			}
+			else if (cbp == 1) {
+
+				$('#async-body').removeClass('hide')
+			}
+			else if (cbp == 2) {
+
+				$('#sync-body').removeClass('hide')
+			}
+			else if (cbp == 3) {
+				$('#doc-ready').removeClass('hide')
+			};
+		}; // end code function
+        code();
+    }); //end click function
+};
+	
+// GRAB UID AND DOMAIN
+	function config(){
+        $( "#UID" )
+          .keyup(function() {
+            var value = $( this ).val();
+            $( ".head-uid" ).text( value );
+          })
+      .keyup();
+
+     $( "#domain" )
+          .keyup(function() {
+            var value = $( this ).val();
+            $( ".head-domain" ).text( value );
+          })
+      .keyup();
+
+    };
+	
+
 	
 
 	// // PART 2 INCLUDE PLAYERDOMAIN
@@ -124,8 +131,7 @@ function generate() {
 
 	// config();
 	// bodyCode();
-
-	
+config ();
 displayVals();
 
 generate();
