@@ -5,6 +5,7 @@
 
   }); // end of document ready
 })(jQuery); // end of jQuery name space
+
 $(document).ready(function() {
     $('select').material_select();
   });
@@ -21,28 +22,116 @@ $(document).ready(function() {
 
  // Video CODE
 
-$('#download-button').click(function(){
-	$('#codegen').removeClass('hide')
-})
 
-// PART 1 - HEAD CODE
-	// if SYNC  no value for flicker control (not included in block)
-	// with Flicker adds style and TIME OUT THING
-	// without flicker adds FLICKERCONTROL=false
+// VALUES VARIABLES
 
+function displayVals(){
+	var eht = $('#EHT').val();
+	var cbp = $('#cbp').val();
+	var video = $('#video').val();
+	console.log(eht);
+	 console.log(cbp);
+	 console.log(video);
+};
+
+$( "#EHT" ).change( displayVals );
+$( "#cbp" ).change( displayVals );
+$( "#video" ).change( displayVals );
+
+
+
+function generate() {
+	$('#download-button').click(function(){
+		$('#sync-head').addClass('hide');
+		$('#async-flick-head').addClass('hide');
+		$('#async-noFlick-head').addClass('hide');
+	// PART 1 - HEAD CODE
+		// if SYNC  no value for flicker control (not included in block)
+		// with Flicker adds style and TIME OUT THING
+		// without flicker adds FLICKERCONTROL=false
+ 
+		function headCode() {
+			var eht = $('#EHT').val();
+			
+
+			if (eht === null) {
+			}
+			else if (eht == 1) {
+				$('#sync-head').removeClass('hide');
+			}
+			else if (eht == 2) {
+				$('#async-flick-head').removeClass('hide');
+			}
+			else if (eht == 3) {
+				$('#async-noFlick-head').removeClass('hide');
+		};
+	});
+};
+	
+// GRAB UID AND DOMAIN
+	// function config(){
+	// 	$( "#UID" )
+	// 	  .keyup(function() {
+	// 	    var value = $( this ).val();
+	// 	    $( ".head-uid" ).text( value );
+	// 	  })
+	//   .keyup();
+
+	//  $( "#domain" )
+	// 	  .keyup(function() {
+	// 	    var value = $( this ).val();
+	// 	    $( ".head-domain" ).text( value );
+	// 	  })
+	//   .keyup();
+
+	// };
+	
 // PART 2 BODY CODE
-	// IF ASYNC LOAD FIRST CLASS
-	// IF SYNC LOAD 2ND CLASS
-	// IF DOC.READY LOAD 3RD CLASS
+	// IF ASYNC LOAD async-body
+	// IF SYNC LOAD sync-body
+	// // IF DOC.READY LOAD that CLASS
+	// function bodyCode(){
+	// 	var cbp = $('#cbp').val();
 
-// PART 2 INCLUDE PLAYERDOMAIN
-	// IF INCLUDES BRIGHTCOVE 
-	// OR PLATFORM 
-	// OR IFRAME
+	// 	if (cbp === null) {
+	// 	console.log("none");
+	// 	}
+	// 	else if (cbp == 1) {
+	// 		$('#async-body').removeClass('hide')
+	// 	}
+	// 	else if (cbp == 2) {
+	// 		$('#sync-body').removeClass('hide')
+	// 	}
+	// 	else if (cbp == 3) {
+	// 		$('#doc-ready').removeClass('hide')
+	// 	};
+	// };
+	
 
-// PART 2.VIDEO.JS
-	// IF INCLUDES VIDEO ADD VIDEO.JS
+	// // PART 2 INCLUDE PLAYERDOMAIN
+	// 	// IF INCLUDES BRIGHTCOVE LOAD BCOVE 
+	// 	// OR PLATFORM LOAD THE-PLAT
+	// 	// OR IFRAME LOAD IFRAME
+	// function playerDomain(){
 
+	// };
+
+	// // PART 2.VIDEO.JS
+	// 	// IF INCLUDES VIDEO ADD VIDEO.JS
+	// function video(){
+
+	// };
+
+	// config();
+	// bodyCode();
+
+	
+displayVals();
+
+generate();
+
+
+// END OF CODE GEN BUTTON 
 
 
 

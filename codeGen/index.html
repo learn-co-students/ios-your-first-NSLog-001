@@ -4,8 +4,8 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
   <title>Chartbeat Publishing Setup</title>
-
-  <!-- CSS  -->
+  <link rel="icon" type="image/png" href="http://pages.chartbeat.com/support/assets/favicons/favicon-32x32.png" sizes="32x32">
+  <!-- MATERIALIZE CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -44,6 +44,15 @@
       <div class="row">
         <div class="col s12 m4">
           <div class="card teal darken-1">
+          <div class="card-content white-text">
+              <span class="card-title orange-text">Asynchronous</span>
+              <p>By default, Chartbeat is set to deploy in the <code>window.onload</code> function. In order to not slow down your site, it is completely asynchronous and doesn't load until everything else on the page has finished loading</p>
+            </div>
+            
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card teal darken-1">
             <div class="card-content white-text">
               <span class="card-title orange-text">Synchronous</span>
               <p>Does not utilize the <code>window.onload</code> function and will not load asynchronously — meaning that it will load inline with all other elements on the page.</p>
@@ -53,16 +62,8 @@
         <div class="col s12 m4">
           <div class="card teal darken-1">
             <div class="card-content white-text">
-              <span class="card-title orange-text">Asynchronous</span>
-              <p>Does not utilize the <code>window.onload</code> function and will not load asynchronously — meaning that it will load inline with all other elements on the page.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col s12 m4">
-          <div class="card teal darken-1">
-            <div class="card-content white-text">
               <span class="card-title orange-text">document.ready</span>
-              <p>Does not utilize the <code>window.onload</code> function and will not load asynchronously — meaning that it will load inline with all other elements on the page.</p>
+              <p>The default method to deploy the chartbeat.js script is the <code>window.onload</code> function. It is possible to use another function if necessary, but functions other than window.onload may cause site performance issues.</p>
             </div>
           </div>
         </div>
@@ -73,11 +74,11 @@
         <form action="#">
         <div class='row'>
             <p class='col s4'>
-              <input type="checkbox" id="EHT"/>
+              <input type="checkbox" />
               <label for="EHT" class='tooltipped' data-position="bottom" data-delay="50" data-tooltip="I am tooltip">Engaged Headline Testing</label>
             </p>
-            <div class="input-field col s8">
-              <select>
+            <div class="input-field col s8" >
+              <select id="EHT">
                 <option value="" disabled selected>Choose your option</option>
                 <option value="1">Synchronous</option>
                 <option value="2">Asynchronous with flicker control</option>
@@ -85,14 +86,14 @@
               </select>
               <label>Choose your implementation option</label>
             </div>
-          </div>
+        </div>
         <div class='row'>
             <p class='col s4'>
-              <input type="checkbox" id="cbp" />
+              <input type="checkbox"  />
               <label for="cbp" class='tooltipped' data-position="bottom" data-delay="50" data-tooltip="I am tooltip">Standard Chartbeat Publishing</label>
             </p>
             <div class="input-field col s8">
-              <select>
+              <select id="cbp">
                 <option value="" disabled selected>Choose your option</option>
                 <option value="1">Asynchronous</option>
                 <option value="2">Synchronous</option>
@@ -106,21 +107,20 @@
           <div class='row'>
 
            <p class='col s4'>
-            <input type="checkbox" id="video" />
+            <input type="checkbox"  />
             <label for="video" class='tooltipped' data-position="bottom" data-delay="50" data-tooltip="I am tooltip">Video Dashboard</label>
           </p>
           <div class="input-field col s8">
-              <select>
+              <select id="video">
                 <option value="" disabled selected>Choose your option</option>
-                <option value="7">Brightcove (New)</option>
-                <option value="8">Brightcove (Legacy)</option>
-                <option value="1">Flowplayer</option>
-                <option value="2">HTML5</option>
-                <option value="3">JW Player</option>
-                <option value="4">Kaltura</option>
-                <option value="5">Ooyala</option>
-                <option value="6">ThePlatform</option>
-                
+                <option value="1">Brightcove (New)</option>
+                <option value="2">Brightcove (Legacy)</option>
+                <option value="3">Flowplayer</option>
+                <option value="4">HTML5</option>
+                <option value="5">JW Player</option>
+                <option value="6">Kaltura</option>
+                <option value="7">Ooyala</option>
+                <option value="8">ThePlatform</option>
                 <option value="9">Youtube</option>
                 <option value="10">Other</option>
               </select>
@@ -133,7 +133,7 @@
       <div class="row">
         <div class="input-field col s2">
         <i class="material-icons small prefix">account_circle</i>
-          <input placeholder="UID" id="domain" type="text" class="validate" length="6">
+          <input placeholder="UID" id="UID" type="text" class="validate" length="6">
           <label for="UID">Enter the Chartbeat UID</label>
         </div>
         <div class="input-field col s7">
@@ -148,19 +148,19 @@
     </div>
   </div>
 
-  <div class="section no-pad-bot hide" id="codegen">
+  <div class="section no-pad-bot" id="codegen">
     <div class="container">
       <h4>Chartbeat Publishing Code — Implement on all pages of your site.</h3>
       <div class="row">
         <h5>Part 1</h5>
         <p>Insert this right after the opening &lt;head&gt; tag:</p>
         <pre>
-          <code class='synd-head'>
+          <code id = 'sync-head' class='hide'>
             &lt;script type='text/javascript'&gt;
                var _sf_async_config = _sf_async_config || {};
                /** CONFIGURATION START **/
-               _sf_async_config.uid = {{DYNAMICALLY POPULATED}}; // ACCOUNT NUMBER
-               _sf_async_config.domain = '{{DYNAMICALLY POPULATED}}'; //DOMAIN TRACKED
+               _sf_async_config.uid = <code class='head-uid'></code> // ACCOUNT NUMBER
+               _sf_async_config.domain = '<code class='head-domain'></code>'; //DOMAIN TRACKED
                _sf_async_config.useCanonical = true;
                var _sf_startpt = (new Date()).getTime();
                /** CONFIGURATION END **/
@@ -169,7 +169,7 @@
           </code>
         </pre>
         <pre>
-          <code class='async-flick-head'>
+          <code id ='async-flick-head' class='hide'>
               &lt;style id='chartbeat-flicker-control-style' type='text/css'&gt;
                   body {
                   visibility: hidden !important;
@@ -178,8 +178,8 @@
               &lt;script type='text/javascript'&gt;
                   var _sf_async_config = _sf_async_config || {};
                   /** CONFIGURATION START **/
-                  _sf_async_config.uid = #####;
-                  _sf_async_config.domain = 'yoursite.com';
+                  _sf_async_config.uid = <code class='head-uid'></code>
+                  _sf_async_config.domain = '<code class='head-domain'></code>';
                   /** CONFIGURATION END **/
                   var _sf_startpt = (new Date()).getTime();
                   // Set a timeout event for 1 second that will remove the body hiding
@@ -198,12 +198,12 @@
           </code>
         </pre>
         <pre>
-          <code class='async-noFlick-head'>
+          <code id ='async-noFlick-head' class=' hide'>
             &lt;script type=&quot;text/javascript&quot;&gt;
                 var _sf_async_config = _sf_async_config || {};
                 /** CONFIGURATION START **/
-                _sf_async_config.uid = #####; /** CHANGE TO YOUR CHARTBEAT ACCOUNT ID **/
-                _sf_async_config.domain = 'yoursite.com'; /** CHANGE THIS **/
+                _sf_async_config.uid = <code class='head-uid'></code>; /** CHANGE TO YOUR CHARTBEAT ACCOUNT ID **/
+                _sf_async_config.domain = '<code class='head-domain'></code>'; /** CHANGE THIS **/
                 _sf_async_config.flickerControl = false;
                 /** CONFIGURATION END **/
                 var _sf_startpt = (new Date()).getTime();
@@ -215,18 +215,15 @@
         <h5>Part 2</h5>
         <p>Insert this script right before the closing &lt;/body&gt; tag:</p>
         <pre>
-          <code class='body'>
+          <code id="body-code" class='hide'>
               &lt;script type='text/javascript'&gt;
                 var _sf_async_config = _sf_async_config || {};
                 /** CONFIGURATION START **/
-                _sf_async_config.uid = #####; //CHANGE THIS
-                _sf_async_config.domain = 'YourDomain.com'; //CHANGE THIS
-                _sf_async_config.useCanonical = true;
                 _sf_async_config.sections = 'Change this to your Section name'; //CHANGE THIS
                 _sf_async_config.authors = 'Change this to your Author name'; //CHANGE THIS
-                <code>_sf_async_config.playerdomain = 'c.brightcove.com';</code>
-                <code>_sf_async_config.playerdomain = 'the platform';</code>
-                <code>_sf_async_config.playerdomain = 'iframe';</code>
+                <code class='bcove'>_sf_async_config.playerdomain = 'c.brightcove.com';</code>
+                <code class='the-plat'>_sf_async_config.playerdomain = 'the platform';</code>
+                <code class='iframe'>_sf_async_config.playerdomain = 'iframe';</code>
                 /** CONFIGURATION END **/
                 (function() {
                     function loadChartbeat() {
@@ -238,16 +235,16 @@
                         <code>e.setAttribute('src', '//static.chartbeat.com/js/chartbeat_video.js');</code>
                         document.body.appendChild(e);
                     }
-                    <code class='async'>var oldonload = window.onload;
+                    <code id='async-body' class='hide'>var oldonload = window.onload;
                     window.onload = (typeof window.onload != 'function') ?
                         loadChartbeat : function() {
                             oldonload();
                             loadChartbeat();
                         };</code>
 
-                    <code class='sync'>loadChartbeat();</code>
+                    <code id='sync-body' class='hide'>loadChartbeat();</code>
 
-                    <code class='doc-ready'>
+                    <code id='doc-ready' class='hide'>
                     var oldonload = document.ready;
                      document.ready = (typeof document.ready != 'function') ? loadChartbeat : function() {
                          oldonload();
