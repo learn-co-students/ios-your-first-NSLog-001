@@ -167,7 +167,6 @@
              &lt;/script&gt;
             &lt;script async src = &quot;//static.chartbeat.com/js/chartbeat_mab.js&quot;&gt;&lt;/script&gt;
           </code>
-        
           <code id ='async-flick-head' class='hide'>
               &lt;style id='chartbeat-flicker-control-style' type='text/css'&gt;
                   body {
@@ -195,7 +194,6 @@
               &lt;/script&gt;
               &lt;script async src = &quot;//static.chartbeat.com/js/chartbeat_mab.js&quot;&gt;&lt;/script
           </code>
-       
           <code id ='async-noFlick-head' class=' hide'>
             &lt;script type=&quot;text/javascript&quot;&gt;
                 var _sf_async_config = _sf_async_config || {};
@@ -207,8 +205,7 @@
                 var _sf_startpt = (new Date()).getTime();
             &lt;/script&gt;
             &lt;script async src=&quot;//static.chartbeat.com/js/chartbeat_mab.js&quot;&gt;&lt;/script&gt;
-          </code>
-        </pre>
+          </code></pre>
        
         <h5>Part 2</h5>
         <p>Insert this script right before the closing &lt;/body&gt; tag:</p>
@@ -219,9 +216,8 @@
                 /** CONFIGURATION START **/
                 _sf_async_config.sections = 'Change this to your Section name'; //CHANGE THIS
                 _sf_async_config.authors = 'Change this to your Author name'; //CHANGE THIS
-                <code class='bcove'>_sf_async_config.playerdomain = 'c.brightcove.com';</code>
-                <code class='the-plat'>_sf_async_config.playerdomain = 'the platform';</code>
-                <code class='iframe'>_sf_async_config.playerdomain = 'iframe';</code>
+                <code id='bcove' class='hide'>_sf_async_config.playerdomain = 'c.brightcove.com';</code>
+                <code id='the-plat' class='hide'>_sf_async_config.playerdomain = 'the platform';</code>
                 /** CONFIGURATION END **/
                 (function() {
                     function loadChartbeat() {
@@ -246,76 +242,11 @@
                     var oldonload = document.ready;
                      document.ready = (typeof document.ready != 'function') ? loadChartbeat : function() {
                          oldonload();
-                         loadChartbeat();
-                     };</code>
-                })();
-            &lt;/script&gt;
-          </code>
-        </pre>
-       <!--  <pre>
-          <code class='sync-body'>
-              &lt;script type='text/javascript'&gt;
-                var _sf_async_config = _sf_async_config || {};
-                 /** CONFIGURATION START **/
-                _sf_async_config.uid = #####; //CHANGE THIS
-                _sf_async_config.domain = 'YourDomain.com'; //CHANGE THIS
-                _sf_async_config.useCanonical = true;
-                _sf_async_config.sections = 'Change this to your Section name'; //CHANGE THIS
-                _sf_async_config.authors = 'Change this to your Author name'; //CHANGE THIS
-                <code>_sf_async_config.playerdomain = 'c.brightcove.com';</code>
-                <code>_sf_async_config.playerdomain = 'the platform';</code>
-                <code>_sf_async_config.playerdomain = 'iframe';</code>
-                /** CONFIGURATION END **/
-                 (function () {
-                      function loadChartbeat() {
-                       window._sf_endpt = (new Date()).getTime();
-                       var e = document.createElement('script');
-                       e.setAttribute('language', 'javascript');
-                       e.setAttribute('type', 'text/javascript');
-                       e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
-                       <code>e.setAttribute('src', '//static.chartbeat.com/js/chartbeat_video.js');</code>
-                       document.body.appendChild(e);
-                    }
-                      loadChartbeat();
-                 })();
-            &lt;/script&gt;
-          </code>
-        </pre>
-        <pre>
-          <code class='doc-ready-body'>
-              &lt;script type='text/javascript'&gt;
-                var _sf_async_config = _sf_async_config || {};
-                _sf_async_config.uid = #####; //CHANGE THIS
-                _sf_async_config.domain = 'YourDomain.com'; //CHANGE THIS
-                _sf_async_config.useCanonical = true;
-                _sf_async_config.sections = 'Change this to your Section name'; //CHANGE THIS
-                _sf_async_config.authors = 'Change this to your Author name'; //CHANGE THIS 
-                <code>_sf_async_config.playerdomain = 'c.brightcove.com';</code>
-                <code>_sf_async_config.playerdomain = 'the platform';</code>
-                <code>_sf_async_config.playerdomain = 'iframe';</code>
-                (function() {
-                   function loadChartbeat() {
-                       window._sf_endpt = (new Date()).getTime();
-                       var e = document.createElement('script');
-                       e.setAttribute('language', 'javascript');
-                       e.setAttribute('type', 'text/javascript');
-                       e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
-                       <code>e.setAttribute('src', '//static.chartbeat.com/js/chartbeat_video.js');</code>
-                       document.body.appendChild(e);
-                   }
-                   var oldonload = document.ready;
-                   document.ready = (typeof document.ready != 'function') ? loadChartbeat : function() {
-                       oldonload();
-                       loadChartbeat();
-                   };
-               })();
-            &lt;/script&gt;
-          </code>
-        </pre> -->
+                         loadChartbeat();};</code>})();&lt;/script&gt;</code></pre>
 
         <p><strong>Sections & Authors </strong>For more information about setting the section and author variable on lines 6 and 7 see the <a href="http://support.chartbeat.com/docs/#sectionsauthors" target="_blank">section and author docs on the Support Site.</a>  </p>
       
-      <h4>Video Dashboard — Implement on all pages that contain the video player. </h4>
+      <!-- <h4>Video Dashboard — Implement on all pages that contain the video player. </h4>
         <h5>Part 3:</h5>
         <div class="Brightcove-new">
           <p></p>
@@ -356,7 +287,7 @@
         <div class="Other">
           <p></p>
           <code></code>
-        </div>
+        </div> -->
         
         <br><br>
         <a href="#" id="download-button" class="right btn-large waves-effect waves-light" >Next: Activate and Test</a>

@@ -52,10 +52,15 @@ function generate() {
         function code() {
             var eht = $('#EHT').val();
             var cbp = $('#cbp').val();
+            var video = $('#video').val();
+
 			$('#body-code').removeClass('hide')
 			$('#async-body').addClass('hide')
 			$('#sync-body').addClass('hide')
 			$('#doc-ready').addClass('hide')
+			$('#bcove').addClass('hide')
+			$('#the-plat').addClass('hide')
+
 
             if (eht === null) {
             }
@@ -78,6 +83,13 @@ function generate() {
 			if (cbp === null) {
 			console.log("none");
 			}
+			else if (((cbp == 1) || (cbp == 2) || (cbp == 3)) && (video = 2)){
+				$('#bcove').removeClass('hide')
+			}
+			else if (((cbp == 1) || (cbp == 2) || (cbp == 3)) && (video = 8)){
+				$('#the-plat').removeClass('hide')
+			}
+			
 			else if (cbp == 1) {
 
 				$('#async-body').removeClass('hide')
@@ -88,7 +100,16 @@ function generate() {
 			}
 			else if (cbp == 3) {
 				$('#doc-ready').removeClass('hide')
-			};
+			}
+			
+			
+
+	// PART 2 INCLUDE PLAYERDOMAIN
+		// IF INCLUDES BRIGHTCOVE LOAD BCOVE 
+		// OR PLATFORM LOAD THE-PLAT
+		// OR IFRAME LOAD IFRAME
+	
+
 		}; // end code function
         code();
     }); //end click function
@@ -115,13 +136,7 @@ function generate() {
 
 	
 
-	// // PART 2 INCLUDE PLAYERDOMAIN
-	// 	// IF INCLUDES BRIGHTCOVE LOAD BCOVE 
-	// 	// OR PLATFORM LOAD THE-PLAT
-	// 	// OR IFRAME LOAD IFRAME
-	// function playerDomain(){
-
-	// };
+	
 
 	// // PART 2.VIDEO.JS
 	// 	// IF INCLUDES VIDEO ADD VIDEO.JS
