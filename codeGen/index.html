@@ -14,16 +14,16 @@
   <nav class="" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><img src="logo-publishing.svg" alt=""></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Editorial Dashboard </a></li>
+        <li><a href="https://chartbeat.com/publishing/dashboard/" target="_blank">Editorial Dashboard </a></li>
       </ul>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Daily Content Perspective</a></li>
+        <li><a href="https://chartbeat.com/publishing/perspectives/" target="_blank">Daily Content Perspective</a></li>
       </ul>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Video</a></li>
+        <li><a href="https://chartbeat.com/publishing/video-dashboard/overview/" target="_blank">Video</a></li>
       </ul>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Heads Up Display</a></li>
+        <li><a href="http://chartbeat.com/publishing/hud/install/" target="_blank">Heads Up Display</a></li>
       </ul>
         
 
@@ -71,7 +71,7 @@
       
       <div class="row">
         <p>First select the product(s) that you are implementing on your site.</p>
-        <form action="#">
+        <form action="">
         <div class='row'>
             <p class='col s4'>
 <!--               <input type="checkbox" />
@@ -133,12 +133,12 @@
       <div class="row">
         <div class="input-field col s2">
         <i class="material-icons small prefix">account_circle</i>
-          <input placeholder="UID" id="UID" type="text" class="validate" length="6">
+          <input placeholder="UID" id="UID" type="text" class="validate" length="6" required>
           <label for="UID">Enter the Chartbeat UID</label>
         </div>
         <div class="input-field col s7">
           <i class="material-icons small prefix">language</i>
-          <input placeholder="Domain (without the www.)" id="domain" type="text" class="validate">
+          <input placeholder="Domain (without the www.)" id="domain" type="text" class="validate" required>
           <label for="first_name">Enter the name of the domain you want to track, without including ‘www.’ at the beginning. For example, “yoursite.com”.</label>
         </div>
         <a id="download-button" class=" right btn-large waves-effect waves-light" >Generate Javascript</a>
@@ -156,7 +156,7 @@
         <p>Insert this right after the opening &lt;head&gt; tag:</p>
         <pre>
           <code id = 'sync-head' class='hide'>
-            &lt;script type='text/javascript'&gt;
+          &lt;script type='text/javascript'&gt;
                var _sf_async_config = _sf_async_config || {};
                /** CONFIGURATION START **/
                _sf_async_config.uid = <code class='head-uid'></code> // ACCOUNT NUMBER

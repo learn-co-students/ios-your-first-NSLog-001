@@ -86,9 +86,10 @@ function generate() {
 		// IF INCLUDES BRIGHTCOVE LOAD BCOVE 
 		// OR PLATFORM LOAD THE-PLAT
 
-			if (cbp === null) {
+			if (((cbp == 1) || (cbp == 2) || (cbp == 3)) && ((video === 1) || (video === 3) || (video === 4) || (video === 5) || (video === 6) || (video === 7) || (video === 9) || (video === 10)) )
+			{
 				$('#async-body').removeClass('hide')
-				$('#stat-js').removeClass('hide')
+				$('#video-js').removeClass('hide')
 			}
 			else if ((cbp == 1) && (video === null)){
 				$('#async-body').removeClass('hide')
@@ -131,6 +132,10 @@ function generate() {
 				$('#the-plat').removeClass('hide')
 				$('#doc-ready').removeClass('hide')
 				$('#video-js').removeClass('hide')
+			}
+			else if (cbp === null) {
+				$('#async-body').removeClass('hide')
+				$('#stat-js').removeClass('hide')
 			}
 			else if (cbp == 1) {
 				$('#async-body').removeClass('hide')

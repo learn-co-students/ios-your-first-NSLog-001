@@ -34,7 +34,9 @@ pre {
   border-radius: 10px;
 }
 
-
+label {
+  font-size: 1.5rem;
+}
 /*#CBPcode {
 display: none;
 }*/
