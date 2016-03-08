@@ -75,7 +75,7 @@
         <div class='row'>
             <p class='col s4'>
 <!--               <input type="checkbox" />
- -->              <label for="EHT" class='tooltipped' data-position="bottom" data-delay="50" data-tooltip="I am tooltip">Engaged Headline Testing</label>
+ -->              <label for="EHT" class='tooltipped' data-position="bottom" data-delay="50" data-tooltip="Engaged Headline Testing is a multivariate approach to running live tests to determine if one headline is more successful at attracting visitors' interest (clicks) and holding their attention on the page (engaged time).">Engaged Headline Testing</label>
             </p>
             <div class="input-field col s8" >
               <select id="EHT">
@@ -84,13 +84,13 @@
                 <option value="2">Asynchronous with flicker control</option>
                 <option value="3">Asynchronous without flicker control</option>
               </select>
-              <label>Choose your implementation option</label>
+              <label>Choose your Engaged Headline Testing implementation option</label>
             </div>
         </div>
         <div class='row'>
             <p class='col s4'>
 <!--               <input type="checkbox"  />
- -->              <label for="cbp" class='tooltipped' data-position="bottom" data-delay="50" data-tooltip="I am tooltip">Standard Chartbeat Publishing</label>
+ -->              <label for="cbp" class='tooltipped' data-position="bottom" data-delay="50" data-tooltip="The Chartbeat JavaScript code (around 3KB) is set to deploy in the window.onload function. In order to not slow down your site, it is completely asynchronous and doesn't load until everything else on the page has finished loading.">Standard Chartbeat Publishing</label>
             </p>
             <div class="input-field col s8">
               <select id="cbp">
@@ -99,7 +99,7 @@
                 <option value="2">Synchronous</option>
                 <option value="3">document.ready</option>
               </select>
-              <label>Choose your implementation option</label>
+              <label>Choose your Standard Chartbeat Publishing implementation option</label>
             </div> <!-- inout field -->
           </div> <!-- row -->
           
@@ -108,7 +108,7 @@
 
            <p class='col s4'>
 <!--             <input type="checkbox"  />
- -->            <label for="video" class='tooltipped' data-position="bottom" data-delay="50" data-tooltip="I am tooltip">Video Dashboard</label>
+ -->            <label for="video" class='tooltipped' data-position="bottom" data-delay="50" data-tooltip="The Chartbeat Publishing Video Dashboard and the Daily Video Perspective report gives you a real-time and historical look at how your video content is performing, how well it's doing at engaging your audience, and how it works together with the written, editorial content your readers know and love.">Video Dashboard</label>
           </p>
           <div class="input-field col s8">
               <select id="video">
@@ -124,7 +124,7 @@
                 <option value="9">Youtube</option>
                 <option value="10">Other</option>
               </select>
-              <label>Choose your implementation option</label>
+              <label>Choose your Video Dashboard implementation option</label>
             </div>
         </form>
       </div>
@@ -148,7 +148,7 @@
     </div>
   </div>
 
-  <div class="section no-pad-bot" id="codegen">
+  <div id="codegen" class="section no-pad-bot hide" >
     <div class="container">
       <h4>Chartbeat Publishing Code — Implement on all pages of your site.</h3>
       <div class="row">
@@ -242,9 +242,12 @@
                     var oldonload = document.ready;
                      document.ready = (typeof document.ready != 'function') ? loadChartbeat : function() {
                          oldonload();
-                         loadChartbeat();};</code>});&lt;/script&gt;</code></pre>
-
-        <p><strong>Sections & Authors </strong>For more information about setting the section and author variable on lines 6 and 7 see the <a href="http://support.chartbeat.com/docs/#sectionsauthors" target="_blank">section and author docs on the Support Site.</a>  </p>
+                         loadChartbeat();
+                         };
+                  </code>});
+                &lt;/script&gt;</code></pre>
+        <br><br>
+        <p><strong>Sections &amp; Authors: </strong>For more information about setting the section and author variable see the <a href="http://support.chartbeat.com/docs/#sectionsauthors" target="_blank">section and author docs on the Support Site.</a>  </p>
       
       <!-- <h4>Video Dashboard — Implement on all pages that contain the video player. </h4>
         <h5>Part 3:</h5>

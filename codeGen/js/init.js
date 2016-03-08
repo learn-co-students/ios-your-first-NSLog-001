@@ -41,6 +41,7 @@ $( "#video" ).change( displayVals );
 
 function generate() {
     $('#download-button').click(function(){
+    	$('#codegen').removeClass('hide');
         $('#sync-head').addClass('hide');
         $('#async-flick-head').addClass('hide');
         $('#async-noFlick-head').addClass('hide');
@@ -63,7 +64,7 @@ function generate() {
 
 
             if (eht === null) {
-            	console.log("none");
+                $('#async-noFlick-head').removeClass('hide');
             }
             else if (eht == 1) {
                 $('#sync-head').removeClass('hide');
@@ -84,7 +85,7 @@ function generate() {
 		// OR PLATFORM LOAD THE-PLAT
 
 			if (cbp === null) {
-			console.log("none");
+				$('#async-body').removeClass('hide')
 			}
 			else if ((cbp == 1) && (video === null)){
 				$('#async-body').removeClass('hide')
