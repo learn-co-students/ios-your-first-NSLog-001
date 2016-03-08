@@ -63,6 +63,7 @@ function generate() {
 
 
             if (eht === null) {
+            	console.log("none");
             }
             else if (eht == 1) {
                 $('#sync-head').removeClass('hide');
@@ -78,40 +79,76 @@ function generate() {
 	// IF ASYNC LOAD async-body
 	// IF SYNC LOAD sync-body
 	// // IF DOC.READY LOAD that CLASS
-			
+// PART 2 INCLUDE PLAYERDOMAIN
+		// IF INCLUDES BRIGHTCOVE LOAD BCOVE 
+		// OR PLATFORM LOAD THE-PLAT
 
 			if (cbp === null) {
 			console.log("none");
 			}
-			else if (((cbp == 1) || (cbp == 2) || (cbp == 3)) && (video = 2)){
+			else if ((cbp == 1) && (video === null)){
+				$('#async-body').removeClass('hide')
+			}
+			else if ((cbp == 2) && (video === null)){
+				$('#sync-body').removeClass('hide')
+			}
+			else if ((cbp == 3) && (video === null)){
+				$('#doc-ready').removeClass('hide')
+			}
+			else if ((cbp == 1) && (video = 2)){
+				$('#async-body').removeClass('hide')
 				$('#bcove').removeClass('hide')
 			}
-			else if (((cbp == 1) || (cbp == 2) || (cbp == 3)) && (video = 8)){
-				$('#the-plat').removeClass('hide')
+			else if ((cbp == 2) && (video = 2)){
+				$('#sync-body').removeClass('hide')
+				$('#bcove').removeClass('hide')
 			}
-			
+			else if ((cbp == 3) && (video = 2)){
+				$('#doc-ready').removeClass('hide')
+				$('#bcove').removeClass('hide')
+			}
+			else if ((cbp == 1) && (video = 8)){
+				$('#the-plat').removeClass('hide')
+				$('#async-body').removeClass('hide')
+			}
+			else if ((cbp == 2) && (video = 8)){
+				$('#the-plat').removeClass('hide')
+				$('#sync-body').removeClass('hide')
+			}
+			else if ((cbp == 3) && (video = 8)){
+				$('#the-plat').removeClass('hide')
+				$('#doc-ready').removeClass('hide')
+			}
 			else if (cbp == 1) {
-
 				$('#async-body').removeClass('hide')
 			}
 			else if (cbp == 2) {
-
 				$('#sync-body').removeClass('hide')
 			}
 			else if (cbp == 3) {
 				$('#doc-ready').removeClass('hide')
 			}
+			else if ((video === null) || (cbp === null)){
+				console.log("none");
+			}
 			
-			
-
-	// PART 2 INCLUDE PLAYERDOMAIN
-		// IF INCLUDES BRIGHTCOVE LOAD BCOVE 
-		// OR PLATFORM LOAD THE-PLAT
-		// OR IFRAME LOAD IFRAME
-	
+	// PART 2.VIDEO.JS
+			// IF INCLUDES VIDEO ADD VIDEO.JS
+			// VIDEO.JS
+			// FLOWPLAYER
+			// HTML5
+			// JWPLAYER
+			// KALTURA
+			// OOYALA
+			// YOUTUBE
+			// SDK	
 
 		}; // end code function
+	
+
+// CALL CODE GENERATION FUNCTION
         code();
+
     }); //end click function
 };
 	
@@ -134,21 +171,9 @@ function generate() {
     };
 	
 
-	
-
-	
-
-	// // PART 2.VIDEO.JS
-	// 	// IF INCLUDES VIDEO ADD VIDEO.JS
-	// function video(){
-
-	// };
-
-	// config();
-	// bodyCode();
+// CALL ALL FUNCTIONS
 config ();
 displayVals();
-
 generate();
 
 
@@ -158,20 +183,6 @@ generate();
 
 
 
-// PART 5 VIDEO CODE
-// ***** NEEDS .PLAYERDOMAIN SET
-// **BRIGHTCOVE OLD
-// **THE PLATFORM
-// **IFRAME
 
-// VIDEO.JS
-// FLOWPLAYER
-// HTML5
-// JWPLAYER
-// KALTURA
-// OOYALA
-// YOUTUBE
-// SDK
-// IFRAME - INSIDE
 
 
