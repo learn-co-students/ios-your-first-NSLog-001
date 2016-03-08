@@ -225,8 +225,8 @@
                         var e = document.createElement('script');
                         e.setAttribute('language', 'javascript');
                         e.setAttribute('type', 'text/javascript');
-                        e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
-                        <code>e.setAttribute('src', '//static.chartbeat.com/js/chartbeat_video.js');</code>
+                        <code id="stat-js" class="hide">e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');</code>
+                        <code id="video-js" class='hide'>e.setAttribute('src', '//static.chartbeat.com/js/chartbeat_video.js');</code>
                         document.body.appendChild(e);
                     }
                     <code id='async-body' class='hide'>var oldonload = window.onload;
@@ -247,7 +247,7 @@
                   </code>});
                 &lt;/script&gt;</code></pre>
         <br><br>
-        <p><strong>Sections &amp; Authors: </strong>For more information about setting the section and author variable see the <a href="http://support.chartbeat.com/docs/#sectionsauthors" target="_blank">section and author docs on the Support Site.</a>  </p>
+        <blockquote><strong>Sections &amp; Authors: </strong>For more information about setting the section and author variable see the <a href="http://support.chartbeat.com/docs/#sectionsauthors" target="_blank">section and author docs on the Support Site.</a>  </blockquote>
       
       <!-- <h4>Video Dashboard — Implement on all pages that contain the video player. </h4>
         <h5>Part 3:</h5>

@@ -61,6 +61,8 @@ function generate() {
 			$('#doc-ready').addClass('hide')
 			$('#bcove').addClass('hide')
 			$('#the-plat').addClass('hide')
+			$('#video-js').addClass('hide')
+			$('#stat-js').addClass('hide')
 
 
             if (eht === null) {
@@ -86,39 +88,49 @@ function generate() {
 
 			if (cbp === null) {
 				$('#async-body').removeClass('hide')
+				$('#stat-js').removeClass('hide')
 			}
 			else if ((cbp == 1) && (video === null)){
 				$('#async-body').removeClass('hide')
+				$('#stat-js').removeClass('hide')
 			}
 			else if ((cbp == 2) && (video === null)){
 				$('#sync-body').removeClass('hide')
+				$('#stat-js').removeClass('hide')
 			}
 			else if ((cbp == 3) && (video === null)){
 				$('#doc-ready').removeClass('hide')
+				$('#stat-js').removeClass('hide')
 			}
 			else if ((cbp == 1) && (video = 2)){
 				$('#async-body').removeClass('hide')
 				$('#bcove').removeClass('hide')
+				$('#video-js').removeClass('hide')
 			}
 			else if ((cbp == 2) && (video = 2)){
 				$('#sync-body').removeClass('hide')
 				$('#bcove').removeClass('hide')
+				$('#video-js').removeClass('hide')
 			}
 			else if ((cbp == 3) && (video = 2)){
 				$('#doc-ready').removeClass('hide')
 				$('#bcove').removeClass('hide')
+				$('#video-js').removeClass('hide')
 			}
 			else if ((cbp == 1) && (video = 8)){
 				$('#the-plat').removeClass('hide')
 				$('#async-body').removeClass('hide')
+				$('#video-js').removeClass('hide')
 			}
 			else if ((cbp == 2) && (video = 8)){
 				$('#the-plat').removeClass('hide')
 				$('#sync-body').removeClass('hide')
+				$('#video-js').removeClass('hide')
 			}
 			else if ((cbp == 3) && (video = 8)){
 				$('#the-plat').removeClass('hide')
 				$('#doc-ready').removeClass('hide')
+				$('#video-js').removeClass('hide')
 			}
 			else if (cbp == 1) {
 				$('#async-body').removeClass('hide')

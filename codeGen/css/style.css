@@ -28,9 +28,12 @@ main {
   flex: 1 0 auto;
 }
 
-code {
-  color: blue;
+pre {
+  background: #444444;
+  color: #ddd;
+  border-radius: 10px;
 }
+
 
 /*#CBPcode {
 display: none;
