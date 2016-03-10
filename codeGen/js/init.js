@@ -94,7 +94,7 @@ function generate() {
 			}
 			else if (((cbp === null) || (cbp == 1)) &&  ((video == 1) || (video == 3) || (video == 4) || (video == 5) || (video == 6) || (video == 7) || (video == 9) || (video == 10)))
 			{
-				$('#sync-body').removeClass('hide')
+				$('#async-body').removeClass('hide')
 				$('#video-js').removeClass('hide')
 				console.log('new')
 			}
