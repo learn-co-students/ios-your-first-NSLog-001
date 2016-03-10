@@ -57,14 +57,14 @@
               <label>Choose your Standard Chartbeat Publishing implementation option</label>
             </div> <!-- inout field -->
           </div> <!-- row -->
-      <p>Not sure what those options mean? Here's a few definitions of Chartbeat implementations to get you started. </p>
+      <p>Here's a few definitions of Chartbeat implementations to get you started. </p>
       <ul class="collapsible" data-collapsible="accordion">
         <li>
-          <div class="collapsible-header"><i class="material-icons">filter_drama</i>Asynchronous</div>
+          <div class="collapsible-header"><i class="material-icons">power_settings_new</i>Asynchronous</div>
           <div class="collapsible-body"><p>By default, Chartbeat is set to deploy in the <code>window.onload</code> function. In order to not slow down your site, it is completely asynchronous and doesn't load until everything else on the page has finished loading</p></div>
         </li>
         <li>
-          <div class="collapsible-header"><i class="material-icons">place</i>Synchronous</div>
+          <div class="collapsible-header"><i class="material-icons">launch</i>Synchronous</div>
           <div class="collapsible-body"><p>Does not utilize the <code>window.onload</code> function and will not load asynchronously — meaning that it will load inline with all other elements on the page.</p></div>
         </li>
         <li>
@@ -128,7 +128,8 @@
 
   <div id="codegen" class="section no-pad-bot hide" >
     <div class="container">
-      <h4 class='left'>Chartbeat Publishing Code — Implement on all pages of your site.</h4>
+      <h4>Chartbeat Publishing Code — Implement on all pages of your site.</h4>
+      <br><br>
       <div class="row">
         <h5>Part 1</h5>
         <p>Insert this right after the opening &lt;head&gt; tag:</p>
@@ -184,7 +185,7 @@
             &lt;/script&gt;
             &lt;script async src=&quot;//static.chartbeat.com/js/chartbeat_mab.js&quot;&gt;&lt;/script&gt;
           </code></pre>
-       
+       <br><br>
         <h5>Part 2</h5>
         <p>Insert this script right before the closing &lt;/body&gt; tag:</p>
         <pre>
@@ -223,88 +224,21 @@
                          loadChartbeat();
                          };
                   </code>});
-                &lt;/script&gt;</code></pre>
+                &lt;/script&gt;</code>
+                </pre>
         <br><br>
-        <blockquote><strong>Sections &amp; Authors: </strong>For more information about setting the section and author variable see the <a href="http://support.chartbeat.com/docs/#sectionsauthors" target="_blank">section and author docs on the Support Site.</a>  </blockquote>
+        <blockquote><strong>Sections &amp; Authors:</strong>For more information about setting the section and author variable see the <a href="http://support.chartbeat.com/docs/#sectionsauthors" target="_blank">section and author docs on the Support Site.</a>  </blockquote>
       
-      <!-- <h4>Video Dashboard — Implement on all pages that contain the video player. </h4>
-        <h5>Part 3:</h5>
-        <div class="Brightcove-new">
-          <p></p>
-          <code></code>
-        </div>
-        <div class="Brightcove-old">
-          <p></p>
-          <code></code>
-        </div>
-        <div class="flowplayer">
-          <p></p>
-          <code></code>
-        </div>
-        <div class="HTML5">
-          <p></p>
-          <code></code>
-        </div>
-        <div class="JW-Player">
-          <p></p>
-          <code></code>
-        </div>
-        <div class="Kaltura">
-          <p></p>
-          <code></code>
-        </div>
-        <div class='ooyala'>
-          <p></p>
-          <code></code>
-        </div>
-        <div class="thePlatform">
-          <p></p>
-          <code></code>
-        </div>
-        <div class="Youtube">
-          <p></p>
-          <code></code>
-        </div>
-        <div class="Other">
-          <p></p>
-          <code></code>
-        </div> -->
+    
         
         <br><br>
-        <!-- <a href="#" id="download-button" class="right btn-large waves-effect waves-light" >Next: Activate and Test</a> -->
+        
       </div>
     </div>
   </div>
-  </div>
+</div>
 
   <footer class="page-footer s12 ">
-    <!-- <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Chartbeat Logo</h5>
-          <p class="grey-text text-lighten-4"></p>
-
-
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Support</h5>
-          <ul>
-            <li><a class="white-text" href="http://support.chartbeat.com/docs/">Code</a></li>
-            <li><a class="white-text" href="http://support.chartbeat.com/edu/editorial/index.html">Education</a></li>
-            <li><a class="white-text" href="http://faq.chartbeat.com/hc/en-us">Help & FAQ</a></li>
-          </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Facebook</a></li>
-            <li><a class="white-text" href="#!">Twitter</a></li>
-            <li><a class="white-text" href="#!">LinkedIn</a></li>
-            <li><a class="white-text" href="#!">Google Plus</a></li>
-          </ul>
-        </div>
-      </div>
-    </div> -->
     <div class="footer-copyright">
       <div class="container">
       Made by <a class="orange-text text-lighten-3" target ="_blank" href="http://support.chartbeat.com/">ChartCorps</a>
@@ -313,7 +247,7 @@
   </footer>
 
 
-  <!--  Scripts-->
+  <!--  Scripts  -->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>

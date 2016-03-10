@@ -29,9 +29,9 @@ function displayVals(){
 	var eht = $('#EHT').val();
 	var cbp = $('#cbp').val();
 	var video = $('#video').val();
-	console.log(eht);
-	 console.log(cbp);
-	 console.log(video);
+	console.log(cbp);
+	console.log(eht); 
+	console.log(video);
 };
 
 $( "#EHT" ).change( displayVals );
@@ -86,69 +86,111 @@ function generate() {
 		// IF INCLUDES BRIGHTCOVE LOAD BCOVE 
 		// OR PLATFORM LOAD THE-PLAT
 
-			if (((cbp == 1) || (cbp == 2) || (cbp == 3)) && ((video === 1) || (video === 3) || (video === 4) || (video === 5) || (video === 6) || (video === 7) || (video === 9) || (video === 10)) )
+			if ( ((cbp === null) || (cbp == 1)) && ((video === null)))
 			{
 				$('#async-body').removeClass('hide')
-				$('#video-js').removeClass('hide')
+				$('#stat-js').removeClass('hide')
+				console.log('1')
 			}
-			else if ((cbp == 1) && (video === null)){
+			else if (((cbp === null) || (cbp == 1)) &&  ((video == 1) || (video == 3) || (video == 4) || (video == 5) || (video == 6) || (video == 7) || (video == 9) || (video == 10)))
+			{
+				$('#sync-body').removeClass('hide')
+				$('#video-js').removeClass('hide')
+				console.log('new')
+			}
+			else if (((cbp == 2)) && ((video == 1) || (video == 3) || (video == 4) || (video == 5) || (video == 6) || (video == 7) || (video == 9) || (video == 10)))
+			{
+				$('#sync-body').removeClass('hide')
+				$('#video-js').removeClass('hide')
+				console.log('new1')
+			}
+			else if (((cbp == 3)) && ((video == 1) || (video == 3) || (video == 4) || (video == 5) || (video == 6) || (video == 7) || (video == 9) || (video == 10)))
+			{
+				$('#doc-ready').removeClass('hide')
+				$('#video-js').removeClass('hide')
+				console.log('new2')
+			}
+
+			else if ((cbp == 1) && (video === null))
+			{
 				$('#async-body').removeClass('hide')
 				$('#stat-js').removeClass('hide')
+				console.log('2')
 			}
-			else if ((cbp == 2) && (video === null)){
+			else if ((cbp == 2) && (video === null))
+			{
 				$('#sync-body').removeClass('hide')
 				$('#stat-js').removeClass('hide')
+				console.log('3')
 			}
-			else if ((cbp == 3) && (video === null)){
+			else if ((cbp == 3) && (video === null))
+			{
 				$('#doc-ready').removeClass('hide')
 				$('#stat-js').removeClass('hide')
+				console.log('4')
 			}
-			else if ((cbp == 1) && (video = 2)){
+			else if ((cbp == 1) && (video == 2))
+			{
 				$('#async-body').removeClass('hide')
 				$('#bcove').removeClass('hide')
 				$('#video-js').removeClass('hide')
+				console.log('5')
 			}
-			else if ((cbp == 2) && (video = 2)){
+			else if ((cbp == 2) && (video == 2))
+			{
 				$('#sync-body').removeClass('hide')
 				$('#bcove').removeClass('hide')
 				$('#video-js').removeClass('hide')
+				console.log('6')
 			}
-			else if ((cbp == 3) && (video = 2)){
+			else if ((cbp == 3) && (video == 2))
+			{
 				$('#doc-ready').removeClass('hide')
 				$('#bcove').removeClass('hide')
 				$('#video-js').removeClass('hide')
+				console.log('7')
 			}
-			else if ((cbp == 1) && (video = 8)){
+			else if ((cbp == 1) && (video == 8))
+			{
 				$('#the-plat').removeClass('hide')
 				$('#async-body').removeClass('hide')
 				$('#video-js').removeClass('hide')
+				console.log('8')
 			}
-			else if ((cbp == 2) && (video = 8)){
+			else if ((cbp == 2) && (video == 8))
+			{
 				$('#the-plat').removeClass('hide')
 				$('#sync-body').removeClass('hide')
 				$('#video-js').removeClass('hide')
+				console.log('9')
 			}
-			else if ((cbp == 3) && (video = 8)){
+			else if ((cbp == 3) && (video == 8))
+			{
 				$('#the-plat').removeClass('hide')
 				$('#doc-ready').removeClass('hide')
 				$('#video-js').removeClass('hide')
+				console.log('10')
 			}
-			else if (cbp === null) {
+			else if ((cbp == 1))
+			 {
 				$('#async-body').removeClass('hide')
-				$('#stat-js').removeClass('hide')
+				console.log('11')
 			}
-			else if (cbp == 1) {
-				$('#async-body').removeClass('hide')
-			}
-			else if (cbp == 2) {
+			else if ((cbp == 2))
+			 {
 				$('#sync-body').removeClass('hide')
+				console.log('12')
 			}
-			else if (cbp == 3) {
+			else if ((cbp == 3))
+			 {
 				$('#doc-ready').removeClass('hide')
+				console.log('13')
 			}
-			else if ((video === null) || (cbp === null)){
-				console.log("none");
-			}
+			
+			else {
+				console.log('this shit is broken')
+			};
+			
 			
 	// PART 2.VIDEO.JS
 			// IF INCLUDES VIDEO ADD VIDEO.JS

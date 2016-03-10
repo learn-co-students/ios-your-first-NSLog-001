@@ -8,23 +8,23 @@
 
 /* CHARTBEAT FONTS */
 
-/*@font-face {
+@font-face {
 font-family: "merriweather";
-src:url("../fonts/Merriweather-Light.otf") format("opentype");
+src:url("../font/Merriweather-Light.otf") format("opentype");
 font-style:normal;font-weight:300;
 }
 
 @font-face {
 font-family: "proxima-nova";
-src:url("../fonts/Proxima Nova Reg.otf") format("opentype");
+src:url("../font/Proxima Nova Reg.otf") format("opentype");
 font-style:normal;font-weight:400;
 }
 
 @font-face {
 font-family: "proxima-nova";
-src:url("../fonts/Proxima Nova Sbold.otf") format("opentype");
+src:url("../font/Proxima Nova Sbold.otf") format("opentype");
 font-style:normal;font-weight:600;
-}*/
+}
 
 @import url(https://fonts.googleapis.com/css?family=Merriweather:300);
 
@@ -38,6 +38,7 @@ nav {
   width: 100%;
   display: flex;
   position: fixed;
+  z-index:1;
   height: 64px;
   top: 0;
   width: 100%;
@@ -55,10 +56,10 @@ body {
   font-family: 'Merriweather', serif !important;
   color: #005175;
 }
-/*h1, h2, h3, h4, h5 {
-  font-family: 'proxima-nova', sans-serif !important;
+h1, h2, h3, h4, h5, label {
+  font-family: 'proxima nova', sans-serif !important;
   font-weight: 200;
-}*/
+}
 
 main {
   flex: 1 0 auto;
@@ -83,6 +84,7 @@ pre {
 
 label {
   font-size: 1.5rem;
+  color: #52A4D8;
 }
 /*#CBPcode {
 display: none;
