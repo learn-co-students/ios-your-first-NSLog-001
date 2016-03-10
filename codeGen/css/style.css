@@ -86,12 +86,9 @@ label {
   font-size: 1.5rem;
   color: #52A4D8;
 }
-/*#CBPcode {
-display: none;
-}*/
-.input-field .prefix.active {
-  color: #52A4D8;
 
+blockquote {
+  border-left: 5px solid #52a4d8;
 }
 
 #download-button {
@@ -107,6 +104,10 @@ display: none;
 }
 .icon-block .material-icons {
   font-size: inherit;
+}
+.input-field .prefix.active {
+  color: #52A4D8;
+
 }
 
 /* FOOTER */
