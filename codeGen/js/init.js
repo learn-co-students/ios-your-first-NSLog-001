@@ -41,21 +41,36 @@ $( "#video" ).change( displayVals );
 
 function generate() {
     $('#download-button').click(function(){
-    	$('#codegen').removeClass('hide');
-        $('#sync-head').addClass('hide');
-        $('#async-flick-head').addClass('hide');
-        $('#async-noFlick-head').addClass('hide');
-    // PART 1 - HEAD CODE
+    	
+
+// validation for UID and DOMAIN
+	var UID = $('#UID').val();
+    var domain = $('#domain').val();
+	if(UID.length === 0)
+	   {
+	    alert("Please input a your Account ID");
+	    return false;
+	   }
+   	else if(domain.length === 0)
+	   {
+	    alert("Please input the domain you want to track");
+	    return false;
+	   };
+
+  	$('#codegen').removeClass('hide');
+    $('#sync-head').addClass('hide');
+    $('#async-flick-head').addClass('hide');
+    $('#async-noFlick-head').addClass('hide');
+    
+ // PART 1 - HEAD CODE
         // if SYNC  no value for flicker control (not included in block)
         // with Flicker adds style and TIME OUT THING
         // without flicker adds FLICKERCONTROL=false
-
         function code() {
             var eht = $('#EHT').val();
             var cbp = $('#cbp').val();
             var video = $('#video').val();
-            var UID = $('#UID').val();
-            var domain = $('#domain').val();
+            
 
 			$('#body-code').removeClass('hide')
 			$('#async-body').addClass('hide')
@@ -66,15 +81,7 @@ function generate() {
 			$('#video-js').addClass('hide')
 			$('#stat-js').addClass('hide')
 
-			// validation for UID and DOMAIN
-			if(UID.length === 0)
-			   {
-			    alert("Please input a your Account ID");
-			   }
-			   else if(domain.length === 0)
-			   {
-			    alert("Please input the domain you want to track");
-			   };
+			
 
 			// EHT code
 
