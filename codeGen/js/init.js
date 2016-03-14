@@ -54,6 +54,8 @@ function generate() {
             var eht = $('#EHT').val();
             var cbp = $('#cbp').val();
             var video = $('#video').val();
+            var UID = $('#UID').val();
+            var domain = $('#domain').val();
 
 			$('#body-code').removeClass('hide')
 			$('#async-body').addClass('hide')
@@ -64,6 +66,17 @@ function generate() {
 			$('#video-js').addClass('hide')
 			$('#stat-js').addClass('hide')
 
+			// validation for UID and DOMAIN
+			if(UID.length === 0)
+			   {
+			    alert("Please input a your Account ID");
+			   }
+			   else if(domain.length === 0)
+			   {
+			    alert("Please input the domain you want to track");
+			   };
+
+			// EHT code
 
             if (eht === null) {
                 $('#async-noFlick-head').removeClass('hide');
