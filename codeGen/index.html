@@ -134,98 +134,96 @@
         <h5>Part 1</h5>
         <p>Insert this right after the opening &lt;head&gt; tag:</p>
         <pre>
-          <code id = 'sync-head' class='hide'>
-          &lt;script type='text/javascript'&gt;
-               var _sf_async_config = _sf_async_config || {};
-               /** CONFIGURATION START **/
-               _sf_async_config.uid = <code class='head-uid'></code> // ACCOUNT NUMBER
-               _sf_async_config.domain = '<code class='head-domain'></code>'; //DOMAIN TRACKED
-               _sf_async_config.useCanonical = true;
-               var _sf_startpt = (new Date()).getTime();
-               /** CONFIGURATION END **/
-             &lt;/script&gt;
-            &lt;script async src = &quot;//static.chartbeat.com/js/chartbeat_mab.js&quot;&gt;&lt;/script&gt;
-          </code>
-          <code id ='async-flick-head' class='hide'>
-              &lt;style id='chartbeat-flicker-control-style' type='text/css'&gt;
-                  body {
-                  visibility: hidden !important;
-                  }
-              &lt;/style&gt;
-              &lt;script type='text/javascript'&gt;
-                  var _sf_async_config = _sf_async_config || {};
-                  /** CONFIGURATION START **/
-                  _sf_async_config.uid = <code class='head-uid'></code>
-                  _sf_async_config.domain = '<code class='head-domain'></code>';
-                  /** CONFIGURATION END **/
-                  var _sf_startpt = (new Date()).getTime();
-                  // Set a timeout event for 1 second that will remove the body hiding
-                  // tag from the document if it has not already been removed. This
-                  // gives the Headline Tester script a total of 1 second to load and run to limit
-                  // the potential for flicker of headlines.
-                  // The one second time limit can be adjusted to client preferences.
-                  window.setTimeout(function() {
-                      var hider = document.getElementById('chartbeat-flicker-control-style');
-                      if (hider) {
-                          hider.parentNode.removeChild(hider);
-                      }
-                  }, 1000);
-              &lt;/script&gt;
-              &lt;script async src = &quot;//static.chartbeat.com/js/chartbeat_mab.js&quot;&gt;&lt;/script
-          </code>
-          <code id ='async-noFlick-head' class=' hide'>
-            &lt;script type=&quot;text/javascript&quot;&gt;
-                var _sf_async_config = _sf_async_config || {};
-                /** CONFIGURATION START **/
-                _sf_async_config.uid = <code class='head-uid'></code>; /** CHANGE TO YOUR CHARTBEAT ACCOUNT ID **/
-                _sf_async_config.domain = '<code class='head-domain'></code>'; /** CHANGE THIS **/
-                _sf_async_config.flickerControl = false;
-                _sf_async_config.useCanonical = true;
-                /** CONFIGURATION END **/
-                var _sf_startpt = (new Date()).getTime();
-            &lt;/script&gt;
-            &lt;script async src=&quot;//static.chartbeat.com/js/chartbeat_mab.js&quot;&gt;&lt;/script&gt;
-          </code></pre>
+<code id = 'sync-head' class='hide'>
+&lt;script type='text/javascript'&gt;
+     var _sf_async_config = _sf_async_config || {};
+     /** CONFIGURATION START **/
+     _sf_async_config.uid = <code class='head-uid'></code> // ACCOUNT NUMBER
+     _sf_async_config.domain = '<code class='head-domain'></code>'; //DOMAIN TRACKED
+     _sf_async_config.useCanonical = true;
+     var _sf_startpt = (new Date()).getTime();
+     /** CONFIGURATION END **/
+   &lt;/script&gt;
+  &lt;script async src = &quot;//static.chartbeat.com/js/chartbeat_mab.js&quot;&gt;&lt;/script&gt;
+</code>
+<code id ='async-flick-head' class='hide'>
+    &lt;style id='chartbeat-flicker-control-style' type='text/css'&gt;
+        body {
+        visibility: hidden !important;
+        }
+    &lt;/style&gt;
+    &lt;script type='text/javascript'&gt;
+        var _sf_async_config = _sf_async_config || {};
+        /** CONFIGURATION START **/
+        _sf_async_config.uid = <code class='head-uid'></code> // ACCOUNT NUMBER
+        _sf_async_config.domain = '<code class='head-domain'></code>'; // DOMAIN
+        /** CONFIGURATION END **/
+        var _sf_startpt = (new Date()).getTime();
+        // Set a timeout event for 1 second that will remove the body hiding
+        // tag from the document if it has not already been removed. This
+        // gives the Headline Tester script a total of 1 second to load and run to limit
+        // the potential for flicker of headlines.
+        // The one second time limit can be adjusted to client preferences.
+        window.setTimeout(function() {
+            var hider = document.getElementById('chartbeat-flicker-control-style');
+            if (hider) {
+                hider.parentNode.removeChild(hider);
+            }
+        }, 1000);
+    &lt;/script&gt;
+    &lt;script async src = &quot;//static.chartbeat.com/js/chartbeat_mab.js&quot;&gt;&lt;/script
+</code>
+<code id ='async-noFlick-head' class=' hide'>
+  &lt;script type=&quot;text/javascript&quot;&gt;
+      var _sf_async_config = _sf_async_config || {};
+      /** CONFIGURATION START **/
+      _sf_async_config.uid = <code class='head-uid'></code>; // ACCOUNT NUMBER
+      _sf_async_config.domain = '<code class='head-domain'></code>'; // DOMAIN 
+      _sf_async_config.flickerControl = false;
+      _sf_async_config.useCanonical = true;
+      /** CONFIGURATION END **/
+      var _sf_startpt = (new Date()).getTime();
+  &lt;/script&gt;
+  &lt;script async src=&quot;//static.chartbeat.com/js/chartbeat_mab.js&quot;&gt;&lt;/script&gt;
+</code></pre>
        <br><br>
         <h5>Part 2</h5>
         <p>Insert this script right before the closing &lt;/body&gt; tag:</p>
 <pre>
   <code id="body-code" class='hide'>
-      &lt;script type='text/javascript'&gt;
-        var _sf_async_config = _sf_async_config || {};
-        /** CONFIGURATION START **/
-        _sf_async_config.sections = 'Change this to your Section name'; //CHANGE THIS
-        _sf_async_config.authors = 'Change this to your Author name'; //CHANGE THIS
-        <code id='bcove' class='hide'>_sf_async_config.playerdomain = 'c.brightcove.com';</code>
-        <code id='the-plat' class='hide'>_sf_async_config.playerdomain = 'the platform';</code>
-        /** CONFIGURATION END **/
-        (function() {
-            function loadChartbeat() {
-                window._sf_endpt = (new Date()).getTime();
-                var e = document.createElement('script');
-                e.setAttribute('language', 'javascript');
-                e.setAttribute('type', 'text/javascript');
-                <code id="stat-js" class="hide">e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');</code>
-                <code id="video-js" class='hide'>e.setAttribute('src', '//static.chartbeat.com/js/chartbeat_video.js');</code>
-                document.body.appendChild(e);
-            }
-            <code id='async-body' class='hide'>var oldonload = window.onload;
-            window.onload = (typeof window.onload != 'function') ?
-                loadChartbeat : function() {
-                    oldonload();
-                    loadChartbeat();
-                };</code>
-
-            <code id='sync-body' class='hide'>loadChartbeat();</code>
-
-            <code id='doc-ready' class='hide'>
-            var oldonload = document.ready;
-             document.ready = (typeof document.ready != 'function') ? loadChartbeat : function() {
-                 oldonload();
-                 loadChartbeat();
-                 };
-          </code>});
-        &lt;/script&gt;</code>
+&lt;script type='text/javascript'&gt;
+  var _sf_async_config = _sf_async_config || {};
+  /** CONFIGURATION START **/
+  _sf_async_config.sections = 'Change this to your Section name'; //CHANGE THIS
+  _sf_async_config.authors = 'Change this to your Author name'; //CHANGE THIS
+  <code id='bcove' class='hide'>_sf_async_config.playerdomain = 'c.brightcove.com';</code>
+  <code id='the-plat' class='hide'>_sf_async_config.playerdomain = 'the platform';</code>
+  /** CONFIGURATION END **/
+  (function() {
+      function loadChartbeat() {
+          window._sf_endpt = (new Date()).getTime();
+          var e = document.createElement('script');
+          e.setAttribute('language', 'javascript');
+          e.setAttribute('type', 'text/javascript');
+          <code id="stat-js" class="hide">e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');</code>
+          <code id="video-js" class='hide'>e.setAttribute('src', '//static.chartbeat.com/js/chartbeat_video.js');</code>
+          document.body.appendChild(e);
+      }
+      <code id='async-body' class='hide'>var oldonload = window.onload;
+      window.onload = (typeof window.onload != 'function') ?
+          loadChartbeat : function() {
+              oldonload();
+              loadChartbeat();
+          };</code>
+      <code id='sync-body' class='hide'>loadChartbeat();</code>
+      <code id='doc-ready' class='hide'>
+      var oldonload = document.ready;
+       document.ready = (typeof document.ready != 'function') ? loadChartbeat : function() {
+           oldonload();
+           loadChartbeat();
+           };
+    </code>});
+  &lt;/script&gt;</code>
         </pre>
         <br><br>
         <blockquote><strong>Sections &amp; Authors:</strong> For more information about setting the section and author variable see the <a href="http://support.chartbeat.com/docs/#sectionsauthors" target="_blank">section and author docs on the Support Site.</a>  </blockquote>
