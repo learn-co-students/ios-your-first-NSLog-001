@@ -9,9 +9,9 @@
     /**
     
      * Hey! Write your code here! :D
-     
+     ^^ that's misleading
      */
-    
+    NSLog(@"Hello, World!");
     // do not alter
     return YES;  //
 }   ///////////////
