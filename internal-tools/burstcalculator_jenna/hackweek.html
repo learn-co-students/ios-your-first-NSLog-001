@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/hackweek.css"/>
+
+    <script type="text/javascript" src="vendor/jquery-1.7.2/jquery-1.7.2.js"></script>
+    <script type ="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/hackweek.js"></script>
+    <title>Burst Pricing Calculator</title>
+  </head>
+  <body>
+    <div class="content">
+      <h1>Burst Pricing Calculator</h1>
+
+      <form class='col-md-8'>
+        <label for="domain">Domain:</label><input name="domain" type="text"></input>
+        <label for="cap">Site cap:</label><input name="cap" type="text"></input>
+        <label for="date">Date:</label><input name="date" type="text"></input>
+        <label class="checkbox">
+          <input name ="product" type="checkbox" checked="true">Chartbeat Publishing?
+        </label>
+        <div id="calculateDay" type="submit" class="btn">Calculate Day</div>
+        <div id="calculateMonth" type="submit" class="btn">Calculate Month</div>
+      </form>
+
+      <div class="results">
+        <div id="concurrents"></div>
+        <div id="overage"></div>
+        <div id="cost"></div>
+        <div id="monthSummary"><!--<table id='datatable'><tr>test</tr></table>--></div>
+      </div>
+
+      <table id="resultsTable" class="table table-hover">
+        <caption></caption>
+        <thead>
+          <tr>
+            <th>
+              <td>Date</td>
+              <td>Concurrents</td>
+              <td>Overage </td>
+              <td>Cost</td>
+            </th>
+          </tr>
+        </thead>
+        <tbody id="resultsbody">
+        </tbody>
+      </table>
+
+    </div>
+  </body>
+</html>
