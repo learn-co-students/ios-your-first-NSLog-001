@@ -72,9 +72,8 @@
       </form>
     </div> <!-- end row -->
 
-    <div id='download' style='white-space: pre-wrap'>
-      
-      <a href='' id='csv'>CSV Link Here</a>
+    <div id='download' style='white-space: pre-wrap' >
+      <a class='btn btn-primary hide' href='' id='csv'>Download CSV File</a>
     </div>
   </div> <!-- main container end -->
 
@@ -82,12 +81,19 @@
 <script src="js/materialize.js"></script>
 <script src="js/init.js"></script>
 
-
-<script>
-  var fileName = 'csv/' + '{{domain}}' + "_" + '{{start}}' + "_" + '{{end}}' + '.csv';
-  console.log(fileName);
-  $('#csv').attr('href', fileName);
-</script>
+ <script>
+    var fileName = 'csv/' + '{{domain}}' + "_" + '{{start}}' + "_" + '{{end}}' + '.csv';
+    console.log(fileName);
+    $('#csv').attr('href', fileName);
+    
+    if (fileName == 'csv/None_None_None.csv') {
+      console.log('lets hide this bugger')
+    }
+    else {
+      $('#csv').removeClass('hide');
+    };
+  </script>
+ 
 
 
   </body>

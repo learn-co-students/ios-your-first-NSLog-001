@@ -22,4 +22,12 @@ $('.datepicker').pickadate({
     hiddenSuffix: '__suffix'
   });
 
+// function CreateCSV(){
+//   var fileName = 'csv/' + '{{domain}}' + "_" + '{{start}}' + "_" + '{{end}}' + '.csv';
+//   console.log(fileName);
+//   $('#csv').attr('href', fileName);
+// };
 
+// CreateCSV();
+
+// after 'run query' button is hit show the csv download button 
