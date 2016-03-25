@@ -15,7 +15,7 @@ $('.datepicker').pickadate({
     today: '',
     selectMonths: true, // Creates a dropdown to control month
     selectYears: true,
-    min: new Date(2014,01,01),
+    min: new Date(2013,12,01),
     max: -1,
     format: 'yyyy-mm-dd',
     formatSubmit: 'yyyy-mm-dd',
