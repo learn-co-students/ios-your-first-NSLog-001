@@ -8,18 +8,20 @@
 
 $(document).ready(function() {
     $('select').material_select();
-
-    
  });
 
 
 $('.datepicker').pickadate({
+    today: '',
     selectMonths: true, // Creates a dropdown to control month
-    selectYears: 10, // Creates a dropdown of 15 years to control year
+    selectYears: true,
+    min: new Date(2014,01,01),
+    max: -1,
     format: 'yyyy-mm-dd',
     formatSubmit: 'yyyy-mm-dd',
     hiddenPrefix: 'prefix__',
     hiddenSuffix: '__suffix'
+    
   });
 
 // function CreateCSV(){

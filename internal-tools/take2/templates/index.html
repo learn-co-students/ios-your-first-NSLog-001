@@ -40,7 +40,7 @@
             <i class="material-icons small prefix">vpn_key</i>
             <label class="col-md-4 control-label" for="apikey">apikey <a href="https://chartbeat.com/docs/api/explore/" target="_blank">(https://chartbeat.com/docs/api/explore/)</a></label> 
             <div class="col-md-4">
-              <input id="apikey" name="apikey" type="text" placeholder="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" class="form-control input-md">
+              <input id="apikey" name="apikey" type="text" placeholder="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" class="form-control input-md" required>
             </div>
           </div>
           <!-- Text input-->
@@ -48,7 +48,7 @@
             <i class="material-icons small prefix">language</i>
             <label class="col-md-4 control-label" for="domain">domain</label>
             <div class="col-md-4">
-              <input id="domain" name="domain" type="text" placeholder="exampleDomain.com" class="form-control input-md">
+              <input id="domain" name="domain" type="text" placeholder="exampleDomain.com" class="form-control input-md" required>
             </div>
           </div>
           <!-- Text input-->
@@ -81,8 +81,10 @@
 <script src="js/materialize.js"></script>
 <script src="js/init.js"></script>
 
- <script>
-    var fileName = 'csv/' + '{{domain}}' + "_" + '{{start}}' + "_" + '{{end}}' + '.csv';
+<!-- SHOW/HIDE THE DOWNLOAD BUTTON BELOW -->
+<script>
+  
+  var fileName = 'csv/' + '{{domain}}' + "_" + '{{start}}' + "_" + '{{end}}' + '.csv';
     console.log(fileName);
     $('#csv').attr('href', fileName);
     
@@ -92,9 +94,8 @@
     else {
       $('#csv').removeClass('hide');
     };
-  </script>
- 
 
+</script>
 
   </body>
 </html>
