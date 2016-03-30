@@ -17,11 +17,11 @@ $('.datepicker').pickadate({
     selectYears: true,
     min: new Date(2013,12,01),
     max: -1,
+    closeOnSelect: true,
     format: 'yyyy-mm-dd',
     formatSubmit: 'yyyy-mm-dd',
     hiddenPrefix: 'prefix__',
     hiddenSuffix: '__suffix'
-    
   });
 
 // function CreateCSV(){
