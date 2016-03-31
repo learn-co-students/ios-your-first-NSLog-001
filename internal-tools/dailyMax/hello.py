@@ -26,11 +26,6 @@ settings = {
 
 # print static_path
 
-if __name__ == "__main__":
-    app = make_app()
-    app.listen(8888)
-    tornado.ioloop.IOLoop.current().start()
-
 
 
 # ----------------- OLD FLASK CODE BELOW ---------------
@@ -93,5 +88,11 @@ def home():
     print type(data)
     return render_template('index.html', data=data, domain=domain, start=start, end=end)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    app = make_app()
+    app.listen(8888)
+    tornado.ioloop.IOLoop.current().start()
+
+
+# if __name__ == '__main__':
+#     app.run(debug=True)
