@@ -1,33 +1,41 @@
-from flask import Flask
-from flask import request
-from flask import render_template
-from flask import url_for
-from flask import jsonify
+import os 
+import tornado.ioloop
+from tornado.web import Application
 
-from datetime import datetime
-from datetime import timedelta
-import requests
-import json
-import os
-import os.path
-from csv import DictWriter, DictReader
-from flask import send_from_directory
 
-app = Flask(__name__, static_url_path='')
+class MainHandler(tornado.web.RequestHandler):
+    def get(self):
+        self.render("index.html")
+
+def make_app():
+    return Application([
+	# (r"/content/(.*)", web.StaticFileHandler, {"path": "/var/www"}),
+    (r"/", MainHandler),
+    (r"/js", MainHandler),
+    (r"/css", tornado.web.StaticFileHandler,
+    dict(path=settings['static_path'])),
+], **settings)
+
+
+# class StaticFileHandler(tornado.web.StaticFileHandler):
+# 	def get(self)
+
+settings = {
+    "static_path": os.path.join(os.path.dirname(__file__), "static"),
+}
+
+# print static_path
+
+if __name__ == "__main__":
+    app = make_app()
+    app.listen(8888)
+    tornado.ioloop.IOLoop.current().start()
+
+
+
+# ----------------- OLD FLASK CODE BELOW ---------------
 
 REPORTS_API_ENDPOINT = 'http://chartbeat.com/report_api/reports/daily/'
-
-@app.route('/js/<path:path>')
-def send_js(path):
-    return send_from_directory('js', path)
-
-@app.route('/css/<path:path>')
-def send_css(path):
-    return send_from_directory('css', path)
-
-@app.route('/csv/<path:path>')
-def send_csv(path):
-    return send_from_directory('csv', path)
 
 def max_concurrents(apikey, domain, start, end, save_to=False):
 
@@ -87,4 +95,3 @@ def home():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
