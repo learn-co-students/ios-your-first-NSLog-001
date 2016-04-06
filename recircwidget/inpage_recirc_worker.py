@@ -38,32 +38,6 @@ def request_pages_from_domain(domain):
     pages = r.json()
     return pages
 
-
-#r = requests.get('http://api.chartbeat.com/live/toppages/v3/?apikey=0993d53651dbf432cf9e235114c86d35&host='+domain+'&limit=200&sections='+sections)
-#r = requests.get('http://api.chartbeat.com/live/toppages/v3/?apikey=0993d53651dbf432cf9e235114c86d35&host='+domain+'&limit=200')
-#print sections
-#pages = r.json()
-#print pages
-#r = requests.get('http://api.chartbeat.com/live/toppages/v3/?apikey=0993d53651dbf432cf9e235114c86d35&host=gizmodo.com&limit=200')
-#print sections
-#pages = r.json()['pages']
-#result = [
-#(p['stats']['people']*p['stats']['engaged_time']['avg'], p['path'], p['title'], p['sections']) for p in pages
-#]
-#result = sorted(result, reverse=True)
-
-#result2 = pages[0]
-
-#stored_result = result
-
-#return json.dumps(stored_result)
-#return json.dumps(r)
-#pages.headers['']
-## put requests data object output here and return a json object
-#r = { 'x': 5 }
-#r['x'] += 1
-#return json.dumps(pages)
-
 if __name__ == "__main__":
     app.run(debug=True)
 
