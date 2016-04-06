@@ -1,0 +1,30 @@
+<!-- You have two options to set the title using _sf_async_config.title:
+1) hardcode a new <meta> title variable and set it
+2) Use jQuery to grab the existing <meta> title tag, then call .split("|") to isolate the title. Either one will be fine, but clients have opinions about the performance of each.  
+
+Expose the meta itemprop-datepublished
+ -->
+<script type='text/javascript'>
+var _sf_async_config = _sf_async_config || {};
+  /** CONFIGURATION START  **/
+  _sf_async_config.sections = cms.exampleSection ; /**POPULATE DYNAMICALLY AS YOU ARE **/
+  _sf_async_config.authors = cms.exampleAuthor; /**POPULATE DYNAMICALLY AS YOU ARE **/
+ _sf_async_config.contentType = s.prop16; //POPULATES THE DATE PUBLISHED
+ _sf_async_config.title = document.title.split('|')[0]; // THIS GRABS THE FIRST PROPERTY OF THE DOCUMENT'S TITLE OBJECT
+  /** CONFIGURATION END **/
+  (function() {
+    function loadChartbeat() {
+      window._sf_endpt = (new Date()).getTime();
+      var e = document.createElement('script');
+      e.setAttribute('language', 'javascript');
+      e.setAttribute('type', 'text/javascript');
+      e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+      document.body.appendChild(e);
+    }
+    var oldonload = window.onload;
+    window.onload = (typeof window.onload != 'function') ?
+          loadChartbeat : function() {
+      oldonload();
+      loadChartbeat();};
+  })();
+</script>

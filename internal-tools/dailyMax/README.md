@@ -1,6 +1,8 @@
 CBP MAX CONCURRENT EXPORT
 
-This site returns daily max concurrent data with a Python Flask backend that queries the Chartbeat Report API
+This site returns daily max concurrent data with a Python Tornado backend that queries the Chartbeat Report API
+
+The data populates in a a downloadable CSV file for easy sorting and filtering. 
 
 =======
 # CHARTCORPS
