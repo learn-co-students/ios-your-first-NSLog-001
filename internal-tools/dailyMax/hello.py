@@ -2,6 +2,13 @@ import os
 import tornado.ioloop
 from tornado.web import Application
 
+from datetime import datetime
+from datetime import timedelta
+import requests
+import json
+from csv import DictWriter
+from csv import DictReader
+
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
@@ -9,7 +16,7 @@ class MainHandler(tornado.web.RequestHandler):
 
 def make_app():
     return Application([
-	# (r"/content/(.*)", web.StaticFileHandler, {"path": "/var/www"}),
+    # (r"/content/(.*)", web.StaticFileHandler, {"path": "/var/www"}),
     (r"/", MainHandler),
     (r"/js", MainHandler),
     (r"/css", tornado.web.StaticFileHandler,
@@ -18,7 +25,7 @@ def make_app():
 
 
 # class StaticFileHandler(tornado.web.StaticFileHandler):
-# 	def get(self)
+#   def get(self)
 
 settings = {
     "static_path": os.path.join(os.path.dirname(__file__), "static"),
@@ -26,7 +33,10 @@ settings = {
 
 # print static_path
 
-
+if __name__ == "__main__":
+    app = make_app()
+    app.listen(8888)
+    tornado.ioloop.IOLoop.current().start()
 
 # ----------------- OLD FLASK CODE BELOW ---------------
 
@@ -88,11 +98,5 @@ def home():
     print type(data)
     return render_template('index.html', data=data, domain=domain, start=start, end=end)
 
-if __name__ == "__main__":
-    app = make_app()
-    app.listen(8888)
-    tornado.ioloop.IOLoop.current().start()
-
-
-# if __name__ == '__main__':
-#     app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
