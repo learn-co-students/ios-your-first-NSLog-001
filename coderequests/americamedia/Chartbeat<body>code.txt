@@ -1,10 +1,8 @@
 <script type='text/javascript'>
   var _sf_async_config = _sf_async_config || {};
   /** CONFIGURATION START **/
-  _sf_async_config.sections = 'Change this to your Section name'; //CHANGE THIS
-  _sf_async_config.authors = 'Change this to your Author name'; //CHANGE THIS
-  _sf_async_config.videoType = 'ooyala';
-  _sf_async_config.playerdomain = '<player domain>'; // include this inside the iframe code 
+  _sf_async_config.sections = document.location.href.split('/')[3]; //CHANGE THIS
+  _sf_async_config.authors = document.querySelectorAll('[href="/users/kevin-clarke"]'); //CHANGE THIS
   /** CONFIGURATION END **/
   (function() {
       function loadChartbeat() {
@@ -12,7 +10,8 @@
           var e = document.createElement('script');
           e.setAttribute('language', 'javascript');
           e.setAttribute('type', 'text/javascript');
-          e.setAttribute('src', '//static.chartbeat.com/js/chartbeat_video.js');
+          e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+          
           document.body.appendChild(e);
       }
       var oldonload = window.onload;
@@ -21,6 +20,6 @@
               oldonload();
               loadChartbeat();
           };
-      
       })();
 </script>
+  
