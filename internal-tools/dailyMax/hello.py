@@ -1,46 +1,56 @@
-import os 
 import tornado.ioloop
-from tornado.web import Application
-
+import tornado.web
+import os.path
 from datetime import datetime
 from datetime import timedelta
 import requests
 import json
+import os
+import os.path
 from csv import DictWriter
 from csv import DictReader
+from flask import send_from_directory
 
+REPORTS_API_ENDPOINT = 'http://chartbeat.com/report_api/reports/daily/'
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
-        self.render("index.html")
+        apikey = self.get_argument('apikey', '')
+        domain = self.get_argument('domain','')
+        start = self.get_argument('start','')
+        end = self.get_argument('end','')
+        filePath = domain + "_"  + start + "_"  + end + ".csv" 
+        if apikey:
+            results = max_concurrents(apikey, domain, start, end, save_to=True)
+            # self.content_type = 'application/json'
+            # self.write(json.dumps(results))
+            # print results
+            self.render('index.html', data=filePath, domain=domain, start=start, end=end)
+        else:
+           self.render('index.html')
+
+    def post(self):
+        apikey = self.get_argument('apikey','')
+        domain = self.get_argument('domain','')
+        start = self.get_argument('start','')
+        end = self.get_argument('end','')
+        filePath = domain + "_"  + start + "_"  + end + ".csv"
+        print filePath
 
 def make_app():
-    return Application([
-    # (r"/content/(.*)", web.StaticFileHandler, {"path": "/var/www"}),
-    (r"/", MainHandler),
-    (r"/js", MainHandler),
-    (r"/css", tornado.web.StaticFileHandler,
-    dict(path=settings['static_path'])),
-], **settings)
+    return tornado.web.Application([
+        (r"/", MainHandler),
+        (r"/js", MainHandler),
+        (r"/csv", MainHandler),
+        (r"/css", tornado.web.StaticFileHandler,
+        dict(path=settings['static_path'])),
+    ], **settings)
 
-
-# class StaticFileHandler(tornado.web.StaticFileHandler):
-#   def get(self)
 
 settings = {
     "static_path": os.path.join(os.path.dirname(__file__), "static"),
 }
 
-# print static_path
-
-if __name__ == "__main__":
-    app = make_app()
-    app.listen(8888)
-    tornado.ioloop.IOLoop.current().start()
-
-# ----------------- OLD FLASK CODE BELOW ---------------
-
-REPORTS_API_ENDPOINT = 'http://chartbeat.com/report_api/reports/daily/'
 
 def max_concurrents(apikey, domain, start, end, save_to=False):
 
@@ -70,12 +80,14 @@ def max_concurrents(apikey, domain, start, end, save_to=False):
         rows.append(row)
         #print r.json()
     if save_to:
-        path = os.path.join(".", "csv/{0}_{1}_{2}.csv".format(domain, start, end))
-        #print path
+        path = os.path.join(".", "static/{0}_{1}_{2}.csv".format(domain, start, end))
+        print domain
+        print start, end
         with open(path, 'wb') as csvFile:
             writer = DictWriter(csvFile, fieldnames=['domain', 'date', 'max_concurrents'])
             writer.writeheader()
             for row in rows:
+                print row
                 writer.writerow({
                         'domain': row[0],
                         'date': row[1],
@@ -84,19 +96,7 @@ def max_concurrents(apikey, domain, start, end, save_to=False):
             
     return '\n'.join(toReturn)
 
-@app.route('/')
-def home():
-    apikey = request.args.get('apikey')
-    domain = request.args.get('domain')
-    start = request.args.get('start')
-    end = request.args.get('end')
-    print domain, start, end
-    data = ''
-    if apikey and domain and start and end:
-        data = max_concurrents(apikey, domain, start, end, save_to=True)
-    #data = max_concurrents(domain, start, end)
-    print type(data)
-    return render_template('index.html', data=data, domain=domain, start=start, end=end)
-
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    app = make_app()
+    app.listen(8888)
+    tornado.ioloop.IOLoop.current().start()
