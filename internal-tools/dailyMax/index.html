@@ -72,30 +72,20 @@
       </form>
     </div> <!-- end row -->
 
+
     <div id='download' style='white-space: pre-wrap' >
-      <a class='btn btn-primary hide' href="{{ static_url(data) }}" id='csv'>Download CSV File</a>
+      <!-- if data is empty hide the static_url(data) // if it is populated then populate this link -->
+      {% if data != '__.csv' %}
+      <a class='btn btn-primary' href="{{ static_url(data) }}" id='csv'>Download CSV File</a>
+      {% end %}
+     
     </div>
   </div> <!-- main container end -->
-
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="{{ static_url("materialize.js") }}"></script>
 <script src="{{ static_url("init.js") }}"></script>
 
 <!-- SHOW/HIDE THE DOWNLOAD BUTTON BELOW -->
-<script>
-    // var fileName = ;
-     // console.log(fileName)
-     // window.open({{ static_url("materialize.js") }})
-     $('#csv').attr('href',a fileName);
-
-    if (fileName == 'csv/None_None_None.csv') {
-      console.log('lets hide this bugger')
-    }
-    else {
-      $('#csv').removeClass('hide');
-    };
-
-</script>
 
   </body>
 </html>

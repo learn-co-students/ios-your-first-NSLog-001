@@ -22,12 +22,12 @@ class MainHandler(tornado.web.RequestHandler):
         filePath = domain + "_"  + start + "_"  + end + ".csv" 
         if apikey:
             results = max_concurrents(apikey, domain, start, end, save_to=True)
-            # self.content_type = 'application/json'
-            # self.write(json.dumps(results))
-            # print results
-            self.render('index.html', data=filePath, domain=domain, start=start, end=end)
+            if filePath:
+                print filePath + 'valid'
+                self.render('index.html', data=filePath, domain=domain, start=start, end=end)
         else:
-           self.render('index.html')
+            print filePath + 'invalid'
+            self.render('index.html', data=filePath)
 
     def post(self):
         apikey = self.get_argument('apikey','')
