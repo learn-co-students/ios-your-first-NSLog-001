@@ -1,0 +1,17 @@
+*****SCRIPTING TEMPLATES**********
+
+ADD USER
+
+Options:
+  --help                           show this help information
+  --account_id                      [required]
+  --act                            Actually apply changes [default: False]
+  --file                           tsv of users [required]
+  --password                        [default: super-secure-password-123]
+  --prod_db                        use prod settings [default: True]
+  --read_header                    use the first line of the tsv to determine column headers, else use [email, first_name, last_name] [default: True]
+  --skip_existing                  skip over existing emails instead of exiting [default: False]
+
+python ~ubuntu/superfly/djangofly/scripts/grant_permissions.py --account_id=62564 --domains=massmutualatwork.com --users=jjeffress@MassMutual.com,usingh@massmutual.com,emastrio@massmutual.com,RiceKRice@MassMutual.com,RConstantine@massmutual.com,wpartelo@massmutual.com --product_type=newsbeat
+
+python ~ubuntu/superfly/djangofly/scripts/grant_permissions.py --account_id=62564 --domains=massmutualatwork.com --users=jjeffress@MassMutual.com,usingh@massmutual.com,emastrio@massmutual.com,RiceKRice@MassMutual.com,RConstantine@massmutual.com,wpartelo@massmutual.com --product_type=newsbeat

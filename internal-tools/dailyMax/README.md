@@ -1,6 +1,12 @@
 CBP MAX CONCURRENT EXPORT
 
+<<<<<<< HEAD
 This site returns daily max concurrent data with a Python Tornado backend that queries the Chartbeat Report API.
+=======
+This site returns daily max concurrent data with a Python Tornado backend that queries the Chartbeat Report API
+
+The data populates in a a downloadable CSV file for easy sorting and filtering. 
+>>>>>>> master
 
 In order to use this tool you'll need an API Key and a domain.
 
