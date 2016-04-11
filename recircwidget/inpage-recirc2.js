@@ -1,12 +1,11 @@
-(function(){
+	(function(){
 
 	var config = _sf_async_config;
-	apiKey = "0993d53651dbf432cf9e235114c86d35";
 
 	console.log(config.sections);
 	console.log(config.domain);
 
-	url = "http://127.0.0.1:5000/?domain="+config.domain+"&sections="+config.sections;
+	url = "http://127.0.0.1:5000/?domain="+config.domain;
 	console.log(url);
 
 	/* pushes top 5 articles ranked by concurrents excluding home page and current path to an array.

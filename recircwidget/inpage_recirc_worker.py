@@ -13,12 +13,10 @@ stored_result = {}
 stored_result_time = {}
 
 @app.route("/")
-## check age of result, if old (determined by whatever metric), then get new one)
+## check age of result, if older than specified duration, then get new one)
 def hello():
     global stored_result
     global stored_result_time
-    ##if (stored_result_time != None && stored_result_time)
-    #sections = request.args.get('sections')
     domain = request.args.get('domain')
 
     if domain in stored_result_time and (stored_result_time[domain] + 20 > time()):
@@ -36,6 +34,25 @@ def hello():
 def request_pages_from_domain(domain):
     r = requests.get('http://api.chartbeat.com/live/toppages/v3/?apikey=0993d53651dbf432cf9e235114c86d35&host='+domain+'&limit=200')
     pages = r.json()
+    sort_by_total_engaged_time(pages)
+    return pages
+
+def sort_by_total_engaged_time(pages):
+    newpages = {}
+    print (pages['pages'][0]['stats']['people'])
+    print (pages['pages'][0]['stats']['engaged_time']['avg'])
+
+    for x in range (0, len(pages)):
+        if newpages:
+            print ('newpages is true')
+        else:
+            newpages.update(pages['pages'][x])
+    #print (newpages)
+    #return newpages
+    print (pages['pages'][10]['path'])
+    print ('break')
+    sorted(pages, pages['pages'][0]['stats']['engaged_time']['avg'])
+    print (pages['pages'][10]['path'])
     return pages
 
 if __name__ == "__main__":
