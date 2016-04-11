@@ -1,8 +1,7 @@
 import json
 from time import time
 import requests
-from flask import Flask
-from flask import request
+from flask import Flask, request, send_from_directory
 from flask.ext.cors import CORS
 
 
@@ -12,9 +11,14 @@ CORS(app)
 stored_result = {}
 stored_result_time = {}
 
+@app.route("/scripts/<path:filename>")
+def host_file(filename):
+    return send_from_directory('scripts',filename)
+
 @app.route("/")
 ## check age of result, if older than specified duration, then get new one)
 def hello():
+    print('inside hello function')
     global stored_result
     global stored_result_time
     domain = request.args.get('domain')
@@ -42,18 +46,17 @@ def sort_by_total_engaged_time(pages):
     print (pages['pages'][0]['stats']['people'])
     print (pages['pages'][0]['stats']['engaged_time']['avg'])
 
-    for x in range (0, len(pages)):
+    for x in range (0, len(pages['pages'])):
         if newpages:
             print ('newpages is true')
         else:
             newpages.update(pages['pages'][x])
-    #print (newpages)
-    #return newpages
-    print (pages['pages'][10]['path'])
-    print ('break')
-    sorted(pages, pages['pages'][0]['stats']['engaged_time']['avg'])
-    print (pages['pages'][10]['path'])
-    return pages
+   
+    #print (pages['pages'][10]['path'])
+    #print ('break')
+    #sorted(pages, pages['pages'][0]['stats']['engaged_time']['avg'])
+    #print (pages['pages'][10]['path'])
+    return newpages
 
 if __name__ == "__main__":
     app.run(debug=True)

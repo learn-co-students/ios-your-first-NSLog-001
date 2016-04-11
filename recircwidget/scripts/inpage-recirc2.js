@@ -1,12 +1,37 @@
 	(function(){
 
-	var config = _sf_async_config;
+	var config;
+	var requestUrl;
 
-	console.log(config.sections);
-	console.log(config.domain);
+	function emitChartbeatConfiguration() {
+    // We set an interval and keep trying to find the Chartbeat configuration
+    // object (_sf_async_config) in the host page. We wait for it to exist and
+    // to have both `domain` and `path` properties (which the HUD needs to know
+    // what data to load).
+	    var retries = 0, maxRetries = 300;
+	    var interval = setInterval(function() {
+	      if (window['_sf_async_config'] &&
+	          window['_sf_async_config']['domain'] &&
+	          window['_sf_async_config']['path']) {
 
-	url = "http://127.0.0.1:5000/?domain="+config.domain;
-	console.log(url);
+	        clearInterval(interval);
+
+	        config = _sf_async_config;
+
+			console.log(config.sections);
+			console.log(config.domain);
+
+			requestUrl = "http://127.0.0.1:5000/?domain="+config.domain;
+			createRequest();
+
+	      } else {
+	        retries += 1;
+	        if (retries > maxRetries) {
+	          clearInterval(interval);
+	        }
+	      }
+	    }, 50);
+  	}; emitChartbeatConfiguration();
 
 	/* pushes top 5 articles ranked by concurrents excluding home page and current path to an array.
 	accepts: unsorted JSON object containing top pages
@@ -63,26 +88,30 @@
 
   	}
 
-  	// creates XHR request
-	var xhr = new XMLHttpRequest();
-	console.log('created xhr');
-	xhr.open("GET", url, true);
-	xhr.setRequestHeader('Content-Type', 'text/html');
-	xhr.send();
+  	function createRequest() {
+  		console.log('createRequest fired')
+  		var xhr = new XMLHttpRequest();
+		console.log('created xhr');
+		console.log(requestUrl);
+		xhr.open("GET", requestUrl, true);
+		xhr.setRequestHeader('Content-Type', 'text/html');
+		xhr.send();
 
+		xhr.addEventListener("load", function () {
+			console.log(xhr.responseText);
+			var topPages = JSON.parse(xhr.responseText);
+			console.log(topPages);
+			topPages = topFive(topPages);
+			console.log(topPages);
+
+			var recircWidg = document.createElement("div");
+
+			createAnchors(recircWidg, topPages);
+
+			//document.body.insertBefore(recircWidg, document.body.childNodes[0]);
+			document.getElementById('cbrecirc').appendChild(recircWidg);
+  		});
+	}
 	/* fires after xhr request completes/loads, parses returned data into JSON and calls topPages to sort
 	and createAnchors to build div element (recircWidg) to append to page */
-	xhr.addEventListener("load", function () {
-		var topPages = JSON.parse(xhr.responseText);
-		console.log(topPages);
-		topPages = topFive(topPages);
-		console.log(topPages);
-
-		var recircWidg = document.createElement("div");
-
-		createAnchors(recircWidg, topPages);
-
-		//document.body.insertBefore(recircWidg, document.body.childNodes[0]);
-		document.getElementById('cbrecirc').appendChild(recircWidg);
-	});
 }());
