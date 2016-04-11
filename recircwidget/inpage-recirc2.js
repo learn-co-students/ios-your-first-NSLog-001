@@ -1,4 +1,4 @@
-(function(){
+	(function(){
 
 	var config = _sf_async_config;
 
