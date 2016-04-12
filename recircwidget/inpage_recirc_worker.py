@@ -59,7 +59,7 @@ def sort_by_total_engaged_time(pages):
     return newpages
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=80)
 
 ## stuff that i need
 ## function that creates object

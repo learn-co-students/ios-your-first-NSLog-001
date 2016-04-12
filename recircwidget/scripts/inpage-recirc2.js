@@ -1,8 +1,5 @@
 	(function(){
 
-	var config;
-	var requestUrl;
-
 	function emitChartbeatConfiguration() {
     // We set an interval and keep trying to find the Chartbeat configuration
     // object (_sf_async_config) in the host page. We wait for it to exist and
@@ -16,13 +13,12 @@
 
 	        clearInterval(interval);
 
-	        config = _sf_async_config;
+	        var config = _sf_async_config;
 
-			console.log(config.sections);
 			console.log(config.domain);
 
-			requestUrl = "http://127.0.0.1:5000/?domain="+config.domain;
-			createRequest();
+			var requestUrl = "http://127.0.0.1:80/?domain="+config.domain;
+			createRequest(requestUrl, config);
 
 	      } else {
 	        retries += 1;
@@ -36,7 +32,7 @@
 	/* pushes top 5 articles ranked by concurrents excluding home page and current path to an array.
 	accepts: unsorted JSON object containing top pages
 	returns: JSON object containing array of top 5 sorted page objects */
-	function topFive (pagesObject) {
+	function topFive (pagesObject, config) {
 		console.log('inside top topFive');
 	    var temp = [];
 	    var i = 0;
@@ -88,7 +84,7 @@
 
   	}
 
-  	function createRequest() {
+  	function createRequest(requestUrl, config) {
   		console.log('createRequest fired')
   		var xhr = new XMLHttpRequest();
 		console.log('created xhr');
@@ -101,7 +97,7 @@
 			console.log(xhr.responseText);
 			var topPages = JSON.parse(xhr.responseText);
 			console.log(topPages);
-			topPages = topFive(topPages);
+			topPages = topFive(topPages, config);
 			console.log(topPages);
 
 			var recircWidg = document.createElement("div");
