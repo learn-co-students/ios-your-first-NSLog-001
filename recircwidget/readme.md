@@ -13,7 +13,7 @@ This widget is meant as an example to build a Top Pages widget using the Chartbe
 
 <p>Proxy any page tagged with Chartbeat code and:</p> 
 <p>insert a div element tagged with <code>&lt;div id=&quot;cbrecirc&quot;&gt;&lt;/div&gt; </code>anywhere on the page. inpage-recirc2.js replaces the div with an element containing links to 5 pages sorted by concurrents that share a section with the page.</p>
-<p>add the `<script> src='http://127.0.0.1/scripts/inpage-recirc2.js' </script>` script call in the body.</p>
+<p>add the `script src='http://127.0.0.1/scripts/inpage-recirc2.js' /script` script call in the body.</p>
 <h3>b1.1 NOTE: Currently the inpage-recirc2.js call is set up for functionality with a bookmarklet. The script call in the proxied .html is commented out. By removing the comment wrapping on the script call, it will run on the proxied page</h3>
   
 <h3>STEP 3:</h3>
