@@ -13,7 +13,8 @@ This widget is meant as an example to build a Top Pages widget using the Chartbe
 
 <p>Proxy any page tagged with Chartbeat code and:</p> 
 <p>insert a div element tagged with <code>&lt;div id=&quot;cbrecirc&quot;&gt;&lt;/div&gt; </code>anywhere on the page. inpage-recirc2.js replaces the div with an element containing links to 5 pages sorted by concurrents that share a section with the page.</p>
-<p>add the <code><script src='http://127.0.0.1/scripts/inpage-recirc2.js'></script></code> script call in the body.
+<p>add the `<script> src='http://127.0.0.1/scripts/inpage-recirc2.js' </script>` script call in the body.</p>
+<h3>b1.1 NOTE: Currently the inpage-recirc2.js call is set up for functionality with a bookmarklet. The script call in the proxied .html is commented out. By removing the comment wrapping on the script call, it will run on the proxied page</h3>
   
 <h3>STEP 3:</h3>
 <p>in terminal run <code>python inpage_recirc_worker.py</code> which serves up the data object on a local server (inpage-recirc2 requests from that locally hosted file). note: may require <code>sudo python inpage_recirc_worker.py</code> because the flask server is hosted on port:80 which is a protected port</p>
