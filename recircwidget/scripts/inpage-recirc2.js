@@ -17,7 +17,7 @@
 
 			console.log(config.domain);
 
-			var requestUrl = "http://127.0.0.1:80/?domain="+config.domain;
+			var requestUrl = "http://127.0.0.1:80/?domain="+_sf_async_config.domain;
 			createRequest(requestUrl, config);
 
 	      } else {
