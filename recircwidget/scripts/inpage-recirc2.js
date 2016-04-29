@@ -29,6 +29,29 @@
 	    }, 50);
   	}; emitChartbeatConfiguration();
 
+  	function divStyle() {
+  		var css = '#cbrecirc {';
+	  		css = css + 'position: fixed;';
+	  		css = css + 'top: 15px;';
+	  		css = css + 'background-color: white;';
+			css = css + 'border: thin;';
+			css = css + 'border-color: aliceblue;';
+			css = css + 'z-index: 1000;';
+			css = css + '}';
+
+	    var head = document.head || document.getElementsByTagName('head')[0];
+	    var style = document.createElement('style');
+
+		style.type = 'text/css';
+		if (style.styleSheet){
+		  style.styleSheet.cssText = css;
+		} else {
+		  style.appendChild(document.createTextNode(css));
+		}
+
+		head.appendChild(style);
+  	}
+
 	/* pushes top 5 articles ranked by concurrents excluding home page and current path to an array.
 	accepts: unsorted JSON object containing top pages
 	returns: JSON object containing array of top 5 sorted page objects */
@@ -103,6 +126,7 @@
 			var recircWidg = document.createElement("div");
 
 			createAnchors(recircWidg, topPages);
+			divStyle();
 
 			//document.body.insertBefore(recircWidg, document.body.childNodes[0]);
 			document.getElementById('cbrecirc').appendChild(recircWidg);
