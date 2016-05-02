@@ -43,15 +43,13 @@ def request_pages_from_domain(domain):
 
 def sort_by_total_engaged_time(pages):
     newpages = {}
-    print (pages['pages'][0]['stats']['people'])
-    print (pages['pages'][0]['stats']['engaged_time']['avg'])
+    pageInfo = pages['pages']
 
-    for x in range (0, len(pages['pages'])):
-        if newpages:
-            print ('newpages is true')
-        else:
-            newpages.update(pages['pages'][x])
-   
+    newpages = sorted(pageInfo, key=lambda page: page['stats']['people']*page['stats']['engaged_time']['avg'], reverse=True)
+    print(newpages[:5])
+    stats = [(page['stats']['people']*page['stats']['engaged_time']['avg'], page['title']) for page in newpages]
+    print(stats)
+
     #print (pages['pages'][10]['path'])
     #print ('break')
     #sorted(pages, pages['pages'][0]['stats']['engaged_time']['avg'])
@@ -59,7 +57,7 @@ def sort_by_total_engaged_time(pages):
     return newpages
 
 if __name__ == "__main__":
-    app.run(debug=True, port=80)
+    app.run(debug=True, port=8000)
 
 ## stuff that i need
 ## function that creates object
