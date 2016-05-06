@@ -10,7 +10,6 @@ from csv import DictWriter
 from csv import DictReader
 
 port = int(os.environ.get("PORT", 5000))
-app.run(debug=True, host='0.0.0.0', port=port)
 
 REPORTS_API_ENDPOINT = 'http://chartbeat.com/report_api/reports/daily/'
 
@@ -97,4 +96,5 @@ def max_concurrents(apikey, domain, start, end, save_to=False):
 
 if __name__ == "__main__":
     app = make_app()
+    app.run(debug=True, host='0.0.0.0', port=port)
     tornado.ioloop.IOLoop.current().start()
