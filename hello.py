@@ -94,6 +94,7 @@ def max_concurrents(apikey, domain, start, end, save_to=False):
 
 if __name__ == "__main__":
     app = make_app()
+    app.listen(8888)
     tornado.ioloop.IOLoop.current().start()
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
