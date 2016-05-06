@@ -49,11 +49,7 @@ def sort_by_total_engaged_time(pages):
     print(newpages[:5])
     stats = [(page['stats']['people']*page['stats']['engaged_time']['avg'], page['title']) for page in newpages]
     print(stats)
-
-    #print (pages['pages'][10]['path'])
-    #print ('break')
-    #sorted(pages, pages['pages'][0]['stats']['engaged_time']['avg'])
-    #print (pages['pages'][10]['path'])
+    
     return newpages
 
 if __name__ == "__main__":
