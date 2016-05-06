@@ -3,7 +3,6 @@ import tornado.web
 import os.path
 from datetime import datetime
 from datetime import timedelta
-import requests
 import json
 import os
 import os.path
