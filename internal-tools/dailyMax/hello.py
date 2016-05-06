@@ -3,7 +3,6 @@ import tornado.web
 import os.path
 from datetime import datetime
 from datetime import timedelta
-import requests
 import json
 import os
 import os.path
@@ -95,5 +94,7 @@ def max_concurrents(apikey, domain, start, end, save_to=False):
 
 if __name__ == "__main__":
     app = make_app()
-    app.listen(8888)
+    port = int(os.environ.get('PORT', 5000))
+    app.listen(port, '0.0.0.0')
+    print "test"
     tornado.ioloop.IOLoop.current().start()
