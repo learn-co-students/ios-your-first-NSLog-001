@@ -1,1 +1,1 @@
-<process type>: python hello.py
+web: python hello.py --port=$PORT
