@@ -33,7 +33,7 @@
   		var css = '#cbrecirc {';
 	  		css = css + 'position: fixed;';
 	  		css = css + 'top: 15px;';
-	  		css = css + 'background-color: white;';
+	  		css = css + 'background-color: green;';
 			css = css + 'border: thin;';
 			css = css + 'border-color: aliceblue;';
 			css = css + 'z-index: 1000;';
