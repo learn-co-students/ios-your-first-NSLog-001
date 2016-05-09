@@ -128,8 +128,10 @@
 			createAnchors(recircWidg, topPages);
 			divStyle();
 
+			recircWidg.id = "cbrecirc";
+
 			//document.body.insertBefore(recircWidg, document.body.childNodes[0]);
-			document.getElementById('cbrecirc').appendChild(recircWidg);
+			document.body.appendChild(recircWidg);
   		});
 	}
 	/* fires after xhr request completes/loads, parses returned data into JSON and calls topPages to sort
