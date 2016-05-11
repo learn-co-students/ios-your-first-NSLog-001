@@ -7,7 +7,6 @@ import json
 import os
 import os.path
 import logging
-import requests
 from csv import DictWriter
 from csv import DictReader
 
