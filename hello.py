@@ -3,11 +3,11 @@ import tornado.web
 import os.path
 from datetime import datetime
 from datetime import timedelta
+import requests
 import json
 import os
 import os.path
 import logging
-import requests
 from csv import DictWriter
 from csv import DictReader
 
