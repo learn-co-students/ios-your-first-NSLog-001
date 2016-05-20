@@ -12,6 +12,13 @@ Options:
   --read_header                    use the first line of the tsv to determine column headers, else use [email, first_name, last_name] [default: True]
   --skip_existing                  skip over existing emails instead of exiting [default: False]
 
-python ~ubuntu/superfly/djangofly/scripts/grant_permissions.py --account_id=62564 --domains=massmutualatwork.com --users=jjeffress@MassMutual.com,usingh@massmutual.com,emastrio@massmutual.com,RiceKRice@MassMutual.com,RConstantine@massmutual.com,wpartelo@massmutual.com --product_type=newsbeat
+****** GRANT PERMISSIONS *********
 
-python ~ubuntu/superfly/djangofly/scripts/grant_permissions.py --account_id=62564 --domains=massmutualatwork.com --users=jjeffress@MassMutual.com,usingh@massmutual.com,emastrio@massmutual.com,RiceKRice@MassMutual.com,RConstantine@massmutual.com,wpartelo@massmutual.com --product_type=newsbeat
+./../../usr/local/chartbeat_bin/djangofly-prod-scripts grant_permissions add_users --account_id=62564 --domains=massmutualatwork.com --users=jjeffress@MassMutual.com,usingh@massmutual.com,emastrio@massmutual.com,RiceKRice@MassMutual.com,RConstantine@massmutual.com,wpartelo@massmutual.com --product_type=newsbeat
+
+./../../usr/local/chartbeat_bin/djangofly-prod-scripts grant_permissions add_users --account_id=62564 --domains=massmutualatwork.com --users=jjeffress@MassMutual.com,usingh@massmutual.com,emastrio@massmutual.com,RiceKRice@MassMutual.com,RConstantine@massmutual.com,wpartelo@massmutual.com --product_type=newsbeat
+
+
+******* GRANT MAB ACCESS **********
+
+djangofly-prod-scripts grant_permissions --account_id=10538 --domains=timesofindia.indiatimes.com --users=Indrajeet.Rai@timesinternet.in,Jitendra.Verma@timesinternet.in,Kunal.Varma@timesinternet.in,James.Alter@timesinternet.in,Amit.Chaturvedi1@timesinternet.in,Prasad.Sanyal@timesinternet.in,Rkalra@gmail.com,Udit.Tyagi@timesinternet.in --product_type=mab --allow_protected=true --act
