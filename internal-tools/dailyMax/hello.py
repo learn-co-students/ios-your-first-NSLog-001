@@ -13,8 +13,14 @@ from csv import DictReader
 
 REPORTS_API_ENDPOINT = 'http://chartbeat.com/report_api/reports/daily/'
 
+# below is to support CBE reports
+cbe_endpoint = 'http://api.chartbeat.com/historical/traffic/stats/'
+
+# class CbeHandler(tornado.web.RequestHandler):
+
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
+        product = self.get_argument('product-type', '')
         apikey = self.get_argument('apikey', '')
         domain = self.get_argument('domain', '')
         start = self.get_argument('start', '')
@@ -30,12 +36,14 @@ class MainHandler(tornado.web.RequestHandler):
             self.render('index.html', data=filePath)
 
     def post(self):
+        product = self.get_argument('product-type', '')
         apikey = self.get_argument('apikey','')
         domain = self.get_argument('domain','')
         start = self.get_argument('start','')
         end = self.get_argument('end','')
         filePath = domain + "_"  + start + "_"  + end + ".csv"
         print filePath
+        print r
 
     
 
@@ -67,7 +75,12 @@ def max_concurrents(apikey, domain, start, end, save_to=False):
                 'apikey': apikey,
                 'date': formatted_date,
             }
-            r = requests.get(REPORTS_API_ENDPOINT, params=params)
+            # NEW CODE TO SUPPORT CBE CLIENTS
+            if "#product-type"==1:
+                r = requests.get(cbe_endpoint, params=params)
+            else: 
+            # END CBE CODE
+                r = requests.get(REPORTS_API_ENDPOINT, params=params)
            
             data = r.json()
 
@@ -92,7 +105,6 @@ def max_concurrents(apikey, domain, start, end, save_to=False):
                     })
                 
         return '\n'.join(toReturn)
-
 
 if __name__ == "__main__":
     app = make_app()

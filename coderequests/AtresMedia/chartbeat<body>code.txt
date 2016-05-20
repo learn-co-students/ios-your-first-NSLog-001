@@ -21,3 +21,10 @@
       
       })();
 </script>
+
+if (document.location.href.split('/').length < 5) {
+  _sf_async_config.sections = document.location.href.split('/')[3]
+}
+else {
+    _sf_async_config.sections = document.location.href.split('/')[4]
+}
