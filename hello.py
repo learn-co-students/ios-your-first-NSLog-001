@@ -8,36 +8,52 @@ import json
 import os
 import os.path
 import logging
+import grequests
 from csv import DictWriter
 from csv import DictReader
+import json
 
 REPORTS_API_ENDPOINT = 'http://chartbeat.com/report_api/reports/daily/'
 
+
+# below is to support CBE reports
+# cbe_endpoint = 'http://api.chartbeat.com/historical/traffic/stats/'
+
+# class CbeHandler(tornado.web.RequestHandler):
+
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
+        # product = self.get_argument('product-type', '')
         apikey = self.get_argument('apikey', '')
         domain = self.get_argument('domain', '')
         start = self.get_argument('start', '')
         end = self.get_argument('end', '')
-        filePath = domain + "_"  + start + "_"  + end + ".csv" 
-        if apikey:
-            results = max_concurrents(apikey, domain, start, end, save_to=True)
-            if filePath:
-                print filePath + 'valid'
-                self.render('index.html', data=filePath, domain=domain, start=start, end=end)
-        else:
-            print filePath + 'invalid'
-            self.render('index.html', data=filePath)
+        urls = domain.split(",")
+        print "urls: ", urls
+
+        url_to_filenames_dictionary = {}
+        for u in urls:
+            print 'url', u
+            filePath = u + "_"  + start + "_"  + end + ".csv" 
+            if apikey:
+                results = max_concurrents(apikey, u, start, end, save_to=True)
+                if filePath:
+                    url_to_filenames_dictionary[u] = results
+                    print filePath + 'valid'
+
+        self.render('index.html', data=str(url_to_filenames_dictionary), start=start, end=end, urls=domain.split(","), apikey=apikey)
 
     def post(self):
+        # product = self.get_argument('product-type', '')
         apikey = self.get_argument('apikey','')
         domain = self.get_argument('domain','')
         start = self.get_argument('start','')
         end = self.get_argument('end','')
-        filePath = domain + "_"  + start + "_"  + end + ".csv"
-        print filePath
-
-    
+        urls = domain.split(",")
+        for u in urls:
+            filePath = u + "_"  + start + "_"  + end + ".csv"
+            print filePath
+            print r
 
 def make_app():
     return tornado.web.Application([
@@ -50,6 +66,7 @@ settings = {
     "static_path": os.path.join(os.path.dirname(__file__), "static"),
 }
 
+
 def max_concurrents(apikey, domain, start, end, save_to=False):
 
         d_start = datetime.strptime(start, "%Y-%m-%d")
@@ -59,44 +76,58 @@ def max_concurrents(apikey, domain, start, end, save_to=False):
 
         toReturn = []
         rows = []
-        for i in xrange(delta.days + 1):
-            curr_date = d_start + timedelta(days=i)
-            formatted_date = curr_date.strftime("%Y-%m-%d")
-            params = {
-                'host': domain,
-                'apikey': apikey,
-                'date': formatted_date,
-            }
-            r = requests.get(REPORTS_API_ENDPOINT, params=params)
-           
-            data = r.json()
+        # for grequests
+        # grab the domain from comma separated list and make separate async requests for each domain
 
-            row = [domain, formatted_date, str(data['data']['overview']['data']['max_concurrents']['num'])]
+        urls = domain.split(",")
 
-            # data = r.json()
-            toReturn.append(','.join(row))
-            rows.append(row)
-            #print r.json()
+        print urls
+
+        for u in urls:
+            print u
+            for i in xrange(delta.days + 1):
+                curr_date = d_start + timedelta(days=i)
+                formatted_date = curr_date.strftime("%Y-%m-%d")
+                params = {
+                    'host': u,
+                    'apikey': apikey,
+                    'date': formatted_date,
+                }
+                # NEW CODE TO SUPPORT CBE CLIENTS
+                # if "#product-type"==1:
+                #     r = requests.get(cbe_endpoint, params=params)
+                # else: 
+                # END CBE CODE
+                r = requests.get(REPORTS_API_ENDPOINT, params=params)
+                
+                # rs = (grequests.get(u) for u in urls)
+                # grequests.map(rs)
+
+                data = r.json()
+
+                row = [u, formatted_date, str(data['data']['overview']['data']['max_concurrents']['num'])]
+
+                toReturn.append(','.join(row))
+                rows.append(row)
+                #print r.json()
         if save_to:
-            path = os.path.join(".", "static", "{0}_{1}_{2}.csv".format(domain, start, end))
-            print domain
+            path = os.path.join(".", "static", "{0}{1}{2}.csv".format(u, start, end))
             print start, end
             with open(path, 'wb') as csvFile:
-                writer = DictWriter(csvFile, fieldnames=['domain', 'date', 'max_concurrents'])
+                writer = DictWriter(csvFile, fieldnames=['u', 'date', 'max_concurrents'])
                 writer.writeheader()
-                for domain, date, max_concurrents in rows:
+                for u, date, max_concurrents in rows:
                     writer.writerow({
-                        'domain': domain,
+                        'u': u,
                         'date': date,
                         'max_concurrents': max_concurrents,
                     })
-                
-        return '\n'.join(toReturn)
-
+                    
+            return '\n'.join(toReturn)
 
 if __name__ == "__main__":
     app = make_app()
     port = int(os.environ.get('PORT', 5000))
     app.listen(port, '0.0.0.0')
-    print "test"
+    print "It's alive!!!"
     tornado.ioloop.IOLoop.current().start()
