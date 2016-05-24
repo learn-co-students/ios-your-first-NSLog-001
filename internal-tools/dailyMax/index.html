@@ -87,12 +87,12 @@
         </fieldset> 
       </form>
     </div> <!-- end row -->
-
-
     <div id='download' style='white-space: pre-wrap' >
-      <!-- if data is empty hide the static_url(data) // if it is populated then populate this link -->
-      {% if data != '__.csv' %}
-      <a class='btn btn-primary' href="{{ static_url(data) }}" id='csv'>Download CSV File</a>
+    <!-- if data is empty hide the static_url(data) // if it is populated then populate this link -->
+      {% if data != '{}' %}
+        {% for u in urls %}
+          <a class='btn btn-primary' href="{{ static_url(u + start + end + '.csv') }}" id='csv'>Download CSV File</a>
+        {% end %}
       {% end %}
      
     </div>
@@ -100,6 +100,10 @@
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="{{ static_url("materialize.js") }}"></script>
 <script src="{{ static_url("init.js") }}"></script>
+<script>
+var data = ("{{ data }}");
+console.log(data);
+</script>
 
 <!-- SHOW/HIDE THE DOWNLOAD BUTTON BELOW -->
 

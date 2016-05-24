@@ -11,6 +11,7 @@ import logging
 import grequests
 from csv import DictWriter
 from csv import DictReader
+import json
 
 REPORTS_API_ENDPOINT = 'http://chartbeat.com/report_api/reports/daily/'
 
@@ -27,15 +28,20 @@ class MainHandler(tornado.web.RequestHandler):
         domain = self.get_argument('domain', '')
         start = self.get_argument('start', '')
         end = self.get_argument('end', '')
-        filePath = domain + "_"  + start + "_"  + end + ".csv" 
-        if apikey:
-            results = max_concurrents(apikey, domain, start, end, save_to=True)
-            if filePath:
-                print filePath + 'valid'
-                self.render('index.html', data=filePath, domain=domain, start=start, end=end)
-        else:
-            print filePath + 'invalid'
-            self.render('index.html', data=filePath)
+        urls = domain.split(",")
+        print "urls: ", urls
+
+        url_to_filenames_dictionary = {}
+        for u in urls:
+            print 'url', u
+            filePath = u + "_"  + start + "_"  + end + ".csv" 
+            if apikey:
+                results = max_concurrents(apikey, u, start, end, save_to=True)
+                if filePath:
+                    url_to_filenames_dictionary[u] = results
+                    print filePath + 'valid'
+
+        self.render('index.html', data=str(url_to_filenames_dictionary), start=start, end=end, urls=domain.split(","), apikey=apikey)
 
     def post(self):
         # product = self.get_argument('product-type', '')
@@ -43,9 +49,11 @@ class MainHandler(tornado.web.RequestHandler):
         domain = self.get_argument('domain','')
         start = self.get_argument('start','')
         end = self.get_argument('end','')
-        filePath = domain + "_"  + start + "_"  + end + ".csv"
-        print filePath
-        print r
+        urls = domain.split(",")
+        for u in urls:
+            filePath = u + "_"  + start + "_"  + end + ".csv"
+            print filePath
+            print r
 
 def make_app():
     return tornado.web.Application([
@@ -102,19 +110,18 @@ def max_concurrents(apikey, domain, start, end, save_to=False):
                 toReturn.append(','.join(row))
                 rows.append(row)
                 #print r.json()
-            if save_to:
-                path = os.path.join(".", "static", "{0}_{1}_{2}.csv".format(u, start, end))
-                print u
-                print start, end
-                with open(path, 'wb') as csvFile:
-                    writer = DictWriter(csvFile, fieldnames=['domain', 'date', 'max_concurrents'])
-                    writer.writeheader()
-                    for u, date, max_concurrents in rows:
-                        writer.writerow({
-                            'domain': u,
-                            'date': date,
-                            'max_concurrents': max_concurrents,
-                        })
+        if save_to:
+            path = os.path.join(".", "static", "{0}{1}{2}.csv".format(u, start, end))
+            print start, end
+            with open(path, 'wb') as csvFile:
+                writer = DictWriter(csvFile, fieldnames=['u', 'date', 'max_concurrents'])
+                writer.writeheader()
+                for u, date, max_concurrents in rows:
+                    writer.writerow({
+                        'u': u,
+                        'date': date,
+                        'max_concurrents': max_concurrents,
+                    })
                     
             return '\n'.join(toReturn)
 
