@@ -8,7 +8,9 @@ The data populates in a a downloadable CSV file for easy sorting and filtering.
 
 Install tornado: <code>pip install tornado</code> in dailyMax directory.
 
-Run localhost: <code>python hello.py</code> in command line, then in browser use URL: localhost:8888 to run page.
+Install grequests: <code>pip install grequests</code> in dailyMax directory.
+
+Run localhost: <code>python hello.py</code> in command line, then in browser use URL: localhost:5000 to run page.
 
 In order to use this tool you'll need an API Key and a domain.
 
