@@ -21,4 +21,12 @@ Options:
 
 ******* GRANT MAB ACCESS **********
 
-djangofly-prod-scripts grant_permissions --account_id=10538 --domains=timesofindia.indiatimes.com --users=Indrajeet.Rai@timesinternet.in,Jitendra.Verma@timesinternet.in,Kunal.Varma@timesinternet.in,James.Alter@timesinternet.in,Amit.Chaturvedi1@timesinternet.in,Prasad.Sanyal@timesinternet.in,Rkalra@gmail.com,Udit.Tyagi@timesinternet.in --product_type=mab --allow_protected=true --act
+djangofly-prod-scripts grant_permissions --account_id=10538 --domains=timesofindia.indiatimes.com --users= --product_type=mab --allow_protected=true --act
+
+******* ADD USERS **********
+
+./../../usr/local/chartbeat_bin/djangofly-prod-scripts add_users --account_id=63483 --domains=businessinsider.in --users= --product_type=newsbeat
+
+******* GRANT PERMISSIONS / ADD DOMAINS **********
+
+./../../usr/local/chartbeat_bin/djangofly-prod-scripts grant_permissions --account_id=33583 --domains=nhpr.org,exit977.org,ds.npr.org,kplu.org,kunc.org,news.stlpublicradio.org,jazz24.org,groovenotes.org,kpluwonders.org,humanosphere.kplu.org,wuwm.com,kcur.org,mpbn.net,wuky.org,wncw.org,wwno.org,wfpl.org,boisestatepublicradio.org,innovationtrail.org,publicradiokitchen.wbur.org,kacu.org,wdiy.org,kanw.com,kasu.org,kazu.org,kbia.org,kccu.org,redriverradio.org,kenw.org,keranews.org,kios.org,knau.org,krvs.org,krwg.org,ksut.org,kttz.org,kuer.org,radiowest.kuer.org,kunm.org,publicradiotulsa.org,kwit.org,news.prairiepublic.org,nwpr.org,prndi.org,upr.org,wamc.org,wbaa.org,news.wbfo.org,wcbe.org,weku.fm --create_domains --product_type=newsbeat 
