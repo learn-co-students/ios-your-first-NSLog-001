@@ -11,11 +11,13 @@ import logging
 import grequests
 from csv import DictWriter
 from csv import DictReader
+from rq import Queue
+from worker import conn
 import json
 
 REPORTS_API_ENDPOINT = 'http://chartbeat.com/report_api/reports/daily/'
 
-
+q = Queue(connection=conn)
 # below is to support CBE reports
 # cbe_endpoint = 'http://api.chartbeat.com/historical/traffic/stats/'
 
@@ -99,7 +101,7 @@ def max_concurrents(apikey, domain, start, end, save_to=False):
                 # else: 
                 # END CBE CODE
                 r = requests.get(REPORTS_API_ENDPOINT, params=params)
-                
+                var requestUrl = "http://127.0.0.1:5000/?host=" +u+ "&apikey="+apikey+ "&date=" + formatted_date;
                 # rs = (grequests.get(u) for u in urls)
                 # grequests.map(rs)
 
