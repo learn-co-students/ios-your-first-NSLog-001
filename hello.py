@@ -40,7 +40,7 @@ class MainHandler(tornado.web.RequestHandler):
             filePath = u + "_"  + start + "_"  + end + ".csv" 
             if apikey:
                 results = max_concurrents(apikey, u, start, end, save_to=True)
-                enqueue_job(apikey, u, start, end, save_to)
+                enqueue_job(apikey, u, start, end, save_to=True)
                 if filePath:
                     url_to_filenames_dictionary[u] = results
                     print filePath + 'valid'
