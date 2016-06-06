@@ -77,6 +77,8 @@ try:
     result = q.enqueue(max_concurrents, "redis://localhost:5000")
     print result
     print len(q)
+except Exception:
+    pass
 except max_concurrents as e:
     pass
     print max_concurrents
