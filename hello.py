@@ -89,7 +89,7 @@ def enqueue_job(apikey, domain, start, end, save_to=False):
 #     q = Queue(connection=conn)
 #     result = q.enqueue(max_concurrents, "redis://localhost:5000")
 #     print result
-#     print len(q)
+#     print listenn(q)
 # except Exception:
 #     sys.exc_clear()
 #     pass
