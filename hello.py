@@ -40,6 +40,7 @@ class MainHandler(tornado.web.RequestHandler):
             filePath = u + "_"  + start + "_"  + end + ".csv" 
             if apikey:
                 results = max_concurrents(apikey, u, start, end, save_to=True)
+                enqueue_job(apikey, u, start, end, save_to)
                 if filePath:
                     url_to_filenames_dictionary[u] = results
                     print filePath + 'valid'
@@ -70,28 +71,39 @@ settings = {
 }
 
 
-
-# async code
-try:
-    q = Queue(connection=conn)
-    result = q.enqueue(max_concurrents, "redis://localhost:5000")
-    print result
-    print len(q)
-except Exception:
-    sys.exc_clear()
-    pass
-except max_concurrents as e:
-    pass
-    print max_concurrents
-    res = "no max"
-except ConnectionError as e:
-    print e 
-    res = "No Response"
+# class DailyMaxWorker(object):
+#     def __init__(self, redis_address):
+#         pass
 
 
-    if __name__ == "__main__":
-        app = make_app()
-        port = int(os.environ.get('PORT', 5000))
-        app.listen(port, '0.0.0.0')
-        print "It's alive!!!"
-        tornado.ioloop.IOLoop.current().start()
+def enqueue_job(apikey, domain, start, end, save_to=False):
+    try:
+        q = Queue(connection=conn)
+        result = q.enqueue_call(func=max_concurrents, args=(apikey, domain, start, end, save_to))
+        print result
+    except Exception as e:
+        raise e
+# # async/worker 
+# try:
+#     q = Queue(connection=conn)
+#     result = q.enqueue(max_concurrents, "redis://localhost:5000")
+#     print result
+#     print len(q)
+# except Exception:
+#     sys.exc_clear()
+#     pass
+# except max_concurrents as e:
+#     pass
+#     print max_concurrents
+#     res = "no max"
+# except ConnectionError as e:
+#     print e 
+#     res = "No Response"
+
+
+if __name__ == "__main__":
+    app = make_app()
+    port = int(os.environ.get('PORT', 5000))
+    app.listen(port, '0.0.0.0')
+    print "It's alive!!!"
+    tornado.ioloop.IOLoop.current().start()
