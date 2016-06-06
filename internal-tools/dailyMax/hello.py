@@ -8,16 +8,22 @@ import json
 import os
 import os.path
 import logging
-import grequests
 from csv import DictWriter
 from csv import DictReader
 from rq import Queue
-from worker import conn
+# from redis import Redis
+# import worker
 import json
+# from worker import conn
+
 
 REPORTS_API_ENDPOINT = 'http://chartbeat.com/report_api/reports/daily/'
 
-q = Queue(connection=conn)
+# def herokuQ(max_concurrents):
+#     q = Queue(connection=conn)
+#     q.enqueue(herokuQ, max_concurrents)
+
+#     print len(q)
 # below is to support CBE reports
 # cbe_endpoint = 'http://api.chartbeat.com/historical/traffic/stats/'
 
@@ -100,8 +106,9 @@ def max_concurrents(apikey, domain, start, end, save_to=False):
                 #     r = requests.get(cbe_endpoint, params=params)
                 # else: 
                 # END CBE CODE
+                # requestUrl = "http://localhost:5000/?"+params;
+
                 r = requests.get(REPORTS_API_ENDPOINT, params=params)
-                var requestUrl = "http://127.0.0.1:5000/?host=" +u+ "&apikey="+apikey+ "&date=" + formatted_date;
                 # rs = (grequests.get(u) for u in urls)
                 # grequests.map(rs)
 

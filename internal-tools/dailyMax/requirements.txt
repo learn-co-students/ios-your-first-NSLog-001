@@ -21,6 +21,5 @@ s3cmd==1.6.1
 singledispatch==3.4.0.3
 six==1.10.0
 tornado==4.3
-vboxapi==1.0
 virtualenv==15.0.1
 Werkzeug==0.11.9

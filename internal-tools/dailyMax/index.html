@@ -34,6 +34,15 @@
   <br><br>
   <div class="container">
     <h1 class='center'>Daily Max Concurrents</h1>
+     <div id='download' style='white-space: pre-wrap' >
+    <!-- if data is empty hide the static_url(data) // if it is populated then populate this link -->
+      {% if data != '{}' %}
+        {% for u in urls %}
+          <a class='btn btn-primary' href="{{ static_url(u + start + end + '.csv') }}" id='csv'>Download CSV File</a>
+        {% end %}
+      {% end %}
+     
+    </div>
       <div class="row">
         <form class="col s12">
           <fieldset>
@@ -87,15 +96,7 @@
         </fieldset> 
       </form>
     </div> <!-- end row -->
-    <div id='download' style='white-space: pre-wrap' >
-    <!-- if data is empty hide the static_url(data) // if it is populated then populate this link -->
-      {% if data != '{}' %}
-        {% for u in urls %}
-          <a class='btn btn-primary' href="{{ static_url(u + start + end + '.csv') }}" id='csv'>Download CSV File</a>
-        {% end %}
-      {% end %}
-     
-    </div>
+   
   </div> <!-- main container end -->
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="{{ static_url("materialize.js") }}"></script>
