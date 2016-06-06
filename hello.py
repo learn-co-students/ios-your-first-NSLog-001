@@ -77,10 +77,13 @@ try:
     result = q.enqueue(max_concurrents, "redis://localhost:5000")
     print result
     print len(q)
+except max_concurrents as e:
+    print max_concurrents
+    res = "no max"
 except ConnectionError as e:
     print e 
     res = "No Response"
-    # craigs error message
+
 
     if __name__ == "__main__":
         app = make_app()
