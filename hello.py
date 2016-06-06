@@ -18,10 +18,6 @@ from worker import conn
 from maxConcurrents import max_concurrents
 from redis import ConnectionError
 
-
-
-
-
 # below is to support CBE reports
 # cbe_endpoint = 'http://api.chartbeat.com/historical/traffic/stats/'
 
@@ -81,7 +77,9 @@ try:
     result = q.enqueue(max_concurrents, "redis://localhost:5000")
     print result
     print len(q)
-except ConnectionError:
+except ConnectionError as e:
+    print e 
+    res = "No Response"
     # craigs error message
 
     if __name__ == "__main__":

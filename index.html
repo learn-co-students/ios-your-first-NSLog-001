@@ -38,7 +38,7 @@
     <!-- if data is empty hide the static_url(data) // if it is populated then populate this link -->
       {% if data != '{}' %}
         {% for u in urls %}
-          <a class='btn btn-primary' href="{{ static_url(u + start + end + '.csv') }}" id='csv'>Download CSV File</a>
+          <a class='btn btn-primary' href="{{ static_url(u + start + end + '.csv') }}" id='csv'>Download {{ u }} CSV File</a>
         {% end %}
       {% end %}
      
