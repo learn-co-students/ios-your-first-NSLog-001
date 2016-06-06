@@ -58,8 +58,8 @@ def max_concurrents(apikey, domain, start, end, save_to=False):
         if save_to:
             path = os.path.join(".", "static", "{0}{1}{2}.csv".format(u, start, end))
             print start, end
-            print "THIS IS THE FILEPATH"
-            print path
+            print "THIS IS THE FILEPATH: ", path
+            print "end"
             with open(path, 'wb') as csvFile:
                 writer = DictWriter(csvFile, fieldnames=['u', 'date', 'max_concurrents'])
                 writer.writeheader()
