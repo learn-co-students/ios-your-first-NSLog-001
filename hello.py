@@ -37,12 +37,13 @@ class MainHandler(tornado.web.RequestHandler):
         url_to_filenames_dictionary = {}
         for u in urls:
             print 'url', u
-            filePath = u + "_"  + start + "_"  + end + ".csv" 
+            filePath = os.path.join(".", "static", "{0}{1}{2}.csv".format(u, start, end))
             if apikey:
-                results = max_concurrents(apikey, u, start, end, save_to=True)
+                #results = max_concurrents(apikey, u, start, end, save_to=True)
                 enqueue_job(apikey, u, start, end, save_to=True)
                 if filePath:
-                    url_to_filenames_dictionary[u] = results
+                    #url_to_filenames_dictionary[u] = results
+                    url_to_filenames_dictionary[u] = filePath
                     print filePath + 'valid'
 
         self.render('index.html', data=str(url_to_filenames_dictionary), start=start, end=end, urls=domain.split(","), apikey=apikey)
