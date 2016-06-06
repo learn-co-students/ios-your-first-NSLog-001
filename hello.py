@@ -74,10 +74,11 @@ settings = {
 # async code
 try:
     q = Queue(connection=conn)
-    result = q.enqueue(max_concurrents, "redis://localhost:5000", '', '', '')
+    result = q.enqueue(max_concurrents, "redis://localhost:5000")
     print result
     print len(q)
 except max_concurrents as e:
+    pass
     print max_concurrents
     res = "no max"
 except ConnectionError as e:
