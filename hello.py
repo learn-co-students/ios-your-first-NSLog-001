@@ -78,6 +78,7 @@ try:
     print result
     print len(q)
 except Exception:
+    sys.exc_clear()
     pass
 except max_concurrents as e:
     pass
