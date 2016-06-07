@@ -165,7 +165,7 @@
   	if none of the above, returns false */
   	function sectionChecker (cachedDataObject, pageSections) {
 
-  		if (pageSections === "" || pageSections === undefined) { //|| pageSections[0] === "home" || pageSections[0] === "homepage") {
+  		if (pageSections === "" || pageSections === undefined || pageSections[0] === "home" || pageSections[0] === "homepage") {
   			console.log('page has no sections defined:' + pageObjectSections);
   			return true;
   		}
