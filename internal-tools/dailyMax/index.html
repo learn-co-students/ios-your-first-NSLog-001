@@ -68,12 +68,20 @@
               <input id="apikey" name="apikey" type="text" placeholder="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" class="form-control input-md" required>
             </div>
           </div>
+          <!-- USERS EMAIL TEXT INPUT -->
+          <div class="form-group">
+            <i class="material-icons small prefix">mail</i>
+            <label class="col-md-4 control-label" for="domain">Email</label>
+            <div class="col-md-4">
+              <input id="email" name="email" type="text" placeholder="example@chartbeat.com" class="form-control input-md" required>
+            </div>
+          </div>
           <!-- Text input-->
           <div class="form-group">
             <i class="material-icons small prefix">language</i>
-            <label class="col-md-4 control-label" for="domain">Domain</label>
+            <label class="col-md-4 control-label" for="domain">Domain(s)</label>
             <div class="col-md-4">
-              <input id="domain" name="domain" type="text" placeholder="exampleDomain.com" class="form-control input-md" required>
+              <input id="domain" name="domain" type="text" placeholder="exampleDomain.com (this accepts comma separated domains with no spaces)" class="form-control input-md" required>
             </div>
           </div>
           <!-- Text input-->
@@ -104,6 +112,7 @@
 <script>
 var data = ("{{ data }}");
 console.log(data);
+console.log(document.querySelector('#email').innerText)
 </script>
 
 <!-- SHOW/HIDE THE DOWNLOAD BUTTON BELOW -->

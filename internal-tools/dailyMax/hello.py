@@ -77,7 +77,7 @@ settings = {
 #         pass
 
 
-def enqueue_job(apikey, domain, start, end, save_to=False):
+def enqueue_job(apikey, domain, start, end, save_to=True):
     try:
         q = Queue(connection=conn)
         result = q.enqueue_call(func=max_concurrents, args=(apikey, domain, start, end, save_to))
