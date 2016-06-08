@@ -8,48 +8,43 @@
 var Pouch = function (articleTitle, articlePath) {
   return (
     `
-    <div class="box"> 
-      <h1>${articleTitle}${articlePath}</h1> 
-    </div>
+    <a href=${articlePath}>${articleTitle}</a> 
     `
   );
 };
 
-// Our list of titles
 var pouchItems = [{
-    articleTitle : "Article 1",
-    articlePath : "path/to/Article1"
+  articleTitle : "Article 1",
+  articlePath : "path/to/Article1"
   },
   {
-    articleTitle : "Article 2",
-    articlePath : "path/to/Article2"
+  articleTitle : "Article 2",
+  articlePath : "path/to/Article2"
   },
   {
-    articleTitle : "Article 3",
-    articlePath : "path/to/Article3"
+  articleTitle : "Article 3",
+  articlePath : "path/to/Article3"
   },
   {
-    articleTitle : "Article 4",
-    articlePath : "path/to/Article4"
+  articleTitle : "Article 4",
+  articlePath : "path/to/Article4"
   },
   {
-    articleTitle : "Article 5",
-    articlePath : "path/to/Article5"
+  articleTitle : "Article 5",
+  articlePath : "path/to/Article5"
   },
-  ];
+];
 
 var appContents = '';
 
-var loopFunc = function (title) {
+var loopPouchItems = function (article) {
   return (
-    appContents = appContents + Pouch(title);
+    appContents = appContents + Pouch(article.articleTitle, article.articlePath)
   );
 };
 
-pouchItems.forEach(loopFunc);
+pouchItems.forEach(loopPouchItems);
 
 console.log(`APP CONTENTS: ${appContents}`);
 
 document.querySelector('.app').innerHTML = appContents;
-
-titles[0]['title']
