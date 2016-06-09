@@ -34,13 +34,24 @@
   <br><br>
   <div class="container">
     <h1 class='center'>Daily Max Concurrents</h1>
+       <!--  <div class="spinner-layer spinner-red">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div>
+          <div class="gap-patch">
+            <div class="circle"></div>
+          </div>
+          <div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div> -->
      <div id='download' style='white-space: pre-wrap' >
     <!-- if data is empty hide the static_url(data) // if it is populated then populate this link -->
+    {% for u in urls %}
       {% if data != '{}' %}
-        {% for u in urls %}
-          <a class='btn btn-primary' href="{{ static_url(u + start + end + '.csv') }}" id='csv'>Download {{ u }} CSV File</a>
-        {% end %}
+        <a class='btn btn-primary' href="{{ static_url(u + start + end + '.csv') }}" id='csv'>Download {{ u }} CSV File</a>
       {% end %}
+    {% end %}
      
     </div>
       <div class="row">
@@ -48,18 +59,6 @@
           <fieldset>
           <!-- Form Name -->
           <legend> Fill Out The Fields Below</legend>
-
-          <!-- SELECT CBE OR CBP CLIENT -->
-          <!-- <div class="form-group">
-            
-            <select id="product-type">
-              <option value="" disabled selected>SELECT CBE OR CBP CLIENT</option>
-              <option value="1">CBE</option>
-              <option value="2">CBP</option>
-            </select>
-            <label>SELECT CBE OR CBP CLIENT</label>
-          </div> -->
-
           <!-- Text input-->
           <div class="form-group">
             <i class="material-icons small prefix">vpn_key</i>
