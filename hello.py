@@ -24,10 +24,14 @@ from redis import ConnectionError
 # class CbeHandler(tornado.web.RequestHandler):
 
 class MainHandler(tornado.web.RequestHandler):
-
+    debug=True
+    static_hash_cache=False
+    serve_traceback=True
+    autoreload=True
     def get(self):
         # product = self.get_argument('product-type', '')
         apikey = self.get_argument('apikey', '')
+        email = self.get_argument('email', '')
         domain = self.get_argument('domain', '')
         start = self.get_argument('start', '')
         end = self.get_argument('end', '')
@@ -37,7 +41,7 @@ class MainHandler(tornado.web.RequestHandler):
         url_to_filenames_dictionary = {}
         for u in urls:
             print 'url', u
-            filePath = os.path.join(".", "static", "{0}{1}{2}.csv".format(u, start, end))
+            filePath = os.path.join(".", "static", "{0}{1}{2}.csv".format(domain, start, end))
             if apikey:
                 #results = max_concurrents(apikey, u, start, end, save_to=True)
                 enqueue_job(apikey, u, start, end, save_to=True)
@@ -49,8 +53,8 @@ class MainHandler(tornado.web.RequestHandler):
         self.render('index.html', data=str(url_to_filenames_dictionary), start=start, end=end, urls=domain.split(","), apikey=apikey)
 
     def post(self):
-        # product = self.get_argument('product-type', '')
         apikey = self.get_argument('apikey','')
+        email = self.get_argument('email', '')
         domain = self.get_argument('domain','')
         start = self.get_argument('start','')
         end = self.get_argument('end','')
@@ -59,22 +63,22 @@ class MainHandler(tornado.web.RequestHandler):
             filePath = u + "_"  + start + "_"  + end + ".csv"
             print filePath
             print r
+            print email
 
 def make_app():
+    debug=True
+    static_hash_cache=False
+    serve_traceback=True
+    autoreload=True
     return tornado.web.Application([
         (r"/", MainHandler),
-        (r"/font", tornado.web.StaticFileHandler,
+        (r"/static", tornado.web.StaticFileHandler,
         dict(path=settings['static_path'])),
     ], **settings)
 
 settings = {
     "static_path": os.path.join(os.path.dirname(__file__), "static"),
 }
-
-
-# class DailyMaxWorker(object):
-#     def __init__(self, redis_address):
-#         pass
 
 
 def enqueue_job(apikey, domain, start, end, save_to=True):
@@ -84,22 +88,6 @@ def enqueue_job(apikey, domain, start, end, save_to=True):
         print result
     except Exception as e:
         raise e
-# # async/worker 
-# try:
-#     q = Queue(connection=conn)
-#     result = q.enqueue(max_concurrents, "redis://localhost:5000")
-#     print result
-#     print listenn(q)
-# except Exception:
-#     sys.exc_clear()
-#     pass
-# except max_concurrents as e:
-#     pass
-#     print max_concurrents
-#     res = "no max"
-# except ConnectionError as e:
-#     print e 
-#     res = "No Response"
 
 
 if __name__ == "__main__":

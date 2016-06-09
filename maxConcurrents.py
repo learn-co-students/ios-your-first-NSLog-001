@@ -20,7 +20,6 @@ def max_concurrents(apikey, domain, start, end, save_to=False):
 
         toReturn = []
         rows = []
-        # for grequests
         # grab the domain from comma separated list and make separate async requests for each domain
 
         urls = domain.split(",")
@@ -37,16 +36,8 @@ def max_concurrents(apikey, domain, start, end, save_to=False):
                     'apikey': apikey,
                     'date': formatted_date,
                 }
-                # NEW CODE TO SUPPORT CBE CLIENTS
-                # if "#product-type"==1:
-                #     r = requests.get(cbe_endpoint, params=params)
-                # else: 
-                # END CBE CODE
-                # requestUrl = "http://localhost:5000/?"+params;
 
                 r = requests.get(REPORTS_API_ENDPOINT, params=params)
-                # rs = (grequests.get(u) for u in urls)
-                # grequests.map(rs)
 
                 data = r.json()
 
@@ -55,19 +46,21 @@ def max_concurrents(apikey, domain, start, end, save_to=False):
                 toReturn.append(','.join(row))
                 rows.append(row)
                 #print r.json()
-        if save_to:
-            path = os.path.join(".", "static", "{0}{1}{2}.csv".format(u, start, end))
-            print start, end
-            print "THIS IS THE FILEPATH: ", path
-            print "end"
-            with open(path, 'wb') as csvFile:
-                writer = DictWriter(csvFile, fieldnames=['u', 'date', 'max_concurrents'])
-                writer.writeheader()
-                for u, date, max_concurrents in rows:
-                    writer.writerow({
-                        'u': u,
-                        'date': date,
-                        'max_concurrents': max_concurrents,
-                    })
+            if save_to:
+                path = os.path.join(".", "static", "{0}{1}{2}.csv".format(domain, start, end))
+                print start, end
+                print "THIS IS THE FILEPATH: ", path
+                print "end"
+
+                with open(path, 'wb') as csvFile:
+                    writer = DictWriter(csvFile, fieldnames=['u', 'date', 'max_concurrents'])
+                    writer.writeheader()
+                    for u, date, max_concurrents in rows:
+                        writer.writerow({
+                            'u': u,
+                            'date': date,
+                            'max_concurrents': max_concurrents,
+                        })
                     
             return '\n'.join(toReturn)
+
