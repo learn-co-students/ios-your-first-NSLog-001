@@ -5,13 +5,40 @@
 //             want to render to
 // - title: the tile we want to 
 //          display
-var Pouch = function (articleTitle, articlePath) {
+var pouchItem = function (articleTitle, articlePath) {
   return (
     `
     <a href=${articlePath}>${articleTitle}</a> 
     `
   );
-};
+}
+
+class Pouch {
+  constructor(selector, articles) {
+    this.selector = selector;
+    this.articles = articles;
+  }
+
+  getPouchItems () {
+    var self = this;
+    /*fetch('./data/items.json')
+      .then(function(response){
+        return response.json();
+      })
+      .then(function(result) {
+        self.articles = result;*/
+        self.render();
+      //})
+  }
+  
+  render () {
+    var appContents = '';
+    this.articles.forEach(function(article) {
+      appContents += pouchItem(article.articleTitle, article.articlePath);
+    });
+    document.querySelector(this.selector).innerHTML = appContents;
+  }
+}
 
 var pouchItems = [{
   articleTitle : "Article 1",
@@ -35,16 +62,20 @@ var pouchItems = [{
   },
 ];
 
-var appContents = '';
+var pouchComponent = new Pouch('.app', pouchItems);
+pouchComponent.getPouchItems();
 
-var loopPouchItems = function (article) {
+
+
+/*var loopPouchItems = function (article) {
   return (
-    appContents = appContents + Pouch(article.articleTitle, article.articlePath)
+    appContents = appContents + pouchItem(article.articleTitle, article.articlePath)
   );
 };
 
 pouchItems.forEach(loopPouchItems);
+*/
 
-console.log(`APP CONTENTS: ${appContents}`);
+//console.log(`APP CONTENTS: ${appContents}`);
 
-document.querySelector('.app').innerHTML = appContents;
+//document.querySelector('.app').innerHTML = appContents;
