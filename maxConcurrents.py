@@ -61,6 +61,7 @@ def max_concurrents(apikey, domain, start, end, save_to=False):
                             'date': date,
                             'max_concurrents': max_concurrents,
                         })
+                print "THIS IS AFTER THE WRITE"
                     
             return '\n'.join(toReturn)
 

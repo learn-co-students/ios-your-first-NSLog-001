@@ -25,7 +25,6 @@ from redis import ConnectionError
 
 class MainHandler(tornado.web.RequestHandler):
     debug=True
-    static_hash_cache=False
     serve_traceback=True
     autoreload=True
     def get(self):
@@ -91,6 +90,7 @@ def enqueue_job(apikey, domain, start, end, save_to=True):
 
 
 if __name__ == "__main__":
+    static_hash_cache=False
     app = make_app()
     port = int(os.environ.get('PORT', 5000))
     app.listen(port, '0.0.0.0')
