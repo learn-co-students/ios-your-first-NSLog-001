@@ -1,23 +1,9 @@
 [
-  "pouchItems" : [{
-    articleTitle : "Article 1",
-    articlePath : "path/to/Article1"
-    },
-    {
-    articleTitle : "Article 2",
-    articlePath : "path/to/Article2"
-    },
-    {
-    articleTitle : "Article 3",
-    articlePath : "path/to/Article3"
-    },
-    {
-    articleTitle : "Article 4",
-    articlePath : "path/to/Article4"
-    },
-    {
-    articleTitle : "Article 5",
-    articlePath : "path/to/Article5"
-    }
+  "pouchItems": [
+  "one",
+  "two",
+  "three",
+  "four",
+  "five"
   ]
 ]

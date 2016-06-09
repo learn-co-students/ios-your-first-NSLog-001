@@ -8,7 +8,7 @@
 var pouchItem = function (articleTitle, articlePath) {
   return (
     `
-    <a href=${articlePath}>${articleTitle}</a> 
+    <p><a href=${articlePath}>${articleTitle}</a></p> 
     `
   );
 }
@@ -20,23 +20,37 @@ class Pouch {
   }
 
   getPouchItems () {
+
     var self = this;
-    /*fetch('./data/items.json')
+    debugger;
+    
+    var request = new Request('http://86a9826c.ngrok.io/items.json', {
+      method: 'GET',
+      dataType: 'jsonp',
+      mode: 'no-cors',
+      headers: new Headers ({
+        'Content-Type': 'text/plain'
+      })
+    });
+
+    fetch(request)
       .then(function(response){
+        debugger; 
         return response.json();
       })
       .then(function(result) {
-        self.articles = result;*/
+        self.articles = result;
         self.render();
-      //})
+      })
   }
   
   render () {
     var appContents = '';
     this.articles.forEach(function(article) {
-      appContents += pouchItem(article.articleTitle, article.articlePath);
+      appContents += pouchItem(article);//article.articleTitle, article.articlePath);
     });
-    document.querySelector(this.selector).innerHTML = appContents;
+    document.querySelector(this.selector).innerHTML = "Most Popular Related Content";
+    document.querySelector(this.selector).innerHTML += appContents;
   }
 }
 
