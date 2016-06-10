@@ -17,7 +17,6 @@ import json
 from worker import conn
 from maxConcurrents import max_concurrents
 from redis import ConnectionError
-import tornadoredis
 
 # below is to support CBE reports
 # cbe_endpoint = 'http://api.chartbeat.com/historical/traffic/stats/'
@@ -28,7 +27,6 @@ class MainHandler(tornado.web.RequestHandler):
     debug=True
     serve_traceback=True
     autoreload=True
-    @tornado.web.asynchronous
     def get(self):
         # product = self.get_argument('product-type', '')
         apikey = self.get_argument('apikey', '')
