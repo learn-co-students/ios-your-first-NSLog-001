@@ -17,12 +17,6 @@ import json
 from worker import conn
 from maxConcurrents import max_concurrents
 from redis import ConnectionError
-import tornadoredis
-
-# below is to support CBE reports
-# cbe_endpoint = 'http://api.chartbeat.com/historical/traffic/stats/'
-
-# class CbeHandler(tornado.web.RequestHandler):
 
 class MainHandler(tornado.web.RequestHandler):
     debug=True
@@ -66,6 +60,7 @@ class MainHandler(tornado.web.RequestHandler):
             print r
             print email
 
+# MAKE THE APP
 def make_app():
     debug=True
     static_hash_cache=False
@@ -77,11 +72,12 @@ def make_app():
         dict(path=settings['static_path'])),
     ], **settings)
 
+# SET THE SETTINGS
 settings = {
     "static_path": os.path.join(os.path.dirname(__file__), "static"),
 }
 
-
+# QUEUE THE JOB FOR THE WORKER
 def enqueue_job(apikey, domain, start, end, save_to=True):
     try:
         q = Queue(connection=conn)
@@ -89,6 +85,7 @@ def enqueue_job(apikey, domain, start, end, save_to=True):
         print result
     except Exception as e:
         raise e
+
 
 
 if __name__ == "__main__":
