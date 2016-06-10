@@ -5,6 +5,24 @@
 //             want to render to
 // - title: the tile we want to 
 //          display
+var pouchContainer = function () {
+  return (
+    `
+    <div id="close">
+      <div id="top">
+        <div id="recircTitle" class="flexitem">
+          Most Popular Related Articles
+        </div>
+        <div id="closeMe" class="flexitem">
+          Close [x]
+        </div>
+      </div>
+      <a href="path">goo gooo ga gaaa</a>
+    </div>
+    `
+    )
+}
+
 var pouchItem = function (articleTitle, articlePath) {
   return (
     `
@@ -21,13 +39,10 @@ class Pouch {
 
   getPouchItems () {
 
-    var self = this;
-    debugger;
-    
-    var request = new Request('http://86a9826c.ngrok.io/items.json', {
+   /*var request = new Request('http://127.0.0.1:8000/?domain=nytimes.com', {
       method: 'GET',
-      dataType: 'jsonp',
-      mode: 'no-cors',
+      dataType: 'json',
+      mode: 'cors',
       headers: new Headers ({
         'Content-Type': 'text/plain'
       })
@@ -39,15 +54,15 @@ class Pouch {
         return response.json();
       })
       .then(function(result) {
-        self.articles = result;
-        self.render();
-      })
+        self.articles = result;*/
+        this.render();
+      //})
   }
   
   render () {
-    var appContents = '';
+    var appContents = pouchContainer();
     this.articles.forEach(function(article) {
-      appContents += pouchItem(article);//article.articleTitle, article.articlePath);
+      appContents += pouchItem(article.articleTitle, article.articlePath);
     });
     document.querySelector(this.selector).innerHTML = "Most Popular Related Content";
     document.querySelector(this.selector).innerHTML += appContents;
