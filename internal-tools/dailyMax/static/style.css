@@ -26,15 +26,10 @@ src:url("../font/Proxima Nova Sbold.otf") format("opentype");
 font-style:normal;font-weight:600;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Merriweather:300);
-
 
 /* NAVIGATION STYLES */
 
 nav {
-	/*background-color: #203543 !important;
-  background-color: #2F3E4A;
-  padding-top: 14px;*/
   width: 100%;
   display: flex;
   position: fixed;
@@ -97,11 +92,7 @@ blockquote {
   border-left: 5px solid #52a4d8;
 }
 
-/*#download {
-  background-color: #52A4D8;
-  font-size: 14px;
-  letter-spacing: 2px;
-}*/
+
 
 /* CLASSES */
 

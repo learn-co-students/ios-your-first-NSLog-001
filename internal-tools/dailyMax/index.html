@@ -34,22 +34,11 @@
   <br><br>
   <div class="container">
     <h1 class='center'>Daily Max Concurrents</h1>
-       <!--  <div class="spinner-layer spinner-red">
-          <div class="circle-clipper left">
-            <div class="circle"></div>
-          </div>
-          <div class="gap-patch">
-            <div class="circle"></div>
-          </div>
-          <div class="circle-clipper right">
-            <div class="circle"></div>
-          </div>
-        </div> -->
      <div id='download' style='white-space: pre-wrap' >
-    <!-- if data is empty hide the static_url(data) // if it is populated then populate this link -->
+    <!-- if data is empty hide the button // if it is populated then populate this link -->
     {% for u in urls %}
       {% if data != '{}' %}
-        <a class='btn btn-primary' href="{{ static_url(u + start + end + '.csv') }}" id='csv'>Download {{ u }} CSV File</a>
+        <a class='btn btn-primary' href="https://s3-us-west-2.amazonaws.com/{{ bucket }}/{{ path }}" id='csv'>Download {{ u }} CSV File</a>
       {% end %}
     {% end %}
      

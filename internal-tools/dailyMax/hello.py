@@ -16,15 +16,14 @@ import worker
 import json
 from worker import conn
 from maxConcurrents import max_concurrents
+from maxConcurrents import writeCSV
+from maxConcurrents import concurrents_to_s3
 from redis import ConnectionError
+import boto3
+import botocore
 
 class MainHandler(tornado.web.RequestHandler):
-    debug=True
-    serve_traceback=True
-    autoreload=True
-    @tornado.web.asynchronous
     def get(self):
-        # product = self.get_argument('product-type', '')
         apikey = self.get_argument('apikey', '')
         email = self.get_argument('email', '')
         domain = self.get_argument('domain', '')
@@ -32,14 +31,35 @@ class MainHandler(tornado.web.RequestHandler):
         end = self.get_argument('end', '')
         urls = domain.split(",")
         print "urls: ", urls
+        s3 = boto3.resource('s3')
+        bucket = s3.Bucket('powerful-bayou')
+        exists = True
+        suffix = "/{0}{1}{2}.csv".format(domain, start, end)
+        path = os.path.join(bucket, suffix)
+        key= path
+        rows = []
+        fieldnames=[]
+        
+        for bucket in s3.buckets.all():
+            print(bucket.name)
 
         url_to_filenames_dictionary = {}
+
         for u in urls:
             print 'url', u
-            filePath = os.path.join(".", "static", "{0}{1}{2}.csv".format(domain, start, end))
+            filePath = os.path.join("https://s3-us-west-2.amazonaws.com/", "bucket", "path", "{0}{1}{2}.csv".format(domain, start, end))
             if apikey:
                 #results = max_concurrents(apikey, u, start, end, save_to=True)
+
+                # THIS ENQUEUE RUNS THE MAXCON JOB
                 enqueue_job(apikey, u, start, end, save_to=True)
+
+                # THIS QUEUE RUNS THE WRITE CSV
+                enqueue_job_writeCSV(s3, bucket, key, rows, fieldnames)
+
+                # THIS QUEUE PUTS THE CSV ONTO S3
+                enqueue_job_concurrents(apikey, domain, start, end, save_to)
+
                 if filePath:
                     #url_to_filenames_dictionary[u] = results
                     url_to_filenames_dictionary[u] = filePath
@@ -55,8 +75,9 @@ class MainHandler(tornado.web.RequestHandler):
         end = self.get_argument('end','')
         urls = domain.split(",")
         for u in urls:
-            filePath = u + "_"  + start + "_"  + end + ".csv"
+            filePath = bucket + u + "_"  + start + "_"  + end + ".csv"
             print filePath
+            print bucket
             print r
             print email
 
@@ -86,7 +107,22 @@ def enqueue_job(apikey, domain, start, end, save_to=True):
     except Exception as e:
         raise e
 
-
+# QUEUE THE JOB TO WRITE THE CSV
+def enqueue_job_writeCSV(s3, bucket, key, rows, fieldnames):
+    # try:
+    q = Queue(connection=conn)
+    result = q.enqueue_call(func=writeCSV, args=(s3, bucket, key, rows, fieldnames))
+    print result
+    # except Exception as e:
+    #     raise e
+# QUEUE THE JOB TO WRITE THE CSV FILES TO S3
+def enqueue_job_concurrents(s3, bucket, key, rows, fieldnames):
+    try:
+        q = Queue(connection=conn)
+        result = q.enqueue_call(func=concurrents_to_s3, args=(apikey, domain, start, end, save_to))
+        print result
+    except Exception as e:
+        raise e
 
 if __name__ == "__main__":
     static_hash_cache=False
