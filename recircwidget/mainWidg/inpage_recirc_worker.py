@@ -38,7 +38,7 @@ def hello():
 def request_pages_from_domain(domain):
     r = requests.get('http://api.chartbeat.com/live/toppages/v3/?apikey=0993d53651dbf432cf9e235114c86d35&host='+domain+'&limit=200')
     pages = r.json()
-    sort_by_total_engaged_time(pages)
+    #sort_by_total_engaged_time(pages)
     return pages
 
 def sort_by_total_engaged_time(pages):
