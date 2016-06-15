@@ -37,20 +37,20 @@ class MainHandler(tornado.web.RequestHandler):
         for u in urls:
             print 'url', u
 
-            filePath = os.path.join("https://s3-us-west-2.amazonaws.com/", u, start, end, ".csv".format(domain, start, end))
-
+            
+            bucket='powerful-bayou'
+            suffix = '{}_{}_{}'.format(domain, start, end)
+            path = os.path.join(bucket, suffix)
             if apikey:
                 #results = max_concurrents(apikey, u, start, end, save_to=True)
 
                 # THIS QUEUE PUTS THE CSV ONTO S3
                 save_to = True
-                enqueue_job_concurrents(apikey, domain, start, end, save_to)
-
-                
-                if filePath:
+                enqueue_job_concurrents(apikey, domain, start, end, bucket, suffix, save_to)
+                if path:
                     #url_to_filenames_dictionary[u] = results
-                    url_to_filenames_dictionary[u] = filePath
-                    print filePath + 'valid'
+                    url_to_filenames_dictionary[u] = path
+                    print path + 'valid'
 
         self.render('index.html', data=str(url_to_filenames_dictionary), start=start, end=end, urls=domain.split(","), apikey=apikey)
 
@@ -62,8 +62,7 @@ class MainHandler(tornado.web.RequestHandler):
         end = self.get_argument('end','')
         urls = domain.split(",")
         for u in urls:
-            filePath = bucket + u + "_"  + start + "_"  + end + ".csv"
-            print filePath
+            path = bucket + u + "_"  + start + "_"  + end + ".csv"
             print bucket
             print r
             print email
@@ -103,9 +102,9 @@ settings = {
 #     # except Exception as e:
 #     #     raise e
 # QUEUE THE JOB TO WRITE THE CSV FILES TO S3
-def enqueue_job_concurrents(apikey, domain, start, end, save_to=True):
+def enqueue_job_concurrents(apikey, domain, start, end, bucket, suffix, save_to=True):
         q = Queue(connection=conn)
-        result = q.enqueue_call(func=concurrents_to_s3, args=(apikey, domain, start, end))
+        result = q.enqueue_call(func=concurrents_to_s3, args=(apikey, domain, start, end, bucket, suffix))
         print result
 
 if __name__ == "__main__":

@@ -11,16 +11,18 @@ import boto3
 import botocore
 import tempfile
 from tempfile import NamedTemporaryFile
+import csv
+
 
 
 REPORTS_API_ENDPOINT = 'http://chartbeat.com/report_api/reports/daily/'
 
 
-def concurrents_to_s3(apikey, domain, start, end, save_to=False):
+def concurrents_to_s3(apikey, domain, start, end, bucket, suffix, save_to=False):
     data = max_concurrents(apikey, domain, start, end)
     s3 = boto3.resource('s3')
     bucket = 'powerful-bayou'
-    suffix = "bucket".format(domain, start, end)
+    suffix = '{}_{}_{}'.format(domain, start, end)
     path = os.path.join(bucket, suffix)
     writeCSV(s3,
              bucket=bucket,
@@ -73,15 +75,20 @@ def max_concurrents(apikey, domain, start, end, save_to=False):
     return response
 
 def writeCSV(s3, bucket, key, rows, fieldnames):
-    tf = tempfile.NamedTemporaryFile()
-
-    with tf as f:
-        writer = DictWriter(f, fieldnames=fieldnames)
+    # dataImport = max_concurrents(response)
+    # maxCondata = open('test.jpg', 'rb')
+    # rows = str(rows)
+    with tempfile.NamedTemporaryFile() as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames , delimiter = ';')
         writer.writeheader()
         for row in rows:
+            print "THIS IS THE ROW", row
             writer.writerow(row)
+            print key
+            print bucket
+        f.seek(0)
+        s3.Bucket(bucket).put_object(Key=key, Body=f)
 
-        s3.Object(bucket).upload_file(Key=key, Body=f)
 
     return ''
 
