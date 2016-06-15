@@ -39,7 +39,7 @@ class MainHandler(tornado.web.RequestHandler):
 
             
             bucket='powerful-bayou'
-            suffix = '{}_{}_{}'.format(domain, start, end)
+            suffix = '{}_{}_{}.csv'.format(domain, start, end)
             path = os.path.join(bucket, suffix)
             if apikey:
                 #results = max_concurrents(apikey, u, start, end, save_to=True)
@@ -52,7 +52,7 @@ class MainHandler(tornado.web.RequestHandler):
                     url_to_filenames_dictionary[u] = path
                     print path + 'valid'
 
-        self.render('index.html', data=str(url_to_filenames_dictionary), start=start, end=end, urls=domain.split(","), apikey=apikey)
+        self.render('index.html', data=str(url_to_filenames_dictionary), start=start, end=end, urls=domain.split(","), apikey=apikey, path=path)
 
     def post(self):
         apikey = self.get_argument('apikey','')

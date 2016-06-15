@@ -22,7 +22,7 @@ def concurrents_to_s3(apikey, domain, start, end, bucket, suffix, save_to=False)
     data = max_concurrents(apikey, domain, start, end)
     s3 = boto3.resource('s3')
     bucket = 'powerful-bayou'
-    suffix = '{}_{}_{}'.format(domain, start, end)
+    suffix = '{}_{}_{}.csv'.format(domain, start, end)
     path = os.path.join(bucket, suffix)
     writeCSV(s3,
              bucket=bucket,

@@ -36,11 +36,10 @@
     <h1 class='center'>Daily Max Concurrents</h1>
      <div id='download' style='white-space: pre-wrap' >
     <!-- if data is empty hide the button // if it is populated then populate this link -->
-    {% for u in urls %}
       {% if data != '{}' %}
-        <a class='btn btn-primary' href="https://s3-us-west-2.amazonaws.com/" id='csv'>Download {{ u }} CSV File</a>
+        <p>Thanks for using the Daily Max Calculator! We are working on your job, come back and click the button below in a few minutes and your CSV file should be ready to go!!</p>
+        <a class='btn btn-primary' href="https://s3-us-west-2.amazonaws.com/{{ path }}" id='csv'>Download your CSV File</a>
       {% end %}
-    {% end %}
      
     </div>
       <div class="row">
