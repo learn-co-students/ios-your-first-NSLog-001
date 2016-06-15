@@ -38,7 +38,7 @@
     <!-- if data is empty hide the button // if it is populated then populate this link -->
     {% for u in urls %}
       {% if data != '{}' %}
-        <a class='btn btn-primary' href="https://s3-us-west-2.amazonaws.com/{{ bucket }}/{{ path }}" id='csv'>Download {{ u }} CSV File</a>
+        <a class='btn btn-primary' href="https://s3-us-west-2.amazonaws.com/" id='csv'>Download {{ u }} CSV File</a>
       {% end %}
     {% end %}
      

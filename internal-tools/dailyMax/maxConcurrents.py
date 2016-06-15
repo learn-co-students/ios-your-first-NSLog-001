@@ -9,9 +9,33 @@ from csv import DictWriter
 from csv import DictReader
 import boto3
 import botocore
+import tempfile
+from tempfile import NamedTemporaryFile
 
 
 REPORTS_API_ENDPOINT = 'http://chartbeat.com/report_api/reports/daily/'
+
+
+def concurrents_to_s3(apikey, domain, start, end, save_to=False):
+    data = max_concurrents(apikey, domain, start, end)
+    s3 = boto3.resource('s3')
+    bucket = 'powerful-bayou'
+    suffix = "bucket".format(domain, start, end)
+    path = os.path.join(bucket, suffix)
+    writeCSV(s3,
+             bucket=bucket,
+             key=path,
+             rows=data,
+            # fieldnames=['domain', 'date', 'max_concurrents']
+
+             fieldnames=['host', 'date', 'concurrents']
+            )
+    print path
+    print bucket
+    return json.dumps({
+        'data': path,
+        'url': 'https://%s.s3.amazonaws.com/%s' % (bucket, suffix)
+    })
 
 def max_concurrents(apikey, domain, start, end, save_to=False):
     domains = domain.split(",")
@@ -40,43 +64,28 @@ def max_concurrents(apikey, domain, start, end, save_to=False):
             data = r.json()
             concurrents = str(data['data']['overview']['data']['max_concurrents']['num'])
 
-            responses.append({
+            response.append({
                 'host': domain,
                 'date': formatted_date,
                 'concurrents': concurrents
             })
 
-    return responses
+    return response
 
 def writeCSV(s3, bucket, key, rows, fieldnames):
-    with NamedTemporaryFile() as f:
+    tf = tempfile.NamedTemporaryFile()
+
+    with tf as f:
         writer = DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
         for row in rows:
             writer.writerow(row)
 
-        s3.Bucket(bucket).put_object(Key=key, Body=f)
+        s3.Object(bucket).upload_file(Key=key, Body=f)
 
     return ''
 
-def concurrents_to_s3(apikey, domain, start, end, save_to=False):
-    data = max_concurrents(apikey, domain, start, end)
-    s3 = boto3.resource('s3')
-    bucket = 'powerful-bayou'
-    suffix = "/{0}{1}{2}.csv".format(domain, start, end)
-    path = os.path.join(bucket, suffix)
-    writeCSV(s3,
-             bucket=bucket,
-             key=path,
-             rows=data,
-             fieldnames=['domain', 'date', 'max_concurrents']
-            )
-    print path
-    print bucket
-    return json.dumps({
-        'data': path,
-        'url': 'https://%s.s3.amazonaws.com/%s' % (bucket, suffix)
-    })
+
         # row = [domain, formatted_date, str(data['data']['overview']['data']['max_concurrents']['num'])]
 
         # toReturn.append(','.join(row))
