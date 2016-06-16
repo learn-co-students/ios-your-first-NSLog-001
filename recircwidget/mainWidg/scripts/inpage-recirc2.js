@@ -31,6 +31,8 @@
 
   	
   	//Sets styling for the div we're inserting and injects the css code into the <head>
+  	//Please note this can be hosted on the localhost and pointed to in the 'var style ='
+  	//div element. I'm keeping it here for now as I am experimenting with the look / feel.
   	function divStyle() {
   		var css = '#close {';
 	  		css = css + 'position: fixed;';
@@ -79,7 +81,7 @@
   	}
 
 	/* pushes top 5 articles ranked by concurrents * engaged time, excluding landing pages and current path, to an array.
-	accepts: unsorted JSON object containing top pages
+	accepts: unsorted JSON object containing top pages, _sf_async_config config variable
 	returns: JSON object containing array of top 5 sorted page objects */
 	function topFive (pagesObject, config) {
 		
@@ -156,7 +158,9 @@
   		}
   	}
 
-  	/* if sections on the page being checked is set to "" or is not defined,
+  	/* 
+	Compares _sf_async_config.sections set on the browser page to the page data objects'.
+  	if sections on the page being checked is set to "" or is not defined,
   	returns true.
   	if sections is defined but equals 'home' or 'homepage', returns true
   	if any section value tagged on the page matches
