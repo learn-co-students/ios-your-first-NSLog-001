@@ -11,6 +11,7 @@ CORS(app)
 stored_result = {}
 stored_result_time = {}
 
+## hosts up javascript files on the local server
 @app.route("/scripts/<path:filename>")
 def host_file(filename):
     return send_from_directory('scripts',filename)
