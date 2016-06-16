@@ -21,7 +21,6 @@ def host_file(filename):
 ## check age of result, if older than specified duration, then get new one.
 ## in this case the duration of the cache is 60 seconds
 def hello():
-    print('inside hello function')
     global stored_result
     global stored_result_time
     domain = request.args.get('domain')
@@ -48,6 +47,7 @@ def request_pages_from_domain(domain):
 ## this function sorts the resulting data object on concurrents * engaged time.
 ## the call to this function is currently commented out and this happens in the 
 ## front end now.
+## this can manipulate the object in any way you want: just change the code here.
 def sort_by_total_engaged_time(pages):
     newpages = {}
     pageInfo = pages['pages']
