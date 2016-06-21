@@ -29,7 +29,6 @@
 	    }, 50);
   	}; emitChartbeatConfiguration();
 
-  	
   	//Sets styling for the div we're inserting and injects the css code into the <head>
   	function divStyle() {
   		var css = '#close {';

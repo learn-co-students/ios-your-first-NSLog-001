@@ -3,7 +3,7 @@
 // - selector: the css selector
 //             of the object we
 //             want to render to
-// - title: the tile we want to 
+// - title: the tile we want to
 //          display
 var pouchContainer = function () {
   return (
@@ -26,7 +26,7 @@ var pouchContainer = function () {
 var pouchItem = function (articleTitle, articlePath) {
   return (
     `
-    <p><a href=${articlePath}>${articleTitle}</a></p> 
+    <p><a href=${articlePath}>${articleTitle}</a></p>
     `
   );
 }
@@ -39,26 +39,26 @@ class Pouch {
 
   getPouchItems () {
 
-   /*var request = new Request('http://127.0.0.1:8000/?domain=nytimes.com', {
+    var request = new Request('http://localhost:8000/data.json', {
       method: 'GET',
       dataType: 'json',
-      mode: 'cors',
+      mode: 'no-cors',
       headers: new Headers ({
         'Content-Type': 'text/plain'
       })
     });
 
-    fetch(request)
-      .then(function(response){
-        debugger; 
-        return response.json();
-      })
-      .then(function(result) {
-        self.articles = result;*/
-        this.render();
-      //})
-  }
-  
+  fetch(request)
+    .then(function(response){
+      debugger;
+      return response;
+    })
+    .then(function(result) {
+      this.articles = result;
+      this.render();
+    })
+}
+
   render () {
     var appContents = pouchContainer();
     this.articles.forEach(function(article) {
@@ -69,25 +69,26 @@ class Pouch {
   }
 }
 
-var pouchItems = [{
-  articleTitle : "Article 1",
-  articlePath : "path/to/Article1"
+var pouchItems = [
+  {
+    articleTitle : "Article 1",
+    articlePath : "path/to/Article1"
   },
   {
-  articleTitle : "Article 2",
-  articlePath : "path/to/Article2"
+    articleTitle : "Article 2",
+    articlePath : "path/to/Article2"
   },
   {
-  articleTitle : "Article 3",
-  articlePath : "path/to/Article3"
+    articleTitle : "Article 3",
+    articlePath : "path/to/Article3"
   },
   {
-  articleTitle : "Article 4",
-  articlePath : "path/to/Article4"
+    articleTitle : "Article 4",
+    articlePath : "path/to/Article4"
   },
   {
-  articleTitle : "Article 5",
-  articlePath : "path/to/Article5"
+    articleTitle : "Article 5",
+    articlePath : "path/to/Article5"
   },
 ];
 
