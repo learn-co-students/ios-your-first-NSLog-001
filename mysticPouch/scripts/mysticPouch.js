@@ -23,10 +23,10 @@ var pouchContainer = function () {
     )
 }
 
-var pouchItem = function (articleTitle, articlePath) {
+var pouchItem = function (article) {
   return (
     `
-    <p><a href=${articlePath}>${articleTitle}</a></p>
+    <p>{article}</p>
     `
   );
 }
@@ -35,11 +35,13 @@ class Pouch {
   constructor(selector, articles) {
     this.selector = selector;
     this.articles = articles;
+    debugger;
   }
 
   getPouchItems () {
 
-    var request = new Request('http://localhost:8000/data.json', {
+    debugger;
+    var request = new Request('http://localhost:3000', {
       method: 'GET',
       dataType: 'json',
       mode: 'no-cors',
@@ -50,11 +52,11 @@ class Pouch {
 
   fetch(request)
     .then(function(response){
-      debugger;
       return response;
     })
     .then(function(result) {
       this.articles = result;
+      debugger;
       this.render();
     })
 }
@@ -62,10 +64,10 @@ class Pouch {
   render () {
     var appContents = pouchContainer();
     this.articles.forEach(function(article) {
-      appContents += pouchItem(article.articleTitle, article.articlePath);
+      appContents += pouchItem(article);
     });
-    document.querySelector(this.selector).innerHTML = "Most Popular Related Content";
-    document.querySelector(this.selector).innerHTML += appContents;
+    document.querySelector(self.selector).innerHTML = "Most Popular Related Content";
+    document.querySelector(self.selector).innerHTML += appContents;
   }
 }
 
@@ -80,21 +82,17 @@ var pouchItems = [
   },
   {
     articleTitle : "Article 3",
-    articlePath : "path/to/Article3"
-  },
-  {
-    articleTitle : "Article 4",
-    articlePath : "path/to/Article4"
+    articlePath: "path/to/article3"
   },
   {
     articleTitle : "Article 5",
     articlePath : "path/to/Article5"
-  },
+  }
 ];
 
 var pouchComponent = new Pouch('.app', pouchItems);
 pouchComponent.getPouchItems();
-
+debugger;
 
 
 /*var loopPouchItems = function (article) {
