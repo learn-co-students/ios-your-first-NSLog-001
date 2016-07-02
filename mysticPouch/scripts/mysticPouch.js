@@ -40,13 +40,13 @@ class Pouch {
 
   getPouchItems () {
 
-    debugger;
-    var request = new Request('http://localhost:3000', {
+    var self = this;
+    var request = new Request('http://localhost:3000/pages', {
       method: 'GET',
       dataType: 'json',
       mode: 'no-cors',
       headers: new Headers ({
-        'Content-Type': 'text/plain'
+        'Content-Type': 'application/json'
       })
     });
 
@@ -55,9 +55,10 @@ class Pouch {
       return response;
     })
     .then(function(result) {
-      this.articles = result;
+      console.log(result);
+      //this.articles = result;
       debugger;
-      this.render();
+      self.render();
     })
 }
 
@@ -66,8 +67,8 @@ class Pouch {
     this.articles.forEach(function(article) {
       appContents += pouchItem(article);
     });
-    document.querySelector(self.selector).innerHTML = "Most Popular Related Content";
-    document.querySelector(self.selector).innerHTML += appContents;
+    document.querySelector(this.selector).innerHTML = "Most Popular Related Content";
+    document.querySelector(this.selector).innerHTML += appContents;
   }
 }
 
