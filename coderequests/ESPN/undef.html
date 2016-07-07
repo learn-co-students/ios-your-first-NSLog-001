@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="http://theundefeated.vip.10uplabs.com/xmlrpc.php">
+	<link rel="shortcut icon" href="http://theundefeated.vip.10uplabs.com/wp-content/themes/vip/theundefeated/favicon.ico?v=1.0.1">
+	<link rel="apple-touch-icon" href="http://theundefeated.vip.10uplabs.com/wp-content/themes/vip/theundefeated/assets/images/the-undefeated-touch.png?v=1.0.1">
+	<link rel="mask-icon" color="black" href="http://theundefeated.vip.10uplabs.com/wp-content/themes/vip/theundefeated/assets/images/the-undefeated-u.svg?v=1.0.1">
+	<title>Draymond Green playoffs diary, Part 13 — The Undefeated</title>
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/svg\/","svgExt":".svg","source":{"wpemoji":"http:\/\/theundefeated.vip.10uplabs.com\/wp-includes\/js\/wp-emoji.js?ver=4.6-beta2-38008","twemoji":"http:\/\/theundefeated.vip.10uplabs.com\/wp-includes\/js\/twemoji.js?ver=4.6-beta2-38008"}};
+			( function( window, document, settings ) {
+	var src, ready, ii, tests;
+
+	/**
+	 * Detect if the browser supports rendering emoji or flag emoji. Flag emoji are a single glyph
+	 * made of two characters, so some browsers (notably, Firefox OS X) don't support them.
+	 *
+	 * @since 4.2.0
+	 *
+	 * @param type {String} Whether to test for support of "simple", "flag", "diversity" or "unicode8" emoji.
+	 * @return {Boolean} True if the browser can render emoji, false if it cannot.
+	 */
+	function browserSupportsEmoji( type ) {
+		var canvas = document.createElement( 'canvas' ),
+			context = canvas.getContext && canvas.getContext( '2d' ),
+			stringFromCharCode = String.fromCharCode,
+			tonedata, tone, tone2;
+
+		if ( ! context || ! context.fillText ) {
+			return false;
+		}
+
+		/*
+		 * Chrome on OS X added native emoji rendering in M41. Unfortunately,
+		 * it doesn't work when the font is bolder than 500 weight. So, we
+		 * check for bold rendering support to avoid invisible emoji in Chrome.
+		 */
+		context.textBaseline = 'top';
+		context.font = '600 32px Arial';
+
+		switch ( type ) {
+			case 'flag':
+				/*
+				 * This works because the image will be one of three things:
+				 * - Two empty squares, if the browser doesn't render emoji
+				 * - Two squares with 'A' and 'U' in them, if the browser doesn't render flag emoji
+				 * - The Australian flag
+				 *
+				 * The first two will encode to small images (1-2KB data URLs), the third will encode
+				 * to a larger image (4-5KB data URL).
+				 */
+				context.fillText( stringFromCharCode( 55356, 56806, 55356, 56826 ), 0, 0 );
+				return canvas.toDataURL().length > 3000;
+			case 'diversity':
+				/*
+				 * This tests if the browser supports the Emoji Diversity specification, by rendering an
+				 * emoji with no skin tone specified (in this case, Santa). It then adds a skin tone, and
+				 * compares if the emoji rendering has changed.
+				 */
+				context.fillText( stringFromCharCode( 55356, 57221 ), 0, 0 );
+				tonedata = context.getImageData( 16, 16, 1, 1 ).data;
+				tone = tonedata[0] + ',' + tonedata[1] + ',' + tonedata[2] + ',' + tonedata[3];
+
+				context.fillText( stringFromCharCode( 55356, 57221, 55356, 57343 ), 0, 0 );
+				// Chrome has issues comparing arrays, and Safari has issues converting arrays to strings.
+				// So, we create our own string and compare that, instead.
+				tonedata = context.getImageData( 16, 16, 1, 1 ).data;
+				tone2 = tonedata[0] + ',' + tonedata[1] + ',' + tonedata[2] + ',' + tonedata[3];
+
+				return tone !== tone2;
+			case 'simple':
+				/*
+				 * This creates a smiling emoji, and checks to see if there is any image data in the
+				 * center pixel. In browsers that don't support emoji, the character will be rendered
+				 * as an empty square, so the center pixel will be blank.
+				 */
+				context.fillText( stringFromCharCode( 55357, 56835 ), 0, 0 );
+				return context.getImageData( 16, 16, 1, 1 ).data[0] !== 0;
+			case 'unicode8':
+				/*
+				 * To check for Unicode 8 support, let's try rendering the most important advancement
+				 * that the Unicode Consortium have made in years: the burrito.
+				 */
+				context.fillText( stringFromCharCode( 55356, 57135 ), 0, 0 );
+				return context.getImageData( 16, 16, 1, 1 ).data[0] !== 0;
+		}
+
+		return false;
+	}
+
+	function addScript( src ) {
+		var script = document.createElement( 'script' );
+
+		script.src = src;
+		script.type = 'text/javascript';
+		document.getElementsByTagName( 'head' )[0].appendChild( script );
+	}
+
+	tests = Array( 'simple', 'flag', 'unicode8', 'diversity' );
+
+	settings.supports = {
+		everything: true,
+		everythingExceptFlag: true
+	};
+
+	for( ii = 0; ii < tests.length; ii++ ) {
+		settings.supports[ tests[ ii ] ] = browserSupportsEmoji( tests[ ii ] );
+
+		settings.supports.everything = settings.supports.everything && settings.supports[ tests[ ii ] ];
+
+		if ( 'flag' !== tests[ ii ] ) {
+			settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag && settings.supports[ tests[ ii ] ];
+		}
+	}
+
+	settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag && ! settings.supports.flag;
+
+	settings.DOMReady = false;
+	settings.readyCallback = function() {
+		settings.DOMReady = true;
+	};
+
+	if ( ! settings.supports.everything ) {
+		ready = function() {
+			settings.readyCallback();
+		};
+
+		if ( document.addEventListener ) {
+			document.addEventListener( 'DOMContentLoaded', ready, false );
+			window.addEventListener( 'load', ready, false );
+		} else {
+			window.attachEvent( 'onload', ready );
+			document.attachEvent( 'onreadystatechange', function() {
+				if ( 'complete' === document.readyState ) {
+					settings.readyCallback();
+				}
+			} );
+		}
+
+		src = settings.source || {};
+
+		if ( src.concatemoji ) {
+			addScript( src.concatemoji );
+		} else if ( src.wpemoji && src.twemoji ) {
+			addScript( src.twemoji );
+			addScript( src.wpemoji );
+		}
+	}
+
+} )( window, document, window._wpemojiSettings );
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='all-css-0' href='http://theundefeated.vip.10uplabs.com/_static/??/wp-includes/css/dashicons.css,/wp-includes/css/admin-bar.css?m=1466190001j' type='text/css' media='all' />
+<link rel='stylesheet' id='gif-play-button-styles-css'  href='http://theundefeated.vip.10uplabs.com/wp-content/themes/vip/espn-plugins/gif-play-button/assets/css/gif-play-button.src.css?ver=4.6-beta2-38008' type='text/css' media='all' />
+<link rel='stylesheet' id='the-undefeated-css'  href='http://theundefeated.vip.10uplabs.com/wp-content/themes/vip/theundefeated/assets/css/the-undefeated-main.css?ver=1.0.1' type='text/css' media='all' />
+<script type='text/javascript' src='http://theundefeated.vip.10uplabs.com/_static/??-eJzTLy/QzcxLzilNSS3WzwKiwtLUokoopZdVrKOPT4FubmZ6UWJJKlChfa6toYmZsaWluZmBURYAnocfQw=='></script>
+<script type='text/javascript' src='https://widgets.outbrain.com/outbrain.js?ver=4.6-beta2-38008'></script>
+<script type='text/javascript' src='https://secure.espn.com/combiner/c?js=analytics%2Fqa%2FVisitorAPI.js%2Canalytics%2Fqa%2FsOmni_161.js%2Canalytics%2Ftarget.r2.js&#038;ver=4.5&#038;development=true&#038;minify=false'></script>
+<script type='text/javascript' src='http://theundefeated.vip.10uplabs.com/wp-includes/js/underscore.min.js?m=1455724801g'></script>
+<script type='text/javascript' src='http://theundefeated.vip.10uplabs.com/wp-content/themes/vip/theundefeated/assets/js/the-undefeated-head.js?ver=1.0.1'></script>
+<script type='text/javascript' src='http://theundefeated.vip.10uplabs.com/wp-content/themes/vip/theundefeated/assets/js/vendor/modernizr.js?ver=4.6-beta2-38008'></script>
+<script type='text/javascript' src='http://theundefeated.vip.10uplabs.com/wp-includes/js/swfobject.js?m=1413337916g'></script>
+<link rel='https://api.w.org/' href='http://theundefeated.vip.10uplabs.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://theundefeated.vip.10uplabs.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://theundefeated.vip.10uplabs.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.6-beta2-38008" />
+<link rel='dns-prefetch' href='http://ajax.googleapis.com'>
+<link rel='dns-prefetch' href='http://theundefeated.vip.10uplabs.com'>
+<link rel='dns-prefetch' href='http://s0.wp.com'>
+<link rel='dns-prefetch' href='http://widgets.outbrain.com'>
+<link rel='dns-prefetch' href='http://secure.espn.com'>
+<link rel='dns-prefetch' href='http://fonts.googleapis.com'>
+<link rel='preconnect' href='http://s.w.org'>
+<link rel='shortlink' href='http://undf.td/25Fd8Pv' />
+<link rel="alternate" type="application/json+oembed" href="http://theundefeated.vip.10uplabs.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Ftheundefeated.vip.10uplabs.com%2Ffeatures%2Fdraymond-green-playoffs-diary-part-13%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://theundefeated.vip.10uplabs.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Ftheundefeated.vip.10uplabs.com%2Ffeatures%2Fdraymond-green-playoffs-diary-part-13%2F&#038;format=xml" />
+
+<link rel='dns-prefetch' href='//i0.wp.com'>
+<link rel='dns-prefetch' href='//i1.wp.com'>
+<link rel='dns-prefetch' href='//i2.wp.com'>
+<style type='text/css'>img#wpstats{display:none}</style><style type="text/css" media="print">#wpadminbar { display:none; }</style>
+<style type="text/css" media="screen">
+	html { margin-top: 32px !important; }
+	* html body { margin-top: 32px !important; }
+	@media screen and ( max-width: 782px ) {
+		html { margin-top: 46px !important; }
+		* html body { margin-top: 46px !important; }
+	}
+</style>
+
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Draymond Green playoffs diary, Part 13" />
+<meta property="og:url" content="http://theundefeated.vip.10uplabs.com/features/draymond-green-playoffs-diary-part-13/" />
+<meta property="og:description" content="Draymond Green has evolved into one of the most interesting personalities in the NBA, and perhaps all of sports — the vocal leader and emotional engine for one of the most compelling NBA teams in r…" />
+<meta property="article:published_time" content="2016-05-23T15:09:26+00:00" />
+<meta property="article:modified_time" content="2016-05-23T15:09:26+00:00" />
+<meta property="og:site_name" content="The Undefeated" />
+<meta property="og:image" content="http://theundefeated.vip.10uplabs.com/wp-content/uploads/sites/19/2016/05/r85594_1296x864_3-2.jpg" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:image" content="http://i2.wp.com/theundefeated.vip.10uplabs.com/wp-content/uploads/sites/19/2016/05/r85594_1296x864_3-2.jpg?quality=70&#038;strip=all&#038;w=240" />
+<meta name="twitter:card" content="summary" />
+<meta property="article:author" content="http://theundefeated.vip.10uplabs.com/contributors/marc-spears/" />
+<meta property="og:image:width" content="1296" />
+<meta property="og:image:height" content="729" />
+<meta property="article:publisher" content="https://www.facebook.com/theundefeatedsite" />
+<meta property="fb:app_id" content="834240743288407" />
+<meta property="fb:pages" content="1583598865225460" />
+<meta name="twitter:widgets:csp" content="on" />
+<meta name="twitter:maxage" content="300" />
+<meta name="twitter:site" content="TheUndefeated" />
+<meta name="twitter:site:id" content="3033098871" />
+<meta name="twitter:creator" content="MarcJSpearsESPN" />
+<meta name="twitter:creator:id" content="27649623" />
+<link rel='canonical' href='http://theundefeated.vip.10uplabs.com/features/draymond-green-playoffs-diary-part-13/' />
+<meta name="DC.date.issued" content="2016-05-23 15:09:26" />
+<meta name="news_keywords" content="2016 NBA Playoffs, Draymond Green, Golden State Warriors, NBA, Oklahoma City Thunder, Steven Adams" />
+<meta name="description" content="Draymond Green has evolved into one of the most interesting personalities in the NBA, and perhaps all of sports — the vocal leader and emotional engine for one &#8230;" />
+<meta name='author' content='Marc J. Spears' />
+<link rel='author' href='http://theundefeated.vip.10uplabs.com/contributors/marc-spears/' />
+<script type='application/ld+json'>
+{
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://theundefeated.vip.10uplabs.com/features/draymond-green-playoffs-diary-part-13/"
+    },
+    "headline": "Draymond Green playoffs diary, Part 13",
+    "author": {
+        "@type": "Person",
+        "name": "Marc J. Spears"
+    },
+    "datePublished": "2016-05-23T11:09:26+00:00",
+    "dateModified": "2016-05-23T11:09:26+00:00",
+    "publisher": {
+        "@type": "Organization",
+        "name": "The Undefeated",
+        "logo": {
+            "url": "http://theundefeated.vip.10uplabs.com/wp-content/themes/vip/theundefeated/assets/images/the-undefeated-logo-snippets.png",
+            "width": 152,
+            "height": 60,
+            "@type": "ImageObject"
+        }
+    },
+    "articleSection": "Sports",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://espntheundefeated.files.wordpress.com/2016/04/the-undefeated-u-1024.png?w=1024",
+        "width": 1024,
+        "height": 1024
+    }
+}
+</script>
+		<script type="text/javascript">
+			var previousBreakpoint, refKey, referringSite, ref = document.referrer, refsMap = {'facebook.com': 'facebook', 'twitter.com': 'twitter', 't.co': 'twitter', 'plus.google.com': 'googleplus', 'plus.url.google.com': 'googleplus', 'google.com': 'google', 'bing.com': 'bing', 'yahoo.com': 'yahoo', 'espn.go.com': 'espn', 'espn.com': 'espn', 'instagram.com': 'instagram', 'reddit.com': 'reddit', 'bleacherreport.com': 'bleacherreport', 'tumblr.com': 'tumblr', 't.umblr.com': 'tumblr', 'pinterest.com': 'pinterest', 'fivethirtyeight.com': 'fivethirtyeight', 'grantland.com': 'grantland', 'thundefeated.com': 'theundefeated'};
+
+			var googletag = googletag || {};
+			googletag.cmd = googletag.cmd || [];
+
+			function getViewport() {
+				var e = window, a = 'inner';
+				if ( ! ('innerWidth' in window ) ) {
+					a = 'client';
+					e = document.documentElement || document.body;
+				}
+				return { width : e[ a + 'Width' ] , height : e[ a + 'Height' ] };
+			};
+
+			function getCurrentBreakpoint() {
+				var width = getViewport().width;
+
+				if ( width > 1280 ) {
+					return 'xlarge';
+				}
+
+				if ( width > 1024 ) {
+					return 'large';
+				}
+
+				if ( width > 768 ) {
+					return 'medium';
+				}
+
+				return 'small';
+			};
+
+			function refreshForBreakpointChange() {
+				var breakpoint = getCurrentBreakpoint();
+				if ( breakpoint !== previousBreakpoint ) {
+					previousBreakpoint = breakpoint;
+					clearTimeout( self.timeoutHook );
+					self.timeoutHook = setTimeout( refreshSlots, 250 );
+				}
+			}
+
+			function refreshSlots () {
+				googletag.cmd.push(function() {
+					googletag.pubads().refresh( [slotBanner, slotInContent] );
+				});
+			}
+
+			(function() {
+				var gads = document.createElement('script');
+				var node = document.getElementsByTagName('script')[0];
+				gads.async = true;
+				gads.type = 'text/javascript';
+				gads.src = 'https://www.googletagservices.com/tag/js/gpt.js';
+				node.parentNode.insertBefore(gads, node);
+				previousBreakpoint = getCurrentBreakpoint();
+			})();
+
+			googletag.cmd.push( function() {
+				var url = "/6444/espn.theundefeated.us.com/sports/article";
+				var bannerMapping = googletag.sizeMapping().addSize( [1280, 100], [[1280, 100]] ).addSize( [1024, 100], [[970, 66], [970,250]] ).addSize( [768, 100], [[728, 90]] ).addSize( [0,0], [[320, 50]] ).build();
+
+				slotBanner = googletag.defineSlot( url, [[1280,100],[970,250],[970,66],[728,90],[320,50]], "ad-Banner" ).addService( googletag.pubads() ).setTargeting( "sp", "theundefeated" ).setTargeting( "objid", "4820" ).setTargeting( "col", "spears_marc" ).setTargeting( "pos", "Banner" ).defineSizeMapping( bannerMapping ).setCollapseEmptyDiv( true, true );
+				slotInContent = googletag.defineSlot( url, [[300,250]], "ad-InContent" ).addService( googletag.pubads() ).setTargeting( "sp", "theundefeated" ).setTargeting( "objid", "4820" ).setTargeting( "col", "spears_marc" ).setTargeting( "pos", "InContent" ).setCollapseEmptyDiv( true, true );
+				slotOverlay = googletag.defineOutOfPageSlot( url, "ad-Overlay" ).addService( googletag.pubads() ).setTargeting( "sp", "theundefeated" ).setTargeting( "objid", "4820" ).setTargeting( "col", "spears_marc" ).setTargeting( "pos", "Overlay" ).setCollapseEmptyDiv( true, true );
+				
+				for ( refKey in refsMap ) {
+					if ( refsMap.hasOwnProperty( refKey ) ) {
+						if ( ref.match( new RegExp( '^https?:\\/\\/(?:(?:[a-zA-Z0-9]+\\.)+)?' + refKey.replace( /\./g, '\\.' ) + '(?:$|\\/$|\\/.*|\\?.*)', 'i' ) ) ) {
+							referringSite = refsMap[refKey];
+							break;
+						}
+					}
+				}
+
+				if ( referringSite ) {
+					slotBanner.setTargeting( 'ref', referringSite );
+					slotInContent.setTargeting( 'ref', referringSite );
+					slotOverlay.setTargeting( 'ref', referringSite );
+				}
+
+				// 1. don't show any ads right away, so we can handle the overlay case
+				googletag.pubads().disableInitialLoad();
+				googletag.pubads().enableSingleRequest();
+				googletag.pubads().collapseEmptyDivs();
+				googletag.enableServices();
+
+				// 2. show the overlay ad, if it exists
+				googletag.cmd.push(function() {
+					googletag.pubads().refresh( [slotOverlay] );
+				});
+
+				// 3. if there's no overlay (the overlay slot is empty), show the other ads right away
+				if ( true !== self.initialized ) {
+					googletag.pubads().addEventListener( 'slotRenderEnded', function( event ) {
+						if ( 'undefined' !== typeof slotOverlay && event.slot === slotOverlay && event.isEmpty ) {
+							refreshSlots();
+						}
+					});
+				}
+
+				// 4. when the overlay is closed (manually or automatically), show the other slots
+				jQuery.subscribe( 'ad.overlay.close', refreshSlots );
+
+				jQuery( window ).resize( refreshForBreakpointChange );
+			});
+		</script>
+	<script type="text/javascript">
+/* <![CDATA[ */
+	var wpNotesIsJetpackClient = true;
+	var wpNotesIsJetpackClientV2 = true;
+	var wpNotesLinkAccountsURL = 'https://theundefeated.vip.10uplabs.com/wp-admin/admin.php?page=jetpack';
+/* ]]> */
+</script>
+</head>
+
+<body class="single single-tu_feature postid-4820 logged-in admin-bar no-customize-support vertical-sports slug-draymond-green-playoffs-diary-part-13">
+
+		<!-- Ad placement: Overlay -->
+		<div class="ad-wrapper">
+			<div id="ad-Overlay" class="ad-overlay">
+				<script type="text/javascript">googletag.cmd.push(function() { googletag.display( "ad-Overlay" ); });</script>
+			</div>
+		</div>
+	
+ <div class="ad-prevent-jump">
+				<!-- Ad placement: Banner -->
+		<div class="ad-wrapper">
+			<div id="ad-Banner" class="ad-banner">
+				<script type="text/javascript">googletag.cmd.push(function() { googletag.display( "ad-Banner" ); });</script>
+			</div>
+		</div>
+		</div> 
+<header class="primary-header" role="banner">
+	<h1 class="primary-heading">
+		<a class="link" href="http://theundefeated.vip.10uplabs.com/">The Undefeated</a>
+	</h1>
+
+		<nav class="navigation--primary" id="navigation" role="navigation">
+			<h3 class="heading">
+				<a class="link" href="#navigation">Navigation</a>
+			</h3>
+			<ul id="menu-primary-menu" class="menu menu--primary">
+				<li id="menu-item-211" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-211"><a href="/sports/" name="&amp;lpos=theundefeated:sitenav:sports">Sports</a></li>
+<li id="menu-item-212" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-212"><a href="/culture/" name="&amp;lpos=theundefeated:sitenav:culture">Culture</a></li>
+<li id="menu-item-213" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-213"><a href="/hbcu/" name="&amp;lpos=theundefeated:sitenav:hbcu">HBCU</a></li>
+<li id="menu-item-214" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-214"><a href="/the-uplift/" name="&amp;lpos=theundefeated:sitenav:the uplift">The Uplift</a></li>
+				<li class="menu-item menu-item-type-custom menu-item-object-custom espn-nav-link">
+					<a href="http://espn.com/" target="_blank">ESPN</a>
+				</li>
+			</ul>
+		</nav>
+
+		<nav class="navigation--secondary" id="secondary-navigation" role="navigation">
+			<h3 class="heading">
+				<a class="link js-nav-trigger" href="#secondary-navigation"><span class="invis-at-small menu-text">Menu</span><span class="menu-icon"></span></a>
+			</h3>
+
+			<div class="content">
+				<ul id="menu-primary-menu-1" class="menu menu--primary"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-211"><a href="/sports/" name="&amp;lpos=theundefeated:sitenav:sports">Sports</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-212"><a href="/culture/" name="&amp;lpos=theundefeated:sitenav:culture">Culture</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-213"><a href="/hbcu/" name="&amp;lpos=theundefeated:sitenav:hbcu">HBCU</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-214"><a href="/the-uplift/" name="&amp;lpos=theundefeated:sitenav:the uplift">The Uplift</a></li>
+</ul>
+				<ul id="menu-secondary-menu" class="menu menu--secondary"><li id="menu-item-223" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-223"><a href="http://theundefeated.vip.10uplabs.com/you-got-99-words/">You Got 99 Words</a></li>
+<li id="menu-item-2607" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2607"><a href="/allday">All Day Blog</a></li>
+<li id="menu-item-2610" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2610"><a href="/contributors/his-hers/">His &#038; Hers</a></li>
+<li id="menu-item-224" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-224"><a href="http://theundefeated.vip.10uplabs.com/contributors/">Contributors</a></li>
+<li id="menu-item-2555" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2555"><a href="/podcasts/">Podcasts</a></li>
+<li id="menu-item-225" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-225"><a href="/videos/">Video</a></li>
+<li id="menu-item-226" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-226"><a href="http://theundefeated.vip.10uplabs.com/about/">About</a></li>
+</ul>
+				<div class="menu menu--social">
+					<a class="facebook" href="https://www.facebook.com/theundefeatedsite" target="_blank">Facebook</a>
+					<a class="twitter" href="https://twitter.com/TheUndefeated" target="_blank">Twitter</a>
+					<a class="espn" href="http://espn.com/" target="_blank">ESPN</a>
+				</div>
+
+				<form action="http://theundefeated.vip.10uplabs.com/" class="primary-search" method="get">
+					<input class="input" id="primary-search-input" placeholder="Search" name="s">
+					<button class="submit submit--search" type="submit"></button>
+				</form>
+			</div>
+		</nav>
+	</header>
+	<div class="page-content"> <!-- Opens the page content that should contain everything from the nav to the footer : closed in footer.php-->
+
+
+	<div class="reading-list top-reading-list" id="top-reading-list">
+		<h2 class="reading-list-title"><span>Up Next</span></h2>
+		<ul class="reading-list-articles">
+		</ul>
+	</div>
+
+<div id="infinite-scroll-container" class="single-feature-infinite-scroll-container tu_feature">
+	
+<article class="story slug-draymond-green-playoffs-diary-part-13 post-4820 tu_feature type-tu_feature status-publish has-post-thumbnail hentry tag-2016-nba-playoffs tag-draymond-green tag-golden-state-warriors tag-nba tag-oklahoma-city-thunder tag-steven-adams the_undefeated_verticals-sports vertical-sports"	data-page-url="http://theundefeated.vip.10uplabs.com/features/draymond-green-playoffs-diary-part-13/"
+	data-page-title="Draymond Green playoffs diary, Part 13"
+			data-short-byline="By Marc J. Spears"
+		data-post-id="4820"
+	data-omniture='{"omniture":{"premium":"n","lang":"en_us","countryRegion":"en-us","userKey":"unknown:unknown:anonymous:insider-no:premium-no","insiderStatus":"anonymous:premium-no","eVar1":"DoNotSet","birthAge":"unknown","gender":"unknown","regType":"unknown","fantasyPersonalize":"has favorites:no-fantasy:no-notifications:no-docking:no-autostart:no","site":"theundefeated","pageName":"sports:story","sections":"sports","section":"sports","account":"wdgespundefeateddev","contentType":"story","events":"event3","srchKwd":"","srchTerm":"","srchNumResults":"","storyId":"4820:Draymond Green playoffs diary, Part 13","assetInfo":"","columnist":"marc_spears","espn3ContentType":"draymond-green-playoffs-diary-part-13:theundefeated:sports"},"chartbeat":{"domain":"theundefeated.com","path":"/features/draymond-green-playoffs-diary-part-13/","sections":"features","authors":"Marc Spears","title":"","loadPubJS":false,"loadVidJS":true}}'
+	data-omniture-scroll-type="everscroll"
+	id="draymond-green-playoffs-diary-part-13">
+
+
+<div class="story-header">
+	<a href="http://theundefeated.vip.10uplabs.com/tag/gary-rogers/" class="term " name="">Gary Rogers</a>
+	<h1 class="heading entry-title heading-long"><span>Draymond Green playoffs diary, Part 13</span></h1>
+			<p class="subheading">&#8216;From this point on, we have to treat every game like a Game 7&#8217;</p>
+	
+	</div>
+
+<div class="story-body">
+
+	
+		<div class="sidebar">
+
+		
+				<div class="ad-placement">
+			<a href="#">
+						<!-- Ad placement: InContent -->
+		<div class="ad-wrapper">
+			<div id="ad-InContent" class="ad-incontent">
+				<script type="text/javascript">googletag.cmd.push(function() { googletag.display( "ad-InContent" ); });</script>
+			</div>
+		</div>
+				</a>
+		</div>
+		
+					<div class="reading-list">
+				<h2 class="reading-list-title">Up Next From <a href="http://theundefeated.vip.10uplabs.com/sports/">Sports</a></h2>
+				<ul class="reading-list-articles"></ul>
+			</div>
+			</div>
+	
+	<div class="content">
+		
+					<figure class="featured-image pull-out">
+						<img src="http://i2.wp.com/theundefeated.vip.10uplabs.com/wp-content/uploads/sites/19/2016/05/r85594_1296x864_3-2.jpg?quality=70&amp;strip=all" class="attachment-large size-large" alt="Draymond Green #23 of the Golden State Warriors argue with referee Tony Brothers #25 in the second quarter against the Oklahoma City Thunder in game three of the Western Conference Finals during the 2016 NBA Playoffs at Chesapeake Energy Arena on May 22, 2016 in Oklahoma City, Oklahoma." />							<figcaption class="featured-image__figcaption">
+																	<span class="featured-image__caption">Draymond Green #23 of the Golden State Warriors argue with referee Tony Brothers #25 in the second quarter against the Oklahoma City Thunder in game three of the Western Conference Finals during the 2016 NBA Playoffs at Chesapeake Energy Arena on May 22, 2016 in Oklahoma City, Oklahoma. </span>
+								
+															</figcaption>
+						
+											</figure>
+			
+					<div class="meta pull-out">
+					<div class="byline-timestamp-mod">
+							<div class="author-block author-block--no-headshot">
+						<span class="meta-author vcard">
+							<span class="byline">
+							By <a href="http://theundefeated.vip.10uplabs.com/contributors/marc-spears/" title="" class="author url fn" rel="author">Marc J. Spears</a>							</span>
+															<a href="https://twitter.com/MarcJSpearsESPN" class="author-twitter">@MarcJSpearsESPN</a>
+													</spans>
+					</div>
+
+							<time class="timestamp updated" datetime="2016-05-23T11:09:26+00:00">May 23, 2016</time>
+	</div>
+			</div>
+		
+		
+			<div class="share pull-out">
+				
+<div class="mini-social-share-list">
+<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing"><div class="sd-content"><ul><li class="share-twitter"><a rel="nofollow" data-shared="sharing-twitter-4820" class="share-twitter sd-button share-icon no-text" href="http://theundefeated.vip.10uplabs.com/features/draymond-green-playoffs-diary-part-13/?share=twitter" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li><li class="share-facebook"><a rel="nofollow" data-shared="sharing-facebook-4820" class="share-facebook sd-button share-icon no-text" href="http://theundefeated.vip.10uplabs.com/features/draymond-green-playoffs-diary-part-13/?share=facebook" target="_blank" title="Share on Facebook"><span></span><span class="sharing-screen-reader-text">Share on Facebook (Opens in new window)</span></a></li><li class="share-print"><a rel="nofollow" data-shared="" class="share-print sd-button share-icon no-text" href="http://theundefeated.vip.10uplabs.com/features/draymond-green-playoffs-diary-part-13/#print" target="_blank" title="Click to print"><span></span><span class="sharing-screen-reader-text">Click to print (Opens in new window)</span></a></li><li class="share-email"><a rel="nofollow" data-shared="" class="tu-email-share sd-button share-icon no-text" href="mailto:?subject=I thought you’d like this article from The Undefeated&body=http%3A%2F%2Ftheundefeated.vip.10uplabs.com%2Ffeatures%2Fdraymond-green-playoffs-diary-part-13%2F?ex_cid=TUemail" target="_blank" title="Click to email this to a friend"><span></span><span class="sharing-screen-reader-text">Click to email this to a friend (Opens in new window)</span></a></li><li class="share-end"></li></ul></div></div></div></div>
+			</div><!-- .share -->
+
+		
+		
+				
+		<div class="story-content entry-content" id="story-content">
+			<h6><i><a href="http://espn.go.com/nba/player/_/id/6589/draymond-green">Draymond Green</a> has evolved into one of the most interesting personalities in the NBA, and perhaps all of sports — the vocal leader and emotional engine for one of the most compelling NBA teams in recent memory. Green has agreed to give The Undefeated’s Marc J. Spears an exclusive look into his life on and off the court, via a playoff diary that Green hopes will end with a second straight NBA championship for the <a href="http://espn.go.com/nba/team/_/name/gs/golden-state-warriors" target="_blank">Golden State Warriors</a>.</i></h6>
+<hr />
+<h4><strong><span></span>Draymond Green Diary No. 13</strong></h4>
+<p><em><span></span>The Golden State Warriors fell to 2-1 in the best of seven Western Conference finals after being routed 133-105 by the host Oklahoma City Thunder on Sunday night. Green struggled with six points on just 1-9 shooting from the field, with four rebounds, three assists and four turnovers in 31 minutes. The NBA All-Star also received a flagrant foul 1 for kneeing Oklahoma City Thunder center Steven Adams in the groin in the second quarter. Green called it unintentional, but the play is expected to be reviewed by the NBA before Game 4 on Tuesday in Oklahoma City.</em></p>
+<p><span class="drop-cap">“</span><span class="drop-cap"></span><span class="drop-cap"></span><span class="drop-cap"></span>I would tell [Adams], ‘My bad. I didn’t try to do something like that.’ Honestly, I wanted to go up to him during the game and say that. But I know what type of competitor he is and I think I know how he would react. If he would have reacted the way I thought he would have reacted, I know what that would have done to me, as well. I just kind of erred on the side of not saying anything and was hopeful I may catch him after the game.</p>
+<p>I didn’t intentionally kick him down there. Whether he believes me or not, which I don’t think he will and wouldn’t in the moment, which is why I didn’t say anything. I would definitely apologize and I look forward to apologizing to him, if I see him.</p>
+<p>I’m kind of upset about this, ‘Will he get suspended or will he not?’ It’s just frustrating. Obviously, I hit [Adams] there in Game 2. But can anyone possibly say that was intentional. People might look at that and say, ‘He did it then — he tried to do [it again].’ Would I be that obvious, if I’m <em>trying</em> to do it?’</p>
+<p>I know how important I am to my team. Being that I know that, I’m not going to be that obvious and try to kick a man down there. That’s not something I would even do. Hitting someone down there … you can ruin a lot more. Why do that?</p>
+<p>And I am all for fans cheering their guys on, so it doesn’t bother me that they were saying, [‘Throw him out.’]. I didn’t think there was a chance that I’d get thrown out. It would have completely shocked me. I immediately thought that it should probably be rescinded.</p>
+<p>If a guy takes the ball over to the left and gets fouled trying to go up left, your body is hit left and the right side goes up — physics. You hit something on one side the other side goes up. I learned that in physics. I didn’t know it happened. That’s how intentional it was. I didn’t even know I did it.</p>
+<p><span></span><aside class="espn-boxout" id="boxout-3674"><h4>More Dray Diaries</h4><ul> <li><a href="https://theundefeated.com/features/draymond-green-playoffs-diary-part-12/">Part 12: ‘The mentality in Oklahoma City is to just get one game’</a></li> <li><a href="https://theundefeated.com/features/draymond-green-playoffs-warriors-diary-part-11/">Part 11: ‘This is definitely foreign territory for us’</a></li> <li><a href="http://espn.go.com/nba/playoffs/2016/story/_/id/15532035/draymond-green-playoffs-diary-part-10">Part 10: 'KD and Russ are very dangerous'</a></li> <li><a href="http://espn.go.com/nba/playoffs/2016/story/_/id/15501325/draymond-green-playoffs-diary-part-9">Part 9: '[Steph's] back'</a></li> <li><a href="http://espn.go.com/nba/playoffs/2016/story/_/id/15492403/draymond-green-playoffs-diary-part-8">Part 8: 'I didn't leave my troops'</a></li> <li><a href="http://espn.go.com/nba/playoffs/2016/story/_/id/15470099/draymond-green-playoffs-diary-part-7">Part 7: 'I trash-talked Lillard during Game 2'</a></li> <li><a href="http://espn.go.com/nba/playoffs/2016/story/_/id/15449118/draymond-green-playoffs-diary-part-6">Part 6: 'We've got bigger plans'</a></li> </ul></aside></p>
+<p>From this point on, we have to treat every game like a Game 7. We’ve been here before. We’ve been here before in the [last year’s] finals and against Memphis [in the second round]. It’s not the first time having to battle back from this. But, every time we’ve been there, we responded well. We have to make sure we stick to the basics and do what it takes to win.</p>
+<p>The Thunder are a very good team. Very competitive — a very good ball club. We expected them to be tough. But we don’t worry about what someone else is doing. If we do what we have to do, everything else will take care of itself. If we play our best game and they play their best game, I think we win. But if they play their best game while we are playing our worst, what happened tonight can also happen.”</p>
+<hr />
+<p><em><span></span>Hall of Famer Gary Payton recently told Sirius Radio that Green needs to stop crying to the referees “all the time.”</em></p>
+<p>“He is a guy that wasn’t too quiet himself and I watched him growing up. There is some truth to what he said and some false to what he said. It is what it is. I don’t live my life worrying about what someone else has to say. If I live my life worrying about what everyone else has to say, it would take my entire day.”</p>
+		</div>
+
+		<div class="author-bio">
+	<p>Marc J. Spears is the senior NBA writer for The Undefeated. He used to be able to dunk on you, but he hasn’t been able to in years and his knees still hurt.</p>
+</div>
+<!-- .author-bio -->
+					</div>
+			<!-- .content -->
+
+
+	
+	</div>
+	<!-- .story-body -->
+
+	<div class="promoted-stories-list">
+			<div class="obr-unloaded" data-src="http://theundefeated.vip.10uplabs.com/features/draymond-green-playoffs-diary-part-13/" data-widget-id="AR_1" data-ob-template="Undefeated"></div>
+	</div>
+<!-- .promoted-stories-list -->
+
+
+
+<div class="story-tags" id="story-tags">
+						<span class="heading">This Story Tagged:</span>
+			
+			<a href="http://theundefeated.vip.10uplabs.com/tag/2016-nba-playoffs/" class="tag">2016 NBA Playoffs</a>
+
+			
+			<a href="http://theundefeated.vip.10uplabs.com/tag/draymond-green/" class="tag">Draymond Green</a>
+
+			
+			<a href="http://theundefeated.vip.10uplabs.com/tag/golden-state-warriors/" class="tag">Golden State Warriors</a>
+
+			
+			<a href="http://theundefeated.vip.10uplabs.com/tag/nba/" class="tag">NBA</a>
+
+			
+			<a href="http://theundefeated.vip.10uplabs.com/tag/oklahoma-city-thunder/" class="tag">Oklahoma City Thunder</a>
+
+							<span class="view-all">&hellip; <a href="#" class="view-all-link" id="view-all-tags"> View All</a></span>
+			
+			<a href="http://theundefeated.vip.10uplabs.com/tag/steven-adams/" class="tag tag-hidden">Steven Adams</a>
+
+				</div><!-- .story-tags -->
+
+</article>
+</div>
+
+	</div><!-- closes the page content that should contain everything from the nav to the footer : opened in header.php -->
+		<div class="reveal-test-block"></div>
+		<footer class="primary-footer">
+
+			<div class="primary-footer__width">
+				<a href="/" class="primary-footer__logo-link">
+					<svg class="primary-footer__logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 584.7 231.2"><path fill="#222" d="M207.3 231.2c-11.5 0-19.5-6.6-19.5-17.7v-60h15.5v59.6c0 2.7 2.1 4.2 4 4.2s4-1.5 4-4.2v-59.6h15.5v60c.1 11.2-7.9 17.7-19.5 17.7m95.3-59.2c0-3.1-1.5-4.5-4.2-4.5h-3.8v48.9h3.8c2.7 0 4.2-1.4 4.2-4.5V172zm-2.2 58.3h-21.2v-76.7h21.2c10.8 0 17.5 6.1 17.5 16.8v43.1c0 10.7-6.7 16.8-17.5 16.8m23.1-76.7v76.7h30.4v-13.9h-15.1v-17.7h13.3V185h-13.2v-17.5h15v-13.9m4.8 0v76.7H374v-31.6h13.3V185h-13.2v-17.5h15v-13.9m4.2 0v76.7h30.4v-13.9h-15.1v-17.7h13.3V185h-13.2v-17.5h15v-13.9m24.1 16.8h1.1l3 31.5h-7.1l3-31.5zm-11.2-16.8l-10.1 76.7h15.1l2-15.3h9.7l2 15.3h15.1l-10.1-76.7h-23.7zm30 0v13.9h11.7v62.8h15.5v-62.8h11.6v-13.9m4.9 0v76.7h30.3v-13.9h-15v-17.7h13.3V185h-13.2v-17.5h14.9v-13.9m28.9 18.4c0-3.1-1.5-4.5-4.2-4.5h-3.8v48.9h3.8c2.7 0 4.2-1.4 4.2-4.5V172zm-2.3 58.3H546v-76.7h21.2c10.8 0 17.5 6.1 17.5 16.8v43.1c0 10.7-6.7 16.8-17.5 16.8m-308-.1l-11.6-38.3v38.3h-14.8v-76.7h13.9l11.5 39.6v-39.6h14.9v76.7M215.6 82.1v62.8h-15.5V82.1h-11.8V68.2h39.1v13.9m30.1 62.8v-31.6h-9.1v31.6h-15.6V68.2h15.6v31.5h9.1V68.2h15.6v76.7m6.1 0V68.2h30.3v13.9h-14.9v17.6h13.2v13.6h-13.3v17.8h15v13.8"/><g fill="#222" class="primary-footer__logo__icon"><path d="M135.4 229.4c-35.3 0-52.8-24.6-52.8-65.8V0H0v164.5c0 41.2 19.7 65.8 41.1 65.8h94.3v-.9z"/><path d="M93.9 163.6c0 20.4 5.4 54.6 41.5 54.6s41-34.2 41-54.6V68.2H93.9v95.4z"/></g></svg>				</a>
+
+				<div class="primary-footer__nav-links">
+					<nav class="primary-footer__navigation" role="navigation">
+						<ul id="menu-footer-menu" class="menu"><li id="menu-item-227" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-227"><a href="/sports/" name="&amp;lpos=theundefeated:bottomnav:sports">Sports</a></li>
+<li id="menu-item-228" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-228"><a href="/culture/" name="&amp;lpos=theundefeated:bottomnav:culture">Culture</a></li>
+<li id="menu-item-229" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-229"><a href="/hbcu/" name="&amp;lpos=theundefeated:bottomnav:hbcu">HBCU</a></li>
+<li id="menu-item-230" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-230"><a href="/the-uplift/" name="&amp;lpos=theundefeated:bottomnav:the uplift">The Uplift</a></li>
+<li id="menu-item-231" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-231"><a href="/contact/" name="&amp;lpos=theundefeated:bottomnav:contact">Contact</a></li>
+<li id="menu-item-2608" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2608"><a href="http://theundefeated.vip.10uplabs.com/masthead/" name="&amp;lpos=theundefeated:bottomnav:masthead">Masthead</a></li>
+<li id="menu-item-232" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-232"><a href="http://theundefeated.vip.10uplabs.com/about/" name="&amp;lpos=theundefeated:bottomnav:about">About</a></li>
+</ul>					</nav>
+
+					<div class="primary-footer__social">
+						<a class="twitter" href="https://twitter.com/TheUndefeated" target="_blank">Twitter</a>
+						<a class="facebook" href="https://www.facebook.com/theundefeatedsite" target="_blank">Facebook</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="primary-footer__copyright">
+				<div class="primary-footer__copyright__width">
+					<p><a href="https://disneytermsofuse.com/">Terms of Use</a> and <a href="https://disneyprivacycenter.com/">Privacy Policy</a> and Safety Information/<a href="https://disneyprivacycenter.com/notice-to-california-residents/">Your California Privacy Rights</a>/<a href="https://disneyprivacycenter.com/kids-privacy-policy/english/">Children's Online Privacy Policy</a> are applicable to you.</p>
+					<p class="copyright">&copy; 2016 ESPN Internet Ventures. All rights reserved. <a href="https://preferences-mgr.truste.com/?type=espn&affiliateId=148">Interest-Based Ads</a>. Powered by <a href="https://vip.wordpress.com/?utm_source=vip_powered_wpcom&#038;utm_medium=web&#038;utm_campaign=VIP%20Footer%20Credit" rel="generator nofollow" class="powered-by-wpcom">WordPress.com VIP</a></p>
+				</div>
+			</div>
+		</footer>
+
+		<div style="display:none">
+	</div>
+		<div id="fb-root"></div>
+		<script>
+		(function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "https://connect.facebook.net/en_US/sdk.js#version=v2.6&xfbml=1&appId=834240743288407"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));
+		</script>
+			<script type="text/javascript">
+			!function(d,s,id){
+				var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+				if(!d.getElementById(id)){
+					js=d.createElement(s);
+					js.id=id;js.src=p+"://platform.twitter.com/widgets.js";
+					fjs.parentNode.insertBefore(js,fjs);
+				}
+			}(document,"script","twitter-wjs");
+		</script>
+				<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-twitter' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-facebook' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+		});
+		</script>
+			<div id="sharing_email" style="display: none;">
+		<form action="/features/draymond-green-playoffs-diary-part-13/" method="post">
+			<label for="target_email">Send to Email Address</label>
+			<input type="email" name="target_email" id="target_email" value="" />
+
+							<input type="hidden" name="source_name" value="rtsang" />
+				<input type="hidden" name="source_email" value="Ronald.Tsang@espn.com" />
+						<input type="text" id="jetpack-source_f_name" name="source_f_name" class="input" value="" size="25" autocomplete="off" />
+			<script> document.getElementById('jetpack-source_f_name').value = ''; </script>
+			
+			<img style="float: right; display: none" class="loading" src="http://theundefeated.vip.10uplabs.com/wp-content/plugins/jetpack/modules/sharedaddy/images/loading.gif" alt="loading" width="16" height="16" />
+			<input type="submit" value="Send Email" class="sharing_send" />
+			<a rel="nofollow" href="#cancel" class="sharing_cancel">Cancel</a>
+
+			<div class="errors errors-1" style="display: none;">
+				Post was not sent - check your email addresses!			</div>
+
+			<div class="errors errors-2" style="display: none;">
+				Email check failed, please try again			</div>
+
+			<div class="errors errors-3" style="display: none;">
+				Sorry, your blog cannot share posts by email.			</div>
+		</form>
+	</div>
+<link rel='stylesheet' id='wpcom-notes-admin-bar-css'  href='http://s0.wp.com/wp-content/mu-plugins/notes/admin-bar-v2.css?ver=3.8.0-201627' type='text/css' media='all' />
+<link rel='stylesheet' id='noticons-css'  href='http://s0.wp.com/i/noticons/noticons.css?ver=3.8.0-201627' type='text/css' media='all' />
+<script type='text/javascript' src='http://theundefeated.vip.10uplabs.com/wp-includes/js/admin-bar.js?m=1438706658g'></script>
+<script type='text/javascript' src='http://theundefeated.vip.10uplabs.com/wp-content/plugins/jetpack/modules/photon/photon.js?ver=20130122'></script>
+<script type='text/javascript' src='http://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201627'></script>
+<script type='text/javascript' src='http://theundefeated.vip.10uplabs.com/wp-content/themes/vip/espn-plugins/gif-play-button/assets/js/gif-play-button.src.js?ver=4.6-beta2-38008'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
+var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://theundefeated.vip.10uplabs.com/wp-includes/js/wp-util.js?m=1466953202g'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var YG99W = {"action_submit":"the_undefeated_yg99w_submission","action_get_submissions":"the_undefeated_yg99w_get_submissions","action_get_prompts":"the_undefeated_yg99w_get_prompts","nonce_submit":"3d1147994a","nonce_get_submissions":"c575f87e8a","nonce_get_prompts":"1bb38127a6","form_id_body":"the_undefeated_yg99w_submission_body","form_id_name":"the_undefeated_yg99w_submission_name","form_id_email":"the_undefeated_yg99w_submission_email","form_id_cookie":"the_undefeated_yg99w_submission_cookie","form_id_prompt":"the_undefeated_yg99w_submission_prompt","form_id_honeypot":"the_undefeated_yg99w_submission_honeypot","cookie_name":"the_undefeated_you_got_99_words_submission","prompt_id":"0","submission_count_all":"0","submission_count_highlighted":"0","submission_count_staff":"0","submissions_per_page":"10","prompts_per_page":"5","home_prompts_per_page":"10","is_yg99w_home":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://theundefeated.vip.10uplabs.com/wp-content/themes/vip/theundefeated/includes/you-got-99-words/assets/js/you-got-99-words.js?ver=1.0.1'></script>
+<script type='text/javascript' src='http://theundefeated.vip.10uplabs.com/wp-content/themes/vip/theundefeated/assets/js/vendor/jquery.hc-sticky.js?ver=1.0.1'></script>
+<script type='text/javascript' src='http://theundefeated.vip.10uplabs.com/wp-includes/js/backbone.min.js?m=1466071201g'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var TheUndefeated = {"ajaxurl":"https:\/\/theundefeated.vip.10uplabs.com\/wp-admin\/admin-ajax.php","nonce_single_infinite_scroll":"0d8f042fbe","nonce_load_more":"f85191c9d3","action_get_posts":"the_undefeated_ajax_get_posts","action_get_posts_endpoint":"http:\/\/theundefeated.vip.10uplabs.com\/ajax\/the_undefeated_get_posts\/","action_single_infinite_endpoint":"http:\/\/theundefeated.vip.10uplabs.com\/ajax\/single_infinite_scroll\/","action_infinite_ad_endpoint":"http:\/\/theundefeated.vip.10uplabs.com\/ajax\/infinite_scroll_ads\/"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://theundefeated.vip.10uplabs.com/wp-content/themes/vip/theundefeated/assets/js/the-undefeated-single-feature-scroll.js?ver=1.0.1'></script>
+<script type='text/javascript' src='http://theundefeated.vip.10uplabs.com/wp-content/themes/vip/theundefeated/assets/js/the-undefeated-main.src.js?ver=1.0.1'></script>
+<script type='text/javascript' src='http://theundefeated.vip.10uplabs.com/wp-includes/js/wp-embed.js?m=1456398001g'></script>
+<script type='text/javascript' src='http://s1.wp.com/wp-content/js/mustache.js?ver=3.8.0-201627'></script>
+<script type='text/javascript' src='http://s1.wp.com/wp-content/mu-plugins/notes/notes-common-v2.js?ver=3.8.0-201627'></script>
+<script type='text/javascript' src='http://s0.wp.com/wp-content/mu-plugins/notes/admin-bar-v2.js?ver=3.8.0-201627'></script>
+<script type='text/javascript' src='https://secure.espn.com/combiner/c?js=plugins%2Fjquery.metadata.js%2Cplugins%2Fjquery.pubsub.r5.js%2Cswfobject%2F2.2%2Fswfobject.js%2Cplugins%2Fba-debug-0.4.js%2Cespn.l10n.r12.js%2Cespn.core.duo.r55.js%2Cespn.storage.r6.js%2Cespn.p13n.r16.js%2Cespn.geo.r2.js%2Cvideo%2Fespn.video.v3.r8.js&#038;minify=false&#038;ver=4.6-beta2-38008'></script>
+<script type='text/javascript' src='http://theundefeated.vip.10uplabs.com/wp-content/themes/vip/espn-plugins/espn-video/assets/js/espn-video.src.js?ver=4.6-beta2-38008'></script>
+<script type='text/javascript' src='https://platform.twitter.com/widgets.js?ver=4.6-beta2-38008'></script>
+<script type='text/javascript' src='https://platform.instagram.com/en_US/embeds.js?ver=4.6-beta2-38008'></script>
+		<div id="wpadminbar" class="nojq nojs">
+							<a class="screen-reader-shortcut" href="#wp-toolbar" tabindex="1">Skip to toolbar</a>
+						<div class="quicklinks" id="wp-toolbar" role="navigation" aria-label="Toolbar" tabindex="0">
+				<ul id="wp-admin-bar-root-default" class="ab-top-menu">
+		<li id="wp-admin-bar-wp-logo" class="menupop"><a class="ab-item"  aria-haspopup="true" href="https://theundefeated.vip.10uplabs.com/wp-admin/about.php"><span class="ab-icon"></span><span class="screen-reader-text">About WordPress</span></a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-wp-logo-default" class="ab-submenu">
+		<li id="wp-admin-bar-about"><a class="ab-item"  href="https://theundefeated.vip.10uplabs.com/wp-admin/about.php">About WordPress</a>		</li></ul><ul id="wp-admin-bar-wp-logo-external" class="ab-sub-secondary ab-submenu">
+		<li id="wp-admin-bar-wporg"><a class="ab-item"  href="https://wordpress.org/">WordPress.org</a>		</li>
+		<li id="wp-admin-bar-documentation"><a class="ab-item"  href="https://codex.wordpress.org/">Documentation</a>		</li>
+		<li id="wp-admin-bar-support-forums"><a class="ab-item"  href="https://wordpress.org/support/">Support Forums</a>		</li>
+		<li id="wp-admin-bar-feedback"><a class="ab-item"  href="https://wordpress.org/support/forum/requests-and-feedback">Feedback</a>		</li></ul></div>		</li>
+		<li id="wp-admin-bar-my-sites" class="menupop"><a class="ab-item"  aria-haspopup="true" href="https://theundefeated.vip.10uplabs.com/wp-admin/my-sites.php">My Sites</a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-my-sites-list" class="ab-submenu">
+		<li id="wp-admin-bar-blog-19" class="menupop"><a class="ab-item"  aria-haspopup="true" href="https://theundefeated.vip.10uplabs.com/wp-admin/"><div class="blavatar"></div>The Undefeated</a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-blog-19-default" class="ab-submenu">
+		<li id="wp-admin-bar-blog-19-d"><a class="ab-item"  href="https://theundefeated.vip.10uplabs.com/wp-admin/">Dashboard</a>		</li>
+		<li id="wp-admin-bar-blog-19-n"><a class="ab-item"  href="https://theundefeated.vip.10uplabs.com/wp-admin/post-new.php">New Post</a>		</li>
+		<li id="wp-admin-bar-blog-19-c"><a class="ab-item"  href="https://theundefeated.vip.10uplabs.com/wp-admin/edit-comments.php">Manage Comments</a>		</li>
+		<li id="wp-admin-bar-blog-19-v"><a class="ab-item"  href="http://theundefeated.vip.10uplabs.com/">Visit Site</a>		</li></ul></div>		</li>
+		<li id="wp-admin-bar-blog-9" class="menupop"><a class="ab-item"  aria-haspopup="true" href="https://fivethirtyeight.vip.10uplabs.com/wp-admin/"><div class="blavatar"></div>FiveThirtyEight</a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-blog-9-default" class="ab-submenu">
+		<li id="wp-admin-bar-blog-9-d"><a class="ab-item"  href="https://fivethirtyeight.vip.10uplabs.com/wp-admin/">Dashboard</a>		</li>
+		<li id="wp-admin-bar-blog-9-v"><a class="ab-item"  href="http://fivethirtyeight.vip.10uplabs.com/">Visit Site</a>		</li></ul></div>		</li>
+		<li id="wp-admin-bar-blog-12" class="menupop"><a class="ab-item"  aria-haspopup="true" href="https://grantland.vip.10uplabs.com/wp-admin/"><div class="blavatar"></div>Grantland</a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-blog-12-default" class="ab-submenu">
+		<li id="wp-admin-bar-blog-12-d"><a class="ab-item"  href="https://grantland.vip.10uplabs.com/wp-admin/">Dashboard</a>		</li>
+		<li id="wp-admin-bar-blog-12-v"><a class="ab-item"  href="http://grantland.vip.10uplabs.com/">Visit Site</a>		</li></ul></div>		</li></ul></div>		</li>
+		<li id="wp-admin-bar-site-name"><a class="ab-item"  href="http://theundefeated.vip.10uplabs.com/">The Undefeated</a>		</li></ul><ul id="wp-admin-bar-top-secondary" class="ab-top-secondary ab-top-menu">
+		<li id="wp-admin-bar-search" class="admin-bar-search"><div class="ab-item ab-empty-item" tabindex="-1"><form action="http://theundefeated.vip.10uplabs.com/" method="get" id="adminbarsearch"><input class="adminbar-input" name="s" id="adminbar-search" type="text" value="" maxlength="150" /><label for="adminbar-search" class="screen-reader-text">Search</label><input type="submit" class="adminbar-button" value="Search"/></form></div>		</li>
+		<li id="wp-admin-bar-my-account" class="menupop"><a class="ab-item"  aria-haspopup="true" href="https://theundefeated.vip.10uplabs.com/wp-admin/profile.php">Howdy, rtsang</a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-user-actions" class="ab-submenu">
+		<li id="wp-admin-bar-user-info"><a class="ab-item" tabindex="-1" href="https://theundefeated.vip.10uplabs.com/wp-admin/profile.php"><span class='display-name'>rtsang</span></a>		</li>
+		<li id="wp-admin-bar-edit-profile"><a class="ab-item"  href="https://theundefeated.vip.10uplabs.com/wp-admin/profile.php">Edit My Profile</a>		</li>
+		<li id="wp-admin-bar-logout"><a class="ab-item"  href="https://theundefeated.vip.10uplabs.com/wp-login.php?action=logout&#038;_wpnonce=7478cef1d0">Log Out</a>		</li></ul></div>		</li>
+		<li id="wp-admin-bar-notes" class="menupop"><div class="ab-item ab-empty-item" ><span id="wpnt-notes-unread-count" class="wpnt-loading wpn-read">
+					<span class="noticon noticon-notification"></span>
+					</span></div><div id="wpnt-notes-panel2" style="display:none" lang="en" dir="ltr"><div class="wpnt-notes-panel-header"><span class="wpnt-notes-header">Notifications</span><span class="wpnt-notes-panel-link"></span></div></div>		</li></ul>			</div>
+						<a class="screen-reader-shortcut" href="https://theundefeated.vip.10uplabs.com/wp-login.php?action=logout&#038;_wpnonce=7478cef1d0">Log Out</a>
+					</div>
+
+				<script type="text/javascript">
+		var orientation = (window.innerWidth >= window.innerHeight) ? 'landscape' : 'portrait';
+		orientation = window.orientation ? orientation : 'desktop';
+		var page = 'general';
+		var prefix = "&lpos=theundefeated:";
+		var site = "theundefeated";
+		var loadCount = 1;
+		var isTab = false;
+		var currentTab = null;
+
+		(function($) {
+			if ( espn && espn.track ) {
+				espn.track.init = function () {
+
+											// For testing only, remove in prod
+						s_omni.linkInternalFilters = s_omni.linkInternalFilters + ',theundefeated.vip.10uplabs.com,theundefeateddev.vip.10uplabs.com,vip.local';
+					
+					var data = {
+    "omniture": {
+        "premium": "n",
+        "lang": "en_us",
+        "countryRegion": "en-us",
+        "userKey": "unknown:unknown:anonymous:insider-no:premium-no",
+        "insiderStatus": "anonymous:premium-no",
+        "eVar1": "DoNotSet",
+        "birthAge": "unknown",
+        "gender": "unknown",
+        "regType": "unknown",
+        "fantasyPersonalize": "has favorites:no-fantasy:no-notifications:no-docking:no-autostart:no",
+        "site": "theundefeated",
+        "pageName": "sports:story",
+        "sections": "sports",
+        "section": "sports",
+        "account": "wdgespundefeateddev",
+        "contentType": "story",
+        "events": "event3",
+        "srchKwd": "",
+        "srchTerm": "",
+        "srchNumResults": "",
+        "storyId": "4820:Draymond Green playoffs diary, Part 13",
+        "assetInfo": "",
+        "columnist": "marc_spears",
+        "espn3ContentType": "draymond-green-playoffs-diary-part-13:theundefeated:sports"
+    },
+    "chartbeat": {
+        "domain": "theundefeated.com",
+        "path": "/features/draymond-green-playoffs-diary-part-13/",
+        "sections": "features",
+        "authors": "Marc Spears",
+        "title": "",
+        "loadPubJS": false,
+        "loadVidJS": true
+    }
+};
+					data.omniture.loginStatus = jQuery( 'body' ).hasClass( 'logged-in' ) ? 'wp-logged-in' : 'wp-logged-out';
+					data.omniture.orientation = orientation;
+					data.omniture.deviceInfo = orientation;
+
+					// Init Chartbeat
+					espn.track.initCB( data.chartbeat );
+
+					// Global analytics properties used by video players
+					var anData = data.omniture;
+					if ( anData.account ) {
+						window.s_account = anData.account;
+					}
+
+					if ( anData.site ) {
+						window.omniSite = anData.site;
+						if ( anData.pageName ) {
+							window.omniPageName = [anData.site, anData.pageName].join( ':' );
+						}
+					}
+
+					// Default navigation type (used on everscroll)
+					anData.eVar44 = 'none';
+
+					if ( document.querySelector( '.gallery-items' ) ) {
+						var nextSlideButton = document.getElementById( 'next-nav' ),
+								previousSlideButton = document.getElementById( 'previous-nav' );
+
+						function setGalleryData() {
+							var currentPhoto = jQuery( '.gallery-items .active-item' );
+
+							if ( currentPhoto ) {
+								anData.prop41 = anData.eVar41 = currentPhoto.data( 'slide-number' )
+								anData.prop42 = anData.eVar42 = currentPhoto.find( 'img' ).data( 'title' )
+							}
+						}
+
+						function trackGallery() {
+							setGalleryData();
+							espn.track.trackPage( anData );
+						}
+
+						if ( nextSlideButton ) {
+							nextSlideButton.addEventListener( 'click', trackGallery );
+						}
+
+						if ( previousSlideButton ) {
+							previousSlideButton.addEventListener( 'click', trackGallery );
+						}
+
+						setGalleryData();
+					}
+
+					// the expected value is ->  <section>:<show code>
+					var section = 'homepage';
+					var loc = location.pathname;
+					if ( loc !== '' ) {
+						if ( location.hash !== '' ) {
+							loc += location.hash.replace( /\#/, '' );
+						}
+						loc = loc.replace( / |^\/|\/$/g, '' ).replace( /\//g, ':' );
+						section = loc;
+					}
+					window.omniTrackingName = section;
+					espn.track.data = data;
+					anData.enableCB = false;
+					espn.track.trackPage( anData );
+
+					addPname();
+
+					bindEvents();
+				};
+
+				espn.track.init();
+			}
+
+			function getSections() {
+				return location.pathname.replace( /^\/|\/$/g, '' ).replace( /\//g, ':' );
+			}
+
+			// JS to add appropriate prop9 attributes to all links.
+			// Doing it in JS means we can keep all prop9 related code in one spot rather than amongst a million PHP files.
+			function addPname() {
+				if ( $( 'body' ).hasClass( 'home' ) ) {
+					page = 'homepage';
+				} else if ( $( 'body' ).hasClass( 'search' ) ) {
+					page = 'searchresults';
+				} else if ( $( 'body' ).attr( 'class' ).indexOf( 'you-got-99-words' ) > 0 || $( 'body' ).attr( 'class' ).indexOf( 'yg99w' ) > 0 ) {
+					page = 'yougot99words';
+				} else if ( $( 'body' ).attr( 'class' ).indexOf( 'tu_video' ) > 0 ) {
+					page = 'video';
+				} else if ( $( 'body' ).attr( 'class' ).indexOf( 'tu_audio' ) > 0 ) {
+					page = 'podcasts';
+				} else if ( $( 'body' ).attr( 'class' ).indexOf( 'espn_gallery' ) > 0 ) {
+					page = 'gallery';
+				} else if ( $( 'body' ).attr( 'class' ).indexOf( 'contributor' ) > 0 ) {
+					page = 'contributors';
+				} else if ( $( 'body' ).attr( 'class' ).indexOf( 'author' ) > 0 ) {
+					page = getSections();
+				} else if ( $( 'body' ).attr( 'class' ).indexOf( 'tax-the_undefeated_verticals' ) > 0 ) {
+					var classes = $( 'body' ).attr( 'class' ).split( ' ' );
+					for ( var i in classes ) {
+						if ( 0 === classes[i].indexOf( 'term-' ) ) {
+							page = classes[i].split( '-' )[1];
+							break;
+						}
+					}
+				} else if ( $( 'body' ).hasClass( 'single' ) ) {
+					page = 'story';
+				}
+
+				$( '.tease--lead-story, .tease--contributor, .group--full' ).each( function( index ) {
+					var heroCount = index + 1;
+					$( this ).find( 'a' ).attr( 'name', prefix + page + ':herostory:' + heroCount );
+				});
+
+				$( '.tease--term' ).each( function( index ) {
+					var title = $( '.tease--term .block-heading' ).text() || '';
+					title = title.toLowerCase().trim().replace( / /g, '_' );
+					$( this ).find( 'a' ).attr( 'name', prefix + page + ':hero:' + title + ':' + index );
+				});
+
+				$( '.tease--standard, .tease--ad, .tease--podcast, .polldaddy-tease' ).each( function( index ) {
+					var teaseCount = parseInt(index) + 1;
+					$( this ).find( 'a' ).attr( 'name', prefix + page + ':tile:' + teaseCount );
+				});
+
+				$( '.tease--you-got-99-words' ).each( function() {
+					$( this ).find( 'a' ).attr( 'name', prefix + page + ':yougot99words_interaction' );
+				});
+
+				$( '.tease--the-hot-sheet a' ).each( function( index ) {
+					var storyCount = index + 1;
+					var title = $( '.tease--the-hot-sheet .block-heading').text() || '';
+					title = title.toLowerCase().trim().replace( / /g, '_' );
+					$( this ).attr( 'name', prefix + page + ':' + title + ':' + storyCount );
+				});
+
+				$( '.tease--archive:not(.tease-archive-podcast)' ).each( function( index ) {
+					var storyCount = index + 1;
+					if ( 'podcasts' === page ) {
+						var selected = $( '.the-undefeated-ajax-tabs .-is-selected' ).text();
+						selected = selected.toLowerCase().trim();
+						$( this ).find( 'a' ).attr( 'name', prefix + page + ':' + selected + ':' + storyCount );
+					}
+					else if ( 'contributors' === page ) {
+						$( this ).find( 'a' ).attr( 'name', prefix + page + ':feed:' + storyCount );
+					} else {
+						$( this ).find( 'a' ).attr( 'name', prefix + page + ':story:' + storyCount );
+					}
+				});
+
+				$( '.tease--latest-stories li' ).each( function( index ) {
+					var storyCount = parseInt(index) + 1;
+					$( this ).find( 'a' ).attr( 'name', prefix + page + ':latest_stories:' + storyCount );
+				});
+
+				$( '.section--section-front a, .section.tease--video h3 a, .section.tease--video .subheading a' ).each( function() {
+					$( this ).attr( 'name', prefix + page + ':topstorytile' );
+				});
+
+				$( '.the-undefeated-ajax-tabs a, .yg99w-tabs a' ).each( function() {
+					var text = $( this ).text() || '';
+					text = text.toLowerCase().trim().replace( / /g, '' );
+					$( this ).attr( 'name', prefix + page + 'nav:' + text );
+				});
+
+				$( '#yg99w_submit' ).each( function() {
+					$( this ).attr( 'name', prefix + page + ':submit' );
+				});
+
+				$( '.sharedaddy li' ).each( function() {
+					var text = $( this ).attr( 'class' ).split( '-' )[1];
+					text = text.toLowerCase().trim();
+					$( this ).find( 'a' ).attr( 'name', prefix + page + ':socialshare:' + text );
+				});
+
+				$( 'a.load-more' ).each( function() {
+					$( this ).attr( 'name', prefix + page + ':loadmorestories:1' );
+					$( this ).attr( 'data-clicked-count', '1' );
+
+					$( this ).on( 'click', function() {
+						var clicked = $( this ).attr( 'data-clicked-count' );
+						$( this ).attr( 'data-clicked-count', parseInt( clicked ) + 1 );
+
+						$( this ).attr( 'name', prefix + page + ':loadmorestories:' + clicked );
+					});
+				});
+
+				$( '.tab-panel' ).on( 'finishedAjax', function() {
+					$( '.tease-video-section, .tease--standard' ).each( function( index ) {
+						var teaseCount = index + 1;
+
+						var panel = $( '.the-undefeated-ajax-tabs .-is-selected' ).text() || '';
+						panel = panel.toLowerCase().trim();
+						panel = panel.replace( / /g, '' );
+
+						$( this ).find( 'a' ).attr( 'name', prefix + page + ':' + panel + ':tile:' + teaseCount );
+					})
+				});
+
+				$( '.menu--primary .espn-nav-link a' ).attr( 'name', prefix + 'sitenav:espn' );
+
+				$( '.menu--secondary a, .menu--social a' ).each( function( index) {
+					var text = $( this ).text() || '';
+					text = text.toLowerCase().trim();
+					$( this ).attr( 'name', prefix + page + ':menu_nav:' + text );
+				});
+
+				$( '.navigation--secondary .heading .link' ).attr( 'name', prefix + 'sitenav:menu' );
+
+				$( '#yg99w-prompts a' ).each( function( index ) {
+					var promptCount = index + 1;
+					$( this ).attr( 'name', prefix + page + ':jointheconversation:' + promptCount );
+				});
+			}
+
+			// Bind events on intial page load on document, so new links work automatically
+			function bindEvents() {
+				$( document ).on( 'click', '.share-twitter, .share-facebook, .share-email', function() {
+					var $item = $( this );
+					var tool = $item.attr( 'class' ) || '';
+					tool = tool.toLowerCase().replace( /share-service-visible/, '' ).trim();
+
+					espn.track.trackLink({
+						link: this,
+						site: site,
+						linkPos: [site, 'story', 'socialshare', tool].join( ':' ),
+						events: 'event62',
+						socialShare: tool,
+						pageName: tool + ':share'
+					});
+				});
+
+				$( document ).on( 'click', '.the-undefeated-ajax-tabs a, .yg99w-tabs a', function() {
+					var linkPos = $( this ).attr( 'name' ) || '';
+					espn.track.trackLink({
+						link: this,
+						site: site,
+						linkPos: linkPos.replace( '&lpos=', '' )
+					});
+
+					isTab = true;
+					currentTab = null;
+				});
+
+				$( document ).on( 'click', '#yg99w-submit', function() {
+					// Track as tracking link, onsubmit
+					var site = site;
+					var linkPos = site + ':yougot99words:submit';
+					espn.track.trackLink({
+						link: true,
+						site: site,
+						linkPos: linkPos,
+						pageName: null
+					});
+				});
+
+				$( document ).on( 'click', '#the-undefeated-load-more', function() {
+					var pname = $( this ).attr( 'name' ) || '';
+					var linkPos = pname.replace( '&lpos=', '' );
+					espn.track.trackLink({
+						link: this,
+						site: site,
+						events: 'event22',
+						linkPos: linkPos,
+						contentType: "story",
+						pageName: "sports:story",
+						orientation: orientation,
+						deviceInfo: orientation
+					});
+				});
+			}
+			// Update the item elements attribute links with the correct index value per active tab. Also on load more click events
+			function updateTabsIndex() {
+				var panel = $( '.the-undefeated-ajax-tabs .-is-selected' );
+				if ( panel.length > 0 ) {
+					var count = 1;
+					var name = panel.text() || '';
+					name = name.toLowerCase().trim().replace( / /g, '' );
+					currentTab = $( panel.attr( 'id' ).replace( /tab\-/g, '#panel-' ) );
+
+					var $delegate = currentTab.find( '.tease--archive:not(.tease-archive-podcast)' ).filter( '*:not([data-pos])' );
+
+					// set count
+					if ( undefined !== currentTab.attr( 'data-count' ) ) {
+						count = currentTab.attr( 'data-count' );
+					}
+
+					// video
+					if( 'video' === page ) {
+						$delegate = currentTab.find( '.tease-video-section, .tease--standard' ).filter( '*:not([data-pos])' );
+					} else if ( 'podcasts' === page ) {
+						$delegate = currentTab.find( '.tease--archive:not(.tease-archive-podcast)' ).filter( '*:not([data-pos])' );
+					}
+
+					$delegate.each( function( index ) {
+						$( this ).find( 'a' ).attr( 'name', prefix + page + ':' + name + ':tile:' + count );
+						$( this ).attr( 'data-pos', count++ );
+					});
+
+					// update count
+					currentTab.attr( 'data-count', count );
+				}
+			}
+
+			// Event Subscriptions
+			$( document ).find( '#the-undefeated-load-more' ).on( 'finishedAjax', function() {
+				if ( true === isTab ) {
+					updateTabsIndex();
+				} else {
+					setTimeout(function(){ addPname(); }, 500);
+				}
+				loadCount++;
+			});
+
+			$( document ).find( '.tab-panel' ).on( 'finishedAjax', updateTabsIndex );
+
+			var vertical = false;
+			$( document ).on( 'finishedAjax', '.reading-list-articles', function() {
+				if ( false === vertical ) {
+					vertical = $( '.reading-list:not(.top-reading-list) .reading-list-title' ).text().toLowerCase() || '';
+					vertical = vertical.split( ' ' ).pop();
+				}
+
+				$( this ).find( 'li' ).each( function( index ) {
+					var storyCount = index + 1;
+					$( this ).find( 'a' ).attr( 'name', prefix + 'upnextfrom:' + vertical + ':module:' + storyCount );
+				});
+			});
+
+			$.subscribe( 'article.loaded', function( data ) {
+				var jsonData = JSON.parse( data.trackData );
+				var scrollType = data.scrollType;
+
+				// Global analytics properties used by video players
+				var anData = jsonData.omniture;
+				anData.loginStatus = $( 'body' ).hasClass( 'logged-in' ) ? 'wp-logged-in' : 'wp-logged-out';
+				anData.orientation = orientation;
+				anData.deviceInfo = orientation;
+				anData.eVar44 = scrollType;
+
+				jsonData.omniture = anData;
+
+				if ( anData.site ) {
+					window.omniSite = anData.site;
+					if ( anData.pageName ) {
+						window.omniPageName = [anData.site, anData.pageName].join( ':' );
+					}
+				}
+
+				window.omniTrackingName = anData.section;
+				espn.track.data = jsonData;
+				espn.track.trackPage( anData );
+			});
+
+		})( jQuery );
+
+		</script>
+	
+	</body>
+</html>
