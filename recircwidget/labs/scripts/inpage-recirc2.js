@@ -4,7 +4,8 @@
     // We set an interval and keep trying to find the Chartbeat configuration
     // object (_sf_async_config) in the host page. We wait for it to exist and
     // to have both `domain` and `path` properties (which allows us to assume
-    // the page load has completed)
+    // the page load has completed).
+    // gets api key from user.
 	    var retries = 0, maxRetries = 300;
 	    var interval = setInterval(function() {
 	      if (window['_sf_async_config'] &&
@@ -17,7 +18,9 @@
 
 			console.log(config.domain);
 
-			var requestUrl = 'http://api.chartbeat.com/live/toppages/v3/?apikey=0993d53651dbf432cf9e235114c86d35&host=' +_sf_async_config.domain+'&limit=200&types=1';
+			var apiKey = prompt("Hello.\nPlease enter your Chartbeat API Key.\n(Found at: chartbeat.com/docs/api/explore/)", "Your API Key");
+			console.log(apiKey);
+			var requestUrl = 'http://api.chartbeat.com/live/toppages/v3/?apikey=' +apiKey+ '&host=' +_sf_async_config.domain+'&limit=200&types=1';
 			createRequest(requestUrl, config);
 
 	      } else {
