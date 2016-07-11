@@ -41,7 +41,7 @@ class Pouch {
   getPouchItems () {
 
     var self = this;
-    var request = new Request('http://localhost:3000/pages', {
+    var request = new Request('http://localhost:3000/data.json', {
       method: 'GET',
       dataType: 'json',
       mode: 'no-cors',
@@ -50,21 +50,35 @@ class Pouch {
       })
     });
 
-  fetch(request)
+  /*fetch(request)
     .then(function(response){
+      debugger;
       return response;
     })
     .then(function(result) {
+      self.articles = result;
       console.log(result);
-      //this.articles = result;
       debugger;
       self.render();
-    })
+    })*/
+
+    fetch(request).then(function(response) {
+    // Convert to JSON
+      return JSON.parse(response);
+    }).then(function(j) {
+    // Yay, `j` is a JavaScript object
+      console.log(j);
+    });
 }
+
+// why are there two results of this promise, i.e. return on response and
+// return on result
+
+// diff between 43 thru 51 and the fetch() request
 
   render () {
     var appContents = pouchContainer();
-    this.articles.forEach(function(article) {
+    self.articles.forEach(function(article) {
       appContents += pouchItem(article);
     });
     document.querySelector(this.selector).innerHTML = "Most Popular Related Content";
