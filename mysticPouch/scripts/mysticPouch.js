@@ -64,7 +64,7 @@ class Pouch {
 
     fetch(request).then(function(response) {
     // Convert to JSON
-      return JSON.parse(response);
+      return response.json();
     }).then(function(j) {
     // Yay, `j` is a JavaScript object
       console.log(j);
