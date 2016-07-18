@@ -26,7 +26,7 @@ var pouchContainer = function () {
 var pouchItem = function (article) {
   return (
     `
-    <p>{article}</p>
+    <p>${JSON.stringify(article)}</p>
     `
   );
 }
@@ -35,50 +35,47 @@ class Pouch {
   constructor(selector, articles) {
     this.selector = selector;
     this.articles = articles;
-    debugger;
   }
 
   getPouchItems () {
 
     var self = this;
-    var request = new Request('http://localhost:3000/data.json', {
-      method: 'GET',
-      dataType: 'json',
-      mode: 'no-cors',
-      headers: new Headers ({
-        'Content-Type': 'application/json'
-      })
-    });
+    // var request = new Request('http://localhost:3000/pages', {
+    //   method: 'GET',
+    //   dataType: 'json',
+    //   mode: 'cors',
+    //   headers: new Headers ({
+    //     'Content-Type': 'application/json'
+    //   })
+    // });
 
-  /*fetch(request)
+  fetch('http://localhost:3000/pages')
     .then(function(response){
       debugger;
-      return response;
-    })
-    .then(function(result) {
-      self.articles = result;
-      console.log(result);
-      debugger;
-      self.render();
-    })*/
+      response.json().then(function(blob){
+        debugger;
+        self.articles = blob;
+        self.render();
+      });
+    });
 
-    fetch(request).then(function(response) {
+    /*fetch(request).then(function(response) {
     // Convert to JSON
       return response.json();
     }).then(function(j) {
     // Yay, `j` is a JavaScript object
       console.log(j);
-    });
-}
+    });*/
+  }
 
-// why are there two results of this promise, i.e. return on response and
-// return on result
+  // why are there two results of this promise, i.e. return on response and
+  // return on result
 
-// diff between 43 thru 51 and the fetch() request
+  // diff between 43 thru 51 and the fetch() request
 
   render () {
     var appContents = pouchContainer();
-    self.articles.forEach(function(article) {
+    this.articles.forEach(function(article) {
       appContents += pouchItem(article);
     });
     document.querySelector(this.selector).innerHTML = "Most Popular Related Content";
