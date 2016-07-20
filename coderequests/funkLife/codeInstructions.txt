@@ -1,0 +1,57 @@
+******* STANDARD INSTRUCTIONS ********
+
+Attached you'll find a zip folder containing two files:
+	1. Chartbeat<head>code.txt
+	2. Chartbeat<body>code.txt
+
+The <head> tag should be placed before the </head> tag. This code:
+	1. Gets the date and time, and calculates page-load time
+	2. Sets up the Chartbeat configuration object (_sf_async_config) before we load our JavaScript
+
+The <body> tag should be placed before the closing </body> tag. This code: 
+	1. Gets the Chartbeat configuration object set in the <head>
+	2. Sets the section value (_sf_async_config.sections = '';)
+	3. Sets the author value (_sf_async_config.author = '';)
+	4. Passes the newly updated configuration object to the Chartbeat Publishing JavaScript
+
+Section and author values must be populated. 
+	1. They are highlighted in the Chartbeat <body> code file under the 'configuration start' comment. We highly recommend you populate dynamically -- the Chartbeat configuration variable can accept a global JavaScript object.
+	2. If you use a Data Layer or custom tagging, change these variables to reflect your logic
+	3. Here is the link to the general instructions for adding these variables: support.chartbeat.com/docs/#sectionsauthors
+
+The dashboard is now activated, so once you put the code up, data will populate here: https://chartbeat.com/publishing/home/.
+
+***** VIDEO *****
+
+Beyond this, the following considerations are necessary for us to start tracking video.
+
+Since you're using thePlatform as your video platform, you'll just need to install a plug-in to start tracking your videos in Chartbeat.
+
+Determine the plug-in URLs
+
+Replace your Account ID and Host Domain into the plug-in and add the following line into thePlatform's player code.
+
+HTML5 (JS) Plug-in
+
+tp:plugin1=“type=tracking|URL=http://static.chartbeat.com/js/chartbeat_video.js|priority=1"
+Flash Plug-in
+
+tp:plugin1="type=tracking|URL=http://static.chartbeat.com/swf/ChartbeatPDK.swf|acctId=<account_id>|appId=video@<domain.com>|priority=1"
+
+Additional documentation can be found here: http://support.chartbeat.com/docs/video.html#theplatform
+
+***** FBIA AND AMP *****
+
+In order to integrate Chartbeat with AMP and FBIA, please follow the support documentation here, http://support.chartbeat.com/docs/integrations.html#amp and http://support.chartbeat.com/docs/integrations.html#fbia. 
+
+***** HUD *****
+
+In order to be compatible with the current Heads Up Display, cookies must be enabled
+
+Because the HUD uses its own dedicated cookie, it is necessary that you have first-party cookies enabled for your site. If you have set the noCookies configuration variable you will not be able to use the HUD.
+
+After you've ensure that cookies are enabled, follow the instructions here: http://chartbeat.com/publishing/hud/install/?url=********** and drag the "Install Chartbeat HUD" link to your bookmarks bar. You can find more instructions here: http://faq.chartbeat.com/hc/en-us/articles/209707967-How-to-install-the-Heads-Up-Display
+
+***** BIG BOARD ******
+
+To use the Chartbeat Big Board, visit this URL: https://chartbeat.com/labs/publishing/bigboard/ AND append your domain to the end. 

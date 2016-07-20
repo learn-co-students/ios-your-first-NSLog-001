@@ -27,7 +27,7 @@ djangofly-prod-scripts grant_permissions --account_id=10538 --domains=timesofind
 
 ******* GRANT PERMISSIONS / ADD DOMAINS / RB access **********
 
-./../../usr/local/chartbeat_bin/djangofly-prod-scripts grant_permissions --account_id=33583 --domains= --create_domains --product_type=queryapi —users=
+./../../usr/local/chartbeat_bin/djangofly-prod-scripts grant_permissions --account_id=33583 --domains= --create_domains --product_type=queryapi —users=88805 —check_mfly=false
 
 ******* ADD USERS **********
 --help                           show this help information
