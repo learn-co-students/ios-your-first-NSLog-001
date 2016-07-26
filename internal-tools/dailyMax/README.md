@@ -1,10 +1,7 @@
-<<<<<<< HEAD
-=======
+
 CBP MAX CONCURRENT EXPORT
 
 This site returns daily max concurrent data with a Python Tornado backend that queries the Chartbeat Report API.
-
-=======
 
 The data populates in a a downloadable CSV file for easy sorting and filtering. 
 
@@ -17,15 +14,8 @@ Run localhost: <code>python hello.py</code> in command line, then in browser use
 In order to use this tool you'll need an API Key and a domain.
 
 The tool accepts a date rate from January 1, 2014 to present day.
-=======
->>>>>>> 3c703417c6b88db8a620ed1bc682d93467aa0579
-# CHARTCORPS
 
 CHARTCORPS SALES ENGINEERING TEAM
 
-<<<<<<< HEAD
-This is a repository for code snippets of implementation, data requests, and side projects built by the Chartcorps team. 
-=======
 This is a repository for code snippets of implementation, data requests, and side projects built by the Chartcorps team. 
 
->>>>>>> 3c703417c6b88db8a620ed1bc682d93467aa0579

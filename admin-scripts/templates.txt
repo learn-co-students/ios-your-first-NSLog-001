@@ -19,7 +19,7 @@ Options:
 
 ******* GRANT MAB ACCESS **********
 
-djangofly-prod-scripts grant_permissions --account_id=10538 --domains=timesofindia.indiatimes.com --users= --product_type=mab --allow_protected=true --act
+./../../usr/local/chartbeat_bin/djangofly-prod-scripts grant_permissions --account_id=63228 --domains=desimartini.com,htcampus.com,livehindustan.com,livemint.com,shine.com --users=87843,86920 --product_type=mab --allow_protected=true --create_domains --act
 
 ******* ADD USERS **********
 
@@ -27,7 +27,7 @@ djangofly-prod-scripts grant_permissions --account_id=10538 --domains=timesofind
 
 ******* GRANT PERMISSIONS / ADD DOMAINS / RB access **********
 
-./../../usr/local/chartbeat_bin/djangofly-prod-scripts grant_permissions --account_id=33583 --domains= --create_domains --product_type=queryapi —users=88805 —check_mfly=false
+./../../usr/local/chartbeat_bin/djangofly-prod-scripts grant_permissions --account_id=63228 --domains=desimartini.com,htcampus.com,livehindustan.com,livemint.com,shine.com,video@hindustantimes.com  --product_type=queryapi —users=89108 —check_mfly=false
 
 ******* ADD USERS **********
 --help                           show this help information
