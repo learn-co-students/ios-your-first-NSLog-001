@@ -45,3 +45,10 @@ scp polska.txt craig@dev:./../../usr/local/chartbeat_bin/djangofly-prod-scripts 
 ./../../usr/local/chartbeat_bin/djangofly-prod-scripts add_users --account_id=63527 --file=add_users/polska.tsv --skip_existing --act
 
 djangofly-prod-scripts grant_permissions --account_id=47635 --domains=fdlreporter.com,greenbaypressgazette.com,htrnews.com,marshfieldnewsherald.com,packersnews.com,postcrescent.com,sheboyganpress.com,stevenspointjournal.com,thenorthwestern.com,wausaudailyherald.com,wisconsinrapidstribune.com --product_type=queryapi --users=88444,88445,88446,88447,88448
+
+******* GETTING THE ADMIN DOMAINS **********
+
+./../../usr/local/chartbeat_bin/djangofly-prod-scripts generate_domains_csv
+
+will create csv in root directory 
+cd into local comp - scp craig@dev:domain.csv ~/desktop

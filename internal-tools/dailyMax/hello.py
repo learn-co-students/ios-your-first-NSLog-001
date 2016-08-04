@@ -104,7 +104,7 @@ settings = {
 # QUEUE THE JOB TO WRITE THE CSV FILES TO S3
 def enqueue_job_concurrents(apikey, domain, start, end, bucket, suffix, save_to=True):
         q = Queue(connection=conn)
-        result = q.enqueue_call(func=concurrents_to_s3, args=(apikey, domain, start, end, bucket, suffix))
+        result = q.enqueue_call(func=concurrents_to_s3, args=(apikey, domain, start, end, bucket, suffix), timeout=500)
         print result
 
 if __name__ == "__main__":
