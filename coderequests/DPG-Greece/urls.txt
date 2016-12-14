@@ -1,0 +1,1 @@
+./../../usr/local/chartbeat_bin/djangofly-prod-scripts grant_permissions --account_id=63844 --domains=newsbomb.gr,gossip-tv.gr,queen.gr,onsports.gr,astrology.gr,mothersblog.gr,onmed.gr,leoforos.gr,cnn.gr --create_domains --check_mfly=false --product_type=newsbeat --users=88805

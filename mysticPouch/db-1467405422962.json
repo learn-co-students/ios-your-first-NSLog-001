@@ -1,0 +1,1583 @@
+{
+  "pages": [
+    {
+      "path": "/last-night-s-game-of-thrones-was-horrifying-infuriatin-1782266815",
+      "authors": [
+        "rob bricken"
+      ],
+      "sections": [
+        "io9.gizmodo.com",
+        "tv recap",
+        "game of thrones",
+        "game of thrones recap",
+        "fantasy",
+        "television"
+      ],
+      "stats": {
+        "engaged_visit": {
+          "hist": [
+            369,
+            200,
+            191,
+            162,
+            164,
+            161,
+            544,
+            384,
+            402,
+            436
+          ],
+          "avg": 15.373,
+          "median": 10
+        },
+        "engaged_time": {
+          "hist": [
+            713,
+            650,
+            443,
+            349,
+            326,
+            1054,
+            899,
+            735,
+            583,
+            1471,
+            338,
+            259
+          ],
+          "avg": 230.866,
+          "median": 180
+        },
+        "links": 2075,
+        "people": 7820,
+        "read": 2981,
+        "writing_visit": {
+          "hist": [
+            6,
+            2,
+            1,
+            1,
+            0,
+            1,
+            4,
+            5,
+            2,
+            10
+          ],
+          "avg": 23.297,
+          "median": 15
+        },
+        "direct": 0,
+        "visits": 7820,
+        "recirc": 314,
+        "subscr": 0,
+        "platform": {
+          "m": 1839,
+          "d": 5951
+        },
+        "platform_engaged": {
+          "m": 1331,
+          "d": 1669
+        },
+        "article": 7820,
+        "toprefs": [
+          {
+            "visitors": 1658,
+            "domain": "google.com"
+          },
+          {
+            "visitors": 812,
+            "domain": "kotaku.com"
+          },
+          {
+            "visitors": 358,
+            "domain": "google.co.uk"
+          },
+          {
+            "visitors": 353,
+            "domain": "deadspin.com"
+          }
+        ],
+        "search": 2712,
+        "crowd": 0,
+        "domload": {
+          "hist": [
+            2767,
+            2573,
+            939,
+            538,
+            325,
+            574,
+            47,
+            18,
+            9,
+            36,
+            0
+          ],
+          "avg": 2603.164,
+          "median": 2000
+        },
+        "visit": {
+          "hist": [
+            462,
+            310,
+            315,
+            238,
+            321,
+            235,
+            909,
+            749,
+            1266,
+            3015
+          ],
+          "avg": 32.124,
+          "median": 30
+        },
+        "write": 32,
+        "num_refs": 124,
+        "idle": 4807,
+        "internal": 2099,
+        "social": 934,
+        "new": 3474,
+        "scroll": {
+          "hist": [
+            2029,
+            701,
+            622,
+            593,
+            923,
+            1078,
+            778,
+            523,
+            397,
+            204
+          ],
+          "avg": 3.332,
+          "median": 3
+        }
+      },
+      "title": "Last Night’s Game of Thrones Was Horrifying, Infuriating, and Immensely Satisfying"
+    },
+    {
+      "path": "/",
+      "sections": [
+        "gizmodo.com",
+        "io9.gizmodo.com",
+        "sploid.gizmodo.com",
+        "paleofuture.gizmodo.com",
+        "indefinitelywild.gizmodo.com",
+        "lego.gizmodo.com",
+        "toyland.gizmodo.com"
+      ],
+      "stats": {
+        "engaged_visit": {
+          "hist": [
+            1054,
+            190,
+            66,
+            30,
+            26,
+            13,
+            29,
+            30,
+            23,
+            25
+          ],
+          "avg": 2.416,
+          "median": 1
+        },
+        "engaged_time": {
+          "hist": [
+            1397,
+            1747,
+            1185,
+            862,
+            647,
+            1020,
+            147,
+            20,
+            7,
+            2,
+            1,
+            2
+          ],
+          "avg": 31.886,
+          "median": 30
+        },
+        "links": 243,
+        "people": 7037,
+        "read": 1455,
+        "writing_visit": {
+          "hist": [
+            21,
+            5,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0
+          ],
+          "avg": 1.947,
+          "median": 1
+        },
+        "direct": 4113,
+        "visits": 7037,
+        "recirc": 0,
+        "subscr": 0,
+        "platform": {
+          "m": 650,
+          "d": 6366
+        },
+        "platform_engaged": {
+          "m": 372,
+          "d": 1107
+        },
+        "article": 0,
+        "toprefs": [
+          {
+            "visitors": 69,
+            "domain": "gawker.com"
+          },
+          {
+            "visitors": 53,
+            "domain": "google.com"
+          },
+          {
+            "visitors": 31,
+            "domain": "deadspin.com"
+          },
+          {
+            "visitors": 28,
+            "domain": "kotaku.com"
+          },
+          {
+            "visitors": 24,
+            "domain": "lifehacker.com"
+          }
+        ],
+        "search": 81,
+        "crowd": 0,
+        "domload": {
+          "hist": [
+            3298,
+            2278,
+            577,
+            324,
+            163,
+            294,
+            25,
+            15,
+            9,
+            41,
+            0
+          ],
+          "avg": 2122.911,
+          "median": 2000
+        },
+        "visit": {
+          "hist": [
+            1230,
+            450,
+            320,
+            226,
+            213,
+            253,
+            492,
+            457,
+            849,
+            2547
+          ],
+          "avg": 28.921,
+          "median": 15
+        },
+        "write": 31,
+        "num_refs": 45,
+        "idle": 5551,
+        "internal": 2600,
+        "social": 0,
+        "new": 530,
+        "scroll": {
+          "hist": [
+            3080,
+            893,
+            559,
+            501,
+            448,
+            406,
+            373,
+            355,
+            377,
+            550
+          ],
+          "avg": 2.655,
+          "median": 1
+        }
+      },
+      "title": "Gizmodo - We come from the future."
+    },
+    {
+      "path": "/setting-a-walmart-fireworks-display-on-fire-is-a-specta-1782300909",
+      "authors": [
+        "andrew liszewski"
+      ],
+      "sections": [
+        "sploid.gizmodo.com",
+        "fireworks",
+        "walmart",
+        "explosions",
+        "safety",
+        "crimes"
+      ],
+      "stats": {
+        "engaged_visit": {
+          "hist": [
+            360,
+            65,
+            38,
+            32,
+            22,
+            11,
+            46,
+            14,
+            25,
+            10
+          ],
+          "avg": 3.275,
+          "median": 1
+        },
+        "engaged_time": {
+          "hist": [
+            803,
+            972,
+            556,
+            234,
+            148,
+            257,
+            76,
+            33,
+            18,
+            9,
+            2,
+            2
+          ],
+          "avg": 28.519,
+          "median": 15
+        },
+        "links": 2103,
+        "people": 3110,
+        "read": 612,
+        "writing_visit": {
+          "hist": [
+            1,
+            3,
+            1,
+            0,
+            1,
+            1,
+            3,
+            1,
+            0,
+            0
+          ],
+          "avg": 5.109,
+          "median": 5
+        },
+        "direct": 0,
+        "visits": 3110,
+        "recirc": 44,
+        "subscr": 0,
+        "platform": {
+          "m": 339,
+          "d": 2763
+        },
+        "platform_engaged": {
+          "m": 146,
+          "d": 477
+        },
+        "article": 3110,
+        "toprefs": [
+          {
+            "visitors": 855,
+            "domain": "kotaku.com"
+          },
+          {
+            "visitors": 616,
+            "domain": "deadspin.com"
+          },
+          {
+            "visitors": 283,
+            "domain": "io9.gizmodo.com"
+          },
+          {
+            "visitors": 138,
+            "domain": "facebook.com"
+          }
+        ],
+        "search": 9,
+        "crowd": 0,
+        "domload": {
+          "hist": [
+            1820,
+            850,
+            216,
+            91,
+            50,
+            64,
+            7,
+            4,
+            2,
+            5,
+            0
+          ],
+          "avg": 1418.584,
+          "median": 1000
+        },
+        "visit": {
+          "hist": [
+            567,
+            293,
+            219,
+            119,
+            153,
+            124,
+            268,
+            241,
+            466,
+            660
+          ],
+          "avg": 16.164,
+          "median": 10
+        },
+        "write": 11,
+        "num_refs": 40,
+        "idle": 2487,
+        "internal": 595,
+        "social": 403,
+        "new": 1008,
+        "scroll": {
+          "hist": [
+            1291,
+            1671,
+            1115,
+            593,
+            329,
+            174,
+            142,
+            93,
+            76,
+            43
+          ],
+          "avg": 1.875,
+          "median": 1
+        }
+      },
+      "title": "Setting a Walmart Fireworks Display on Fire Is a Spectacularly Stupid Thing to Do"
+    },
+    {
+      "path": "/go-behind-the-scenes-of-last-nights-astonishing-game-of-1782299096",
+      "authors": [
+        "cheryl eddy"
+      ],
+      "sections": [
+        "io9.gizmodo.com",
+        "game of thrones",
+        "behind the scenes",
+        "battle of the bastards",
+        "television",
+        "hbo"
+      ],
+      "stats": {
+        "engaged_visit": {
+          "hist": [
+            110,
+            20,
+            5,
+            2,
+            4,
+            3,
+            11,
+            25,
+            17,
+            7
+          ],
+          "avg": 5.888,
+          "median": 1
+        },
+        "engaged_time": {
+          "hist": [
+            309,
+            990,
+            320,
+            158,
+            85,
+            123,
+            20,
+            6,
+            6,
+            0,
+            1,
+            0
+          ],
+          "avg": 20.334,
+          "median": 15
+        },
+        "links": 64,
+        "people": 2018,
+        "read": 202,
+        "writing_visit": {
+          "hist": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "avg": 3.51,
+          "median": 6
+        },
+        "direct": 0,
+        "visits": 2018,
+        "recirc": 71,
+        "subscr": 0,
+        "platform": {
+          "m": 254,
+          "d": 1760
+        },
+        "platform_engaged": {
+          "m": 62,
+          "d": 142
+        },
+        "article": 2018,
+        "toprefs": [
+          {
+            "visitors": 445,
+            "domain": "facebook.com"
+          },
+          {
+            "visitors": 99,
+            "domain": "t.co"
+          },
+          {
+            "visitors": 88,
+            "domain": "google.com"
+          },
+          {
+            "visitors": 39,
+            "domain": "feedly.com"
+          }
+        ],
+        "search": 137,
+        "crowd": 0,
+        "domload": {
+          "hist": [
+            1165,
+            527,
+            142,
+            72,
+            48,
+            52,
+            5,
+            4,
+            0,
+            3,
+            0
+          ],
+          "avg": 1489.283,
+          "median": 1000
+        },
+        "visit": {
+          "hist": [
+            182,
+            100,
+            109,
+            69,
+            62,
+            150,
+            243,
+            218,
+            331,
+            554
+          ],
+          "avg": 20.317,
+          "median": 15
+        },
+        "write": 2,
+        "num_refs": 38,
+        "idle": 1814,
+        "internal": 1064,
+        "social": 753,
+        "new": 372,
+        "scroll": {
+          "hist": [
+            903,
+            1564,
+            1015,
+            305,
+            118,
+            74,
+            44,
+            39,
+            36,
+            17
+          ],
+          "avg": 1.538,
+          "median": 1
+        }
+      },
+      "title": "Go Behind the Scenes of Last Night's Astonishing Game of Thrones Battle"
+    },
+    {
+      "path": "/the-atmosphere-of-venus-is-more-terrifying-than-we-imag-1782173357",
+      "authors": [
+        "maddie stone"
+      ],
+      "sections": [
+        "gizmodo.com",
+        "venus",
+        "planetary science",
+        "atmospheric science",
+        "space",
+        "astronomy",
+        "electric wind",
+        "electric field"
+      ],
+      "stats": {
+        "engaged_visit": {
+          "hist": [
+            26,
+            9,
+            4,
+            4,
+            2,
+            0,
+            4,
+            6,
+            6,
+            7
+          ],
+          "avg": 11.818,
+          "median": 2
+        },
+        "engaged_time": {
+          "hist": [
+            175,
+            183,
+            71,
+            80,
+            60,
+            139,
+            47,
+            28,
+            12,
+            19,
+            1,
+            2
+          ],
+          "avg": 58.66,
+          "median": 30
+        },
+        "links": 512,
+        "people": 817,
+        "read": 67,
+        "writing_visit": {
+          "hist": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "avg": 17.75,
+          "median": 30
+        },
+        "direct": 0,
+        "visits": 817,
+        "recirc": 100,
+        "subscr": 0,
+        "platform": {
+          "m": 56,
+          "d": 755
+        },
+        "platform_engaged": {
+          "m": 24,
+          "d": 44
+        },
+        "article": 817,
+        "toprefs": [
+          {
+            "visitors": 262,
+            "domain": "news.google.com"
+          },
+          {
+            "visitors": 85,
+            "domain": "io9.gizmodo.com"
+          },
+          {
+            "visitors": 79,
+            "domain": "facebook.com"
+          },
+          {
+            "visitors": 45,
+            "domain": "kotaku.com"
+          }
+        ],
+        "search": 3,
+        "crowd": 0,
+        "domload": {
+          "hist": [
+            363,
+            254,
+            79,
+            54,
+            23,
+            29,
+            4,
+            1,
+            3,
+            5,
+            0
+          ],
+          "avg": 2485.563,
+          "median": 2000
+        },
+        "visit": {
+          "hist": [
+            29,
+            21,
+            12,
+            8,
+            16,
+            11,
+            34,
+            30,
+            74,
+            582
+          ],
+          "avg": 55.838,
+          "median": 30
+        },
+        "write": 1,
+        "num_refs": 29,
+        "idle": 749,
+        "internal": 158,
+        "social": 144,
+        "new": 299,
+        "scroll": {
+          "hist": [
+            336,
+            387,
+            301,
+            140,
+            69,
+            47,
+            29,
+            21,
+            14,
+            7
+          ],
+          "avg": 1.788,
+          "median": 1
+        }
+      },
+      "title": "The Atmosphere of Venus Is More Terrifying Than We Imagined"
+    },
+    {
+      "path": "/tom-holland-may-be-a-secret-genetic-experiment-funded-b-1782292091",
+      "authors": [
+        "rob bricken"
+      ],
+      "sections": [
+        "io9.gizmodo.com",
+        "spider-man",
+        "stan lee",
+        "spider-man homecoming",
+        "marvel",
+        "movies",
+        "clone saga"
+      ],
+      "stats": {
+        "engaged_visit": {
+          "hist": [
+            72,
+            16,
+            9,
+            6,
+            6,
+            3,
+            8,
+            7,
+            4,
+            6
+          ],
+          "avg": 5.14,
+          "median": 1
+        },
+        "engaged_time": {
+          "hist": [
+            298,
+            148,
+            97,
+            60,
+            36,
+            82,
+            34,
+            15,
+            4,
+            5,
+            2,
+            0
+          ],
+          "avg": 34.581,
+          "median": 15
+        },
+        "links": 75,
+        "people": 781,
+        "read": 134,
+        "writing_visit": {
+          "hist": [
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "avg": 2.837,
+          "median": 4
+        },
+        "direct": 0,
+        "visits": 781,
+        "recirc": 90,
+        "subscr": 0,
+        "platform": {
+          "m": 84,
+          "d": 694
+        },
+        "platform_engaged": {
+          "m": 39,
+          "d": 98
+        },
+        "article": 781,
+        "toprefs": [
+          {
+            "visitors": 96,
+            "domain": "facebook.com"
+          },
+          {
+            "visitors": 41,
+            "domain": "deadspin.com"
+          },
+          {
+            "visitors": 11,
+            "domain": "feedly.com"
+          },
+          {
+            "visitors": 10,
+            "domain": "jezebel.com"
+          }
+        ],
+        "search": 10,
+        "crowd": 0,
+        "domload": {
+          "hist": [
+            438,
+            205,
+            67,
+            23,
+            21,
+            24,
+            0,
+            0,
+            0,
+            3,
+            0
+          ],
+          "avg": 1634.122,
+          "median": 1000
+        },
+        "visit": {
+          "hist": [
+            98,
+            55,
+            54,
+            18,
+            42,
+            14,
+            51,
+            51,
+            99,
+            299
+          ],
+          "avg": 31.462,
+          "median": 30
+        },
+        "write": 3,
+        "num_refs": 18,
+        "idle": 644,
+        "internal": 520,
+        "social": 176,
+        "new": 101,
+        "scroll": {
+          "hist": [
+            456,
+            473,
+            227,
+            63,
+            32,
+            20,
+            28,
+            30,
+            15,
+            11
+          ],
+          "avg": 1.432,
+          "median": 1
+        }
+      },
+      "title": "Tom Holland May Be a Secret Genetic Experiment Funded by Marvel to Create the Perfect Movie Spider-M"
+    },
+    {
+      "path": "/mark-zuckerberg-votes-to-keep-peter-thiel-on-facebook-b-1782276509",
+      "authors": [
+        "michael nunez"
+      ],
+      "sections": [
+        "gizmodo.com",
+        "facebook",
+        "mark zuckerberg",
+        "shareholder meeting",
+        "peter thiel",
+        "sheryl sandberg"
+      ],
+      "stats": {
+        "engaged_visit": {
+          "hist": [
+            50,
+            20,
+            17,
+            8,
+            5,
+            5,
+            11,
+            5,
+            9,
+            6
+          ],
+          "avg": 5.95,
+          "median": 2
+        },
+        "engaged_time": {
+          "hist": [
+            117,
+            96,
+            76,
+            47,
+            38,
+            81,
+            33,
+            19,
+            9,
+            12,
+            3,
+            0
+          ],
+          "avg": 58.618,
+          "median": 30
+        },
+        "links": 308,
+        "people": 531,
+        "read": 128,
+        "writing_visit": {
+          "hist": [
+            4,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0
+          ],
+          "avg": 3.742,
+          "median": 3
+        },
+        "direct": 0,
+        "visits": 531,
+        "recirc": 26,
+        "subscr": 0,
+        "platform": {
+          "m": 85,
+          "d": 444
+        },
+        "platform_engaged": {
+          "m": 54,
+          "d": 82
+        },
+        "article": 531,
+        "toprefs": [
+          {
+            "visitors": 285,
+            "domain": "gawker.com"
+          },
+          {
+            "visitors": 46,
+            "domain": "google.com"
+          },
+          {
+            "visitors": 21,
+            "domain": "facebook.com"
+          },
+          {
+            "visitors": 8,
+            "domain": "feedly.com"
+          }
+        ],
+        "search": 60,
+        "crowd": 0,
+        "domload": {
+          "hist": [
+            296,
+            144,
+            51,
+            17,
+            11,
+            4,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "avg": 1387.499,
+          "median": 1000
+        },
+        "visit": {
+          "hist": [
+            64,
+            38,
+            38,
+            17,
+            23,
+            15,
+            31,
+            29,
+            88,
+            188
+          ],
+          "avg": 29.519,
+          "median": 30
+        },
+        "write": 8,
+        "num_refs": 25,
+        "idle": 395,
+        "internal": 105,
+        "social": 58,
+        "new": 127,
+        "scroll": {
+          "hist": [
+            249,
+            265,
+            122,
+            50,
+            35,
+            21,
+            24,
+            22,
+            15,
+            7
+          ],
+          "avg": 1.71,
+          "median": 1
+        }
+      },
+      "title": "Mark Zuckerberg Votes To Keep Peter Thiel On Facebook Board "
+    },
+    {
+      "path": "/how-different-colors-convey-different-emotions-in-movie-1782299224",
+      "authors": [
+        "casey chan"
+      ],
+      "sections": [
+        "sploid.gizmodo.com",
+        "neat",
+        "emotion",
+        "colors",
+        "movies",
+        "film"
+      ],
+      "stats": {
+        "engaged_visit": {
+          "hist": [
+            31,
+            1,
+            2,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "avg": 2.41,
+          "median": 1
+        },
+        "engaged_time": {
+          "hist": [
+            122,
+            238,
+            67,
+            24,
+            3,
+            5,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "avg": 12.054,
+          "median": 15
+        },
+        "links": 200,
+        "people": 461,
+        "read": 39,
+        "writing_visit": {
+          "hist": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "avg": 0,
+          "median": 0
+        },
+        "direct": 0,
+        "visits": 461,
+        "recirc": 6,
+        "subscr": 0,
+        "platform": {
+          "m": 24,
+          "d": 436
+        },
+        "platform_engaged": {
+          "m": 8,
+          "d": 31
+        },
+        "article": 461,
+        "toprefs": [
+          {
+            "visitors": 178,
+            "domain": "io9.gizmodo.com"
+          },
+          {
+            "visitors": 35,
+            "domain": "facebook.com"
+          },
+          {
+            "visitors": 15,
+            "domain": "feedly.com"
+          },
+          {
+            "visitors": 3,
+            "domain": "m.facebook.com"
+          }
+        ],
+        "search": 2,
+        "crowd": 0,
+        "domload": {
+          "hist": [
+            275,
+            127,
+            28,
+            10,
+            5,
+            8,
+            0,
+            1,
+            0,
+            2,
+            0
+          ],
+          "avg": 1731.282,
+          "median": 1000
+        },
+        "visit": {
+          "hist": [
+            51,
+            22,
+            13,
+            11,
+            17,
+            16,
+            31,
+            35,
+            69,
+            196
+          ],
+          "avg": 30.649,
+          "median": 30
+        },
+        "write": 0,
+        "num_refs": 15,
+        "idle": 422,
+        "internal": 182,
+        "social": 77,
+        "new": 93,
+        "scroll": {
+          "hist": [
+            219,
+            370,
+            303,
+            146,
+            57,
+            18,
+            10,
+            9,
+            9,
+            6
+          ],
+          "avg": 1.727,
+          "median": 1
+        }
+      },
+      "title": "How Different Colors Convey Different Emotions in Movies"
+    },
+    {
+      "path": "/even-the-worlds-deepest-trench-is-full-of-garbage-now-1782306048",
+      "authors": [
+        "ria misra"
+      ],
+      "sections": [
+        "gizmodo.com",
+        "ocean",
+        "mariana trench",
+        "environment"
+      ],
+      "stats": {
+        "engaged_visit": {
+          "hist": [
+            83,
+            26,
+            2,
+            3,
+            1,
+            3,
+            3,
+            1,
+            1,
+            0
+          ],
+          "avg": 1.218,
+          "median": 1
+        },
+        "engaged_time": {
+          "hist": [
+            153,
+            98,
+            80,
+            54,
+            27,
+            27,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "avg": 18.615,
+          "median": 15
+        },
+        "links": 27,
+        "people": 439,
+        "read": 123,
+        "writing_visit": {
+          "hist": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "avg": 0,
+          "median": 0
+        },
+        "direct": 0,
+        "visits": 439,
+        "recirc": 91,
+        "subscr": 0,
+        "platform": {
+          "m": 48,
+          "d": 389
+        },
+        "platform_engaged": {
+          "m": 31,
+          "d": 91
+        },
+        "article": 439,
+        "toprefs": [
+          {
+            "visitors": 63,
+            "domain": "facebook.com"
+          },
+          {
+            "visitors": 20,
+            "domain": "t.co"
+          },
+          {
+            "visitors": 19,
+            "domain": "feedly.com"
+          },
+          {
+            "visitors": 6,
+            "domain": "m.facebook.com"
+          }
+        ],
+        "search": 1,
+        "crowd": 0,
+        "domload": {
+          "hist": [
+            277,
+            104,
+            33,
+            8,
+            6,
+            16,
+            3,
+            0,
+            0,
+            1,
+            0
+          ],
+          "avg": 1292.189,
+          "median": 1000
+        },
+        "visit": {
+          "hist": [
+            106,
+            63,
+            44,
+            20,
+            36,
+            15,
+            58,
+            70,
+            27,
+            0
+          ],
+          "avg": 5.466,
+          "median": 4
+        },
+        "write": 0,
+        "num_refs": 14,
+        "idle": 316,
+        "internal": 293,
+        "social": 118,
+        "new": 30,
+        "scroll": {
+          "hist": [
+            207,
+            296,
+            233,
+            124,
+            60,
+            31,
+            20,
+            10,
+            8,
+            5
+          ],
+          "avg": 1.839,
+          "median": 1
+        }
+      },
+      "title": "Even the World's Deepest Trench Is Full of Garbage Now"
+    },
+    {
+      "path": "/anton-yelchin-death-jeep-cherokees-were-recalled-for-c-1782255236",
+      "authors": [
+        "andrew liptak"
+      ],
+      "sections": [
+        "gizmodo.com",
+        "anton yelchin"
+      ],
+      "stats": {
+        "engaged_visit": {
+          "hist": [
+            61,
+            25,
+            4,
+            9,
+            7,
+            5,
+            5,
+            3,
+            4,
+            4
+          ],
+          "avg": 4.754,
+          "median": 2
+        },
+        "engaged_time": {
+          "hist": [
+            82,
+            69,
+            46,
+            50,
+            36,
+            82,
+            32,
+            12,
+            4,
+            4,
+            0,
+            0
+          ],
+          "avg": 53.547,
+          "median": 45
+        },
+        "links": 131,
+        "people": 417,
+        "read": 127,
+        "writing_visit": {
+          "hist": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "avg": 0,
+          "median": 0
+        },
+        "direct": 0,
+        "visits": 417,
+        "recirc": 22,
+        "subscr": 0,
+        "platform": {
+          "m": 160,
+          "d": 255
+        },
+        "platform_engaged": {
+          "m": 83,
+          "d": 43
+        },
+        "article": 417,
+        "toprefs": [
+          {
+            "visitors": 99,
+            "domain": "google.com"
+          },
+          {
+            "visitors": 74,
+            "domain": "gawker.com"
+          },
+          {
+            "visitors": 43,
+            "domain": "io9.gizmodo.com"
+          },
+          {
+            "visitors": 33,
+            "domain": "facebook.com"
+          }
+        ],
+        "search": 108,
+        "crowd": 0,
+        "domload": {
+          "hist": [
+            142,
+            111,
+            40,
+            40,
+            33,
+            53,
+            1,
+            2,
+            0,
+            3,
+            0
+          ],
+          "avg": 3496.978,
+          "median": 2000
+        },
+        "visit": {
+          "hist": [
+            76,
+            40,
+            19,
+            17,
+            21,
+            14,
+            32,
+            20,
+            48,
+            130
+          ],
+          "avg": 25.672,
+          "median": 10
+        },
+        "write": 0,
+        "num_refs": 30,
+        "idle": 290,
+        "internal": 72,
+        "social": 106,
+        "new": 207,
+        "scroll": {
+          "hist": [
+            165,
+            176,
+            97,
+            55,
+            30,
+            19,
+            11,
+            6,
+            9,
+            6
+          ],
+          "avg": 1.714,
+          "median": 1
+        }
+      },
+      "title": "Anton Yelchin Death: Jeep Grand Cherokees Were Recalled for Rollaway Risk [Updated]"
+    }
+  ]
+}

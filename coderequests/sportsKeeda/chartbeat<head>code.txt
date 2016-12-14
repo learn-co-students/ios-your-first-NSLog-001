@@ -1,0 +1,10 @@
+<script type="text/javascript">
+                var _sf_async_config = _sf_async_config || {};
+                /** CONFIGURATION START **/
+                _sf_async_config.uid = 58519; /** CHANGE TO YOUR CHARTBEAT ACCOUNT ID **/
+                _sf_async_config.domain = 'sportskeeda.com'; /** CHANGE THIS **/
+                _sf_async_config.flickerControl = false;
+                /** CONFIGURATION END **/
+                var _sf_startpt = (new Date()).getTime();
+</script>
+<script async src="//static.chartbeat.com/js/chartbeat.js"></script>

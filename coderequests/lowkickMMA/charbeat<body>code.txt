@@ -1,0 +1,27 @@
+ <script type='text/javascript'>
+  var _sf_async_config = _sf_async_config || {};
+  /** CONFIGURATION START **/
+  _sf_async_config.sections = document.querySelector('.entry-category a').innerText; //CHANGE THIS
+  _sf_async_config.authors = document.querySelector('.td-post-author-name a').innerText; //CHANGE THIS
+  _sf_async_config.ytApikey = <key>; // CHANGE THIS TO YOUR YOUTUBE KEY
+  /** CONFIGURATION END **/
+  (function() {
+      function loadChartbeat() {
+          window._sf_endpt = (new Date()).getTime();
+          var e = document.createElement('script');
+          e.setAttribute('language', 'javascript');
+          e.setAttribute('type', 'text/javascript');
+          e.setAttribute('src', '//static.chartbeat.com/js/chartbeat_video.js');
+          document.body.appendChild(e);
+      }
+       /** TELL CHARTBEAT TO AUTODETECT YOUTUBE VIDEOS **/
+      var _cbv = window._cbv || (window._cbv = []);
+      _cbv.push(['autoDetectYouTubeIframes']);
+      var oldonload = window.onload;
+      window.onload = (typeof window.onload != 'function') ?
+          loadChartbeat : function() {
+              oldonload();
+              loadChartbeat();
+          };
+      })();
+</script>

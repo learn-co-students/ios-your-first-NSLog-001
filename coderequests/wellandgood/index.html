@@ -1,0 +1,1084 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQQEVVdVCxABXFRTBgkEXw=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(){}function r(t){function e(t){return t&&t instanceof n?t:t?a(t,i,o):o()}function u(n,r,o){t&&t(n,r,o);for(var i=e(o),a=l(n),s=a.length,f=0;s>f;f++)a[f].apply(i,r);var u=c[v[n]];return u&&u.push([w,n,r,i]),i}function d(t,e){m[t]=l(t).concat(e)}function l(t){return m[t]||[]}function p(t){return f[t]=f[t]||r(u)}function h(t,e){s(t,function(t,n){e=e||"feature",v[n]=e,e in c||(c[e]=[])})}var m={},v={},w={on:d,emit:u,get:p,listeners:l,context:e,buffer:h};return w}function o(){return new n}var i="nr@context",a=t("gos"),s=t(1),c={},f={},u=e.exports=r();u.backlog=c},{1:24,gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:24,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,a){try{f?f-=1:r("err",[a||new UncaughtException(t,e,n)])}catch(c){try{r("ierr",[c,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof s?s.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=t("loader"),s=window.onerror,c=!1,f=0;a.features.err=!0,t(5),window.onerror=e;try{throw new Error}catch(u){"stack"in u&&(t(1),t(2),"addEventListener"in window&&t(3),a.xhrWrappable&&t(4),c=!0)}i.on("fn-start",function(){c&&(f+=1)}),i.on("fn-err",function(t,e,r){c&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){c&&!this.thrown&&f>0&&(f-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:10,2:9,3:7,4:11,5:3,6:25,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],6:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1),i=t(2);t("loader").features.stn=!0,t(3);var a=NREUM.o.EV;n.on("fn-start",function(t){var e=t[0];e instanceof a&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof a&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),i.on("fn-start",function(){this.bstStart=Date.now()}),i.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.clearResourceTimings?window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1):window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:10,2:9,3:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],7:[function(t,e){function n(t){for(var e=t;e&&!e.hasOwnProperty("addEventListener");)e=Object.getPrototypeOf(e);e&&r(e)}function r(t){a.inPlace(t,["addEventListener","removeEventListener"],"-",o)}function o(t){return t[1]}var i=t("ee").get("events"),a=t(1)(i),s=t("gos");e.exports=i,r(window),"getPrototypeOf"in Object?(n(document),n(XMLHttpRequest.prototype)):XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&r(XMLHttpRequest.prototype),i.on("addEventListener-start",function(t){if(t[1]){var e=t[1];if("function"==typeof e){var n=s(e,"nr@wrapped",function(){return a(e,"fn-",null,e.name||"anonymous")});this.wrapped=t[1]=n}else"function"==typeof e.handleEvent&&a.inPlace(e,["handleEvent"],"fn-")}}),i.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:26,ee:"QJf3ax",gos:"7eSDFh"}],8:[function(t,e){var n=t("ee").get("history"),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState","replaceState"],"-")},{1:26,ee:"QJf3ax"}],9:[function(t,e){var n=t("ee").get("raf"),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:26,ee:"QJf3ax"}],10:[function(t,e){function n(t,e,n){t[0]=i(t[0],"fn-",null,n)}function r(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=i(t[0],"fn-",this,n)}var o=t("ee").get("timer"),i=t(1)(o);e.exports=o,i.inPlace(window,["setTimeout","setImmediate"],"setTimer-"),i.inPlace(window,["setInterval"],"setInterval-"),i.inPlace(window,["clearTimeout","clearImmediate"],"clearTimeout-"),o.on("setInterval-start",n),o.on("setTimer-start",r)},{1:26,ee:"QJf3ax"}],11:[function(t,e){function n(t,e){e=e||this;var n=i.context(e);e.readyState>3&&!n.resolved&&(n.resolved=!0,i.emit("xhr-resolved",[],e));try{c.inPlace(e,l,"fn-",r)}catch(o){}}function r(t,e){return e}function o(t,e){for(var n in t)e[n]=t[n];return e}var i=t("ee").get("xhr"),a=t(1),s=t(2),c=s(i),f=s(a),u=NREUM.o,d=u.XHR,l=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout","onreadystatechange"];e.exports=i,window.XMLHttpRequest=function(t){var e=new d(t);try{i.emit("new-xhr",[e],e),e.hasOwnProperty("addEventListener")&&f.inPlace(e,["addEventListener","removeEventListener"],"-",r),e.addEventListener("readystatechange",n,!1)}catch(o){try{i.emit("internal-error",[o])}catch(a){}}return e},o(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,c.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:7,2:26,ee:"QJf3ax"}],12:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var o=0;u>o;o++)t.removeEventListener(f[o],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=n(t,this.lastSize);if(i&&(r.rxSize=i),this.sameOrigin){var s=t.getResponseHeader("X-NewRelic-App-Data");s&&(e.cat=s.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,c.emit("xhr-done",[t],t),a("xhr",[e,r,this.startTime])}}}function n(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var o="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return r(o)}function r(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function o(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var i=t("loader");if(i.xhrWrappable){var a=t("handle"),s=t(2),c=t("ee"),f=["load","error","abort","timeout"],u=f.length,d=t(1),l=t(3),p=window.XMLHttpRequest;i.features.xhr=!0,t(5),t(4),c.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=e,n.ended=!1,n.xhrGuids={},n.lastSize=null,l&&(l>34||10>l)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),c.on("open-xhr-start",function(t){this.params={method:t[0]},o(this,t[1]),this.metrics={}}),c.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),c.on("send-xhr-start",function(t,e){var n=this.metrics,o=t[0],i=this;if(n&&o){var a=r(o);a&&(n.txSize=a)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{c.emit("internal-error",[n])}catch(r){}}};for(var s=0;u>s;s++)e.addEventListener(f[s],this.listener,!1)}),c.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),c.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),c.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),c.on("addEventListener-end",function(t,e){e instanceof p&&"load"===t[0]&&c.emit("xhr-load-added",[t[1],t[2]],e)}),c.on("removeEventListener-end",function(t,e){e instanceof p&&"load"===t[0]&&c.emit("xhr-load-removed",[t[1],t[2]],e)}),c.on("fn-start",function(t,e,n){e instanceof p&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),c.on("fn-end",function(t,e){this.xhrCbStart&&c.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:13,3:15,4:11,5:7,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],13:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],14:[function(t,e){function n(t,e){return function(){r(t,[(new Date).getTime()].concat(i(arguments)),null,e)}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit"],s=["addPageAction"],c="api-";o(a,function(t,e){newrelic[e]=n(c+e,"api")}),o(s,function(t,e){newrelic[e]=n(c+e)}),e.exports=newrelic,newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),r("err",[t,(new Date).getTime()])}},{1:24,2:25,handle:"D5DuLP"}],15:[function(t,e){var n=0,r=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);r&&(n=+r[1]),e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n,o){r.buffer([t],o),r.emit(t,e,n)}var r=t("ee").get("handle");e.exports=n,n.ee=r},{ee:"QJf3ax"}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],G9z0Bl:[function(t,e){function n(){if(!h++){var t=p.info=NREUM.info,e=f.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){t[e]||(t[e]=n)});var n="https"===u.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()],null,"api");var r=f.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()],null,"api")}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=window,f=c.document;NREUM.o={ST:setTimeout,XHR:c.XMLHttpRequest,REQ:c.Request,EV:c.Event,PR:c.Promise,MO:c.MutationObserver},t(2);var u=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-885.min.js"},l=window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent),p=e.exports={offset:i(),origin:u,features:{},xhrWrappable:l};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(f.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()],null,"api");var h=0},{1:24,2:14,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],24:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],25:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],26:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@original",a=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,c;try{i=this,n=o(arguments),s="function"==typeof r?r(n,i):r||{}}catch(u){d([u,"",[n,i,a],s])}f(e+"start",[n,i,a],s);try{return c=t.apply(i,n)}catch(l){throw f(e+"err",[n,i,l],s),l}finally{f(e+"end",[n,i,c],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=t,u(t,nrWrapper),nrWrapper)}function c(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function f(e,n,r){if(!s){s=!0;try{t.emit(e,n,r)}catch(o){d([o,e,n,r])}s=!1}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){d([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function d(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=c,e.flag=i,e}},{1:25,ee:"QJf3ax"}]},{},["G9z0Bl",4,12,6,5]);</script>
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" href="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/favicon-194x194.png" sizes="194x194">
+	<link rel="icon" type="image/png" href="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/manifest.json">
+	<link rel="mask-icon" href="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/safari-pinned-tab.svg" color="#5bbad5  ">
+	<link rel="shortcut icon" href="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/favicon.ico">
+	<meta name="msapplication-TileImage" content="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/mstile-144x144.png">
+	<meta name="msapplication-TileColor" content="#e06758  ">
+	<meta name="theme-color" content="#ffffff  ">
+    <title>!@#!@#!*Tory Sport's first store opens in New York City | Well+Good</title>
+
+<!-- All in One SEO Pack 2.2.7.5 by Michael Torbert of Semper Fi Web Design[2910,2992] -->
+<meta name="description" itemprop="description" content="The activewear line from fashion brand Tory Burch has opened its first store in the Flatiron district of Manhattan, and features their new spring collection." />
+
+<meta name="keywords" itemprop="keywords" content="fitness fashion,good looks,new york city" />
+
+<link rel="canonical" href="http://www.wellandgood.com/good-looks/first-tory-sport-store-in-nyc/" />
+<!-- /all in one seo pack -->
+<link rel="dns-prefetch" href="//connect.facebook.net">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/www.wellandgood.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.4.2"}};
+			!function(a,b,c){function d(a){var c,d=b.createElement("canvas"),e=d.getContext&&d.getContext("2d"),f=String.fromCharCode;return e&&e.fillText?(e.textBaseline="top",e.font="600 32px Arial","flag"===a?(e.fillText(f(55356,56806,55356,56826),0,0),d.toDataURL().length>3e3):"diversity"===a?(e.fillText(f(55356,57221),0,0),c=e.getImageData(16,16,1,1).data.toString(),e.fillText(f(55356,57221,55356,57343),0,0),c!==e.getImageData(16,16,1,1).data.toString()):("simple"===a?e.fillText(f(55357,56835),0,0):e.fillText(f(55356,57135),0,0),0!==e.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag"),unicode8:d("unicode8"),diversity:d("diversity")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag&&c.supports.unicode8&&c.supports.diversity||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='video-styles-css'  href='http://www.wellandgood.com/wp-content/plugins/video-contest/assets/css/public.css?ver=1.4' type='text/css' media='all' />
+<link rel='stylesheet' id='main-css'  href='http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/css/main.min.css?ver=1.1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='googlefonts-css'  href='//fonts.googleapis.com/css?family=PT+Serif%3A400%2C400italic%2C700%2C700italic&#038;ver=1.1.0' type='text/css' media='1' />
+<link rel='https://api.w.org/' href='http://www.wellandgood.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.wellandgood.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.wellandgood.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Be your own personal beauty guru with these next-level DIY skills' href='http://www.wellandgood.com/good-advice/diy-herbal-infusions/' />
+<link rel='next' title='Meet kitchari: Ayurveda&#8217;s super-soothing chicken soup equivalent' href='http://www.wellandgood.com/good-food/kitchari-recipe-inday-good-karma-bowl/' />
+<meta name="generator" content="WordPress 4.4.2" />
+<link rel='shortlink' href='http://www.wellandgood.com/?p=129225' />
+<link rel="alternate" type="application/json+oembed" href="http://www.wellandgood.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.wellandgood.com%2Fgood-looks%2Ffirst-tory-sport-store-in-nyc%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://www.wellandgood.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.wellandgood.com%2Fgood-looks%2Ffirst-tory-sport-store-in-nyc%2F&#038;format=xml" />
+		<style type='text/css'>
+						.nav__cities .nav__cities-nyc a {
+				background-image: url(' http://www.wellandgood.com/wp-content/uploads/2016/03/City-Edition_New-York_800-620x136.jpg ');
+			}
+						.nav__cities .nav__cities-los-angeles a {
+				background-image: url(' http://www.wellandgood.com/wp-content/uploads/2016/03/City-Edition_Los-Angeles_800-620x136.jpg ');
+			}
+					</style>
+		<meta property="og:site_name" content="Well+Good">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="fb:app_id" content="120647878922">
+<meta property="og:url" content="http://www.wellandgood.com/good-looks/first-tory-sport-store-in-nyc/">
+<meta property="og:title" content="The first stand-alone Tory Sport store is officially open">
+<meta property="og:description" content="The quick-to-sell-out activewear brand from Tory Burch is open for (permanent) business in Manhattan.">
+<meta property="og:image" content="http://www.wellandgood.com/wp-content/uploads/2016/03/tory-sport-store.jpg">
+<meta property="og:image:width" content="760">
+<meta property="og:image:height" content="623">
+<meta property="og:image" content="http://www.wellandgood.com/wp-content/uploads/2016/03/TS_SS16_CG_1220_FINAL_RGB150_LR.jpg">
+<meta property="og:image:width" content="2413">
+<meta property="og:image:height" content="3018">
+<meta property="og:image" content="http://www.wellandgood.com/wp-content/uploads/2016/03/TS_SS16_CG_1927_FINAL_RGB150_LR.jpg">
+<meta property="og:image:width" content="3018">
+<meta property="og:image:height" content="2412">
+<meta property="article:published_time" content="2016-03-21T22:31:41+00:00">
+<meta property="article:modified_time" content="2016-03-22T03:06:37+00:00">
+<meta property="article:author" content="http://www.wellandgood.com/author/kmaguire/">
+<meta property="article:section" content="Good Looks">
+<meta property="article:tag" content="New York City">
+<meta property="article:tag" content="fitness fashion">
+<script type="text/javascript">
+          var _sf_async_config = _sf_async_config || {};
+          /** CONFIGURATION START **/
+          _sf_async_config.uid = 62949; // ACCOUNT NUMBER
+          _sf_async_config.domain = 'wellandgood.com'; // DOMAIN 
+          _sf_async_config.flickerControl = false;
+          _sf_async_config.useCanonical = true;
+          /** CONFIGURATION END **/
+          var _sf_startpt = (new Date()).getTime();
+      </script>
+      <script async src="//static.chartbeat.com/js/chartbeat_mab.js"></script>
+  </head>
+  <body class="single single-post postid-129225 single-format-standard" data-module-init="image anchor-link" data-anchor-link-offset=".header">
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5Q356Q"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5Q356Q');</script>
+
+<!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+	  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+	  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+	  document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+  fbq('init', '1664557150447512');
+  fbq('track', "PageView");</script>
+<noscript><img height="1" width="1" style="display:none"
+	src="https://www.facebook.com/tr?id=1664557150447512&ev=PageView&noscript=1"
+/></noscript>
+
+<!-- comScore Tag -->
+<script>
+  var _comscore = _comscore || [];
+  _comscore.push({ c1: "2", c2: "19765212" });
+  (function() {
+	  var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+	  s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+	  el.parentNode.insertBefore(s, el);
+  })();
+</script>
+<noscript>
+  <img src="http://b.scorecardresearch.com/p?c1=2&c2=19765212&cv=2.0&cj=1" />
+</noscript>
+
+  <div class="main-wrapper">
+  	<header class="header" data-module-init="header">
+
+	<div class="header__inner">
+		<div class="header__search" data-search-elem=".search-bar .search-bar__input">
+			<span class="icon-search-thin-small"></span>
+			<span class="icon-x"></span>
+		</div>
+
+		
+		<div class="nav-trigger">
+			<span class="nav-trigger__bar nav-trigger__bar--top"></span>
+			<span class="nav-trigger__bar nav-trigger__bar--middle"></span>
+			<span class="nav-trigger__bar nav-trigger__bar--bottom"></span>
+		</div>
+
+			<div class="menu-social-menu-container">
+	    <ul id="menu-social-menu" class="menu">
+			        <li class="menu-item menu-item-type-social"><a href="https://www.facebook.com/WellandGoodNYC" class="icon-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+	    	        <li class="menu-item menu-item-type-social"><a href="http://pinterest.com/wellandgoodnyc" class="icon-pinterest-p" target="_blank"><span class="label">Pinterest</span></a></li>
+	    	        <li class="menu-item menu-item-type-social"><a href="http://www.twitter.com/WellandGoodNYC" class="icon-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+	    	        <li class="menu-item menu-item-type-social"><a href="https://plus.google.com/101371337599862756201/posts" class="icon-google" target="_blank"><span class="label">Google+</span></a></li>
+	    	        <li class="menu-item menu-item-type-social"><a href="http://instagram.com/wellandgoodnyc" class="icon-instagram" target="_blank"><span class="label">Instagram</span></a></li>
+	    	    </ul>
+	</div>
+
+		<a href="/"><div class="logo"><span class="logo-well"><span class="label">Well</span></span><span class="logo-and"><span class="label">+</span><img src="http://www.wellandgood.com/wp-content/uploads/2016/02/oil-cleanser-300x300-1-150x150.jpg" alt="+" class="logo-graphic" /></span><span class="logo-good"><span class="label">Good</span></span></div></a>
+
+		<div class="menu-header-menu-container">
+			<div class="nav__logo">
+				<img src="http://www.wellandgood.com/wp-content/uploads/2016/02/oil-cleanser-300x300-1-150x150.jpg" alt="">
+			</div>
+			<ul id="menu-header-menu" class="nav__menu nav__primary"><li id="menu-item-121331" class="js-toggle-nav__good-sweat menu-item menu-item-type-taxonomy menu-item-object-category menu-item-121331"><a href="http://www.wellandgood.com/good-sweat/"><span class="label">Good Sweat</span></a></li>
+<li id="menu-item-121333" class="js-toggle-nav__good-looks menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-121333"><a href="http://www.wellandgood.com/good-looks/"><span class="label">Good Looks</span></a></li>
+<li id="menu-item-121330" class="js-toggle-nav__good-advice menu-item menu-item-type-taxonomy menu-item-object-category menu-item-121330"><a href="http://www.wellandgood.com/good-advice/"><span class="label">Good Advice</span></a></li>
+<li id="menu-item-121332" class="js-toggle-nav__good-food menu-item menu-item-type-taxonomy menu-item-object-category menu-item-121332"><a href="http://www.wellandgood.com/good-food/"><span class="label">Good Food</span></a></li>
+<li id="menu-item-121334" class="js-toggle-nav__cities menu-item menu-item-type-custom menu-item-object-custom menu-item-121334"><a href="#"><span class="label">Cities</span></a></li>
+</ul>		</div>
+	</div>
+
+	<div class="search-bar">
+		<div class="search-bar__inner">
+			<form id="search-form" action="http://www.wellandgood.com">
+				<input required class="search-bar__input" type="text" name="s" placeholder="Enter Search&hellip;" value="">
+				<p class="search-bar__hint">Press "Enter" to Search</p>
+				<button class="search-bar__submit"><span class="icon-search-thin-small"></span></button>
+			</form>
+		</div>
+	</div>
+
+	<section class="nav__cities-wrapper sub-menu" data-toggle-class="js-toggle-nav__cities">
+		<header class="sub-menu__header">
+			<a class="sub-menu__title" href="#"><span class="js-toggle-nav__cities icon-arrow-left-thin" title="Back to Menu"></span>Cities</a>
+		</header>
+		<div class="sub-menu__inner">
+			<ul id="menu-cities-dropdown" class="nav__menu nav__cities"><li id="menu-item-121501" class="nav__cities-nyc menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-121501"><a href="http://www.wellandgood.com/new-york-edition/"><span class="label">The New York Edition</span></a></li>
+<li id="menu-item-121502" class="nav__cities-los-angeles menu-item menu-item-type-taxonomy menu-item-object-category menu-item-121502"><a href="http://www.wellandgood.com/los-angeles-edition/"><span class="label">The Los Angeles Edition</span></a></li>
+</ul>		</div>
+		<footer class="sub-menu__footer">
+			<a class="js-toggle-nav__cities" href="#"><span class="icon-angle-left"></span>Back to Menu</a>
+		</footer>
+	</section>
+
+									<section class="sub-menu" data-toggle-class="js-toggle-nav__good-sweat">
+				<header class="sub-menu__header">
+					<a class="sub-menu__title" href="http://www.wellandgood.com/good-sweat/"><span class="js-toggle-nav__good-sweat icon-arrow-left-thin" title="Back to Menu"></span>Good Sweat</a>
+				</header>
+				<div class="sub-menu__inner">
+					<ul class="sub-menu__popular-tags">
+						<li><h4 class="sub-menu__popular-tags-tag"><a href="http://www.wellandgood.com/good-sweat/">See All Articles</a></h4></li>
+													<li><h4 class="sub-menu__popular-tags-tag"><a href="http://www.wellandgood.com/tag/yoga/">yoga</a></h4></li>
+														<li><h4 class="sub-menu__popular-tags-tag"><a href="http://www.wellandgood.com/tag/running/">running</a></h4></li>
+														<li><h4 class="sub-menu__popular-tags-tag"><a href="http://www.wellandgood.com/tag/at-home-workouts/">at-home workouts</a></h4></li>
+														<li><h4 class="sub-menu__popular-tags-tag"><a href="http://www.wellandgood.com/tag/fitness-advice/">fitness advice</a></h4></li>
+														<li><h4 class="sub-menu__popular-tags-tag"><a href="http://www.wellandgood.com/tag/boutique-fitness/">boutique fitness</a></h4></li>
+														<li><h4 class="sub-menu__popular-tags-tag"><a href="http://www.wellandgood.com/tag/my-workout-playlist/">My Workout Playlist</a></h4></li>
+												</ul>
+					<div class="sub-menu__posts">
+																				<div class="sub-menu__featured-container">
+								<a href="http://www.wellandgood.com/good-sweat/cardio-vs-strength-training-anna-kaiser/" target="" class="sub-menu__card--featured">
+									<article>
+										<div class="sub-menu__card__image-wrapper"><div class="sub-menu__card__image" title="How to know when you need cardio or strength training [video]"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/Cardio-Anna-Video-4-608x400.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/Cardio-Anna-Video-4-425x285.jpg" alt="How to know when you need cardio or strength training [video]" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/Cardio-Anna-Video-4-608x400.jpg" alt="How to know when you need cardio or strength training [video]" /></noscript></div></div></div>
+										<h4 class="sub-menu__card__title">How to know when you need cardio or strength training [video]</h4>
+									</article>
+								</a>
+							</div>
+																			<div class="sub-menu__cards">
+																							<a href="http://www.wellandgood.com/good-sweat/tyr-active-launch-sweat-it-out-event/" target="" class="sub-menu__card">
+									<article>
+										<div class="sub-menu__card__image-wrapper"><div class="sub-menu__card__image"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/surfset-600x400.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/surfset-425x285.jpg" alt="Join us for a special weeklong sweat session in NYC" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/surfset-600x400.jpg" alt="Join us for a special weeklong sweat session in NYC" /></noscript></div></div></div>
+										<h4 class="sub-menu__card__title">Join us for a special weeklong sweat session in NYC</h4>
+									</article>
+								</a>
+																							<a href="http://www.wellandgood.com/good-sweat/equinox-new-club-hollywood/" target="" class="sub-menu__card">
+									<article>
+										<div class="sub-menu__card__image-wrapper"><div class="sub-menu__card__image"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/Equinox-Hollywood_Pool-620x277.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/Equinox-Hollywood_Pool-425x285.jpg" alt="Inside Equinox’s ultra-luxe Hollywood club, coming this fall" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/Equinox-Hollywood_Pool-620x277.jpg" alt="Inside Equinox’s ultra-luxe Hollywood club, coming this fall" /></noscript></div></div></div>
+										<h4 class="sub-menu__card__title">Inside Equinox’s ultra-luxe Hollywood club, coming this...</h4>
+									</article>
+								</a>
+																							<a href="http://www.wellandgood.com/good-sweat/what-you-need-to-know-about-the-growing-wellness-social-club-scene/" target="" class="sub-menu__card">
+									<article>
+										<div class="sub-menu__card__image-wrapper"><div class="sub-menu__card__image"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/wellvyl-5-600x400.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/wellvyl-5-425x285.jpg" alt="What you need to know about the growing wellness social club scene" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/wellvyl-5-600x400.jpg" alt="What you need to know about the growing wellness social club scene" /></noscript></div></div></div>
+										<h4 class="sub-menu__card__title">What you need to know about the growing wellness social club...</h4>
+									</article>
+								</a>
+																							<a href="http://www.wellandgood.com/good-sweat/miley-cyrus-yoga-instagram/" target="" class="sub-menu__card">
+									<article>
+										<div class="sub-menu__card__image-wrapper"><div class="sub-menu__card__image"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/miley_cyrus_yoga-583x400.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/miley_cyrus_yoga-425x285.jpg" alt="Miley&#8217;s at-home yoga party in the USA" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/miley_cyrus_yoga-583x400.jpg" alt="Miley&#8217;s at-home yoga party in the USA" /></noscript></div></div></div>
+										<h4 class="sub-menu__card__title">Miley&#8217;s at-home yoga party in the USA</h4>
+									</article>
+								</a>
+																				</div>
+					</div>
+				</div>
+				<footer class="sub-menu__footer">
+					<a class="js-toggle-nav__good-sweat" href="#"><span class="icon-angle-left"></span>Back to Menu</a>
+				</footer>
+			</section>
+
+								<section class="sub-menu" data-toggle-class="js-toggle-nav__good-looks">
+				<header class="sub-menu__header">
+					<a class="sub-menu__title" href="http://www.wellandgood.com/good-looks/"><span class="js-toggle-nav__good-looks icon-arrow-left-thin" title="Back to Menu"></span>Good Looks</a>
+				</header>
+				<div class="sub-menu__inner">
+					<ul class="sub-menu__popular-tags">
+						<li><h4 class="sub-menu__popular-tags-tag"><a href="http://www.wellandgood.com/good-looks/">See All Articles</a></h4></li>
+													<li><h4 class="sub-menu__popular-tags-tag"><a href="http://www.wellandgood.com/tag/fitness-fashion/">fitness fashion</a></h4></li>
+														<li><h4 class="sub-menu__popular-tags-tag"><a href="http://www.wellandgood.com/tag/natural-beauty-products/">natural beauty products</a></h4></li>
+														<li><h4 class="sub-menu__popular-tags-tag"><a href="http://www.wellandgood.com/tag/skincare/">skincare</a></h4></li>
+														<li><h4 class="sub-menu__popular-tags-tag"><a href="http://www.wellandgood.com/tag/haircare/">haircare</a></h4></li>
+														<li><h4 class="sub-menu__popular-tags-tag"><a href="http://www.wellandgood.com/tag/my-five-beauty-obsessions/">My Five Beauty Obsessions</a></h4></li>
+														<li><h4 class="sub-menu__popular-tags-tag"><a href="http://www.wellandgood.com/tag/my-studio-style/">My Studio Style</a></h4></li>
+												</ul>
+					<div class="sub-menu__posts">
+																				<div class="sub-menu__featured-container">
+								<a href="http://www.wellandgood.com/good-looks/on-demand-beauty-apps-for-busy-women/" target="" class="sub-menu__card--featured">
+									<article>
+										<div class="sub-menu__card__image-wrapper"><div class="sub-menu__card__image" title="How beauty services are changing around the lives of busy women [video]"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/Beauty-Alexandra-Video-5-608x400.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/Beauty-Alexandra-Video-5-425x285.jpg" alt="How beauty services are changing around the lives of busy women [video]" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/Beauty-Alexandra-Video-5-608x400.jpg" alt="How beauty services are changing around the lives of busy women [video]" /></noscript></div></div></div>
+										<h4 class="sub-menu__card__title">How beauty services are changing around the lives of busy women [video]</h4>
+									</article>
+								</a>
+							</div>
+																			<div class="sub-menu__cards">
+																							<a href="http://www.wellandgood.com/good-looks/first-tory-sport-store-in-nyc/" target="" class="sub-menu__card">
+									<article>
+										<div class="sub-menu__card__image-wrapper"><div class="sub-menu__card__image"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/tory-sport-store-488x400.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/tory-sport-store-425x285.jpg" alt="The first stand-alone Tory Sport store is officially open" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/tory-sport-store-488x400.jpg" alt="The first stand-alone Tory Sport store is officially open" /></noscript></div></div></div>
+										<h4 class="sub-menu__card__title">The first stand-alone Tory Sport store is officially open</h4>
+									</article>
+								</a>
+																							<a href="http://www.wellandgood.com/good-looks/best-budget-sports-bras/" target="" class="sub-menu__card">
+									<article>
+										<div class="sub-menu__card__image-wrapper"><div class="sub-menu__card__image"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/02/10-best-sports-bras-2-3-608x400.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/02/10-best-sports-bras-2-3-425x285.jpg" alt="The 10 best sports bras for $30 or less" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/02/10-best-sports-bras-2-3-608x400.jpg" alt="The 10 best sports bras for $30 or less" /></noscript></div></div></div>
+										<h4 class="sub-menu__card__title">The 10 best sports bras for $30 or less</h4>
+									</article>
+								</a>
+																							<a href="http://www.wellandgood.com/good-looks/cotton-swabs-great-beauty-tools/" target="_blank" class="sub-menu__card">
+									<article>
+										<div class="sub-menu__card__image-wrapper"><div class="sub-menu__card__image"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/Screen-Shot-2016-03-18-at-11.15.57-AM-499x400.png" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/Screen-Shot-2016-03-18-at-11.15.57-AM-425x285.png" alt="8 ways you never thought of using cotton swabs before" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/Screen-Shot-2016-03-18-at-11.15.57-AM-499x400.png" alt="8 ways you never thought of using cotton swabs before" /></noscript></div></div></div>
+										<h4 class="sub-menu__card__title">8 ways you never thought of using cotton swabs before</h4>
+									</article>
+								</a>
+																							<a href="http://www.wellandgood.com/good-looks/striped-activewear-trend/" target="" class="sub-menu__card">
+									<article>
+										<div class="sub-menu__card__image-wrapper"><div class="sub-menu__card__image"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/Chic-Stripes-2-1-608x400.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/Chic-Stripes-2-1-425x285.jpg" alt="The chic print to add to your fitness wardrobe ASAP" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/Chic-Stripes-2-1-608x400.jpg" alt="The chic print to add to your fitness wardrobe ASAP" /></noscript></div></div></div>
+										<h4 class="sub-menu__card__title">The chic print to add to your fitness wardrobe ASAP</h4>
+									</article>
+								</a>
+																				</div>
+					</div>
+				</div>
+				<footer class="sub-menu__footer">
+					<a class="js-toggle-nav__good-looks" href="#"><span class="icon-angle-left"></span>Back to Menu</a>
+				</footer>
+			</section>
+
+								<section class="sub-menu" data-toggle-class="js-toggle-nav__good-advice">
+				<header class="sub-menu__header">
+					<a class="sub-menu__title" href="http://www.wellandgood.com/good-advice/"><span class="js-toggle-nav__good-advice icon-arrow-left-thin" title="Back to Menu"></span>Good Advice</a>
+				</header>
+				<div class="sub-menu__inner">
+					<ul class="sub-menu__popular-tags">
+						<li><h4 class="sub-menu__popular-tags-tag"><a href="http://www.wellandgood.com/good-advice/">See All Articles</a></h4></li>
+													<li><h4 class="sub-menu__popular-tags-tag"><a href="http://www.wellandgood.com/tag/nutrition-tips/">Nutrition Tips</a></h4></li>
+														<li><h4 class="sub-menu__popular-tags-tag"><a href="http://www.wellandgood.com/tag/meditation-mindfulness/">Meditation &amp; Mindfulness</a></h4></li>
+														<li><h4 class="sub-menu__popular-tags-tag"><a href="http://www.wellandgood.com/tag/wellness-confidential/">wellness confidential</a></h4></li>
+												</ul>
+					<div class="sub-menu__posts">
+																				<div class="sub-menu__featured-container">
+								<a href="http://www.wellandgood.com/good-advice/misty-copeland-obama-body-image/" target="" class="sub-menu__card--featured">
+									<article>
+										<div class="sub-menu__card__image-wrapper"><div class="sub-menu__card__image" title="5 things we learned about body image from Misty Copeland"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/misty-copeland-620x393.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/misty-copeland-425x285.jpg" alt="5 things we learned about body image from Misty Copeland" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/misty-copeland-620x393.jpg" alt="5 things we learned about body image from Misty Copeland" /></noscript></div></div></div>
+										<h4 class="sub-menu__card__title">5 things we learned about body image from Misty Copeland</h4>
+									</article>
+								</a>
+							</div>
+																			<div class="sub-menu__cards">
+																							<a href="http://www.wellandgood.com/good-advice/diy-herbal-infusions/" target="" class="sub-menu__card">
+									<article>
+										<div class="sub-menu__card__image-wrapper"><div class="sub-menu__card__image"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/aromatherapy1-600x400.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/aromatherapy1-425x285.jpg" alt="Be your own personal beauty guru with these next-level DIY skills" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/aromatherapy1-600x400.jpg" alt="Be your own personal beauty guru with these next-level DIY skills" /></noscript></div></div></div>
+										<h4 class="sub-menu__card__title">Be your own personal beauty guru with these next-level DIY...</h4>
+									</article>
+								</a>
+																							<a href="http://www.wellandgood.com/good-advice/5-things-you-can-learn-about-meditation-from-ceos/" target="" class="sub-menu__card">
+									<article>
+										<div class="sub-menu__card__image-wrapper"><div class="sub-menu__card__image"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/DLF_meditation_ceos-600x400.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/DLF_meditation_ceos-425x285.jpg" alt="5 things you can learn about meditation from CEOs" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/DLF_meditation_ceos-600x400.jpg" alt="5 things you can learn about meditation from CEOs" /></noscript></div></div></div>
+										<h4 class="sub-menu__card__title">5 things you can learn about meditation from CEOs</h4>
+									</article>
+								</a>
+																							<a href="http://www.wellandgood.com/good-advice/this-weeks-top-stories-march-11-17/" target="" class="sub-menu__card">
+									<article>
+										<div class="sub-menu__card__image-wrapper"><div class="sub-menu__card__image"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/top-stories-march-2016-399x400.png" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/top-stories-march-2016-425x285.png" alt="This week&#8217;s top stories: March 11-17" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/top-stories-march-2016-399x400.png" alt="This week&#8217;s top stories: March 11-17" /></noscript></div></div></div>
+										<h4 class="sub-menu__card__title">This week&#8217;s top stories: March 11-17</h4>
+									</article>
+								</a>
+																							<a href="http://www.wellandgood.com/good-advice/tampon-tax-voted-down-chicago-new-york/" target="" class="sub-menu__card">
+									<article>
+										<div class="sub-menu__card__image-wrapper"><div class="sub-menu__card__image"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/Three-Friends-601x400.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/Three-Friends-425x285.jpg" alt="Is this the beginning of the end of the tampon tax?" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/Three-Friends-601x400.jpg" alt="Is this the beginning of the end of the tampon tax?" /></noscript></div></div></div>
+										<h4 class="sub-menu__card__title">Is this the beginning of the end of the tampon tax?</h4>
+									</article>
+								</a>
+																				</div>
+					</div>
+				</div>
+				<footer class="sub-menu__footer">
+					<a class="js-toggle-nav__good-advice" href="#"><span class="icon-angle-left"></span>Back to Menu</a>
+				</footer>
+			</section>
+
+								<section class="sub-menu" data-toggle-class="js-toggle-nav__good-food">
+				<header class="sub-menu__header">
+					<a class="sub-menu__title" href="http://www.wellandgood.com/good-food/"><span class="js-toggle-nav__good-food icon-arrow-left-thin" title="Back to Menu"></span>Good Food</a>
+				</header>
+				<div class="sub-menu__inner">
+					<ul class="sub-menu__popular-tags">
+						<li><h4 class="sub-menu__popular-tags-tag"><a href="http://www.wellandgood.com/good-food/">See All Articles</a></h4></li>
+													<li><h4 class="sub-menu__popular-tags-tag"><a href="http://www.wellandgood.com/tag/smoothie-recipes/">Smoothie recipes</a></h4></li>
+														<li><h4 class="sub-menu__popular-tags-tag"><a href="http://www.wellandgood.com/tag/healthy-recipes/">healthy recipes</a></h4></li>
+														<li><h4 class="sub-menu__popular-tags-tag"><a href="http://www.wellandgood.com/tag/healthy-restaurants/">healthy restaurants</a></h4></li>
+														<li><h4 class="sub-menu__popular-tags-tag"><a href="http://www.wellandgood.com/tag/refrigerator-look-book/">Refrigerator Look Book</a></h4></li>
+														<li><h4 class="sub-menu__popular-tags-tag"><a href="http://www.wellandgood.com/tag/my-favorite-green-juice-recipe/">My Favorite Green Juice Recipe</a></h4></li>
+												</ul>
+					<div class="sub-menu__posts">
+																				<div class="sub-menu__featured-container">
+								<a href="http://www.wellandgood.com/good-food/why-you-should-drink-rose-water/" target="" class="sub-menu__card--featured">
+									<article>
+										<div class="sub-menu__card__image-wrapper"><div class="sub-menu__card__image" title="Why the ancient tradition of rose water is the newest thing in beauty"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/rose-water-featured-image-536x400.png" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/rose-water-featured-image-425x285.png" alt="Why the ancient tradition of rose water is the newest thing in beauty" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/rose-water-featured-image-536x400.png" alt="Why the ancient tradition of rose water is the newest thing in beauty" /></noscript></div></div></div>
+										<h4 class="sub-menu__card__title">Why the ancient tradition of rose water is the newest thing in beauty</h4>
+									</article>
+								</a>
+							</div>
+																			<div class="sub-menu__cards">
+																							<a href="http://www.wellandgood.com/good-food/crystal-infused-water-trend-london-la/" target="" class="sub-menu__card">
+									<article>
+										<div class="sub-menu__card__image-wrapper"><div class="sub-menu__card__image"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/02/Nectar-Cafe-Crystal-Waters-400x400.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/02/Nectar-Cafe-Crystal-Waters-425x285.jpg" alt="Why healthy tastemakers are flipping over crystal-infused water" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/02/Nectar-Cafe-Crystal-Waters-400x400.jpg" alt="Why healthy tastemakers are flipping over crystal-infused water" /></noscript></div></div></div>
+										<h4 class="sub-menu__card__title">Why healthy tastemakers are flipping over crystal-infused...</h4>
+									</article>
+								</a>
+																							<a href="http://www.wellandgood.com/good-food/kitchari-recipe-inday-good-karma-bowl/" target="" class="sub-menu__card">
+									<article>
+										<div class="sub-menu__card__image-wrapper"><div class="sub-menu__card__image"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/inday-kitchari-bowl-613x400.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/inday-kitchari-bowl-425x285.jpg" alt="Meet kitchari: Ayurveda&#8217;s super-soothing chicken soup equivalent" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/inday-kitchari-bowl-613x400.jpg" alt="Meet kitchari: Ayurveda&#8217;s super-soothing chicken soup equivalent" /></noscript></div></div></div>
+										<h4 class="sub-menu__card__title">Meet kitchari: Ayurveda&#8217;s super-soothing chicken soup...</h4>
+									</article>
+								</a>
+																							<a href="http://www.wellandgood.com/good-food/tom-and-gisele-diet-recipes/" target="" class="sub-menu__card">
+									<article>
+										<div class="sub-menu__card__image-wrapper"><div class="sub-menu__card__image"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/gisele-drinking-coconut-398x400.png" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/gisele-drinking-coconut-425x285.png" alt="How Gisele Bündchen and Tom Brady eat on vacation" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/gisele-drinking-coconut-398x400.png" alt="How Gisele Bündchen and Tom Brady eat on vacation" /></noscript></div></div></div>
+										<h4 class="sub-menu__card__title">How Gisele Bündchen and Tom Brady eat on vacation</h4>
+									</article>
+								</a>
+																							<a href="http://www.wellandgood.com/good-food/maca-benefits-and-expert-recipes/" target="" class="sub-menu__card">
+									<article>
+										<div class="sub-menu__card__image-wrapper"><div class="sub-menu__card__image"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/maca-side-by-side-620x323.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/maca-side-by-side-425x285.jpg" alt="Why maca should be your new adaptogenic BFF" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/maca-side-by-side-620x323.jpg" alt="Why maca should be your new adaptogenic BFF" /></noscript></div></div></div>
+										<h4 class="sub-menu__card__title">Why maca should be your new adaptogenic BFF</h4>
+									</article>
+								</a>
+																				</div>
+					</div>
+				</div>
+				<footer class="sub-menu__footer">
+					<a class="js-toggle-nav__good-food" href="#"><span class="icon-angle-left"></span>Back to Menu</a>
+				</footer>
+			</section>
+
+			
+	<section class="post-grid related-posts related-posts--header"
+		     data-module-init="related-posts"
+	     data-display-at=".post__title"
+		data-container="."
+	>
+
+	<div class="post-grid__headline-container">
+		<h2 class="module-heading post-grid__headline">You May Also Like</h2>
+					<a href="#" class="related-posts__to-top js-click-to-top"><span class="icon-arrow-up-thin"></span></a>
+			</div>
+	<div class="post-grid__container">
+									<a class="post-grid__card" href="http://www.wellandgood.com/good-sweat/why-a-box-jump-is-not-as-simple-as-it-looks-and-how-to-do-it-right/" target="">
+				<article>
+					<div class="post-grid__image" title="Why a box jump is not as simple as it looks, and how to do it right"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/Box-Jump-425x285.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/Box-Jump.jpg" alt="" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/Box-Jump-425x285.jpg" alt="" /></noscript></div></div>
+					<h3 class="post-grid__title">Why a box jump is not as simple as it looks, and how to do it right</h3>
+				</article>
+			</a>
+								<a class="post-grid__card" href="http://www.wellandgood.com/good-advice/diy-herbal-infusions/" target="">
+				<article>
+					<div class="post-grid__image" title="Be your own personal beauty guru with these next-level DIY skills"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/aromatherapy1-425x285.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/aromatherapy1.jpg" alt="" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/aromatherapy1-425x285.jpg" alt="" /></noscript></div></div>
+					<h3 class="post-grid__title">Be your own personal beauty guru with these next-level DIY skills</h3>
+				</article>
+			</a>
+								<a class="post-grid__card" href="http://www.wellandgood.com/good-sweat/what-you-need-to-know-about-the-growing-wellness-social-club-scene/" target="">
+				<article>
+					<div class="post-grid__image" title="What you need to know about the growing wellness social club scene"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/wellvyl-5-425x285.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/wellvyl-5.jpg" alt="" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/wellvyl-5-425x285.jpg" alt="" /></noscript></div></div>
+					<h3 class="post-grid__title">What you need to know about the growing wellness social club scene</h3>
+				</article>
+			</a>
+								<a class="post-grid__card" href="http://www.wellandgood.com/good-looks/striped-activewear-trend/" target="">
+				<article>
+					<div class="post-grid__image" title="The chic print to add to your fitness wardrobe ASAP"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/Chic-Stripes-2-1-425x285.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/Chic-Stripes-2-1.jpg" alt="" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/Chic-Stripes-2-1-425x285.jpg" alt="" /></noscript></div></div>
+					<h3 class="post-grid__title">The chic print to add to your fitness wardrobe ASAP</h3>
+				</article>
+			</a>
+								<a class="post-grid__card" href="http://www.wellandgood.com/good-looks/microbead-free-all-natural-exfoliators/" target="">
+				<article>
+					<div class="post-grid__image" title="11 exfoliating face cleansers that are microbead-free"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/safe-grit-425x285.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/safe-grit.jpg" alt="" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/safe-grit-425x285.jpg" alt="" /></noscript></div></div>
+					<h3 class="post-grid__title">11 exfoliating face cleansers that are microbead-free</h3>
+				</article>
+			</a>
+								<a class="post-grid__card" href="http://www.wellandgood.com/good-looks/best-budget-sports-bras/" target="">
+				<article>
+					<div class="post-grid__image" title="The 10 best sports bras for $30 or less"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/02/10-best-sports-bras-2-3-425x285.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/02/10-best-sports-bras-2-3.jpg" alt="" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/02/10-best-sports-bras-2-3-425x285.jpg" alt="" /></noscript></div></div>
+					<h3 class="post-grid__title">The 10 best sports bras for $30 or less</h3>
+				</article>
+			</a>
+					</div>
+</section>
+</header>
+<article class="post">
+
+	<div class="container">
+		
+  <script type='text/javascript'>
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function() {
+      var gads = document.createElement('script');
+      gads.async = true;
+      gads.type = 'text/javascript';
+      var useSSL = 'https:' == document.location.protocol;
+      gads.src = (useSSL ? 'https:' : 'http:') +
+        '//www.googletagservices.com/tag/js/gpt.js';
+      var node = document.getElementsByTagName('script')[0];
+      node.parentNode.insertBefore(gads, node);
+    })();
+  </script>
+
+
+<section class="advertisement -meta-box-ed-cat-ed-pg-dfp-header">
+
+  
+      
+      <div id='div-gpt-ad-Home_Leaderboard_728x90' class="advertising-adslot">
+        <script type='text/javascript'>
+          googletag.cmd.push(function() {
+            googletag.defineSlot('/1318049/Home_Leaderboard_728x90', [728, 90], 'div-gpt-ad-Home_Leaderboard_728x90').addService(googletag.pubads());             googletag.pubads().setTargeting('test', ['on']);             googletag.enableServices();
+            googletag.display('div-gpt-ad-Home_Leaderboard_728x90');
+          });
+        </script>
+      </div>
+
+  
+</section>
+
+	</div>
+
+	<div class="post__inner">
+		<div class="container container--with-aside post__content-wrapper">
+			<div class="post__content">
+				<header class="post__header">
+					<h1 class="big post__title">The first stand-alone Tory Sport store is officially open</h1>
+					<div class="post__info info">
+						<div class="social-share">
+	<a class="social-share__button social-share__button--facebook" target="_blank" href="//www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.wellandgood.com%2Fgood-looks%2Ffirst-tory-sport-store-in-nyc%2F">
+		<span class="icon-facebook"></span> Share
+	</a>
+	<a class="social-share__button social-share__button--twitter" target="_blank" href="//twitter.com/share?text=The+first+stand-alone+Tory+Sport+store+is+officially+open+via+%40WellandGoodNYC&amp;url=http%3A%2F%2Fwww.wellandgood.com%2Fgood-looks%2Ffirst-tory-sport-store-in-nyc%2F">
+		<span class="icon-twitter"></span> Tweet
+	</a>
+	<a class="social-share__button social-share__button--pinterest" target="_blank" href="//pinterest.com/pin/create/link/?url=http%3A%2F%2Fwww.wellandgood.com%2Fgood-looks%2Ffirst-tory-sport-store-in-nyc%2F&amp;description=The+first+stand-alone+Tory+Sport+store+is+officially+open&amp;media=http%3A%2F%2Fwww.wellandgood.com%2Fwp-content%2Fuploads%2F2016%2F03%2Ftory-sport-store-488x400.jpg">
+		<span class="icon-pinterest-p"></span> Pin It
+	</a>
+</div>
+						<div class="post__info-inner">
+															<p class="avatar-wrapper post__avatar">
+									<img src="http://www.wellandgood.com/wp-content/uploads/2016/02/Katie-McGuire-150x150.jpg" width="32" height="32" alt="Katie Maguire" class="avatar avatar-32 wp-user-avatar wp-user-avatar-32 alignnone photo" />								</p>
+							
+															<p class="meta post__category"><a
+										href="http://www.wellandgood.com/good-looks/">Good Looks</a></p>
+														<p class="meta by post__by"><span
+									class="icon-by"><span class="label">by</span></span>
+								Katie Maguire, March 21, 2016</p>
+						</div>
+					</div>
+					<hr class="hr__under-info" />
+										<figure class="post__featured-image">
+							<div class="post__image-wrapper">
+								<img width="760" height="623" src="http://www.wellandgood.com/wp-content/uploads/2016/03/tory-sport-store.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="tory-sport-store" srcset="http://www.wellandgood.com/wp-content/uploads/2016/03/tory-sport-store-488x400.jpg 488w, http://www.wellandgood.com/wp-content/uploads/2016/03/tory-sport-store.jpg 760w" sizes="(max-width: 760px) 100vw, 760px" />								<a target="_blank" href="//pinterest.com/pin/create/link/?url=http%3A%2F%2Fwww.wellandgood.com%2Fgood-looks%2Ffirst-tory-sport-store-in-nyc%2F&amp;description=The+first+stand-alone+Tory+Sport+store+is+officially+open&amp;media=http%3A%2F%2Fwww.wellandgood.com%2Fwp-content%2Fuploads%2F2016%2F03%2Ftory-sport-store-488x400.jpg" class="post__pin-image social-share__button social-share__button--circle social-share__button--pinterest"><span class="icon-pinterest-p"></span></a>
+							</div>
+															<figcaption>Photo: Tory Sport</figcaption>
+													</figure>
+									</header>
+				<aside class="post__share social-share--circle"
+				       data-module-init="sticky-pin auto-hide"
+				       data-hide-at=".post__inner"
+				       data-flow-at=".post__inner"
+				       data-pin-at=".header">
+				    <div class="post__share--inner">
+						<a class="social-share__button social-share__button--facebook" target="_blank" href="//www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.wellandgood.com%2Fgood-looks%2Ffirst-tory-sport-store-in-nyc%2F">
+							<span class="icon-facebook"></span>
+						</a>
+						<a class="social-share__button social-share__button--twitter" target="_blank" href="//twitter.com/share?text=The+first+stand-alone+Tory+Sport+store+is+officially+open+via+%40WellandGoodNYC&amp;url=http%3A%2F%2Fwww.wellandgood.com%2Fgood-looks%2Ffirst-tory-sport-store-in-nyc%2F">
+							<span class="icon-twitter"></span>
+						</a>
+						<a class="social-share__button social-share__button--pinterest" target="_blank" href="//pinterest.com/pin/create/link/?url=http%3A%2F%2Fwww.wellandgood.com%2Fgood-looks%2Ffirst-tory-sport-store-in-nyc%2F&amp;description=The+first+stand-alone+Tory+Sport+store+is+officially+open&amp;media=http%3A%2F%2Fwww.wellandgood.com%2Fwp-content%2Fuploads%2F2016%2F03%2Ftory-sport-store-488x400.jpg">
+							<span class="icon-pinterest-p"></span>
+						</a>
+						<a class="social-share__button social-share__button--email" href="mailto:?subject=The+first+stand-alone+Tory+Sport+store+is+officially+open&body=The+quick-to-sell-out+activewear+brand+from+Tory+Burch+is+open+for+%28permanent%29+business+in+Manhattan.+http%3A%2F%2Fwww.wellandgood.com%2Fgood-looks%2Ffirst-tory-sport-store-in-nyc%2F">
+							<span class="icon-paper-plane"></span>
+						</a>
+												<a class="social-share__button social-share__button--comment" href="#comments">
+							<span class="icon-comment-o"></span>
+						</a>
+					</div>
+				</aside>
+				<main class="post__main" data-module-init="post-slides">
+					<section data-slide-url="http://www.wellandgood.com/good-looks/first-tory-sport-store-in-nyc/" id="slide-1" class="post__slide"><div class="post__slide-count">1/11</div><p><span id="more-129225"></span>Go on, book that Central Park tennis court or rent that Montauk beach bungalow, since you&#8217;ll definitely have the outfit for it: Tory Sport just opened its first official store this week in New York City.</p>
+<p>After a highly successful run as <a href="http://www.wellandgood.com/good-looks/tory-burch-new-activewear-big-deal/">a pop-up store in Soho last fall,</a> the Tory Burch sporty-chic spin-off—which has already developed quite a following (see: the Tory Sport track pants <a href="http://www.wellandgood.com/good-looks/tory-sport-track-pants-sold-out/">that sold out online mere hours after they appeared on the runway</a>)—is setting up shop with its first permanent brick-and-mortar store in the Flatiron district, joining fellow fitness-fashion neighbors such as Nike, Lululemon, and Bandier in what we like to call Spandex Alley.</p>
+<figure id="attachment_129293" style="width: 760px" class="wp-caption aligncenter"><img class="size-full wp-image-129293" src="http://www.wellandgood.com/wp-content/uploads/2016/03/IMG_0256-1.jpg" alt="Photo: Katie Maguire for Well+Good" width="760" height="570" srcset="http://www.wellandgood.com/wp-content/uploads/2016/03/IMG_0256-1-533x400.jpg 533w, http://www.wellandgood.com/wp-content/uploads/2016/03/IMG_0256-1.jpg 760w" sizes="(max-width: 760px) 100vw, 760px" /><figcaption class="wp-caption-text">Photo: Katie Maguire for Well+Good</figcaption></figure>
+<p>At first glance, the 5,000-square-foot store, at 129 Fifth Avenue, wears its well-pedigreed roots on its sleeves. The space is bright but clean, with uber-classic navy and white stripes accented with restrained bursts of primary colors. But it&#8217;s not all country club; at the very least, this woman knows her way around Ditch Plains, too. (In fact, the back of the store even features a very Montauk-inspired living room set-up, embodying the &#8217;70s beach house of your dreams—with the rash guards to match.)</p>
+<figure id="attachment_129295" style="width: 300px" class="wp-caption alignright"><img class="size-medium wp-image-129295" src="http://www.wellandgood.com/wp-content/uploads/2016/03/IMG_0266-1-300x400.jpg" alt="Photo: Katie Maguire for Well+Good" width="300" height="400" srcset="http://www.wellandgood.com/wp-content/uploads/2016/03/IMG_0266-1-300x400.jpg 300w, http://www.wellandgood.com/wp-content/uploads/2016/03/IMG_0266-1.jpg 760w" sizes="(max-width: 300px) 100vw, 300px" /><figcaption class="wp-caption-text">Photo: Katie Maguire for Well+Good</figcaption></figure>
+<p>Water sports aren&#8217;t the only focus of the store: The two tennis ball-headed mannequins (in crisp-but-cool white tennis skirts) that greet shoppers at the entrance set the tone. Throughout the space, you&#8217;ll find Tory Sport&#8217;s full activewear collection, including high-performance clothing, bags, shoes, and accessories for all activities (with an emphasis placed on tennis, swimming, and golfing). Prices range from $35 for a cotton tee to $495 for a laser-eyelet tennis dress (serving prowess not included).</p>
+<p>Not in New York City? The current spring collection just launched online as well—don&#8217;t worry, you&#8217;ll find the <a href="http://www.wellandgood.com/good-looks/tory-burch-new-activewear-big-deal/" target="_blank">Tory Sport signature</a> primary stripes in full force.</p>
+<p><em>Tory Sport, 129 Fifth Ave., New York, NY 10003, 212-777-2226, <a href="http://www.torysport.com/" target="_blank">torysport.com</a></em></p>
+<h2> Scroll through to see some of our favorites from Tory Sport&#8217;s spring collection.</h2>
+<p><div class="post__next-slide"><a data-slide="2" class="btn" href="http://www.wellandgood.com/good-looks/first-tory-sport-store-in-nyc/slide/2/">Get Started</a></div></section><section data-slide-url="http://www.wellandgood.com/good-looks/first-tory-sport-store-in-nyc/slide/2/" id="slide-2" class="post__slide"><div class="post__slide-count">2/11</div></p>
+<figure id="attachment_129291" style="width: 760px" class="wp-caption aligncenter"><img class="size-full wp-image-129291" src="http://www.wellandgood.com/wp-content/uploads/2016/03/TS_SS16_T_0199_FINAL_RGB150_LR.jpg" alt="Photo: Tory Sport" width="760" height="950" srcset="http://www.wellandgood.com/wp-content/uploads/2016/03/TS_SS16_T_0199_FINAL_RGB150_LR-320x400.jpg 320w, http://www.wellandgood.com/wp-content/uploads/2016/03/TS_SS16_T_0199_FINAL_RGB150_LR.jpg 760w" sizes="(max-width: 760px) 100vw, 760px" /><figcaption class="wp-caption-text">Photo: Tory Sport</figcaption></figure>
+<h2><a href="http://www.torysport.com/tech-knit-striped-jacket/31074.html?cgid=sport-coming-going&amp;start=5&amp;dwvar_31074_color=414" target="_blank">Tech-knit striped jacket,</a> $250</h2>
+<p><div class="post__next-slide post__next-slide--circle"><a data-slide="3" class="btn" href="http://www.wellandgood.com/good-looks/first-tory-sport-store-in-nyc/slide/3/"><span class="icon-arrow-down-thin"></span></a></div></section><section data-slide-url="http://www.wellandgood.com/good-looks/first-tory-sport-store-in-nyc/slide/3/" id="slide-3" class="post__slide"><div class="post__slide-count">3/11</div></p>
+<figure id="attachment_129289" style="width: 760px" class="wp-caption aligncenter"><img class="wp-image-129289" src="http://www.wellandgood.com/wp-content/uploads/2016/03/TS_SS16_ST_2175_FINAL_RGB150_LR.jpg" alt="Photo: Tory Sport" width="760" height="607" srcset="http://www.wellandgood.com/wp-content/uploads/2016/03/TS_SS16_ST_2175_FINAL_RGB150_LR-500x400.jpg 500w, http://www.wellandgood.com/wp-content/uploads/2016/03/TS_SS16_ST_2175_FINAL_RGB150_LR.jpg 3018w" sizes="(max-width: 760px) 100vw, 760px" /><figcaption class="wp-caption-text">Photo: Tory Sport</figcaption></figure>
+<p><div class="post__next-slide post__next-slide--circle"><a data-slide="4" class="btn" href="http://www.wellandgood.com/good-looks/first-tory-sport-store-in-nyc/slide/4/"><span class="icon-arrow-down-thin"></span></a></div></section><section data-slide-url="http://www.wellandgood.com/good-looks/first-tory-sport-store-in-nyc/slide/4/" id="slide-4" class="post__slide"><div class="post__slide-count">4/11</div></p>
+<figure id="attachment_129288" style="width: 760px" class="wp-caption aligncenter"><img class="wp-image-129288" src="http://www.wellandgood.com/wp-content/uploads/2016/03/TS_SS16_S_2206_FINAL_RGB150_LR.jpg" alt="Photo: Tory Sport" width="760" height="951" srcset="http://www.wellandgood.com/wp-content/uploads/2016/03/TS_SS16_S_2206_FINAL_RGB150_LR-320x400.jpg 320w, http://www.wellandgood.com/wp-content/uploads/2016/03/TS_SS16_S_2206_FINAL_RGB150_LR.jpg 2049w" sizes="(max-width: 760px) 100vw, 760px" /><figcaption class="wp-caption-text">Photo: Tory Sport</figcaption></figure>
+<h2><a href="http://www.torysport.com/nylon-packable-jacket/29283.html?start=3" target="_blank">Nylon packable jacket,</a> $150</h2>
+<h2><a href="http://www.torysport.com/banded-high-waist-bikini-bottom/30038.html?dwvar_30038_color=405&amp;cgid=clothing-swim&amp;start=14" target="_blank">Banded high-waist bikini bottom,</a> $95</h2>
+<h2><a href="http://www.torysport.com/neoprene-bucket-backpack/24763.html?cgid=accessories-handbags&amp;start=6&amp;dwvar_24763_color=407" target="_blank">Neoprene bucket bag,</a> $395</h2>
+<p><div class="post__next-slide post__next-slide--circle"><a data-slide="5" class="btn" href="http://www.wellandgood.com/good-looks/first-tory-sport-store-in-nyc/slide/5/"><span class="icon-arrow-down-thin"></span></a></div></section><section data-slide-url="http://www.wellandgood.com/good-looks/first-tory-sport-store-in-nyc/slide/5/" id="slide-5" class="post__slide"><div class="post__slide-count">5/11</div></p>
+<figure id="attachment_129287" style="width: 760px" class="wp-caption aligncenter"><img class="wp-image-129287" src="http://www.wellandgood.com/wp-content/uploads/2016/03/TS_SS16_S_1699_FINAL_RGB150_LR.jpg" alt="Photo: Tory Sport" width="760" height="951" srcset="http://www.wellandgood.com/wp-content/uploads/2016/03/TS_SS16_S_1699_FINAL_RGB150_LR-320x400.jpg 320w, http://www.wellandgood.com/wp-content/uploads/2016/03/TS_SS16_S_1699_FINAL_RGB150_LR.jpg 2350w" sizes="(max-width: 760px) 100vw, 760px" /><figcaption class="wp-caption-text">Photo: Tory Sport</figcaption></figure>
+<h2><a href="http://www.torysport.com/block-striped-rashguard/29867.html?cgid=clothing-swim&amp;start=3&amp;dwvar_29867_color=060" target="_blank">Block-striped rashguard,</a> $195</h2>
+<h2><a href="http://www.torysport.com/block-striped-rashguard/29867.html?cgid=clothing-swim&amp;start=3&amp;dwvar_29867_color=060" target="_blank">Printed hipster bikini bottom,</a> $85</h2>
+<p><div class="post__next-slide post__next-slide--circle"><a data-slide="6" class="btn" href="http://www.wellandgood.com/good-looks/first-tory-sport-store-in-nyc/slide/6/"><span class="icon-arrow-down-thin"></span></a></div></section><section data-slide-url="http://www.wellandgood.com/good-looks/first-tory-sport-store-in-nyc/slide/6/" id="slide-6" class="post__slide"><div class="post__slide-count">6/11</div></p>
+<figure id="attachment_129286" style="width: 760px" class="wp-caption aligncenter"><img class="wp-image-129286" src="http://www.wellandgood.com/wp-content/uploads/2016/03/TS_SS16_S_1572_FINAL_RGB150_LR.jpg" alt="Photo: Tory Sport" width="760" height="951" srcset="http://www.wellandgood.com/wp-content/uploads/2016/03/TS_SS16_S_1572_FINAL_RGB150_LR-320x400.jpg 320w, http://www.wellandgood.com/wp-content/uploads/2016/03/TS_SS16_S_1572_FINAL_RGB150_LR.jpg 2413w" sizes="(max-width: 760px) 100vw, 760px" /><figcaption class="wp-caption-text">Photo: Tory Sport</figcaption></figure>
+<h2><a href="http://www.torysport.com/lightweight-nylon-bomber-jacket/29367.html?cgid=clothing-outerwear&amp;start=4&amp;dwvar_29367_color=047" target="_blank">Lightweight nylon bomber jacket,</a> $195</h2>
+<h2><a href="http://www.torysport.com/lightweight-nylon-bomber-jacket/29367.html?cgid=clothing-outerwear&amp;start=4&amp;dwvar_29367_color=047" target="_blank">Striped scoopback swimsuit,</a> $185</h2>
+<p><div class="post__next-slide post__next-slide--circle"><a data-slide="7" class="btn" href="http://www.wellandgood.com/good-looks/first-tory-sport-store-in-nyc/slide/7/"><span class="icon-arrow-down-thin"></span></a></div></section><section data-slide-url="http://www.wellandgood.com/good-looks/first-tory-sport-store-in-nyc/slide/7/" id="slide-7" class="post__slide"><div class="post__slide-count">7/11</div></p>
+<figure id="attachment_129290" style="width: 760px" class="wp-caption aligncenter"><img class="wp-image-129290" src="http://www.wellandgood.com/wp-content/uploads/2016/03/TS_SS16_ST_2273_FINAL_RGB150_LR.jpg" alt="Photo: Tory Sport" width="760" height="951" srcset="http://www.wellandgood.com/wp-content/uploads/2016/03/TS_SS16_ST_2273_FINAL_RGB150_LR-320x400.jpg 320w, http://www.wellandgood.com/wp-content/uploads/2016/03/TS_SS16_ST_2273_FINAL_RGB150_LR.jpg 2363w" sizes="(max-width: 760px) 100vw, 760px" /><figcaption class="wp-caption-text">Photo: Tory Sport</figcaption></figure>
+<p><div class="post__next-slide post__next-slide--circle"><a data-slide="8" class="btn" href="http://www.wellandgood.com/good-looks/first-tory-sport-store-in-nyc/slide/8/"><span class="icon-arrow-down-thin"></span></a></div></section><section data-slide-url="http://www.wellandgood.com/good-looks/first-tory-sport-store-in-nyc/slide/8/" id="slide-8" class="post__slide"><div class="post__slide-count">8/11</div></p>
+<figure id="attachment_129285" style="width: 760px" class="wp-caption aligncenter"><img class="wp-image-129285" src="http://www.wellandgood.com/wp-content/uploads/2016/03/TS_SS16_R_0593_FINAL_RGB150_LR.jpg" alt="Photo: Tory Sport" width="760" height="951" srcset="http://www.wellandgood.com/wp-content/uploads/2016/03/TS_SS16_R_0593_FINAL_RGB150_LR-320x400.jpg 320w, http://www.wellandgood.com/wp-content/uploads/2016/03/TS_SS16_R_0593_FINAL_RGB150_LR.jpg 2413w" sizes="(max-width: 760px) 100vw, 760px" /><figcaption class="wp-caption-text">Photo: Tory Sport</figcaption></figure>
+<h2><a href="http://www.torysport.com/nylon-packable-jacket/29283.html?start=3" target="_blank">Nylon packable jacket,</a> $150</h2>
+<h2><a href="http://www.torysport.com/splash-leggings/29325.html?cgid=clothing-bottoms-leggings&amp;dwvar_29325_color=476&amp;start=4" target="_blank">Splash leggings</a>, $150</h2>
+<h2><a href="http://www.torysport.com/printed-slide/30022.html?cgid=accessories-shoes&amp;dwvar_30022_color=115&amp;start=1" target="_blank">Printed slide,</a> $150</h2>
+<p><div class="post__next-slide post__next-slide--circle"><a data-slide="9" class="btn" href="http://www.wellandgood.com/good-looks/first-tory-sport-store-in-nyc/slide/9/"><span class="icon-arrow-down-thin"></span></a></div></section><section data-slide-url="http://www.wellandgood.com/good-looks/first-tory-sport-store-in-nyc/slide/9/" id="slide-9" class="post__slide"><div class="post__slide-count">9/11</div></p>
+<figure id="attachment_129284" style="width: 760px" class="wp-caption aligncenter"><img class="wp-image-129284" src="http://www.wellandgood.com/wp-content/uploads/2016/03/TS_SS16_R_0556_FINAL_RGB150_LR.jpg" alt="Photo: Tory Sport" width="760" height="951" srcset="http://www.wellandgood.com/wp-content/uploads/2016/03/TS_SS16_R_0556_FINAL_RGB150_LR-320x400.jpg 320w, http://www.wellandgood.com/wp-content/uploads/2016/03/TS_SS16_R_0556_FINAL_RGB150_LR.jpg 1800w" sizes="(max-width: 760px) 100vw, 760px" /><figcaption class="wp-caption-text">Photo: Tory Sport</figcaption></figure>
+<h2><a href="http://www.torysport.com/nylon-packable-jacket/29283.html?start=3" target="_blank">Nylon packable jacket,</a> $150</h2>
+<h2><a href="http://www.torysport.com/nylon-curved-hem-shorts/29267.html?dwvar_29267_size=L&amp;cgid=clothing-bottoms-shorts&amp;dwvar_29267_color=808&amp;start=3" target="_blank">Nylon curved-hem shorts,</a> $70</h2>
+<h2><a href="http://www.torysport.com/sequin-backpack/26250.html?cgid=accessories-handbags&amp;start=23&amp;dwvar_26250_color=407" target="_blank">Sequin backpack,</a> $425</h2>
+<p><div class="post__next-slide post__next-slide--circle"><a data-slide="10" class="btn" href="http://www.wellandgood.com/good-looks/first-tory-sport-store-in-nyc/slide/10/"><span class="icon-arrow-down-thin"></span></a></div></section><section data-slide-url="http://www.wellandgood.com/good-looks/first-tory-sport-store-in-nyc/slide/10/" id="slide-10" class="post__slide"><div class="post__slide-count">10/11</div></p>
+<figure id="attachment_129283" style="width: 760px" class="wp-caption aligncenter"><img class="wp-image-129283" src="http://www.wellandgood.com/wp-content/uploads/2016/03/TS_SS16_R_0135_FINAL_RGB150_LR.jpg" alt="TS_SS16_R_0135_FINAL_RGB150_LR" width="760" height="951" srcset="http://www.wellandgood.com/wp-content/uploads/2016/03/TS_SS16_R_0135_FINAL_RGB150_LR-320x400.jpg 320w, http://www.wellandgood.com/wp-content/uploads/2016/03/TS_SS16_R_0135_FINAL_RGB150_LR.jpg 2413w" sizes="(max-width: 760px) 100vw, 760px" /><figcaption class="wp-caption-text">Photo: Tory Sport</figcaption></figure>
+<h2><a href="http://www.torysport.com/all-weather-run-jacket/17244.html?cgid=clothing-outerwear&amp;start=1&amp;dwvar_17244_size=L&amp;dwvar_17244_color=074" target="_blank">All-weather run jacket,</a> $325</h2>
+<h2><a href="http://www.torysport.com/chevron-leggings/17219.html?start=3" target="_blank">Chevron leggings,</a> $125</h2>
+<h2><a href="http://www.torysport.com/printed-slide/30022.html?cgid=accessories-shoes&amp;dwvar_30022_color=115&amp;start=1" target="_blank">Printed slide,</a> $150</h2>
+<p><div class="post__next-slide post__next-slide--circle"><a data-slide="11" class="btn" href="http://www.wellandgood.com/good-looks/first-tory-sport-store-in-nyc/slide/11/"><span class="icon-arrow-down-thin"></span></a></div></section><section data-slide-url="http://www.wellandgood.com/good-looks/first-tory-sport-store-in-nyc/slide/11/" id="slide-11" class="post__slide"><div class="post__slide-count">11/11</div></p>
+<figure id="attachment_129281" style="width: 760px" class="wp-caption aligncenter"><img class="wp-image-129281" src="http://www.wellandgood.com/wp-content/uploads/2016/03/TS_SS16_CG_1927_FINAL_RGB150_LR.jpg" alt="Photo: Tory Sport" width="760" height="607" srcset="http://www.wellandgood.com/wp-content/uploads/2016/03/TS_SS16_CG_1927_FINAL_RGB150_LR-500x400.jpg 500w, http://www.wellandgood.com/wp-content/uploads/2016/03/TS_SS16_CG_1927_FINAL_RGB150_LR.jpg 3018w" sizes="(max-width: 760px) 100vw, 760px" /><figcaption class="wp-caption-text">Photo: Tory Sport</figcaption></figure>
+<h2><a href="http://www.torysport.com/jersey-cami-tank/29497.html?cgid=clothing-tops-tanks&amp;dwvar_29497_color=047&amp;start=6" target="_blank">Jersey cami tank,</a> $65</h2>
+<h2><a href="http://www.torysport.com/jersey-cami-tank/29497.html?cgid=clothing-tops-tanks&amp;dwvar_29497_color=047&amp;start=6" target="_blank">Color-block track jacket,</a> $165</h2>
+<h2><a href="http://www.torysport.com/color-block-track-pants/17162.html?cgid=clothing-bottoms-pants&amp;dwvar_17162_size=L&amp;start=2&amp;dwvar_17162_color=438" target="_blank">Color-block track pants,</a> $135</h2>
+<h2><a href="http://www.torysport.com/sport-sandal/30014.html?cgid=accessories-shoes&amp;start=3&amp;dwvar_30014_color=714" target="_blank">Sport sandal,</a> $125</h2>
+<p>&nbsp;</p>
+<p><strong>Tory Sport is clearly on to something: <a href="http://www.wellandgood.com/good-looks/striped-activewear-trend/" target="_blank">Stripes are the chic print you need to add to your workout wardrobe this spring.</a> If you prefer to speak in memes, these <a href="http://www.wellandgood.com/good-looks/cute-gym-bags-message/" target="_blank">witty gym bags will speak volumes about your fitness.</a></strong></p></section>				</main>
+			</div>
+			<aside class="sidebar post__sidebar">
+				<section class="signup-form signup-form--sidebar">
+
+	
+	<img src="http://www.wellandgood.com/wp-content/uploads/2016/03/Meet-us-on-social-495x400.jpg" class="sidebar-signup-graphic" />
+
+	<div class="signup-form__inner">
+
+		
+<div class="signup-form__tagline"><p>Want daily health and wellness tips? Sign up and keep in touch!</p>
+</div>
+<div class="signup-form__thanks"><p>Thanks for signing up for our newsletter!</p>
+</div>
+
+<form action="http://www.wellandgood.com/wp-content/themes/wellgood-2016/lib/mailchimp-process.php?ajax" class="signup-form__form signup-form__sidebar" method="post" data-module-init="signup-form" data-success-elem=".signup-form__thanks" data-success-hide-elem=".signup-form__tagline, .signup-form__fields" data-error-elem=".signup-form__result" data-loading-class="loading">
+	<div class="signup-form__fields">
+		<div class="signup-form__group">
+			<input type="text" class="required signup-form__email" name="email" id="email" placeholder="Email Address">
+			<input type="submit" name="submit" class="signup-form__submit" value="Join">
+		</div>
+		<p class="signup-form__result small error"></p>
+
+		<div class="signup-form__group signup-form__location">
+			<p class="signup-form__location-headline">Interested in another edition?</p>
+			<label class="signup-form__radio"><input type="checkbox" name="groups[]" value="New York" class="nyc"><span class="radio"></span> New York</label>
+			<label class="signup-form__radio"><input type="checkbox" name="groups[]" value="Los Angeles" class="la"><span class="radio"></span> Los Angeles</label>
+			<input type="hidden" name="groups[]" value="Anywhere" class="anywhere hidden">
+			<input type="hidden" name="form" value="sidebar" />
+		</div>
+	</div>
+</form>
+			<div class="menu-social-menu-container">
+	    <ul id="menu-social-menu" class="menu">
+			        <li class="menu-item menu-item-type-social"><a href="https://www.facebook.com/WellandGoodNYC" class="icon-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+	    	        <li class="menu-item menu-item-type-social"><a href="http://pinterest.com/wellandgoodnyc" class="icon-pinterest-p" target="_blank"><span class="label">Pinterest</span></a></li>
+	    	        <li class="menu-item menu-item-type-social"><a href="http://www.twitter.com/WellandGoodNYC" class="icon-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+	    	        <li class="menu-item menu-item-type-social"><a href="https://plus.google.com/101371337599862756201/posts" class="icon-google" target="_blank"><span class="label">Google+</span></a></li>
+	    	        <li class="menu-item menu-item-type-social"><a href="http://instagram.com/wellandgoodnyc" class="icon-instagram" target="_blank"><span class="label">Instagram</span></a></li>
+	    	    </ul>
+	</div>
+
+	</div>
+
+</section>				<div class="post__sticky-advertisement"
+				     data-module-init="sticky-pin"
+				     data-flow-at=".post__content"
+				     data-pin-at=".header">
+					
+
+
+<section class="advertisement -meta-box-ed-cat-ed-pg-sidebar-advertisement">
+
+  
+      
+      <div id='div-gpt-ad-WideSkyscraper_300x600' class="advertising-adslot">
+        <script type='text/javascript'>
+          googletag.cmd.push(function() {
+            googletag.defineSlot('/1318049/Home_WideSkyscraper_300x600', [300, 600], 'div-gpt-ad-WideSkyscraper_300x600').addService(googletag.pubads());             googletag.pubads().setTargeting('test', ['on']);             googletag.enableServices();
+            googletag.display('div-gpt-ad-WideSkyscraper_300x600');
+          });
+        </script>
+      </div>
+
+  
+</section>
+
+				</div>
+			</aside>
+		</div>
+		<div class="container container--with-aside">
+			<footer class="post__footer">
+				<section class="post-grid related-posts post__related-posts"
+	>
+
+	<div class="post-grid__headline-container">
+		<h2 class="module-heading post-grid__headline">You May Also Like</h2>
+			</div>
+	<div class="post-grid__container">
+									<a class="post-grid__card" href="http://www.wellandgood.com/good-advice/diy-herbal-infusions/" target="">
+				<article>
+					<div class="post-grid__image" title="Be your own personal beauty guru with these next-level DIY skills"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/aromatherapy1-425x285.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/aromatherapy1.jpg" alt="" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/aromatherapy1-425x285.jpg" alt="" /></noscript></div></div>
+					<h3 class="post-grid__title">Be your own personal beauty guru with these next-level DIY skills</h3>
+				</article>
+			</a>
+								<a class="post-grid__card" href="http://www.wellandgood.com/good-looks/cotton-swabs-great-beauty-tools/" target="_blank">
+				<article>
+					<div class="post-grid__image" title="8 ways you never thought of using cotton swabs before"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/Screen-Shot-2016-03-18-at-11.15.57-AM-425x285.png" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/Screen-Shot-2016-03-18-at-11.15.57-AM-739x570.png" alt="" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/Screen-Shot-2016-03-18-at-11.15.57-AM-425x285.png" alt="" /></noscript></div></div>
+					<h3 class="post-grid__title">8 ways you never thought of using cotton swabs before</h3>
+				</article>
+			</a>
+								<a class="post-grid__card" href="http://www.wellandgood.com/good-sweat/tyr-active-launch-sweat-it-out-event/" target="">
+				<article>
+					<div class="post-grid__image" title="Join us for a special weeklong sweat session in NYC"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/surfset-425x285.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/surfset.jpg" alt="" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/surfset-425x285.jpg" alt="" /></noscript></div></div>
+					<h3 class="post-grid__title">Join us for a special weeklong sweat session in NYC</h3>
+				</article>
+			</a>
+								<a class="post-grid__card" href="http://www.wellandgood.com/good-advice/5-things-you-can-learn-about-meditation-from-ceos/" target="">
+				<article>
+					<div class="post-grid__image" title="5 things you can learn about meditation from CEOs"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/DLF_meditation_ceos-425x285.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/DLF_meditation_ceos.jpg" alt="" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/DLF_meditation_ceos-425x285.jpg" alt="" /></noscript></div></div>
+					<h3 class="post-grid__title">5 things you can learn about meditation from CEOs</h3>
+				</article>
+			</a>
+								<a class="post-grid__card" href="http://www.wellandgood.com/good-looks/microbead-free-all-natural-exfoliators/" target="">
+				<article>
+					<div class="post-grid__image" title="11 exfoliating face cleansers that are microbead-free"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/safe-grit-425x285.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/safe-grit.jpg" alt="" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/safe-grit-425x285.jpg" alt="" /></noscript></div></div>
+					<h3 class="post-grid__title">11 exfoliating face cleansers that are microbead-free</h3>
+				</article>
+			</a>
+								<a class="post-grid__card" href="http://www.wellandgood.com/good-looks/nike-wants-to-change-the-way-you-wear-sneakers-this-year/" target="">
+				<article>
+					<div class="post-grid__image" title="Nike wants to change the way you wear sneakers"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/Nike_LunarEpic_Flyknit_Purple_2_original-425x285.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/Nike_LunarEpic_Flyknit_Purple_2_original.jpg" alt="" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/Nike_LunarEpic_Flyknit_Purple_2_original-425x285.jpg" alt="" /></noscript></div></div>
+					<h3 class="post-grid__title">Nike wants to change the way you wear sneakers</h3>
+				</article>
+			</a>
+					</div>
+</section>
+				<section class="post-grid pubexchange">
+	<h2 class="module-heading post-grid__headline">Promoted Stories</h2>
+	<div id="pubexchange_below_content_5" class="pubexchange_module pubexchange_embed" data-pubexchange-module-id="1676"></div>
+	<script>(function(w, d, s, id) {
+	  w.PUBX=w.PUBX || {pub: "well__good", discover: false, lazy: false};
+	  var js, pjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id; js.async = true;
+	  js.src = "//main.pubexchange.com/loader.min.js";
+	  pjs.parentNode.insertBefore(js, pjs);
+	}(window, document, "script", "pubexchange-jssdk"));</script>
+</section>
+				<section class="post__meta">
+					<div>
+												<p class="post__tags tag-list info">
+							<span class="icon-tag"></span>
+							<a href="http://www.wellandgood.com/tag/fitness-fashion/" rel="tag">fitness fashion</a>						</p>
+												<hr class="hr__under-info" />
+					</div>
+
+					<p class="post__add-comment-cta">
+						<a href="#comments" data-toggle-comments="true">
+							<span class="post__add-comment-cta-close">Hide comments</span>
+							<span class="post__add-comment-cta-open">Add a comment</span>
+						</a>
+					</p>
+
+					<div class="social-share">
+	<a class="social-share__button social-share__button--facebook" target="_blank" href="//www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.wellandgood.com%2Fgood-looks%2Ffirst-tory-sport-store-in-nyc%2F">
+		<span class="icon-facebook"></span> Share
+	</a>
+	<a class="social-share__button social-share__button--twitter" target="_blank" href="//twitter.com/share?text=The+first+stand-alone+Tory+Sport+store+is+officially+open+via+%40WellandGoodNYC&amp;url=http%3A%2F%2Fwww.wellandgood.com%2Fgood-looks%2Ffirst-tory-sport-store-in-nyc%2F">
+		<span class="icon-twitter"></span> Tweet
+	</a>
+	<a class="social-share__button social-share__button--pinterest" target="_blank" href="//pinterest.com/pin/create/link/?url=http%3A%2F%2Fwww.wellandgood.com%2Fgood-looks%2Ffirst-tory-sport-store-in-nyc%2F&amp;description=The+first+stand-alone+Tory+Sport+store+is+officially+open&amp;media=http%3A%2F%2Fwww.wellandgood.com%2Fwp-content%2Fuploads%2F2016%2F03%2Ftory-sport-store-488x400.jpg">
+		<span class="icon-pinterest-p"></span> Pin It
+	</a>
+</div>
+
+					<a name="comments"></a>
+
+				</section>
+				<div id="fb-root"></div>
+<section class="comments" data-module-init="comments">
+  <div class="comments-facebook">
+  	<h2 class="module-heading comments-facebook__headline">Facebook Conversations</h2>
+    <div class="fb-comments" data-width="100%" data-href="http://www.wellandgood.com/good-looks/first-tory-sport-store-in-nyc/" data-numposts="10"></div>
+  </main>
+  <div class="comments-disqus">
+  	<h2 class="module-heading comments-disqus__headline">Comments</h2>
+    <div id="disqus_thread"></div>
+	<script>
+	var disqus_config = function () {
+		this.page.url = 'http://www.wellandgood.com/good-looks/first-tory-sport-store-in-nyc/'; 
+		this.page.identifier = '129225'; 
+	};
+	</script>
+  </main>
+</section>
+
+
+
+			</footer>
+			<aside class="sidebar">
+				<div class="post__sticky-advertisement"
+				     data-module-init="sticky-pin"
+				     data-flow-at=".post__footer"
+				     data-pin-at=".header">
+					
+
+
+<section class="advertisement -meta-box-ed-cat-ed-pg-sidebar-bottomad">
+
+  
+      
+      <div id='div-gpt-ad-1424386923131-2' class="advertising-adslot">
+        <script type='text/javascript'>
+          googletag.cmd.push(function() {
+            googletag.defineSlot('/1318049/Wellness_Trends_2015_300x600', [300, 600], 'div-gpt-ad-1424386923131-2').addService(googletag.pubads());             googletag.pubads().setTargeting('test', ['on']);             googletag.enableServices();
+            googletag.display('div-gpt-ad-1424386923131-2');
+          });
+        </script>
+      </div>
+
+  
+</section>
+
+				</div>
+			</aside>
+		</div>
+	</div>
+</article>
+
+<section class="relationship-stories relationship-stories--most-popular module-alternate">
+  <div class="container relationship-stories__container">
+          <h2 class="module-heading relationship-stories__headline" ><span class="relationship-stories__headline-label">Most <strong>Popular</strong></span></h2>
+        <div class="relationship-stories__list">
+                      <article class="relationship-stories__card"> 
+          <a class="relationship-stories__image-wrapper" href="http://www.wellandgood.com/good-sweat/tracy-anderson-workout-rules/" target="">
+            <div class="relationship-stories__image" title="Tracy Anderson&#8217;s 5 (surprising) workout rules"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/TA_March2016-425x285.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/TA_March2016-760x570.jpg" alt="Tracy Anderson&#8217;s 5 (surprising) workout rules" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/TA_March2016-425x285.jpg" alt="Tracy Anderson&#8217;s 5 (surprising) workout rules" /></noscript></div></div>
+          </a>
+                    <a href="http://www.wellandgood.com/good-sweat/tracy-anderson-workout-rules/" target="">
+                          <p class="relationship-stories__ranking">1</p>
+                        <h3 class="relationship-stories__title">Tracy Anderson&#8217;s 5 (surprising) workout rules</h3>
+          </a>
+        </article>
+                            <article class="relationship-stories__card"> 
+          <a class="relationship-stories__image-wrapper" href="http://www.wellandgood.com/good-looks/best-budget-sports-bras/" target="">
+            <div class="relationship-stories__image" title="The 10 best sports bras for $30 or less"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/02/10-best-sports-bras-2-3-425x285.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/02/10-best-sports-bras-2-3.jpg" alt="The 10 best sports bras for $30 or less" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/02/10-best-sports-bras-2-3-425x285.jpg" alt="The 10 best sports bras for $30 or less" /></noscript></div></div>
+          </a>
+                    <a href="http://www.wellandgood.com/good-looks/best-budget-sports-bras/" target="">
+                          <p class="relationship-stories__ranking">2</p>
+                        <h3 class="relationship-stories__title">The 10 best sports bras for $30 or less</h3>
+          </a>
+        </article>
+                            <article class="relationship-stories__card"> 
+          <a class="relationship-stories__image-wrapper" href="http://www.wellandgood.com/good-looks/microbead-free-all-natural-exfoliators/" target="">
+            <div class="relationship-stories__image" title="11 exfoliating face cleansers that are microbead-free"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/safe-grit-425x285.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/safe-grit.jpg" alt="11 exfoliating face cleansers that are microbead-free" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/safe-grit-425x285.jpg" alt="11 exfoliating face cleansers that are microbead-free" /></noscript></div></div>
+          </a>
+                    <a href="http://www.wellandgood.com/good-looks/microbead-free-all-natural-exfoliators/" target="">
+                          <p class="relationship-stories__ranking">3</p>
+                        <h3 class="relationship-stories__title">11 exfoliating face cleansers that are microbead-free</h3>
+          </a>
+        </article>
+                            <article class="relationship-stories__card"> 
+          <a class="relationship-stories__image-wrapper" href="http://www.wellandgood.com/good-food/3-easy-avocado-recipes-no-toast-necessary/" target="">
+            <div class="relationship-stories__image" title="3 easy avocado recipes (no toast necessary)"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/avocado_souffle_crop-425x285.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/avocado_souffle_crop.jpg" alt="3 easy avocado recipes (no toast necessary)" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/avocado_souffle_crop-425x285.jpg" alt="3 easy avocado recipes (no toast necessary)" /></noscript></div></div>
+          </a>
+                    <a href="http://www.wellandgood.com/good-food/3-easy-avocado-recipes-no-toast-necessary/" target="">
+                          <p class="relationship-stories__ranking">4</p>
+                        <h3 class="relationship-stories__title">3 easy avocado recipes (no toast necessary)</h3>
+          </a>
+        </article>
+                            <article class="relationship-stories__card"> 
+          <a class="relationship-stories__image-wrapper" href="http://www.wellandgood.com/good-looks/nike-wants-to-change-the-way-you-wear-sneakers-this-year/" target="">
+            <div class="relationship-stories__image" title="Nike wants to change the way you wear sneakers"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/Nike_LunarEpic_Flyknit_Purple_2_original-425x285.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/Nike_LunarEpic_Flyknit_Purple_2_original.jpg" alt="Nike wants to change the way you wear sneakers" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/Nike_LunarEpic_Flyknit_Purple_2_original-425x285.jpg" alt="Nike wants to change the way you wear sneakers" /></noscript></div></div>
+          </a>
+                    <a href="http://www.wellandgood.com/good-looks/nike-wants-to-change-the-way-you-wear-sneakers-this-year/" target="">
+                          <p class="relationship-stories__ranking">5</p>
+                        <h3 class="relationship-stories__title">Nike wants to change the way you wear sneakers</h3>
+          </a>
+        </article>
+                            </div>
+  </div>
+</section>
+<section class="collection  collection--popular-slideshows ">
+  <div class="container collection__container">
+    <h2 class="module-heading collection__headline">
+      <span class="collection__headline-main">Your spring cleaning guide</span>
+      
+                                  
+      
+      <a class="collection__archive-link" href="http://www.wellandgood.com/tag/healthy-home/">        <span class="collection__archive-title">New season, new you</span>      </a>    </h2>
+    <div class="collection__list" >
+                      <a href="http://www.wellandgood.com/good-advice/marie-kondo-decluttering-room-guide/" target="" class="collection__card collection__card--featured">
+          <article>
+            <div class="collection__image" title="How to declutter every room in your home, the Marie Kondo way"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/02/marie-kondo-room-decluttering-425x285.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/02/marie-kondo-room-decluttering.jpg" alt="How to declutter every room in your home, the Marie Kondo way" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/02/marie-kondo-room-decluttering-425x285.jpg" alt="How to declutter every room in your home, the Marie Kondo way" /></noscript></div></div>
+            <h3 class="collection__title">How to declutter every room in your home, the Marie Kondo way</h3>
+                          <p class="excerpt collection__excerpt">The Head Mistress of Mastering Mess is back with a more detailed method for sparking joy and organizing every room in your home.</p>
+                      </article>
+        </a>
+                      <a href="http://www.wellandgood.com/good-advice/home-design-tips-sage-living/" target="" class="collection__card ">
+          <article>
+            <div class="collection__image" title="5 tips on designing your space—and life—with purpose"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2015/10/anne_sage_bedroom-425x285.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2015/10/anne_sage_bedroom-700x570.jpg" alt="5 tips on designing your space—and life—with purpose" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2015/10/anne_sage_bedroom-425x285.jpg" alt="5 tips on designing your space—and life—with purpose" /></noscript></div></div>
+            <h3 class="collection__title">5 tips on designing your space—and life—with purpose</h3>
+                      </article>
+        </a>
+                      <a href="http://www.wellandgood.com/good-advice/safer-household-cleaning-products-heathier/" target="" class="collection__card ">
+          <article>
+            <div class="collection__image" title="Safer scrubbing: 8 better-for-you household cleaning brands"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/wellgood_placeholder-425x285.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/wellgood_placeholder.jpg" alt="" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/wellgood_placeholder-425x285.jpg" alt="" /></noscript></div></div>
+            <h3 class="collection__title">Safer scrubbing: 8 better-for-you household cleaning brands</h3>
+                      </article>
+        </a>
+                      <a href="http://www.wellandgood.com/good-advice/feng-shui-decluttering/" target="" class="collection__card ">
+          <article>
+            <div class="collection__image" title="Feng shui for beginners"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/fengshui3-425x285.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/fengshui3.jpg" alt="Feng shui for beginners" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/fengshui3-425x285.jpg" alt="Feng shui for beginners" /></noscript></div></div>
+            <h3 class="collection__title">Feng shui for beginners</h3>
+                      </article>
+        </a>
+                      <a href="http://www.wellandgood.com/good-advice/boycott-spring-cleaning-tips/" target="" class="collection__card ">
+          <article>
+            <div class="collection__image" title="The secret to cleaning in 15 minutes"><div class="image-module"><img src="http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/img/spacer.gif" data-src="http://www.wellandgood.com/wp-content/uploads/2016/03/wellgood_placeholder-425x285.jpg" class="image-module-img" data-src-retina="http://www.wellandgood.com/wp-content/uploads/2016/03/wellgood_placeholder.jpg" alt="" /><noscript><img src="http://www.wellandgood.com/wp-content/uploads/2016/03/wellgood_placeholder-425x285.jpg" alt="" /></noscript></div></div>
+            <h3 class="collection__title">The secret to cleaning in 15 minutes</h3>
+                      </article>
+        </a>
+                    </div>
+  </div>
+</section>
+  <footer class="footer" data-module-init="footer">
+
+	
+	<div class="footer__logo"><img src="http://www.wellandgood.com/wp-content/uploads/2016/02/oil-cleanser-300x300-1-150x150.jpg" alt="+" /></div>
+
+	<div class="container signup-form signup-form--footer">
+		<h2 class="signup-form__headline">YOUR HEALTHIEST RELATIONSHIP</h2>
+
+		
+<div class="signup-form__tagline"><p>Well+Good is obsessed with your health and wellness. Get it daily.</p>
+</div>
+<div class="signup-form__thanks"><p>Thanks for signing up for our newsletter!</p>
+</div>
+
+<form action="http://www.wellandgood.com/wp-content/themes/wellgood-2016/lib/mailchimp-process.php?ajax" class="signup-form__form signup-form__footer" method="post" data-module-init="signup-form" data-success-elem=".signup-form__thanks" data-success-hide-elem=".signup-form__tagline, .signup-form__fields" data-error-elem=".signup-form__result" data-loading-class="loading">
+	<div class="signup-form__fields">
+		<div class="signup-form__group">
+			<input type="text" class="required signup-form__email" name="email" id="email" placeholder="Email Address">
+			<input type="submit" name="submit" class="signup-form__submit" value="Join">
+		</div>
+		<p class="signup-form__result small error"></p>
+
+		<div class="signup-form__group signup-form__location">
+			<p class="signup-form__location-headline">Interested in another edition?</p>
+			<label class="signup-form__radio"><input type="checkbox" name="groups[]" value="New York" class="nyc"><span class="radio"></span> New York</label>
+			<label class="signup-form__radio"><input type="checkbox" name="groups[]" value="Los Angeles" class="la"><span class="radio"></span> Los Angeles</label>
+			<input type="hidden" name="groups[]" value="Anywhere" class="anywhere hidden">
+			<input type="hidden" name="form" value="footer" />
+		</div>
+	</div>
+</form>	</div>
+
+	<hr />
+
+	<div class="container">
+		<div class="footer__inner">
+			<div class="menu-footer-menu-container"><ul id="menu-footer-menu" class="menu"><li id="menu-item-128662" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-128662"><a href="http://www.wellandgood.com/about-wg/"><span class="label">About</span></a></li>
+<li id="menu-item-128663" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-128663"><a href="http://www.wellandgood.com/were-hiring/"><span class="label">Careers</span></a></li>
+<li id="menu-item-122364" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-122364"><a href="http://wellandgood.com/contact-us/"><span class="label">Contact Us</span></a></li>
+<li id="menu-item-122365" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-122365"><a href="http://wellandgood.com/advertise/"><span class="label">Advertise</span></a></li>
+<li id="menu-item-122361" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-122361"><a href="http://wellandgood.com/media/"><span class="label">Press</span></a></li>
+</ul></div>
+			<div class="made-in-ny"><span class="label">Made in NY</span></div>
+
+				<div class="menu-social-menu-container">
+	    <ul id="menu-social-menu" class="menu">
+			        <li class="menu-item menu-item-type-social"><a href="https://www.facebook.com/WellandGoodNYC" class="icon-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+	    	        <li class="menu-item menu-item-type-social"><a href="http://pinterest.com/wellandgoodnyc" class="icon-pinterest-p" target="_blank"><span class="label">Pinterest</span></a></li>
+	    	        <li class="menu-item menu-item-type-social"><a href="http://www.twitter.com/WellandGoodNYC" class="icon-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+	    	        <li class="menu-item menu-item-type-social"><a href="https://plus.google.com/101371337599862756201/posts" class="icon-google" target="_blank"><span class="label">Google+</span></a></li>
+	    	        <li class="menu-item menu-item-type-social"><a href="http://instagram.com/wellandgoodnyc" class="icon-instagram" target="_blank"><span class="label">Instagram</span></a></li>
+	    	    </ul>
+	</div>
+
+			<div class="copyright"><p>© <span class="year">2016</span> Well+Good LLC. All rights reserved. The material on this site may not be reproduced, distributed, transmitted, cached or otherwise used, except as expressly permitted in writing by Well+Good LLC. Well+Good is strictly editorial. Read our <a href="/privacy-policy/">Privacy Policy</a> and <a href="/terms-and-conditions/">Terms and Conditions</a>.</p>
+</div>
+		</div>
+	</div>
+
+
+</footer>
+<div class="modal modal-signup" data-module-init="modal-signup" data-close-elem=".modal-signup .modal-close, .modal-signup .modal-bg" data-open-delay-seconds="3">
+	<div class="signup-form--modal">
+		<a href="#close" class="modal-close"></a>
+				<div class="modal-signup-graphic" style="background-image:url('http://www.wellandgood.com/wp-content/uploads/2016/03/Citrus-Refresh_optimized.jpg');"></div>
+		
+		<div class="signup-form__wrapper">
+			<div class="signup-form__inner">
+								<div class="footer__logo"><img src="http://www.wellandgood.com/wp-content/uploads/2016/02/oil-cleanser-300x300-1-150x150.jpg" alt="+" /></div>
+				<h2 class="signup-form__headline">YOUR HEALTHIEST RELATIONSHIP</h2>
+				
+<div class="signup-form__tagline"><p>Well+Good is obsessed with your health and wellness. Get it daily.</p>
+</div>
+<div class="signup-form__thanks"><p>Thanks for signing up for our newsletter!</p>
+</div>
+
+<form action="http://www.wellandgood.com/wp-content/themes/wellgood-2016/lib/mailchimp-process.php?ajax" class="signup-form__form signup-form__modal" method="post" data-module-init="signup-form" data-success-elem=".signup-form__thanks" data-success-hide-elem=".signup-form__tagline, .signup-form__fields" data-error-elem=".signup-form__result" data-loading-class="loading">
+	<div class="signup-form__fields">
+		<div class="signup-form__group">
+			<input type="text" class="required signup-form__email" name="email" id="email" placeholder="Email Address">
+			<input type="submit" name="submit" class="signup-form__submit" value="Join">
+		</div>
+		<p class="signup-form__result small error"></p>
+
+		<div class="signup-form__group signup-form__location">
+			<p class="signup-form__location-headline">Interested in another edition?</p>
+			<label class="signup-form__radio"><input type="checkbox" name="groups[]" value="New York" class="nyc"><span class="radio"></span> New York</label>
+			<label class="signup-form__radio"><input type="checkbox" name="groups[]" value="Los Angeles" class="la"><span class="radio"></span> Los Angeles</label>
+			<input type="hidden" name="groups[]" value="Anywhere" class="anywhere hidden">
+			<input type="hidden" name="form" value="modal" />
+		</div>
+	</div>
+</form>			</div>
+		</div>
+	</div>
+	<div class="modal-bg"></div>
+</div>  <script type='text/javascript' src='http://www.wellandgood.com/wp-includes/js/jquery/jquery.js?ver=1.11.3'></script>
+<script type='text/javascript' src='http://www.wellandgood.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var ajax_object = {"ajax_url":"http:\/\/www.wellandgood.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.wellandgood.com/wp-content/plugins/video-contest/assets/js/video-contest.js?ver=1.4' async='async'></script>
+<script type='text/javascript' src='http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/js/vendors.min.js?ver=1.1.0'></script>
+<script type='text/javascript' src='http://www.wellandgood.com/wp-content/themes/wellgood-2016/assets/js/main.min.js?ver=1.1.0' async='async'></script>
+<script type='text/javascript' src='//use.typekit.net/wbd6gie.js?ver=1.1.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var FB_WP=FB_WP||{};FB_WP.queue={_methods:[],flushed:false,add:function(fn){FB_WP.queue.flushed?fn():FB_WP.queue._methods.push(fn)},flush:function(){for(var fn;fn=FB_WP.queue._methods.shift();){fn()}FB_WP.queue.flushed=true}};window.fbAsyncInit=function(){FB.init({"xfbml":true,"appId":"120647878922"});if(FB_WP && FB_WP.queue && FB_WP.queue.flush){FB_WP.queue.flush()}}
+/* ]]> */
+</script>
+<script type="text/javascript">(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="http:\/\/connect.facebook.net\/en_US\/all.js";fjs.parentNode.insertBefore(js,fjs)}(document,"script","facebook-jssdk"));</script>
+<script type='text/javascript' src='http://www.wellandgood.com/wp-includes/js/wp-embed.min.js?ver=4.4.2' async='async'></script>
+	<script type="text/javascript">try {
+			Typekit.load();
+		} catch ( e ) {
+		}</script> <div id="fb-root"></div>
+  </div> <!-- .main-wrapper -->
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"21e22961b7","applicationID":"18511839","transactionName":"ZwMEbBNSXUYHW0UMDl5JM0oIHBxcCFxUHU9ADhY=","queueTime":0,"applicationTime":1950,"ttGuid":"","agentToken":"","atts":"S0QHGltITkg=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+  <script type='text/javascript'>
+      var _sf_async_config = _sf_async_config || {};
+      /** CONFIGURATION START **/
+      _sf_async_config.sections = document.location.href.split('/')[3]; //CHANGE THIS
+      _sf_async_config.authors = 'Change this to your Author name'; //CHANGE THIS
+      
+      
+      /** CONFIGURATION END **/
+      (function() {
+          function loadChartbeat() {
+              window._sf_endpt = (new Date()).getTime();
+              var e = document.createElement('script');
+              e.setAttribute('language', 'javascript');
+              e.setAttribute('type', 'text/javascript');
+              e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+              
+              document.body.appendChild(e);
+          }
+          var oldonload = window.onload;
+          window.onload = (typeof window.onload != 'function') ?
+              loadChartbeat : function() {
+                  oldonload();
+                  loadChartbeat();
+              };
+          
+          })();
+      </script></body>
+</html>

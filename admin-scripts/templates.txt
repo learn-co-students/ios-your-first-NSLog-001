@@ -1,0 +1,54 @@
+*****SCRIPTING TEMPLATES**********
+
+ADD USER
+
+Options:
+  --help                           show this help information
+  --account_id                      [required]
+  --act                            Actually apply changes [default: False]
+  --file                           tsv of users [required]
+  --password                        [default: super-secure-password-123]
+  --prod_db                        use prod settings [default: True]
+  --read_header                    use the first line of the tsv to determine column headers, else use [email, first_name, last_name] [default: True]
+  --skip_existing                  skip over existing emails instead of exiting [default: False]
+
+****** GRANT PERMISSIONS *********
+./../../usr/local/chartbeat_bin/djangofly-prod-scripts grant_permissions add_users --account_id=62564 --domains=massmutualatwork.com --users=jjeffress@MassMutual.com,usingh@massmutual.com,emastrio@massmutual.com,RiceKRice@MassMutual.com,RConstantine@massmutual.com,wpartelo@massmutual.com --product_type=newsbeat
+
+./../../usr/local/chartbeat_bin/djangofly-prod-scripts grant_permissions --account_id=63527 --domains=dzienniklodzki.pl --product_type=newsbeat --users=
+
+******* GRANT MAB ACCESS **********
+
+./../../usr/local/chartbeat_bin/djangofly-prod-scripts grant_permissions --account_id=63228 --domains=desimartini.com,htcampus.com,livehindustan.com,livemint.com,shine.com --users=87843,86920 --product_type=mab --allow_protected=true --create_domains --act
+
+******* ADD USERS **********
+
+./../../usr/local/chartbeat_bin/djangofly-prod-scripts add_users --account_id=63483 --domains=businessinsider.in --users= --product_type=newsbeat
+
+******* GRANT PERMISSIONS / ADD DOMAINS / RB access **********
+
+./../../usr/local/chartbeat_bin/djangofly-prod-scripts grant_permissions --account_id=63228 --domains=desimartini.com,htcampus.com,livehindustan.com,livemint.com,shine.com,video@hindustantimes.com  --product_type=queryapi —users=89108 —check_mfly=false
+
+******* ADD USERS **********
+--help                           show this help information
+  --account_id                      [required]
+  --act                            Actually apply changes [default: False]
+  --delimiter                      Delimiter character. Defaults to comma or tab based on file name
+  --file                           csv/tsv of users [required]
+  --password                        [default: super-secure-password-123]
+  --prod_db                        use prod settings [default: True]
+  --read_header                    use the first line of the tsv to determine column headers, else use [email, first_name, last_name] [default: True]
+  --skip_existing                  skip over existing emails instead of exiting [default: False]
+
+scp polska.txt craig@dev:./../../usr/local/chartbeat_bin/djangofly-prod-scripts add_users
+
+./../../usr/local/chartbeat_bin/djangofly-prod-scripts add_users --account_id=63527 --file=add_users/polska.tsv --skip_existing --act
+
+djangofly-prod-scripts grant_permissions --account_id=47635 --domains=fdlreporter.com,greenbaypressgazette.com,htrnews.com,marshfieldnewsherald.com,packersnews.com,postcrescent.com,sheboyganpress.com,stevenspointjournal.com,thenorthwestern.com,wausaudailyherald.com,wisconsinrapidstribune.com --product_type=queryapi --users=88444,88445,88446,88447,88448
+
+******* GETTING THE ADMIN DOMAINS **********
+
+./../../usr/local/chartbeat_bin/djangofly-prod-scripts generate_domains_csv
+
+will create csv in root directory 
+cd into local comp - scp craig@dev:domain.csv ~/desktop

@@ -1,0 +1,32 @@
+<script type='text/javascript'>
+    var _sf_async_config = _sf_async_config || {};
+    /** CONFIGURATION START **/
+    _sf_async_config.sections = utag_data.item_name;  //CHANGE THIS
+    _sf_async_config.authors = 'Change this to your Author name';    //CHANGE THIS
+    /** CONFIGURATION END **/
+    (function(){
+      function loadChartbeat() {
+        window._sf_endpt=(new Date()).getTime();
+        var e = document.createElement('script');
+        e.setAttribute('language', 'javascript');
+        e.setAttribute('type', 'text/javascript');
+        e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+        document.body.appendChild(e);
+      }
+      var oldonload = window.onload;
+      window.onload = (typeof window.onload != 'function') ?
+         loadChartbeat : function() { oldonload(); loadChartbeat(); };
+    })();
+</script>
+
+ var utag_data = { 
+item_id: "{0C76AB66-DBF1-4D87-AE1C-6665D612927D}", 
+item_language: "en", 
+item_name: "Home", 
+item_path: "/sitecore/content/massmutualdotcom/home", 
+item_template_id: "{EF62F76C-1D1F-4340-887F-C16214D3644E}", 
+item_template_name: "Individuals Home Page Objects", 
+page_category: "Home", 
+site_id: "MM-Main", 
+page_name: "Home", 
+}; 

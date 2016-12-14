@@ -1,0 +1,13 @@
+
+<script type="text/javascript">
+  var _sf_async_config = _sf_async_config || {};
+  /** CONFIGURATION START **/
+  _sf_async_config.uid = 62968; // ACCOUNT NUMBER
+  _sf_async_config.domain = 'band.uol.com.br'; // DOMAIN 
+  _sf_async_config.flickerControl = false;
+  _sf_async_config.useCanonical = true;
+  /** CONFIGURATION END **/
+  var _sf_startpt = (new Date()).getTime();
+</script>
+<script async src="//static.chartbeat.com/js/chartbeat_mab.js"></script>
+    

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00E8F60E1D480EED009C5472 /* dev-profile.developerprofile in Resources */ = {isa = PBXBuildFile; fileRef = 00E8F60D1D480EED009C5472 /* dev-profile.developerprofile */; };
 		E26B4D4A1B051A5B001AE926 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E26B4D491B051A5B001AE926 /* main.m */; };
 		E26B4D4D1B051A5B001AE926 /* FISAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E26B4D4C1B051A5B001AE926 /* FISAppDelegate.m */; };
 		E26B4D551B051A5B001AE926 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E26B4D541B051A5B001AE926 /* Images.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00E8F60D1D480EED009C5472 /* dev-profile.developerprofile */ = {isa = PBXFileReference; lastKnownFileType = file; path = "dev-profile.developerprofile"; sourceTree = SOURCE_ROOT; };
 		E26B4D441B051A5B001AE926 /* your-first-NSLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "your-first-NSLog.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26B4D481B051A5B001AE926 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E26B4D491B051A5B001AE926 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				E26B4D4C1B051A5B001AE926 /* FISAppDelegate.m */,
 				E26B4D6D1B051D6F001AE926 /* Main.storyboard */,
 				E26B4D541B051A5B001AE926 /* Images.xcassets */,
+				00E8F60D1D480EED009C5472 /* dev-profile.developerprofile */,
 				E26B4D561B051A5B001AE926 /* LaunchScreen.xib */,
 				E26B4D471B051A5B001AE926 /* Supporting Files */,
 			);
@@ -105,6 +108,7 @@
 				TargetAttributes = {
 					E26B4D431B051A5B001AE926 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = SD4CYTB28D;
 					};
 				};
 			};
@@ -133,6 +137,7 @@
 			files = (
 				E26B4D701B051D6F001AE926 /* Main.storyboard in Resources */,
 				E26B4D581B051A5B001AE926 /* LaunchScreen.xib in Resources */,
+				00E8F60E1D480EED009C5472 /* dev-profile.developerprofile in Resources */,
 				E26B4D551B051A5B001AE926 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,10 +253,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "your-first-NSLog/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flatironschool.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -259,10 +267,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "your-first-NSLog/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flatironschool.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

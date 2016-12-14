@@ -1,0 +1,147 @@
+@font-face {
+font-family: "merriweather";
+src:url("../font/Merriweather-Light.otf") format("opentype");
+font-style:normal;font-weight:300;
+}
+
+@font-face {
+font-family: "proxima-nova";
+src:url("../font/Proxima Nova Reg.otf") format("opentype");
+font-style:normal;font-weight:400;
+}
+
+@font-face {
+font-family: "proxima-nova";
+src:url("../font/Proxima Nova Sbold.otf") format("opentype");
+font-style:normal;font-weight:600;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Merriweather:300);
+
+
+
+/* NAVIGATION STYLES */
+
+nav {
+  /*background-color: #203543 !important;
+  background-color: #2F3E4A;
+  padding-top: 14px;*/
+  width: 100%;
+  display: flex;
+  position: fixed;
+  z-index:1;
+  height: 64px;
+  top: 0;
+  width: 100%;
+  background-color: #27495b !important;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
+}
+
+
+/*  BODY */
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  font-family: 'Merriweather', serif !important;
+  color: #005175;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'proxima nova', sans-serif !important;
+  font-weight: 200;
+  font-size: 60px;
+  text-align: center;
+
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+b, strong {
+  font-weight: 600;
+}
+a {
+  -moz-transition: all 0.1s ease;
+  -webkit-transition: all 0.1s ease;
+  -o-transition: all 0.1s ease;
+  -ms-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+pre {
+  background: #444444;
+  color: #ddd;
+  border-radius: 10px;
+}
+
+label {
+  font-size: 1.5rem;
+  color: #52A4D8;
+  letter-spacing: 2px;
+
+}
+
+form {
+  font-size: 30px;
+  margin-top: 50px;
+  font-weight: 900;
+}
+
+td {
+  text-align: center;
+}
+
+blockquote {
+  border-left: 5px solid #52a4d8;
+}
+
+
+/* CLASSES */
+.content {
+  
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+.input-field .prefix.active {
+  color: #52A4D8;
+
+}
+
+/* ID's */
+
+
+#monthSummary {
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#total {
+  font-size: 20px;
+  font-weight: 900;
+  margin-top: 20px;
+}
+
+#download-button {
+  background-color: #52A4D8;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+
+
+/* FOOTER */
+
+footer {
+  background-color: #26495c !important;
+  width: 100%
+}
+

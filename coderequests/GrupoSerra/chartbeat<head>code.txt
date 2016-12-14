@@ -1,0 +1,10 @@
+<script type="text/javascript">
+    var _sf_async_config = _sf_async_config || {};
+    /** CONFIGURATION START **/
+    _sf_async_config.uid = 62114; /** CHANGE TO YOUR CHARTBEAT ACCOUNT ID **/
+    _sf_async_config.domain = 'ultimahora.es'; /** CHANGE THIS **/
+    _sf_async_config.flickerControl = false;
+    /** CONFIGURATION END **/
+    var _sf_startpt = (new Date()).getTime();
+</script>
+<script async src="//static.chartbeat.com/js/chartbeat_mab.js"></script>
